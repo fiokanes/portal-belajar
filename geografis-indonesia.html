@@ -244,19 +244,19 @@
         h2 .icon { font-size: 1.2em; }
 
         h3 {
-            color: var(--merah);
+            color: #b71c1c;
             font-size: 1.4em;
             margin: 25px 0 15px 0;
         }
 
         h4 {
-            color: var(--biru);
+            color: #c62828;
             font-size: 1.2em;
             margin: 15px 0 10px 0;
         }
 
         p {
-            color: #555;
+            color: #d32f2f;
             margin-bottom: 15px;
             font-size: 1.05em;
         }
@@ -1106,9 +1106,35 @@
             font-size: 0.8em; text-align: center;
             cursor: pointer;
         }
+
+        /* ============ FLOATING GEO SYMBOLS ============ */
+        .geo-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+
+        .geo-symbol {
+            position: absolute;
+            animation: floatGeo 25s linear infinite;
+            opacity: 0.06;
+        }
+
+        @keyframes floatGeo {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.06; }
+            90% { opacity: 0.06; }
+            100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+        }
+
+        section {
+            position: relative;
+        }
     </style>
 </head>
 <body>
+    <!-- FLOATING GEO SYMBOLS -->
+    <div class="geo-bg" id="geoBg"></div>
+
     <!-- PORTAL NAVBAR -->
     <nav class="portal-navbar">
         <a href="index.html" class="nav-brand">
@@ -2482,6 +2508,32 @@
             document.getElementById('letak').style.opacity = '1';
             document.getElementById('letak').style.transform = 'translateY(0)';
         }, 100);
+
+        // Create floating geo symbols
+        function createGeoBg() {
+            const container = document.getElementById('geoBg');
+            const symbols = [
+                {text: '🇮🇩', size: '5em'}, {text: '🗺️', size: '4em'}, {text: '🏔️', size: '4.5em'},
+                {text: '🌋', size: '5em'}, {text: '🌊', size: '4em'}, {text: '🏝️', size: '4.5em'},
+                {text: '🌴', size: '3.5em'}, {text: '🦅', size: '5em'}, {text: '🧭', size: '3em'},
+                {text: '🌍', size: '6em'}, {text: '🌏', size: '5em'}, {text: '☀️', size: '4em'},
+                {text: '🌧️', size: '3.5em'}, {text: '🌿', size: '3em'}, {text: '🐘', size: '4em'},
+                {text: '🦜', size: '3.5em'}, {text: '🐟', size: '3em'}, {text: '⛵', size: '3.5em'},
+                {text: '🏠', size: '3em'}, {text: '🚢', size: '4em'}
+            ];
+            for (let i = 0; i < 35; i++) {
+                const s = symbols[Math.floor(Math.random() * symbols.length)];
+                const symbol = document.createElement('div');
+                symbol.className = 'geo-symbol';
+                symbol.textContent = s.text;
+                symbol.style.left = Math.random() * 100 + '%';
+                symbol.style.fontSize = s.size;
+                symbol.style.animationDelay = Math.random() * 25 + 's';
+                symbol.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                container.appendChild(symbol);
+            }
+        }
+        createGeoBg();
     </script>
 </body>
 </html>
