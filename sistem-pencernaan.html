@@ -974,21 +974,22 @@
         /* ============ READ ALOUD BUTTON ============ */
         .read-aloud-btn {
             background: linear-gradient(135deg, #2e7d32, #43a047);
-            color: white; border: none; padding: 10px 20px;
-            border-radius: 25px; cursor: pointer; font-size: 0.95em;
+            color: white; border: none; padding: 8px 16px;
+            border-radius: 20px; cursor: pointer; font-size: 0.85em;
             font-weight: bold; transition: all 0.3s ease;
-            display: inline-flex; align-items: center; gap: 8px;
-            margin: 10px 0;
+            display: inline-flex; align-items: center; gap: 6px;
+            margin: 10px 0; letter-spacing: 0.5px;
         }
 
         .read-aloud-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+            box-shadow: 0 3px 10px rgba(46, 125, 50, 0.3);
+            background: linear-gradient(135deg, #43a047, #66bb6a);
         }
 
         .read-aloud-btn.reading {
-            background: linear-gradient(135deg, #c62828, #e53935);
-            animation: pulse 1s infinite;
+            background: linear-gradient(135deg, #ff8f00, #ffa000);
+            animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
@@ -1103,7 +1104,7 @@
     <main>
         <!-- PENGERTIAN -->
         <section id="pengertian">
-            <h2><span class="icon">📖</span> Apa Itu Sistem Pencernaan? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🔊 Bacakan</button></h2>
+            <h2><span class="icon">📖</span> Apa Itu Sistem Pencernaan? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🎧 Bacain dong</button></h2>
             <p>Hey guys! 👋 Kalian pernah mikir gak sih, gimana sih makanan yang kita makan bisa jadi energi buat tubuh kita? Nah, itu semua berkat <strong>sistem pencernaan</strong>!</p>
             
             <div class="fun-fact">
@@ -1666,7 +1667,7 @@
 
     <script>
         // ============ READ ALOUD SYSTEM ============
-        let speechRate = 0.9;
+        let speechRate = 0.85;
         let isReading = false;
 
         function getTextFromSection(sectionId) {
@@ -1677,12 +1678,14 @@
             let node;
             while (node = walker.nextNode()) {
                 const parent = node.parentElement;
-                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn')) {
-                    const trimmed = node.textContent.trim();
-                    if (trimmed && trimmed.length > 2) text += trimmed + ' ';
+                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn') && !parent.closest('.read-aloud-btn')) {
+                    let cleaned = node.textContent.trim()
+                        .replace(/[📖🫀🔄🗺️🎬🧪⚠️💡🎮❓✨📋💡🔑📐📝🎯🚀😎🤔💡📌📝🔑✨🎯🔢➕➖✖️➗✅❌⚠️🔑💡📝🎯✨🫁🧬🧪🎬🗺️🎮❓✨📋💡🔑📐📝🎯🚀😎🤔💡📌📝🔑✨]/g, '')
+                        .replace(/\s+/g, ' ').trim();
+                    if (cleaned.length > 3) text += cleaned + '. ';
                 }
             }
-            return text.replace(/\s+/g, ' ').trim();
+            return text.replace(/\.\.\./g, ' titik tiga').replace(/\s+/g, ' ').trim();
         }
 
         function readSection(sectionId) {
@@ -1697,16 +1700,22 @@
                     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'id-ID'; utterance.rate = speechRate; utterance.pitch = 1;
+                utterance.lang = 'id-ID';
+                utterance.rate = 0.85;
+                utterance.pitch = 1.15;
+                utterance.volume = 0.9;
+                const voices = window.speechSynthesis.getVoices();
+                const idVoice = voices.find(v => v.lang.startsWith('id') && v.name.includes('Female')) || voices.find(v => v.lang.startsWith('id'));
+                if (idVoice) utterance.voice = idVoice;
                 utterance.onstart = () => {
                     isReading = true;
                     document.querySelectorAll('.read-aloud-btn').forEach(btn => {
-                        if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🔊 Membaca...'; }
+                        if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🎧 Lagi dibacain...'; }
                     });
                 };
                 utterance.onend = () => {
                     isReading = false;
-                    document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🔊 Bacakan'; });
+                    document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🎧 Bacain dong'; });
                     if (section) section.style.borderLeft = '';
                 };
                 window.speechSynthesis.speak(utterance);
