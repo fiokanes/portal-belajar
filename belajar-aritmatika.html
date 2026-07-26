@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Aritmatika Bilangan Bulat - SMP Kelas 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* ============ PORTAL NAVBAR ============ */
+        .portal-navbar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .portal-navbar .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .portal-navbar .nav-brand:hover {
+            color: #ffd700;
+        }
+
+        .portal-navbar .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portal-navbar .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .portal-navbar .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .portal-navbar .nav-link.active {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .page-wrapper {
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+        }
+
+        h3 {
+            color: #2980b9;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            color: #34495e;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            color: #34495e;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        strong {
+            color: #e74c3c;
+        }
+
+        .fun-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .fun-box h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tip-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .tip-box li {
+            color: white;
+        }
+
+        .example-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            color: #2c3e50;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        details {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        summary {
+            color: #2c3e50;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        details ol {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .emoji-big {
+            font-size: 2em;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .story-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px dashed #e74c3c;
+        }
+
+        .story-box h3 {
+            color: #e74c3c;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #3d566e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+        }
+
+        footer p {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        footer p:last-child {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* GAME STYLES */
+        .game-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            border: 3px solid #e94560;
+        }
+
+        .game-section h2 {
+            color: #e94560;
+            border-bottom-color: #e94560;
+        }
+
+        .game-section p, .game-section li {
+            color: #eee;
+        }
+
+        .game-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .game-title {
+            color: #ffd700;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .game-desc {
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .game-btn {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .game-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.5);
+        }
+
+        .game-btn:active {
+            transform: scale(0.95);
+        }
+
+        .game-btn.secondary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .game-btn.success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .question-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.8em;
+            font-weight: bold;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .option-btn {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 20px;
+            font-size: 1.3em;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: #e94560;
+            transform: translateY(-3px);
+        }
+
+        .option-btn.correct {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border-color: #38ef7d;
+            animation: pulse 0.5s;
+        }
+
+        .option-btn.wrong {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-color: #ff6b6b;
+            animation: shake 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .score-display {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .score-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .score-item .label {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .score-item .value {
+            color: #ffd700;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .timer-bar {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .timer-fill {
+            background: linear-gradient(90deg, #e94560, #ffd700);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.1s linear;
+            width: 100%;
+        }
+
+        .input-answer {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .input-answer:focus {
+            outline: none;
+            border-color: #e94560;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .input-answer::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .feedback {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 15px 0;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback.correct {
+            color: #38ef7d;
+        }
+
+        .feedback.wrong {
+            color: #ff6b6b;
+        }
+
+        .difficulty-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .diff-btn {
+            padding: 10px 25px;
+            border: 2px solid;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: white;
+        }
+
+        .diff-btn.easy {
+            border-color: #38ef7d;
+        }
+
+        .diff-btn.easy:hover, .diff-btn.easy.active {
+            background: #38ef7d;
+            color: #1a1a2e;
+        }
+
+        .diff-btn.medium {
+            border-color: #ffd700;
+        }
+
+        .diff-btn.medium:hover, .diff-btn.medium.active {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+
+        .diff-btn.hard {
+            border-color: #e94560;
+        }
+
+        .diff-btn.hard:hover, .diff-btn.hard.active {
+            background: #e94560;
+            color: white;
+        }
+
+        .leaderboard {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .leaderboard h3 {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .leaderboard-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin: 8px 0;
+        }
+
+        .leaderboard-entry:nth-child(1) {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #1a1a2e;
+        }
+
+        .leaderboard-entry:nth-child(2) {
+            background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+            color: #1a1a2e;
+        }
+
+        .leaderboard-entry:nth-child(3) {
+            background: linear-gradient(135deg, #cd7f32 0%, #b8860b 100%);
+            color: white;
+        }
+
+        .rank {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .streak-display {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .streak-display .fire {
+            color: #ff6b6b;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .game-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .game-mode-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .game-mode-card:hover {
+            transform: translateY(-10px);
+            border-color: #e94560;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .game-mode-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .game-mode-card h3 {
+            color: #ffd700;
+            margin: 10px 0;
+        }
+
+        .game-mode-card p {
+            color: #aaa;
+            font-size: 0.95em;
+        }
+
+        .confetti {
+            position: fixed;
+            top: -10px;
+            z-index: 1000;
+            animation: confettiFall 3s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            border: 3px solid #ffd700;
+        }
+
+        .modal h2 {
+            color: #ffd700;
+            border: none;
+            display: block;
+            font-size: 2em;
+        }
+
+        .modal .final-score {
+            font-size: 4em;
+            color: #e94560;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .modal p {
+            color: #aaa;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .question-box {
+                font-size: 1.3em;
+                padding: 20px;
+            }
+
+            .game-modes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTAL NAVBAR -->
+    <nav class="portal-navbar">
+        <a href="index.html" class="nav-brand">
+            <span style="font-size: 1.5em;">📚</span>
+            Portal Belajar Fiona
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+            <a href="belajar-aritmatika.html" class="nav-link active">🔢 Aritmatika</a>
+            <a href="sistem-pencernaan.html" class="nav-link">🫁 Pencernaan</a>
+            <a href="geografis-indonesia.html" class="nav-link">🇮🇩 Geografis</a>
+            <a href="english-tenses.html" class="nav-link">🇬🇧 English</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+    <header>
+        <h1>🔥 ARITMATIKA BILANGAN BULAT 🔥</h1>
+        <p>Yuk, jago matematika! Materi SMP Kelas 8 yang Anti Ribet! 💪</p>
+    </header>
+
+    <main>
+        <!-- Pengertian -->
+        <section>
+            <h2>😎 Apa Sih Bilangan Bulat Itu?</h2>
+            <p>Hey guys! Jadi, <strong>bilangan bulat</strong> itu adalah kumpulan angka yang sering banget kita temuin sehari-hari. Coba deh liat:</p>
+            
+            <div class="fun-box">
+                <h3>🎯 Tiga Jenis Bilangan Bulat:</h3>
+                <ul>
+                    <li><strong>Bilangan Positif (+)</strong>: Angka-angka jagoan kayak 1, 2, 3, 4, 5, ... (yang suka bikin nilai kita bagus! 😄)</li>
+                    <li><strong>Bilangan Negatif (-)</strong>: Angka-angka yang sering muncul di suhu AC atau ketinggian, kayak -1, -2, -3, ... (jangan sedih, ini penting lho! 🌡️)</li>
+                    <li><strong>Nol (0)</strong>: Dia spesial! Bukan positif, bukan negatif. Kayak anak yang netral di kelas 😂</li>
+                </ul>
+            </div>
+            
+            <p>Simbolnya huruf <strong>Z</strong> dari bahasa Jerman "Zahlen" yang artinya bilangan. Keren kan? 😎</p>
+            
+            <p>Kalo di garis bilangan, urutannya kayak gini:</p>
+            <p style="text-align: center; font-size: 1.3em; color: #e74c3c; font-weight: bold;">... -4, -3, -2, -1, 0, 1, 2, 3, 4 ...</p>
+        </section>
+
+        <!-- Operasi Penjumlahan -->
+        <section>
+            <h2>➕ Penjumlahan: Gampang Kok!</h2>
+            
+            <h3>1️⃣ Tanda Sama? Langsung Jumlah Aja!</h3>
+            <p>Kalo kedua angka tandanya sama, tinggal jumlahkan terus kasih tanda yang sama. Simple banget kan?</p>
+            
+            <div class="example-box">
+                <h3>✨ Contoh:</h3>
+                <ul>
+                    <li>(+3) + (+5) = <strong>+8</strong> (positif + positif = positif)</li>
+                    <li>(-4) + (-6) = <strong>-10</strong> (negatif + negatif = negatif)</li>
+                    <li>(+15) + (+25) = <strong>+40</strong> (gas terus! 🚀)</li>
+                </ul>
+            </div>
+
+            <h3>2️⃣ Tanda Beda? Saatnya Adu Kuat! 💪</h3>
+            <p>Kalo tandanya beda, angka yang lebih gede (mutlaknya) yang menang. Hasilnya ikut tanda pemenang!</p>
+            
+            <div class="example-box">
+                <h3>✨ Contoh:</h3>
+                <ul>
+                    <li>(+7) + (-3) = <strong>+4</strong> (7 lebih gede, dia menang! 🏆)</li>
+                    <li>(-9) + (+5) = <strong>-4</strong> (9 lebih gede dari 5, jadi negatif yang menang)</li>
+                    <li>(+20) + (-15) = <strong>+5</strong> (20 jagoan banget! 💪)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Operasi Pengurangan -->
+        <section>
+            <h2>➖ Pengurangan? Santai Aja!</h2>
+            <p>Di sini ada trik jitu nih! Pengurangan itu sebenernya <strong>penjumlahan yang disamarkan</strong>. Caranya?</p>
+            
+            <div class="fun-box">
+                <h3>🔑 Trik Rahasia:</h3>
+                <p><strong>a - b = a + (-b)</strong></p>
+                <p>Tinggal balik tanda angka belakang, terus tambahin! Gampang kan?</p>
+            </div>
+            
+            <div class="example-box">
+                <h3>✨ Contoh Praktik:</h3>
+                <ul>
+                    <li>(+8) - (+3) = (+8) + (-3) = <strong>+5</strong> 👍</li>
+                    <li>(-5) - (+2) = (-5) + (-2) = <strong>-7</strong> 😅</li>
+                    <li>(+6) - (-4) = (+6) + (+4) = <strong>+10</strong> 🎉 (min jadi plus!)</li>
+                    <li>(-7) - (-3) = (-7) + (+3) = <strong>-4</strong> 🤓</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>⚠️ Hati-Hati!</h3>
+                <p>Minus minus jadi plus! Plus plus tetap plus! Jangan sampai kebalik ya!</p>
+            </div>
+        </section>
+
+        <!-- Operasi Perkalian -->
+        <section>
+            <h2>✖️ Perkalian: Hafalkan Aturan Tandanya!</h2>
+            <p>Perkalian bilangan bulat itu gampang kalo udah hafal aturan tandanya. Siap? 🎯</p>
+            
+            <div class="fun-box">
+                <h3>📋 Aturan Tanda Perkalian:</h3>
+                <ul>
+                    <li><strong>Positif × Positif = Positif</strong> ✅ (normal-normal aja)</li>
+                    <li><strong>Negatif × Negatif = Positif</strong> ✅ (dua minus = jadi plus! Ajaib! 🎩)</li>
+                    <li><strong>Positif × Negatif = Negatif</strong> ❌ (beda tanda = negatif)</li>
+                    <li><strong>Negatif × Positif = Negatif</strong> ❌ (sama aja, beda tanda)</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <h3>💡 Trik Biar Gak Lupa:</h3>
+                <p><strong>"Tanda SAMA = POSITIF, tanda BEDA = NEGATIF"</strong></p>
+                <p>Mudah banget kan? Tinggal inget itu aja! 😎</p>
+            </div>
+
+            <div class="example-box">
+                <h3>✨ Contoh Soal:</h3>
+                <ul>
+                    <li>(+3) × (+4) = <strong>+12</strong> (sama-sama positif, hasilnya positif! ✅)</li>
+                    <li>(-2) × (-5) = <strong>+10</strong> (negatif × negatif = positif! 🎉)</li>
+                    <li>(+6) × (-3) = <strong>-18</strong> (beda tanda, jadi negatif ❌)</li>
+                    <li>(-7) × (+2) = <strong>-14</strong> (tetap negatif karena beda tanda)</li>
+                    <li>(-4) × (-8) = <strong>+32</strong> (dua negatif jadi positif! 🥳)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Operasi Pembagian -->
+        <section>
+            <h2>➗ Pembagian: Kayak Perkalian Aja!</h2>
+            <p>Kabar baik! Aturan tandanya <strong>sama persis kayak perkalian</strong>. Jadi kalo udah hafal perkalian, pembagian juga lancar! 🏄</p>
+            
+            <div class="fun-box">
+                <h3>📋 Aturan Tanda Pembagian:</h3>
+                <ul>
+                    <li><strong>Positif ÷ Positif = Positif</strong> ✅</li>
+                    <li><strong>Negatif ÷ Negatif = Positif</strong> ✅</li>
+                    <li><strong>Positif ÷ Negatif = Negatif</strong> ❌</li>
+                    <li><strong>Negatif ÷ Positif = Negatif</strong> ❌</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>✨ Contoh Soal:</h3>
+                <ul>
+                    <li>(+12) ÷ (+3) = <strong>+4</strong> (gampang! 👌)</li>
+                    <li>(-20) ÷ (-5) = <strong>+4</strong> (sama-sama negatif = positif! 🎊)</li>
+                    <li>(+18) ÷ (-6) = <strong>-3</strong> (beda tanda = negatif)</li>
+                    <li>(-24) ÷ (+8) = <strong>-3</strong> (tetap negatif deh)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sifat-Sifat -->
+        <section>
+            <h2>🧠 Sifat-Sifat yang Wajib Dihafal!</h2>
+            <p>Ada beberapa sifat keren yang bakal ngebantu banget pas ujian. Catet ya! 📝</p>
+            
+            <h3>1️⃣ Sifat Komutatif (Tukar-Tukaran 🔄)</h3>
+            <p>Kalo ditukar posisinya, hasilnya tetep sama!</p>
+            <div class="example-box">
+                <ul>
+                    <li><strong>Penjumlahan</strong>: a + b = b + a → 3 + 5 = 5 + 3 = 8 ✅</li>
+                    <li><strong>Perkalian</strong>: a × b = b × a → 4 × 6 = 6 × 4 = 24 ✅</li>
+                </ul>
+            </div>
+
+            <h3>2️⃣ Sifat Asosatif (Dikelompokin 📦)</h3>
+            <p>Mau dikelompokin gimana juga, hasilnya sama!</p>
+            <div class="example-box">
+                <ul>
+                    <li>(2 + 3) + 4 = 2 + (3 + 4) = 9 ✅</li>
+                    <li>(2 × 3) × 4 = 2 × (3 × 4) = 24 ✅</li>
+                </ul>
+            </div>
+
+            <h3>3️⃣ Sifat Distributif (Disebarin 🌊)</h3>
+            <p>Yang dikali bisa disebar ke dalam kurung!</p>
+            <div class="example-box">
+                <p><strong>a × (b + c) = (a × b) + (a × c)</strong></p>
+                <p>Contoh: 3 × (4 + 5) = (3 × 4) + (3 × 5) = 12 + 15 = 27 🎯</p>
+            </div>
+
+            <h3>4️⃣ Sifat Identitas (Si Spesial ✨)</h3>
+            <ul>
+                <li><strong>Identitas Penjumlahan</strong>: a + 0 = a (nol gak ngaruh! 😴)</li>
+                <li><strong>Identitas Perkalian</strong>: a × 1 = a (satu juga gak ngaruh! 🤷)</li>
+            </ul>
+
+            <h3>5️⃣ Sifat Invers (Kebalikan 🔄)</h3>
+            <p>a + (-a) = 0 (tambah lawannya = nol! Saling menghilang! 👻)</p>
+        </section>
+
+        <!-- Latihan Soal -->
+        <section>
+            <h2>📝 Waktunya Latihan! Siap Tempur! ⚔️</h2>
+            <p>Oke gengs, sekarang waktunya praktik! Coba kerjain soal-soal ini:</p>
+            
+            <h3>🎯 Soal Penjumlahan & Pengurangan:</h3>
+            <ol>
+                <li>(-15) + (+20) = ...</li>
+                <li>(+35) + (-18) = ...</li>
+                <li>(-42) - (+15) = ...</li>
+                <li>(+28) - (-12) = ...</li>
+                <li>(-50) + (-30) + (+45) = ...</li>
+            </ol>
+
+            <h3>🎯 Soal Perkalian & Pembagian:</h3>
+            <ol>
+                <li>(-8) × (+7) = ...</li>
+                <li>(+12) × (-5) = ...</li>
+                <li>(-9) × (-6) = ...</li>
+                <li>(-56) ÷ (+8) = ...</li>
+                <li>(+72) ÷ (-9) = ...</li>
+            </ol>
+
+            <h3>🎯 Soal Cerita (Pasti Ada di Ujian! 📚):</h3>
+            <ol>
+                <li>Suhu di puncak gunung pagi hari -5°C. Siangnya naik 12°C. Suhu siang hari berapa? 🌡️</li>
+                <li>Pak Ahmad punya utang Rp150.000. Dia bayar Rp80.000. Sisa utangnya berapa? 💰</li>
+                <li>Seorang penyelam di kedalaman 25 meter. Dia naik 10 meter. Sekarang di kedalaman berapa? 🤿</li>
+            </ol>
+        </section>
+
+        <!-- Pembahasan Soal Cerita -->
+        <section>
+            <h2>🔍 Pembahasan Soal Cerita</h2>
+            <p>Nih pembahasannya, biar makin paham! 💡</p>
+            
+            <div class="story-box">
+                <h3>🌡️ Soal 1: Suhu Gunung</h3>
+                <p>Suhu pagi: <strong>-5°C</strong> (dingin beeeut! 🥶)</p>
+                <p>Naik: <strong>+12°C</strong> (matahari mulai terik! ☀️)</p>
+                <p><strong>Penyelesaian:</strong></p>
+                <p>Suhu siang = (-5) + (+12) = <strong>+7°C</strong></p>
+                <p>✨ <strong>Jadi, suhu siang hari 7°C di atas nol. Lumayan hangat!</strong></p>
+            </div>
+
+            <div class="story-box">
+                <h3>💰 Soal 2: Utang Pak Ahmad</h3>
+                <p>Utang: <strong>-Rp150.000</strong> (utang itu negatif! 📉)</p>
+                <p>Bayar: <strong>+Rp80.000</strong> (bayar ngurangin utang! 📈)</p>
+                <p><strong>Penyelesaian:</strong></p>
+                <p>Sisa utang = (-150.000) + (+80.000) = <strong>-Rp70.000</strong></p>
+                <p>✨ <strong>Jadi, sisa utang Pak Ahmad Rp70.000. Masih ada sisa utangnya!</strong></p>
+            </div>
+
+            <div class="story-box">
+                <h3>🤿 Soal 3: Penyelam</h3>
+                <p>Kedalaman: <strong>-25 meter</strong> (di bawah laut = negatif! 🌊)</p>
+                <p>Naik: <strong>+10 meter</strong> (mendekati permukaan! ⬆️)</p>
+                <p><strong>Penyelesaian:</strong></p>
+                <p>Kedalaman sekarang = (-25) + (+10) = <strong>-15 meter</strong></p>
+                <p>✨ <strong>Jadi, penyelam sekarang di kedalaman 15 meter. Masih di bawah laut!</strong></p>
+            </div>
+        </section>
+
+        <!-- Kuis Interaktif -->
+        <section>
+            <h2>🏆 Kuis Waktu! Berani Coba? 💪</h2>
+            <p>Uji kemampuanmu dengan kuis ini! Kerjain dulu, baru cek jawabannya ya! 😎</p>
+            
+            <h3>🎯 Soal Kuis:</h3>
+            <ol>
+                <li>(+25) + (-17) = ...</li>
+                <li>(-18) + (-32) = ...</li>
+                <li>(+45) - (-15) = ...</li>
+                <li>(-6) × (-9) = ...</li>
+                <li>(-84) ÷ (+12) = ...</li>
+            </ol>
+
+            <details>
+                <summary>🔑 <strong>Klik di sini untuk Kunci Jawaban (Jangan Curang Ya! 😜)</strong></summary>
+                <ol>
+                    <li>(+25) + (-17) = <strong>+8</strong> ✅</li>
+                    <li>(-18) + (-32) = <strong>-50</strong> ✅</li>
+                    <li>(+45) - (-15) = <strong>+60</strong> ✅ (minus minus jadi plus!)</li>
+                    <li>(-6) × (-9) = <strong>+54</strong> ✅ (negatif × negatif = positif!)</li>
+                    <li>(-84) ÷ (+12) = <strong>-7</strong> ✅</li>
+                </ol>
+            </details>
+        </section>
+
+        <!-- Tips Belajar -->
+        <section>
+            <h2>💡 Tips Jago Aritmatika! 🚀</h2>
+            <p>Mau jadi jagoan matematika? Ikutin tips ini!</p>
+            
+            <div class="tip-box">
+                <h3>🔥 5 Tips Anti Gagal:</h3>
+                <ol>
+                    <li><strong>Pake garis bilangan!</strong> Gambar garis terus lompat-lompat kayak main ular tangga 🐍</li>
+                    <li><strong>Hafalin aturan tanda!</strong> "Sama = Positif, Beda = Negatif" (ulang-ulang sampe masuk! 🔁)</li>
+                    <li><strong>Latihan tiap hari!</strong> Kayak olahraga, makin sering latihan makin jago 💪</li>
+                    <li><strong>Hubungin sama kehidupan nyata!</strong> Utang (negatif), tabungan (positif), suhu AC (negatif) 🌡️</li>
+                    <li><strong>Ubah pengurangan jadi penjumlahan!</strong> Trik paling ampuh! 🎯</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Rumus Cepat -->
+        <section>
+            <h2>⚡ Rumus Cepat (Catet Ya! 📝)</h2>
+            <p>Ini dia rumus-rumus yang bakal ngebantu banget pas ujian!</p>
+            
+            <h3>📊 Rumus Penjumlahan:</h3>
+            <table>
+                <tr>
+                    <th>Situasi</th>
+                    <th>Cara</th>
+                    <th>Contoh</th>
+                </tr>
+                <tr>
+                    <td>Tanda sama 👍</td>
+                    <td>Jumlahkan, tanda tetap</td>
+                    <td>(-3) + (-5) = <strong>-8</strong></td>
+                </tr>
+                <tr>
+                    <td>Tanda beda ⚔️</td>
+                    <td>Kurangkan, ikutin tanda yang gede</td>
+                    <td>(+7) + (-4) = <strong>+3</strong></td>
+                </tr>
+            </table>
+
+            <h3>📊 Rumus Pengurangan:</h3>
+            <div class="fun-box">
+                <p><strong>a - b = a + (-b)</strong> 🎯</p>
+                <p>Balik tanda belakang, terus tambahin! Selesai!</p>
+            </div>
+
+            <h3>📊 Rumus Perkalian & Pembagian:</h3>
+            <table>
+                <tr>
+                    <th>Kondisi</th>
+                    <th>Hasil</th>
+                </tr>
+                <tr>
+                    <td>Tanda SAMA (+ × + atau - × -) 🤝</td>
+                    <td><strong>POSITIF (+) ✅</strong></td>
+                </tr>
+                <tr>
+                    <td>Tanda BEDA (+ × - atau - × +) ⚡</td>
+                    <td><strong>NEGATIF (-) ❌</strong></td>
+                </tr>
+            </table>
+
+            <div class="warning-box">
+                <h3>🎯 Kesimpulan Penting!</h3>
+                <p><strong>Ingat selalu: "SAMA = POSITIF, BEDA = NEGATIF"</strong></p>
+                <p>Itu aja! Udah bisa ngerjain semua soal! 😎🔥</p>
+            </div>
+        </section>
+
+        <!-- ==================== GAME SECTION ==================== -->
+        <section class="game-section" id="gameSection">
+            <h2>🎮 GAME ZONE - Main Sambil Belajar! 🎮</h2>
+            <p>Siap uji kemampuanmu? Pilih game yang kamu suka dan raih skor tertinggi! 🏆</p>
+            
+            <div class="game-modes">
+                <div class="game-mode-card" onclick="startGame('quiz')">
+                    <div class="icon">🧠</div>
+                    <h3>Kuis Cepat</h3>
+                    <p>Jawab sebanyak mungkin soal dalam 60 detik! Kecepatan adalah kunci! ⚡</p>
+                </div>
+                
+                <div class="game-mode-card" onclick="startGame('input')">
+                    <div class="icon">✍️</div>
+                    <h3>Tantangan Isian</h3>
+                    <p>Ketik jawabanmu sendiri! Uji pemahamanmu secara langsung! 💪</p>
+                </div>
+                
+                <div class="game-mode-card" onclick="startGame('sign')">
+                    <div class="icon">🎯</div>
+                    <h3>Tebak Tanda</h3>
+                    <p>Positif atau negatif? Tebak hasilnya secepat mungkin! 🔥</p>
+                </div>
+                
+                <div class="game-mode-card" onclick="startGame('marathon')">
+                    <div class="icon">🏃</div>
+                    <h3>Marathon Soal</h3>
+                    <p>30 soal tanpa batas waktu! Tapi hati-hati, 3 salah = game over! 💀</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Area (Hidden by default) -->
+        <section class="game-section hidden" id="gameArea">
+            <div id="gameContent">
+                <!-- Game content will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Leaderboard -->
+        <section class="game-section">
+            <h2>🏆 Hall of Fame - Pencetak Skor Tertinggi! 🏆</h2>
+            <div class="leaderboard" id="leaderboard">
+                <h3>🥇🥈🥉 Top Players</h3>
+                <div id="leaderboardEntries">
+                    <div class="leaderboard-entry">
+                        <span class="rank">🥇</span>
+                        <span class="name">Belum ada pemain</span>
+                        <span class="score">0</span>
+                    </div>
+                    <div class="leaderboard-entry">
+                        <span class="rank">🥈</span>
+                        <span class="name">Belum ada pemain</span>
+                        <span class="score">0</span>
+                    </div>
+                    <div class="leaderboard-entry">
+                        <span class="rank">🥉</span>
+                        <span class="name">Belum ada pemain</span>
+                        <span class="score">0</span>
+                    </div>
+                </div>
+                <button class="game-btn secondary" onclick="clearLeaderboard()" style="margin-top: 15px; font-size: 0.9em; padding: 10px 20px;">🗑️ Reset Leaderboard</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>📚 Materi Aritmatika Bilangan Bulat - SMP Kelas 8</p>
+        <p>🎉 Semangat Belajar! Kamu Pasti Bisa! 💪✨</p>
+    </footer>
+
+    <!-- Modal for Game Over -->
+    <div class="modal-overlay hidden" id="gameOverModal">
+        <div class="modal">
+            <h2 id="modalTitle">🎉 Game Over! 🎉</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget! Skormu udah masuk leaderboard!</p>
+            <div style="margin-top: 20px;">
+                <button class="game-btn" onclick="restartGame()">🔄 Main Lagi</button>
+                <button class="game-btn secondary" onclick="closeModal()">🏠 Menu Utama</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== GAME VARIABLES ====================
+        let currentGame = null;
+        let score = 0;
+        let streak = 0;
+        let bestStreak = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let timer = null;
+        let timeLeft = 60;
+        let currentAnswer = null;
+        let playerName = '';
+        let questionCount = 0;
+        let totalQuestions = 30;
+        let lives = 3;
+
+        // Leaderboard from localStorage
+        let leaderboard = JSON.parse(localStorage.getItem('mathGameLeaderboard')) || [
+            { name: 'Belum ada pemain', score: 0 },
+            { name: 'Belum ada pemain', score: 0 },
+            { name: 'Belum ada pemain', score: 0 }
+        ];
+
+        // Sound effects (using AudioContext)
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playSound(type) {
+            initAudio();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            
+            if (type === 'correct') {
+                oscillator.frequency.value = 523.25;
+                oscillator.type = 'sine';
+                gainNode.gain.value = 0.3;
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.2);
+                
+                setTimeout(() => {
+                    const osc2 = audioCtx.createOscillator();
+                    const gain2 = audioCtx.createGain();
+                    osc2.connect(gain2);
+                    gain2.connect(audioCtx.destination);
+                    osc2.frequency.value = 659.25;
+                    osc2.type = 'sine';
+                    gain2.gain.value = 0.3;
+                    osc2.start();
+                    osc2.stop(audioCtx.currentTime + 0.2);
+                }, 100);
+            } else if (type === 'wrong') {
+                oscillator.frequency.value = 200;
+                oscillator.type = 'sawtooth';
+                gainNode.gain.value = 0.2;
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.3);
+            } else if (type === 'gameover') {
+                oscillator.frequency.value = 300;
+                oscillator.type = 'square';
+                gainNode.gain.value = 0.2;
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.5);
+            }
+        }
+
+        // ==================== QUESTION GENERATORS ====================
+        function generateQuestion(type) {
+            const operations = ['+', '-', '×', '÷'];
+            const op = type === 'sign' ? operations[Math.floor(Math.random() * 4)] : operations[Math.floor(Math.random() * 4)];
+            
+            let a, b, answer, question;
+            
+            switch(op) {
+                case '+':
+                    a = randomInt(-50, 50);
+                    b = randomInt(-50, 50);
+                    answer = a + b;
+                    question = `(${formatNum(a)}) + (${formatNum(b)})`;
+                    break;
+                case '-':
+                    a = randomInt(-50, 50);
+                    b = randomInt(-50, 50);
+                    answer = a - b;
+                    question = `(${formatNum(a)}) - (${formatNum(b)})`;
+                    break;
+                case '×':
+                    a = randomInt(-12, 12);
+                    b = randomInt(-12, 12);
+                    answer = a * b;
+                    question = `(${formatNum(a)}) × (${formatNum(b)})`;
+                    break;
+                case '÷':
+                    b = randomInt(-10, 10);
+                    if (b === 0) b = 1;
+                    answer = randomInt(-10, 10);
+                    a = answer * b;
+                    question = `(${formatNum(a)}) ÷ (${formatNum(b)})`;
+                    break;
+            }
+            
+            return { question, answer, op };
+        }
+
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function formatNum(num) {
+            return num >= 0 ? `+${num}` : `${num}`;
+        }
+
+        // ==================== GAME START ====================
+        function startGame(mode) {
+            initAudio();
+            playerName = prompt('Masukkan nama kamu:', 'Player') || 'Player';
+            
+            currentGame = mode;
+            score = 0;
+            streak = 0;
+            bestStreak = 0;
+            correctCount = 0;
+            wrongCount = 0;
+            questionCount = 0;
+            lives = 3;
+            
+            document.getElementById('gameSection').classList.add('hidden');
+            document.getElementById('gameArea').classList.remove('hidden');
+            
+            switch(mode) {
+                case 'quiz':
+                    startQuizGame();
+                    break;
+                case 'input':
+                    startInputGame();
+                    break;
+                case 'sign':
+                    startSignGame();
+                    break;
+                case 'marathon':
+                    startMarathonGame();
+                    break;
+            }
+        }
+
+        // ==================== QUIZ GAME (Multiple Choice) ====================
+        function startQuizGame() {
+            timeLeft = 60;
+            score = 0;
+            streak = 0;
+            
+            const content = document.getElementById('gameContent');
+            content.innerHTML = `
+                <div class="game-title">🧠 Kuis Cepat - 60 Detik! ⚡</div>
+                <div class="game-desc">Jawab soal secepat mungkin untuk poin bonus!</div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="quizScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Streak</div>
+                        <div class="value" id="quizStreak">0 🔥</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Waktu</div>
+                        <div class="value" id="quizTime">60</div>
+                    </div>
+                </div>
+                
+                <div class="timer-bar">
+                    <div class="timer-fill" id="quizTimer"></div>
+                </div>
+                
+                <div class="question-box" id="quizQuestion"></div>
+                
+                <div class="options-grid" id="quizOptions"></div>
+                
+                <div class="feedback" id="quizFeedback"></div>
+            `;
+            
+            generateQuizQuestion();
+            
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('quizTime').textContent = timeLeft;
+                document.getElementById('quizTimer').style.width = (timeLeft / 60 * 100) + '%';
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function generateQuizQuestion() {
+            const q = generateQuestion();
+            currentAnswer = q.answer;
+            
+            document.getElementById('quizQuestion').textContent = q.question + ' = ?';
+            document.getElementById('quizFeedback').textContent = '';
+            
+            // Generate wrong answers
+            let options = [q.answer];
+            while (options.length < 4) {
+                let wrong;
+                if (Math.random() > 0.5) {
+                    wrong = q.answer + randomInt(-10, 10);
+                } else {
+                    wrong = randomInt(-50, 50);
+                }
+                if (!options.includes(wrong) && wrong !== q.answer) {
+                    options.push(wrong);
+                }
+            }
+            
+            // Shuffle options
+            options.sort(() => Math.random() - 0.5);
+            
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = options.map(opt => 
+                `<button class="option-btn" onclick="checkQuizAnswer(${opt}, this)">${opt}</button>`
+            ).join('');
+        }
+
+        function checkQuizAnswer(selected, btn) {
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(b => b.disabled = true);
+            
+            if (selected === currentAnswer) {
+                btn.classList.add('correct');
+                playSound('correct');
+                streak++;
+                if (streak > bestStreak) bestStreak = streak;
+                
+                // Bonus points for streak
+                let points = 10 + (streak - 1) * 5;
+                score += points;
+                correctCount++;
+                
+                document.getElementById('quizFeedback').innerHTML = `<span class="correct">✅ Benar! +${points} poin ${streak > 1 ? '(🔥 Streak x' + streak + ')' : ''}</span>`;
+            } else {
+                btn.classList.add('wrong');
+                playSound('wrong');
+                streak = 0;
+                wrongCount++;
+                
+                // Show correct answer
+                buttons.forEach(b => {
+                    if (parseInt(b.textContent) === currentAnswer) {
+                        b.classList.add('correct');
+                    }
+                });
+                
+                document.getElementById('quizFeedback').innerHTML = `<span class="wrong">❌ Salah! Jawaban: ${currentAnswer}</span>`;
+            }
+            
+            document.getElementById('quizScore').textContent = score;
+            document.getElementById('quizStreak').textContent = streak + ' 🔥';
+            
+            setTimeout(() => {
+                if (timeLeft > 0) {
+                    generateQuizQuestion();
+                }
+            }, 1000);
+        }
+
+        // ==================== INPUT GAME ====================
+        function startInputGame() {
+            score = 0;
+            streak = 0;
+            questionCount = 0;
+            totalQuestions = 20;
+            
+            const content = document.getElementById('gameContent');
+            content.innerHTML = `
+                <div class="game-title">✍️ Tantangan Isian - 20 Soal! 💪</div>
+                <div class="game-desc">Ketik jawabanmu sendiri! Lebih menantang!</div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="inputScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Soal</div>
+                        <div class="value" id="inputCount">0/20</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Benar</div>
+                        <div class="value" id="inputCorrect">0</div>
+                    </div>
+                </div>
+                
+                <div class="streak-display" id="inputStreak"></div>
+                
+                <div class="question-box" id="inputQuestion"></div>
+                
+                <div style="text-align: center;">
+                    <input type="number" class="input-answer" id="inputAnswer" placeholder="Ketik jawaban..." onkeypress="if(event.key==='Enter')checkInputAnswer()">
+                    <br>
+                    <button class="game-btn" onclick="checkInputAnswer()">✅ Jawab</button>
+                    <button class="game-btn secondary" onclick="skipQuestion()">⏭️ Skip</button>
+                </div>
+                
+                <div class="feedback" id="inputFeedback"></div>
+            `;
+            
+            generateInputQuestion();
+            
+            setTimeout(() => {
+                document.getElementById('inputAnswer').focus();
+            }, 100);
+        }
+
+        function generateInputQuestion() {
+            if (questionCount >= totalQuestions) {
+                endGame();
+                return;
+            }
+            
+            const q = generateQuestion();
+            currentAnswer = q.answer;
+            questionCount++;
+            
+            document.getElementById('inputQuestion').textContent = q.question + ' = ?';
+            document.getElementById('inputAnswer').value = '';
+            document.getElementById('inputFeedback').textContent = '';
+            document.getElementById('inputCount').textContent = `${questionCount}/${totalQuestions}`;
+            
+            setTimeout(() => {
+                document.getElementById('inputAnswer').focus();
+            }, 100);
+        }
+
+        function checkInputAnswer() {
+            const input = document.getElementById('inputAnswer');
+            const userAnswer = parseInt(input.value);
+            
+            if (isNaN(userAnswer)) {
+                document.getElementById('inputFeedback').innerHTML = '<span class="wrong">⚠️ Masukkan angka dulu!</span>';
+                return;
+            }
+            
+            if (userAnswer === currentAnswer) {
+                playSound('correct');
+                streak++;
+                if (streak > bestStreak) bestStreak = streak;
+                
+                let points = 15 + (streak - 1) * 5;
+                score += points;
+                correctCount++;
+                
+                document.getElementById('inputFeedback').innerHTML = `<span class="correct">✅ Benar! +${points} poin ${streak > 1 ? '(🔥 Streak x' + streak + ')' : ''}</span>`;
+            } else {
+                playSound('wrong');
+                streak = 0;
+                wrongCount++;
+                
+                document.getElementById('inputFeedback').innerHTML = `<span class="wrong">❌ Salah! Jawaban: ${currentAnswer}</span>`;
+            }
+            
+            document.getElementById('inputScore').textContent = score;
+            document.getElementById('inputCorrect').textContent = correctCount;
+            document.getElementById('inputStreak').innerHTML = streak > 0 ? `<span class="fire">🔥 Streak: ${streak}</span>` : '';
+            
+            setTimeout(() => {
+                generateInputQuestion();
+            }, 1500);
+        }
+
+        function skipQuestion() {
+            document.getElementById('inputFeedback').innerHTML = `<span class="wrong">⏭️ Dilewati! Jawaban: ${currentAnswer}</span>`;
+            streak = 0;
+            document.getElementById('inputStreak').innerHTML = '';
+            
+            setTimeout(() => {
+                generateInputQuestion();
+            }, 1000);
+        }
+
+        // ==================== SIGN GAME ====================
+        function startSignGame() {
+            timeLeft = 45;
+            score = 0;
+            streak = 0;
+            
+            const content = document.getElementById('gameContent');
+            content.innerHTML = `
+                <div class="game-title">🎯 Tebak Tanda - 45 Detik! 🔥</div>
+                <div class="game-desc">Positif (+) atau Negatif (-)? Pilih secepat mungkin!</div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="signScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Streak</div>
+                        <div class="value" id="signStreak">0 🔥</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Waktu</div>
+                        <div class="value" id="signTime">45</div>
+                    </div>
+                </div>
+                
+                <div class="timer-bar">
+                    <div class="timer-fill" id="signTimer"></div>
+                </div>
+                
+                <div class="question-box" id="signQuestion"></div>
+                
+                <div class="options-grid" style="max-width: 400px; margin: 20px auto;">
+                    <button class="option-btn" onclick="checkSignAnswer('positive')" style="font-size: 2em; background: linear-gradient(135deg, #11998e, #38ef7d); border-color: #38ef7d;">➕ Positif</button>
+                    <button class="option-btn" onclick="checkSignAnswer('negative')" style="font-size: 2em; background: linear-gradient(135deg, #e94560, #ff6b6b); border-color: #ff6b6b;">➖ Negatif</button>
+                </div>
+                
+                <div class="feedback" id="signFeedback"></div>
+            `;
+            
+            generateSignQuestion();
+            
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('signTime').textContent = timeLeft;
+                document.getElementById('signTimer').style.width = (timeLeft / 45 * 100) + '%';
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function generateSignQuestion() {
+            const q = generateQuestion();
+            currentAnswer = q.answer;
+            
+            // Show the question without answer
+            document.getElementById('signQuestion').textContent = q.question + ' = ?';
+            document.getElementById('signFeedback').textContent = '';
+        }
+
+        function checkSignAnswer(sign) {
+            const isPositive = currentAnswer >= 0;
+            const isCorrect = (sign === 'positive' && isPositive) || (sign === 'negative' && !isPositive);
+            
+            if (isCorrect) {
+                playSound('correct');
+                streak++;
+                if (streak > bestStreak) bestStreak = streak;
+                
+                let points = 8 + (streak - 1) * 3;
+                score += points;
+                correctCount++;
+                
+                document.getElementById('signFeedback').innerHTML = `<span class="correct">✅ Benar! ${currentAnswer} ${isPositive ? 'POSITIF ➕' : 'NEGATIF ➖'} (+${points})</span>`;
+            } else {
+                playSound('wrong');
+                streak = 0;
+                wrongCount++;
+                
+                document.getElementById('signFeedback').innerHTML = `<span class="wrong">❌ Salah! ${currentAnswer} itu ${isPositive ? 'POSITIF ➕' : 'NEGATIF ➖'}</span>`;
+            }
+            
+            document.getElementById('signScore').textContent = score;
+            document.getElementById('signStreak').textContent = streak + ' 🔥';
+            
+            setTimeout(() => {
+                if (timeLeft > 0) {
+                    generateSignQuestion();
+                }
+            }, 800);
+        }
+
+        // ==================== MARATHON GAME ====================
+        function startMarathonGame() {
+            score = 0;
+            streak = 0;
+            questionCount = 0;
+            totalQuestions = 30;
+            lives = 3;
+            
+            const content = document.getElementById('gameContent');
+            content.innerHTML = `
+                <div class="game-title">🏃 Marathon Soal - 30 Soal! 💀</div>
+                <div class="game-desc">Jawab semua soal! 3 salah = GAME OVER!</div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="marathonScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Soal</div>
+                        <div class="value" id="marathonCount">0/30</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Nyawa</div>
+                        <div class="value" id="marathonLives">❤️❤️❤️</div>
+                    </div>
+                </div>
+                
+                <div class="streak-display" id="marathonStreak"></div>
+                
+                <div class="question-box" id="marathonQuestion"></div>
+                
+                <div class="options-grid" id="marathonOptions"></div>
+                
+                <div class="feedback" id="marathonFeedback"></div>
+            `;
+            
+            generateMarathonQuestion();
+        }
+
+        function generateMarathonQuestion() {
+            if (questionCount >= totalQuestions) {
+                endGame();
+                return;
+            }
+            
+            if (lives <= 0) {
+                endGame();
+                return;
+            }
+            
+            const q = generateQuestion();
+            currentAnswer = q.answer;
+            questionCount++;
+            
+            document.getElementById('marathonQuestion').textContent = q.question + ' = ?';
+            document.getElementById('marathonFeedback').textContent = '';
+            document.getElementById('marathonCount').textContent = `${questionCount}/${totalQuestions}`;
+            
+            // Generate wrong answers
+            let options = [q.answer];
+            while (options.length < 4) {
+                let wrong;
+                if (Math.random() > 0.5) {
+                    wrong = q.answer + randomInt(-15, 15);
+                } else {
+                    wrong = randomInt(-60, 60);
+                }
+                if (!options.includes(wrong) && wrong !== q.answer) {
+                    options.push(wrong);
+                }
+            }
+            
+            options.sort(() => Math.random() - 0.5);
+            
+            const optionsDiv = document.getElementById('marathonOptions');
+            optionsDiv.innerHTML = options.map(opt => 
+                `<button class="option-btn" onclick="checkMarathonAnswer(${opt}, this)">${opt}</button>`
+            ).join('');
+        }
+
+        function checkMarathonAnswer(selected, btn) {
+            const buttons = document.querySelectorAll('#marathonOptions .option-btn');
+            buttons.forEach(b => b.disabled = true);
+            
+            if (selected === currentAnswer) {
+                btn.classList.add('correct');
+                playSound('correct');
+                streak++;
+                if (streak > bestStreak) bestStreak = streak;
+                
+                let points = 10 + (streak - 1) * 3;
+                score += points;
+                correctCount++;
+                
+                document.getElementById('marathonFeedback').innerHTML = `<span class="correct">✅ Benar! +${points} poin ${streak > 1 ? '(🔥 x' + streak + ')' : ''}</span>`;
+            } else {
+                btn.classList.add('wrong');
+                playSound('wrong');
+                streak = 0;
+                wrongCount++;
+                lives--;
+                
+                buttons.forEach(b => {
+                    if (parseInt(b.textContent) === currentAnswer) {
+                        b.classList.add('correct');
+                    }
+                });
+                
+                document.getElementById('marathonFeedback').innerHTML = `<span class="wrong">❌ Salah! Jawaban: ${currentAnswer} ${lives > 0 ? '(Sisa nyawa: ' + '❤️'.repeat(lives) + ')' : '(💀 GAME OVER!)'}</span>`;
+            }
+            
+            document.getElementById('marathonScore').textContent = score;
+            document.getElementById('marathonStreak').innerHTML = streak > 0 ? `<span class="fire">🔥 Streak: ${streak}</span>` : '';
+            
+            let heartsHTML = '';
+            for (let i = 0; i < 3; i++) {
+                heartsHTML += i < lives ? '❤️' : '🖤';
+            }
+            document.getElementById('marathonLives').textContent = heartsHTML;
+            
+            setTimeout(() => {
+                generateMarathonQuestion();
+            }, 1200);
+        }
+
+        // ==================== END GAME ====================
+        function endGame() {
+            if (timer) clearInterval(timer);
+            
+            playSound('gameover');
+            
+            // Check if score qualifies for leaderboard
+            let isHighScore = false;
+            if (score > leaderboard[2].score) {
+                isHighScore = true;
+            }
+            
+            // Create confetti if high score
+            if (isHighScore && score > 0) {
+                createConfetti();
+            }
+            
+            // Show modal
+            const modal = document.getElementById('gameOverModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalScore = document.getElementById('modalScore');
+            const modalMessage = document.getElementById('modalMessage');
+            
+            modalTitle.textContent = isHighScore ? '🏆 NEW HIGH SCORE! 🏆' : '🎉 Game Over! 🎉';
+            modalScore.textContent = score;
+            
+            let accuracy = correctCount + wrongCount > 0 ? Math.round((correctCount / (correctCount + wrongCount)) * 100) : 0;
+            
+            modalMessage.innerHTML = `
+                Pemain: <strong>${playerName}</strong><br>
+                Benar: ${correctCount} | Salah: ${wrongCount}<br>
+                Akurasi: ${accuracy}%<br>
+                Best Streak: ${bestStreak} 🔥<br>
+                ${isHighScore ? '🎊 Skormu masuk Top 3! 🎊' : '💪 Coba lagi untuk skor lebih tinggi!'}
+            `;
+            
+            modal.classList.remove('hidden');
+            
+            // Update leaderboard
+            if (isHighScore && score > 0) {
+                updateLeaderboard(playerName, score);
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#e94560', '#ffd700', '#38ef7d', '#667eea', '#ff6b6b'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                confetti.style.animationDuration = Math.random() * 2 + 1 + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        function updateLeaderboard(name, score) {
+            leaderboard.push({ name, score });
+            leaderboard.sort((a, b) => b.score - a.score);
+            leaderboard = leaderboard.slice(0, 3);
+            
+            localStorage.setItem('mathGameLeaderboard', JSON.stringify(leaderboard));
+            renderLeaderboard();
+        }
+
+        function renderLeaderboard() {
+            const entries = document.getElementById('leaderboardEntries');
+            const ranks = ['🥇', '🥈', '🥉'];
+            
+            entries.innerHTML = leaderboard.map((entry, i) => `
+                <div class="leaderboard-entry">
+                    <span class="rank">${ranks[i]}</span>
+                    <span class="name">${entry.name}</span>
+                    <span class="score">${entry.score}</span>
+                </div>
+            `).join('');
+        }
+
+        function clearLeaderboard() {
+            if (confirm('Yakin mau reset leaderboard? Semua skor akan hilang!')) {
+                leaderboard = [
+                    { name: 'Belum ada pemain', score: 0 },
+                    { name: 'Belum ada pemain', score: 0 },
+                    { name: 'Belum ada pemain', score: 0 }
+                ];
+                localStorage.setItem('mathGameLeaderboard', JSON.stringify(leaderboard));
+                renderLeaderboard();
+            }
+        }
+
+        function restartGame() {
+            document.getElementById('gameOverModal').classList.add('hidden');
+            document.getElementById('gameArea').classList.add('hidden');
+            document.getElementById('gameSection').classList.remove('hidden');
+            startGame(currentGame);
+        }
+
+        function closeModal() {
+            document.getElementById('gameOverModal').classList.add('hidden');
+            document.getElementById('gameArea').classList.add('hidden');
+            document.getElementById('gameSection').classList.remove('hidden');
+        }
+
+        // Initialize leaderboard on page load
+        renderLeaderboard();
+    </script>
+    </div><!-- end page-wrapper -->
+</body>
+</html>

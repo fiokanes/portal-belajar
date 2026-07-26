@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Sistem Pencernaan - SMP Kelas 8</title>
+    <style>
+        /* ============ GLOBAL STYLES ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #ffa502;
+            --accent: #2ed573;
+            --dark: #2f3542;
+            --light: #f1f2f6;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--gradient-1);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ PORTAL NAVBAR ============ */
+        .portal-navbar {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .portal-navbar .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .portal-navbar .nav-brand:hover {
+            color: #ffd700;
+        }
+
+        .portal-navbar .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portal-navbar .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .portal-navbar .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .portal-navbar .nav-link.active {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ============ NAVIGATION ============ */
+        .nav-container {
+            background: rgba(255,255,255,0.95);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-scroll {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 5px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            scrollbar-width: thin;
+        }
+
+        .nav-btn {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--dark);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 .icon {
+            font-size: 1.2em;
+        }
+
+        h3 {
+            color: #e94560;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        strong {
+            color: #e94560;
+        }
+
+        /* ============ ORGAN CARDS ============ */
+        .organs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .organ-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid;
+            cursor: pointer;
+        }
+
+        .organ-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .organ-card.mouth { border-color: #ff6b6b; }
+        .organ-card.esophagus { border-color: #ffa502; }
+        .organ-card.stomach { border-color: #2ed573; }
+        .organ-card.small-intestine { border-color: #1e90ff; }
+        .organ-card.large-intestine { border-color: #a55eea; }
+        .organ-card.liver { border-color: #ff4757; }
+        .organ-card.pancreas { border-color: #ffc312; }
+
+        .organ-card .organ-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .organ-card h3 {
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .organ-card .function {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .organ-card .function strong {
+            color: var(--dark);
+        }
+
+        /* ============ PROCESS FLOW ============ */
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .process-step .step-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .process-step .step-name {
+            font-weight: bold;
+            color: var(--dark);
+            font-size: 0.9em;
+        }
+
+        .process-arrow {
+            font-size: 2em;
+            color: var(--primary);
+            animation: pulse 1.5s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        /* ============ INTERACTIVE BODY MAP ============ */
+        .body-map-container {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #ffeaa7 0%, #dfe6e9 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .body-outline {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .organ-hotspot {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: glow 2s ease infinite;
+            z-index: 10;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(233, 69, 96, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(233, 69, 96, 0.8); }
+        }
+
+        .organ-hotspot:hover {
+            transform: scale(1.3);
+            z-index: 20;
+        }
+
+        .organ-hotspot.mouth { top: 5%; left: 45%; background: #ff6b6b; }
+        .organ-hotspot.esophagus { top: 18%; left: 45%; background: #ffa502; }
+        .organ-hotspot.stomach { top: 32%; left: 35%; background: #2ed573; }
+        .organ-hotspot.liver { top: 30%; left: 60%; background: #ff4757; }
+        .organ-hotspot.pancreas { top: 40%; left: 42%; background: #ffc312; }
+        .organ-hotspot.small-intestine { top: 48%; left: 40%; background: #1e90ff; }
+        .organ-hotspot.large-intestine { top: 60%; left: 45%; background: #a55eea; }
+
+        .organ-info-popup {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 250px;
+            z-index: 100;
+            display: none;
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .organ-info-popup h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .organ-info-popup p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #999;
+        }
+
+        /* ============ DIGESTION SIMULATOR ============ */
+        .simulator-container {
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+        }
+
+        .simulator-container h3 {
+            color: #ffd700;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .food-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .food-btn {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .food-btn:hover, .food-btn.active {
+            background: rgba(255,255,255,0.2);
+            border-color: #ffd700;
+            transform: translateY(-5px);
+        }
+
+        .food-btn .food-icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .simulation-screen {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .simulation-stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            flex-direction: column;
+        }
+
+        .simulation-stage .current-organ {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: wobble 1s ease infinite;
+        }
+
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .simulation-stage .process-text {
+            font-size: 1.2em;
+            text-align: center;
+            color: #ffd700;
+        }
+
+        .simulation-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sim-btn {
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sim-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .sim-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+
+        /* ============ QUIZ SECTION ============ */
+        .quiz-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+        }
+
+        .quiz-container h3 {
+            color: #ffd700;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 25px;
+        }
+
+        .quiz-question {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: #ffd700;
+            transform: translateX(10px);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, #2ed573, #7bed9f);
+            border-color: #2ed573;
+        }
+
+        .quiz-option.wrong {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border-color: #ff6b6b;
+        }
+
+        .quiz-feedback {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 20px 0;
+            min-height: 50px;
+        }
+
+        .quiz-score {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .score-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .score-item .label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .score-item .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* ============ DRAG AND DROP GAME ============ */
+        .drag-game-container {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+        }
+
+        .drag-game-container h3 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .drag-instruction {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .drag-items-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .drag-item {
+            background: white;
+            color: var(--dark);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .drag-item:active {
+            cursor: grabbing;
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .drag-item.dragging {
+            opacity: 0.5;
+            transform: scale(0.9);
+        }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .drop-zone {
+            background: rgba(255,255,255,0.2);
+            border: 3px dashed rgba(255,255,255,0.5);
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.drag-over {
+            background: rgba(255,255,255,0.3);
+            border-color: #ffd700;
+            transform: scale(1.05);
+        }
+
+        .drop-zone.correct-drop {
+            background: rgba(46, 213, 115, 0.3);
+            border-color: #2ed573;
+            border-style: solid;
+        }
+
+        .drop-zone.wrong-drop {
+            background: rgba(255, 107, 107, 0.3);
+            border-color: #ff6b6b;
+            border-style: solid;
+        }
+
+        .drop-zone .zone-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .drop-zone .zone-hint {
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .drop-zone .dropped-item {
+            background: white;
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* ============ ENZYME TABLE ============ */
+        .enzyme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .enzyme-table th {
+            background: var(--gradient-1);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-size: 1.05em;
+        }
+
+        .enzyme-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .enzyme-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .enzyme-table tr:hover {
+            background: #e8f4f8;
+        }
+
+        .enzyme-table .enzyme-name {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* ============ TIPS CARDS ============ */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .tip-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .tip-card .tip-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .tip-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* ============ FUN FACTS ============ */
+        .fun-fact {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid var(--primary);
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .fun-fact h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .fun-fact p {
+            color: #555;
+            margin: 0;
+        }
+
+        /* ============ BUTTONS ============ */
+        .game-btn {
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .game-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .game-btn.secondary {
+            background: var(--gradient-3);
+        }
+
+        .game-btn.success {
+            background: var(--gradient-4);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        footer p:last-child {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* ============ MODAL ============ */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: popIn 0.3s ease;
+        }
+
+        .modal h2 {
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .modal .final-score {
+            font-size: 4em;
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+
+            .process-flow {
+                flex-direction: column;
+            }
+
+            .process-arrow {
+                transform: rotate(90deg);
+            }
+
+            .body-outline {
+                height: 400px;
+            }
+
+            .organ-hotspot {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTAL NAVBAR -->
+    <nav class="portal-navbar">
+        <a href="index.html" class="nav-brand">
+            <span style="font-size: 1.5em;">📚</span>
+            Portal Belajar Fiona
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+            <a href="belajar-aritmatika.html" class="nav-link">🔢 Aritmatika</a>
+            <a href="sistem-pencernaan.html" class="nav-link active">🫁 Pencernaan</a>
+            <a href="geografis-indonesia.html" class="nav-link">🇮🇩 Geografis</a>
+            <a href="english-tenses.html" class="nav-link">🇬🇧 English</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-icon">🫁</div>
+        <h1>SISTEM PENCERNAAN MANUSIA</h1>
+        <p>Belajar Interaktif untuk SMP Kelas 8 🧬</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <div class="nav-container">
+        <div class="nav-scroll">
+            <button class="nav-btn active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-btn" onclick="scrollToSection('organ')">🫀 Organ</button>
+            <button class="nav-btn" onclick="scrollToSection('proses')">🔄 Proses</button>
+            <button class="nav-btn" onclick="scrollToSection('peta-tubuh')">🗺️ Peta Tubuh</button>
+            <button class="nav-btn" onclick="scrollToSection('simulator')">🎬 Simulator</button>
+            <button class="nav-btn" onclick="scrollToSection('enzim')">🧪 Enzim</button>
+            <button class="nav-btn" onclick="scrollToSection('gangguan')">⚠️ Gangguan</button>
+            <button class="nav-btn" onclick="scrollToSection('tips')">💡 Tips Sehat</button>
+            <button class="nav-btn" onclick="scrollToSection('game-cocok')">🎮 Cocokkan</button>
+            <button class="nav-btn" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span class="icon">📖</span> Apa Itu Sistem Pencernaan?</h2>
+            <p>Hey guys! 👋 Kalian pernah mikir gak sih, gimana sih makanan yang kita makan bisa jadi energi buat tubuh kita? Nah, itu semua berkat <strong>sistem pencernaan</strong>!</p>
+            
+            <div class="fun-fact">
+                <h4>🤔 Fun Fact!</h4>
+                <p>Tahukah kamu? Jika kita merentangkan seluruh saluran pencernaan manusia, panjangnya bisa mencapai <strong>9 meter</strong>! Bayangin, itu kayak 2 kali tinggi jerapah! 🦒</p>
+            </div>
+
+            <p><strong>Sistem pencernaan</strong> adalah sekumpulan organ yang bekerja sama untuk:</p>
+            <ul>
+                <li>🍚 <strong>Memecah makanan</strong> menjadi bagian-bagian kecil (nutrisi)</li>
+                <li>💉 <strong>Menyerap nutrisi</strong> ke dalam darah</li>
+                <li>🚽 <strong>Membuang sisa</strong> makanan yang tidak dibutuhkan tubuh</li>
+            </ul>
+
+            <h3>🎯 Dua Jenis Pencernaan:</h3>
+            <div class="organs-grid">
+                <div class="organ-card mouth">
+                    <div class="organ-icon">🦷</div>
+                    <h3>Pencernaan Mekanis</h3>
+                    <p>Memecah makanan secara fisik menggunakan gigi dan otot lambung.</p>
+                    <div class="function">
+                        <strong>Contoh:</strong> Mengunyah makanan di mulut
+                    </div>
+                </div>
+                <div class="organ-card stomach">
+                    <div class="organ-icon">🧪</div>
+                    <h3>Pencernaan Kimiawi</h3>
+                    <p>Memecah makanan menggunakan enzim dan cairan kimia.</p>
+                    <div class="function">
+                        <strong>Contoh:</strong> Enzim amilase memecah tepung
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ORGAN PENCERNAAN -->
+        <section id="organ">
+            <h2><span class="icon">🫀</span> Organ-Organ Pencernaan</h2>
+            <p>Yuk kenalan sama organ-organ yang terlibat dalam proses pencernaan! Klik kartunya buat tau lebih lanjut! 👇</p>
+
+            <div class="organs-grid">
+                <div class="organ-card mouth" onclick="showOrganDetail('mulut')">
+                    <div class="organ-icon">👄</div>
+                    <h3>Mulut</h3>
+                    <p>Gerbang pertama masuknya makanan!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Mengunyah makanan (mekanis) + enzim amilase (kimiawi)
+                    </div>
+                </div>
+
+                <div class="organ-card esophagus" onclick="showOrganDetail('esofagus')">
+                    <div class="organ-icon">🔽</div>
+                    <h3>Esofagus (Kerongkongan)</h3>
+                    <p>Jalan tol makanan menuju lambung!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Menggerakkan makanan ke lambung dengan gerakan peristaltik
+                    </div>
+                </div>
+
+                <div class="organ-card stomach" onclick="showOrganDetail('lambung')">
+                    <div class="organ-icon">💚</div>
+                    <h3>Lambung</h3>
+                    <p>Pabrik pencernaan utama!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Mencerna protein dengan asam lambung (HCl) dan pepsin
+                    </div>
+                </div>
+
+                <div class="organ-card small-intestine" onclick="showOrganDetail('usus-halus')">
+                    <div class="organ-icon">💙</div>
+                    <h3>Usus Halus</h3>
+                    <p>Raja penyerapan nutrisi!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Menyerap 90% nutrisi makanan ke dalam darah
+                    </div>
+                </div>
+
+                <div class="organ-card large-intestine" onclick="showOrganDetail('usus-besar')">
+                    <div class="organ-icon">💜</div>
+                    <h3>Usus Besar</h3>
+                    <p>Pabrik pengolahan sisa!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Menyerap air dan membentuk feses
+                    </div>
+                </div>
+
+                <div class="organ-card liver" onclick="showOrganDetail('hati')">
+                    <div class="organ-icon">❤️</div>
+                    <h3>Hati (Liver)</h3>
+                    <p>Organ terbesar di tubuh!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Menghasilkan empedu untuk mencerna lemak
+                    </div>
+                </div>
+
+                <div class="organ-card pancreas" onclick="showOrganDetail('pankreas')">
+                    <div class="organ-icon">💛</div>
+                    <h3>Pankreas</h3>
+                    <p>Pabrik enzim pencernaan!</p>
+                    <div class="function">
+                        <strong>Fungsi:</strong> Menghasilkan enzim dan insulin
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROSES PENCERNAAN -->
+        <section id="proses">
+            <h2><span class="icon">🔄</span> Proses Pencernaan Makanan</h2>
+            <p>Gimana sih perjalanan makanan di dalam tubuh kita? Yuk ikuti perjalanannya! 🚀</p>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-icon">👄</div>
+                    <div class="step-name">Mulut</div>
+                </div>
+                <div class="process-arrow">➡️</div>
+                <div class="process-step">
+                    <div class="step-icon">🔽</div>
+                    <div class="step-name">Esofagus</div>
+                </div>
+                <div class="process-arrow">➡️</div>
+                <div class="process-step">
+                    <div class="step-icon">💚</div>
+                    <div class="step-name">Lambung</div>
+                </div>
+                <div class="process-arrow">➡️</div>
+                <div class="process-step">
+                    <div class="step-icon">💙</div>
+                    <div class="step-name">Usus Halus</div>
+                </div>
+                <div class="process-arrow">➡️</div>
+                <div class="process-step">
+                    <div class="step-icon">💜</div>
+                    <div class="step-name">Usus Besar</div>
+                </div>
+                <div class="process-arrow">➡️</div>
+                <div class="process-step">
+                    <div class="step-icon">🚽</div>
+                    <div class="step-name">Rektum</div>
+                </div>
+            </div>
+
+            <h3>📋 Detail Proses di Setiap Organ:</h3>
+            <ol>
+                <li><strong>Mulut</strong>: Gigi mengunyah makanan (mekanis), ludah mengandung enzim amilase yang memecah tepung (kimiawi)</li>
+                <li><strong>Esofagus</strong>: Otot bergerak secara bergelombang (peristaltik) mendorong makanan ke lambung</li>
+                <li><strong>Lambung</strong>: Asam klorida (HCl) dan enzim pepsin memecah protein, otot lambung mengaduk makanan</li>
+                <li><strong>Usus Halus</strong>: Enzim dari pankreas dan empedu dari hati mencerna lemak, protein, dan karbohidrat. Nutrisi diserap di sini!</li>
+                <li><strong>Usus Besar</strong>: Air diserap kembali, bakteri baik membantu membentuk feses</li>
+                <li><strong>Rektum & Anus</strong>: Feses disimpan sementara sebelum dikeluarkan dari tubuh</li>
+            </ol>
+        </section>
+
+        <!-- PETA TUBUH INTERAKTIF -->
+        <section id="peta-tubuh">
+            <h2><span class="icon">🗺️</span> Peta Tubuh Interaktif</h2>
+            <p>Klik pada organ-organ di bawah untuk mengetahui fungsinya! 👇</p>
+
+            <div class="body-map-container">
+                <div class="body-outline">
+                    <!-- SVG Body Outline -->
+                    <svg viewBox="0 0 400 600" width="100%" height="100%">
+                        <!-- Head -->
+                        <ellipse cx="200" cy="60" rx="45" ry="50" fill="none" stroke="#2f3542" stroke-width="2"/>
+                        <!-- Neck -->
+                        <rect x="185" y="105" width="30" height="30" fill="none" stroke="#2f3542" stroke-width="2"/>
+                        <!-- Torso -->
+                        <path d="M140,135 L260,135 L270,350 L130,350 Z" fill="none" stroke="#2f3542" stroke-width="2"/>
+                        <!-- Digestive System -->
+                        <path d="M200,155 Q200,170 195,185 Q190,200 200,215 Q220,230 210,260 Q200,280 190,300 Q180,320 200,340 Q220,350 230,330 Q240,310 220,290 Q200,270 210,250 Q220,230 200,220" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="5,5"/>
+                        <!-- Small Intestine -->
+                        <path d="M180,300 Q170,310 190,320 Q210,330 200,340 Q190,350 210,355 Q230,360 220,370 Q210,380 190,375 Q170,370 180,360" fill="none" stroke="#1e90ff" stroke-width="2"/>
+                        <!-- Large Intestine -->
+                        <path d="M150,330 L150,420 Q150,440 200,440 Q250,440 250,420 L250,330" fill="none" stroke="#a55eea" stroke-width="3"/>
+                    </svg>
+
+                    <!-- Hotspots -->
+                    <div class="organ-hotspot mouth" onclick="showOrganPopup('mulut', this)" title="Mulut">👄</div>
+                    <div class="organ-hotspot esophagus" onclick="showOrganPopup('esofagus', this)" title="Esofagus">🔽</div>
+                    <div class="organ-hotspot stomach" onclick="showOrganPopup('lambung', this)" title="Lambung">💚</div>
+                    <div class="organ-hotspot liver" onclick="showOrganPopup('hati', this)" title="Hati">❤️</div>
+                    <div class="organ-hotspot pancreas" onclick="showOrganPopup('pankreas', this)" title="Pankreas">💛</div>
+                    <div class="organ-hotspot small-intestine" onclick="showOrganPopup('usus-halus', this)" title="Usus Halus">💙</div>
+                    <div class="organ-hotspot large-intestine" onclick="showOrganPopup('usus-besar', this)" title="Usus Besar">💜</div>
+                </div>
+
+                <div class="organ-info-popup" id="organPopup">
+                    <button class="close-popup" onclick="closeOrganPopup()">×</button>
+                    <h3 id="popupTitle"></h3>
+                    <p id="popupContent"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULATOR PENCERNAAN -->
+        <section id="simulator">
+            <h2><span class="icon">🎬</span> Simulator Pencernaan</h2>
+            <p>Pilih makanan dan saksikan proses pencernaannya! 🍕</p>
+
+            <div class="simulator-container">
+                <h3>🎮 Pilih Makananmu!</h3>
+                
+                <div class="food-selector">
+                    <button class="food-btn active" onclick="selectFood('nasi', this)">
+                        <span class="food-icon">🍚</span>
+                        Nasi
+                    </button>
+                    <button class="food-btn" onclick="selectFood('daging', this)">
+                        <span class="food-icon">🥩</span>
+                        Daging
+                    </button>
+                    <button class="food-btn" onclick="selectFood('apel', this)">
+                        <span class="food-icon">🍎</span>
+                        Apel
+                    </button>
+                    <button class="food-btn" onclick="selectFood('susu', this)">
+                        <span class="food-icon">🥛</span>
+                        Susu
+                    </button>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="simProgress"></div>
+                </div>
+
+                <div class="simulation-screen">
+                    <div class="simulation-stage">
+                        <div class="current-organ" id="simOrgan">👄</div>
+                        <div class="process-text" id="simText">Pilih makanan dan klik "Mulai" untuk memulai simulasi!</div>
+                    </div>
+                </div>
+
+                <div class="simulation-controls">
+                    <button class="sim-btn" id="simStartBtn" onclick="startSimulation()">🚀 Mulai</button>
+                    <button class="sim-btn" id="simNextBtn" onclick="nextSimulationStep()" disabled>➡️ Selanjutnya</button>
+                    <button class="sim-btn" id="simResetBtn" onclick="resetSimulation()">🔄 Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABEL ENZIM -->
+        <section id="enzim">
+            <h2><span class="icon">🧪</span> Enzim-Enzim Pencernaan</h2>
+            <p>Enzim itu kaya "gunting kecil" yang memotong makanan jadi bagian kecil. Yuk kenalan sama mereka! ✂️</p>
+
+            <div class="fun-fact">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Setiap hari, tubuh kita memproduksi sekitar <strong>7 liter</strong> cairan pencernaan! Termasuk air liur, asam lambung, dan empedu. Wow! 🤯</p>
+            </div>
+
+            <table class="enzyme-table">
+                <thead>
+                    <tr>
+                        <th>Enzim</th>
+                        <th>Dihasilkan Oleh</th>
+                        <th>Bekerja Di</th>
+                        <th>Fungsi</th>
+                        <th>Substrat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="enzyme-name">Amilase (Ludah)</td>
+                        <td>Kelenjar ludah</td>
+                        <td>Mulut</td>
+                        <td>Memecah tepung menjadi maltosa</td>
+                        <td>Karbohidrat/Amilum</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Pepsin</td>
+                        <td>Lambung</td>
+                        <td>Lambung</td>
+                        <td>Memecah protein menjadi pepton</td>
+                        <td>Protein</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Lipase Lambung</td>
+                        <td>Lambung</td>
+                        <td>Lambung</td>
+                        <td>Memecah lemak sederhana</td>
+                        <td>Lemak</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Amilase Pankreas</td>
+                        <td>Pankreas</td>
+                        <td>Usus Halus</td>
+                        <td>Memecah amilum menjadi maltosa</td>
+                        <td>Karbohidrat</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Tripsin</td>
+                        <td>Pankreas</td>
+                        <td>Usus Halus</td>
+                        <td>Memecah pepton menjadi asam amino</td>
+                        <td>Protein</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Lipase Pankreas</td>
+                        <td>Pankreas</td>
+                        <td>Usus Halus</td>
+                        <td>Memecah lemak menjadi asam lemak + gliserol</td>
+                        <td>Lemak</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Maltase</td>
+                        <td>Dinding usus halus</td>
+                        <td>Usus Halus</td>
+                        <td>Memecah maltosa menjadi glukosa</td>
+                        <td>Maltosa</td>
+                    </tr>
+                    <tr>
+                        <td class="enzyme-name">Empedu (Garam Empedu)</td>
+                        <td>Hati</td>
+                        <td>Usus Halus</td>
+                        <td>Emulsifikasi lemak (memecah jadi butiran kecil)</td>
+                        <td>Lemak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- GANGGUAN PENCERNAAN -->
+        <section id="gangguan">
+            <h2><span class="icon">⚠️</span> Gangguan Sistem Pencernaan</h2>
+            <p>Hati-hati! Ini dia beberapa gangguan pencernaan yang sering terjadi. Kenali gejalanya! 🏥</p>
+
+            <div class="organs-grid">
+                <div class="organ-card" style="border-color: #e74c3c;">
+                    <div class="organ-icon">🤢</div>
+                    <h3>Maag (Gastritis)</h3>
+                    <p>Peradangan pada dinding lambung.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Makan tidak teratur, stres, bakteri H. pylori<br>
+                        <strong>Gejala:</strong> Perut perih, mual, kembung
+                    </div>
+                </div>
+
+                <div class="organ-card" style="border-color: #e67e22;">
+                    <div class="organ-icon">🤮</div>
+                    <h3>Diare</h3>
+                    <p>BAB cair lebih dari 3x sehari.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Infeksi bakteri/virus, makanan terkontaminasi<br>
+                        <strong>Gejala:</strong> BAB cair, dehidrasi, lemas
+                    </div>
+                </div>
+
+                <div class="organ-card" style="border-color: #9b59b6;">
+                    <div class="organ-icon">😰</div>
+                    <h3>Sembelit (Konstipasi)</h3>
+                    <p>Susah buang air besar.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Kurang serat, kurang minum, kurang olahraga<br>
+                        <strong>Gejala:</strong> BAB keras, sakit saat BAB
+                    </div>
+                </div>
+
+                <div class="organ-card" style="border-color: #1abc9c;">
+                    <div class="organ-icon">💛</div>
+                    <h3>Batu Empedu</h3>
+                    <p>Endapan keras di kantung empedu.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Kolesterol tinggi, kurang minum<br>
+                        <strong>Gejala:</strong> Nyeri perut kanan atas, mual
+                    </div>
+                </div>
+
+                <div class="organ-card" style="border-color: #3498db;">
+                    <div class="organ-icon">🩸</div>
+                    <h3>Tukak Lambung</h3>
+                    <p>Luka terbuka di dinding lambung.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Penggunaan obat NSAID, infeksi bakteri<br>
+                        <strong>Gejala:</strong> Nyeri ulu hati, muntah darah
+                    </div>
+                </div>
+
+                <div class="organ-card" style="border-color: #2ecc71;">
+                    <div class="organ-icon">🤧</div>
+                    <h3>GERD</h3>
+                    <p>Asam lambung naik ke kerongkongan.</p>
+                    <div class="function">
+                        <strong>Penyebab:</strong> Makan berlebihan, langsung tidur setelah makan<br>
+                        <strong>Gejala:</strong> Heartburn, rasa asam di mulut
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIPS KESEHATAN -->
+        <section id="tips">
+            <h2><span class="icon">💡</span> Tips Menjaga Kesehatan Pencernaan</h2>
+            <p>Mau sistem pencernaanmu tetap sehat? Ikutin tips ini! 🌟</p>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🥗</div>
+                    <h4>Makan Serat Cukup</h4>
+                    <p>Perbanyak sayur, buah, dan biji-bijian untuk membantu pencernaan lancar.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">💧</div>
+                    <h4>Minum Air Putih</h4>
+                    <p>Minimal 8 gelas sehari untuk membantu melarutkan nutrisi dan mencegah sembelit.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🕐</div>
+                    <h4>Makan Teratur</h4>
+                    <p>Jangan skip makan! Makan tepat waktu agar lambung tidak kosong terlalu lama.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🏃</div>
+                    <h4>Olahraga Rutin</h4>
+                    <p>Olahraga membantu memperlancar pergerakan usus (peristaltik).</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">😌</div>
+                    <h4>Kelola Stres</h4>
+                    <p>Stres bisa bikin asam lambung naik. Cobalah relaksasi atau meditasi.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🚫</div>
+                    <h4>Hindari Makanan Berlemak</h4>
+                    <p>Makanan terlalu berlemak bisa bikin pencernaan bekerja lebih keras.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">🦷</div>
+                    <h4>Kunyah dengan Baik</h4>
+                    <p>Kunyah makanan minimal 32 kali! Biar lambung gak kerja keras.</p>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">😴</div>
+                    <h4>Istirahat Cukup</h4>
+                    <p>Tidur yang cukup membantu tubuh memperbaiki sistem pencernaan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAME COCOKKAN -->
+        <section id="game-cocok">
+            <h2><span class="icon">🎮</span> Game: Cocokkan Organ dengan Fungsinya!</h2>
+            <p>Seret nama organ ke kotak yang sesuai dengan fungsinya! 🎯</p>
+
+            <div class="drag-game-container">
+                <h3>🎯 Drag & Drop!</h3>
+                <div class="drag-instruction">Seret nama organ ke fungsi yang benar!</div>
+
+                <div class="drag-items-container" id="dragItems">
+                    <div class="drag-item" draggable="true" data-organ="mulut" id="drag-mulut">👄 Mulut</div>
+                    <div class="drag-item" draggable="true" data-organ="lambung" id="drag-lambung">💚 Lambung</div>
+                    <div class="drag-item" draggable="true" data-organ="hati" id="drag-hati">❤️ Hati</div>
+                    <div class="drag-item" draggable="true" data-organ="pankreas" id="drag-pankreas">💛 Pankreas</div>
+                    <div class="drag-item" draggable="true" data-organ="usus-halus" id="drag-usus-halus">💙 Usus Halus</div>
+                    <div class="drag-item" draggable="true" data-organ="usus-besar" id="drag-usus-besar">💜 Usus Besar</div>
+                </div>
+
+                <div class="drop-zones">
+                    <div class="drop-zone" data-function="mulut" id="drop-mulut">
+                        <div class="zone-title">🦷 Mengunyah Makanan</div>
+                        <div class="zone-hint">+ Enzim Amilase</div>
+                    </div>
+                    <div class="drop-zone" data-function="lambung" id="drop-lambung">
+                        <div class="zone-title">🧪 Mencerna Protein</div>
+                        <div class="zone-hint">+ Asam Lambung (HCl)</div>
+                    </div>
+                    <div class="drop-zone" data-function="hati" id="drop-hati">
+                        <div class="zone-title">💧 Menghasilkan Empedu</div>
+                        <div class="zone-hint">Untuk mencerna lemak</div>
+                    </div>
+                    <div class="drop-zone" data-function="pankreas" id="drop-pankreas">
+                        <div class="zone-title">🔬 Menghasilkan Enzim</div>
+                        <div class="zone-hint">+ Insulin</div>
+                    </div>
+                    <div class="drop-zone" data-function="usus-halus" id="drop-usus-halus">
+                        <div class="zone-title">💉 Menyerap Nutrisi</div>
+                        <div class="zone-hint">90% nutrisi diserap di sini</div>
+                    </div>
+                    <div class="drop-zone" data-function="usus-besar" id="drop-usus-besar">
+                        <div class="zone-title">🚰 Menyerap Air</div>
+                        <div class="zone-hint">Membentuk feses</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 25px;">
+                    <p id="dragScore" style="font-size: 1.3em; color: #ffd700;"></p>
+                    <button class="game-btn" onclick="resetDragGame()">🔄 Main Lagi</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS INTERAKTIF -->
+        <section id="kuis">
+            <h2><span class="icon">❓</span> Kuis Interaktif Sistem Pencernaan</h2>
+            <p>Uji pemahamanmu tentang sistem pencernaan! Jawab semua soal dengan benar! 💪</p>
+
+            <div class="quiz-container">
+                <h3>🧠 Kuis Sistem Pencernaan</h3>
+                
+                <div class="quiz-score">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="quizScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Soal</div>
+                        <div class="value" id="quizCount">0/10</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Benar</div>
+                        <div class="value" id="quizCorrect">0</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question" id="quizQuestion"></div>
+                
+                <div class="quiz-options" id="quizOptions"></div>
+                
+                <div class="quiz-feedback" id="quizFeedback"></div>
+
+                <div style="text-align: center;">
+                    <button class="game-btn" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📚 Materi Sistem Pencernaan Manusia - SMP Kelas 8</p>
+        <p>🎉 Semangat Belajar! Kamu Pasti Bisa! 💪✨</p>
+    </footer>
+
+    <!-- GAME OVER MODAL -->
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;">
+                <button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ NAVIGATION ============
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active nav button
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+        }
+
+        // ============ ORGAN DETAILS DATA ============
+        const organData = {
+            'mulut': {
+                title: '👄 Mulut (Rongga Mulut)',
+                content: 'Mulut adalah gerbang pertama masuknya makanan ke dalam tubuh. Di sini terjadi 2 jenis pencernaan:\n\n🦷 <strong>Pencernaan Mekanis:</strong> Gigi mengunyah makanan menjadi potongan kecil\n\n🧪 <strong>Pencernaan Kimiawi:</strong> Enzim amilase dalam ludah memecah tepung (amilum) menjadi maltosa\n\n💡 Lidah membantu mengaduk makanan dan mengecap rasa!'
+            },
+            'esofagus': {
+                title: '🔽 Esofagus (Kerongkongan)',
+                content: 'Esofagus adalah tabung otot sepanjang ±25 cm yang menghubungkan mulut dengan lambung.\n\n🔄 <strong>Gerakan Peristaltik:</strong> Otot esofagus berkontraksi secara bergelombang untuk mendorong makanan ke lambung\n\n⏱️ Makanan menempuh waktu ±6 detik untuk sampai ke lambung\n\n🚫 Epiglotis menutup saluran napas agar makanan tidak masuk ke paru-paru'
+            },
+            'lambung': {
+                title: '💚 Lambung (Ventrikulus)',
+                content: 'Lambung adalah organ berotot yang bisa meregang untuk menyimpan makanan.\n\n🧪 <strong>Cairan Lambung mengandung:</strong>\n• Asam Klorida (HCl) - membunuh bakteri\n• Pepsinogen → menjadi Pepsin (memecah protein)\n• Lipase - memecah lemak sederhana\n• Lendir - melindungi dinding lambung\n\n⏰ Makanan berada di lambung selama 2-6 jam'
+            },
+            'usus-halus': {
+                title: '💙 Usus Halus (Intestinum)',
+                content: 'Usus halus adalah organ terpanjang (±6-7 meter) dan tempat penyerapan nutrisi utama!\n\n📍 <strong>3 Bagian Usus Halus:</strong>\n• Duodenum (Usus 12 jari) - menerima enzim pankreas & empedu\n• Jejunum (Usus kosong) - penyerapan nutrisi\n• Ileum (Usus penyerapan) - penyerapan vitamin B12 & garam empedu\n\n💉 90% nutrisi diserap di usus halus melalui vili (jonjot usus)'
+            },
+            'usus-besar': {
+                title: '💜 Usus Besar (Kolon)',
+                content: 'Usus besar memiliki panjang ±1.5 meter.\n\n📍 <strong>Bagian Usus Besar:</strong>\n• Kolon asenden (naik)\n• Kolon transversum (horizontal)\n• Kolon desenden (turun)\n• Kolon sigmoid → Rektum → Anus\n\n💧 <strong>Fungsi:</strong>\n• Menyerap air & mineral\n• Bakteri baik membantu membuat vitamin K\n• Membentuk & menyimpan feses'
+            },
+            'hati': {
+                title: '❤️ Hati (Liver)',
+                content: 'Hati adalah organ terbesar di tubuh manusia (±1.5 kg)!\n\n💚 <strong>Fungsi Utama:</strong>\n• Menghasilkan empedu (±1 liter/hari)\n• Empedu disimpan di kantung empedu\n• Empedu mengemulsifikasi lemak menjadi butiran kecil\n• Menetralisir racun\n• Menyimpan glikogen & vitamin\n\n🔬 Empedu tidak mengandung enzim, tapi membantu lipase bekerja lebih efektif'
+            },
+            'pankreas': {
+                title: '💛 Pankreas',
+                content: 'Pankreas adalah organ yang terletak di belakang lambung.\n\n🧪 <strong>Enzim yang Dihasilkan:</strong>\n• Amilase Pankreas - memecah karbohidrat\n• Tripsin & Kimotripsin - memecah protein\n• Lipase Pankreas - memecah lemak\n• Nuklease - memecah asam nukleat\n\n💉 <strong>Hormon:</strong>\n• Insulin - menurunkan gula darah\n• Glukagon - menaikkan gula darah'
+            }
+        };
+
+        // ============ ORGAN DETAIL FUNCTIONS ============
+        function showOrganDetail(organ) {
+            const data = organData[organ];
+            if (data) {
+                alert(`${data.title}\n\n${data.content.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&')}`);
+            }
+        }
+
+        function showOrganPopup(organ, element) {
+            const data = organData[organ];
+            const popup = document.getElementById('organPopup');
+            const rect = element.getBoundingClientRect();
+            const containerRect = element.parentElement.parentElement.getBoundingClientRect();
+            
+            document.getElementById('popupTitle').textContent = data.title;
+            document.getElementById('popupContent').innerHTML = data.content.replace(/\n/g, '<br>');
+            
+            popup.style.left = (rect.left - containerRect.left + 70) + 'px';
+            popup.style.top = (rect.top - containerRect.top) + 'px';
+            popup.style.display = 'block';
+        }
+
+        function closeOrganPopup() {
+            document.getElementById('organPopup').style.display = 'none';
+        }
+
+        // ============ SIMULATOR ============
+        let selectedFood = 'nasi';
+        let simStep = 0;
+        let simInterval = null;
+
+        const foodProcesses = {
+            'nasi': [
+                { organ: '👄', text: '🍚 Nasi masuk ke mulut. Gigi mengunyah nasi menjadi halus. Enzim amilase mulai memecah tepung!' },
+                { organ: '🔽', text: 'Nasi yang sudah halus didorong ke bawah oleh gerakan peristaltik esofagus...' },
+                { organ: '💚', text: 'Nasi tiba di lambung! Asam lambung dan enzim bekerja mencerna sisa karbohidrat...' },
+                { organ: '💛', text: 'Pankreas mengeluarkan amilase pankreas untuk memecah sisa tepung menjadi gula sederhana...' },
+                { organ: '❤️', text: 'Hati mengeluarkan empedu untuk membantu penyerapan nutrisi...' },
+                { organ: '💙', text: 'Nasi sudah jadi glukosa! Usus halus menyerap glukosa ke dalam darah untuk energi! ⚡' },
+                { organ: '💜', text: 'Sisa makanan masuk ke usus besar. Air diserap kembali...' },
+                { organ: '🚽', text: '🎉 Proses selesai! Glukosa dari nasi sudah menjadi energi untuk tubuhmu!' }
+            ],
+            'daging': [
+                { organ: '👄', text: '🥩 Daging masuk ke mulut. Gigi mengunyah daging. Air liur mulai membasahi...' },
+                { organ: '🔽', text: 'Potongan daging didorong ke lambung oleh peristaltik...' },
+                { organ: '💚', text: 'Daging tiba di lambung! Pepsin dan HCl mulai memecah protein menjadi pepton. Ini butuh waktu lebih lama...' },
+                { organ: '💛', text: 'Pankreas mengeluarkan tripsin untuk memecah pepton menjadi asam amino!' },
+                { organ: '❤️', text: 'Hati bekerja keras memproses protein yang sudah dicerna...' },
+                { organ: '💙', text: 'Usus halus menyerap asam amino ke dalam darah untuk membangun otot! 💪' },
+                { organ: '💜', text: 'Sisa protein yang tidak tercerna masuk ke usus besar...' },
+                { organ: '🚽', text: '🎉 Proses selesai! Asam amino dari daging siap membangun sel-sel tubuhmu!' }
+            ],
+            'apel': [
+                { organ: '👄', text: '🍎 Apel masuk ke mulut! Teksturnya renyah, gigi mudah mengunyahnya. Ada banyak serat!' },
+                { organ: '🔽', text: 'Potongan apel meluncur ke lambung melalui esofagus...' },
+                { organ: '💚', text: 'Di lambung, gula dari apel mulai dicerna. Serat membantu pencernaan!' },
+                { organ: '💛', text: 'Pankreas mengeluarkan enzim untuk memecah gula buah (fruktosa)...' },
+                { organ: '❤️', text: 'Hati memproses fruktosa dari apel...' },
+                { organ: '💙', text: 'Usus halus menyerap vitamin, mineral, dan gula dari apel! Vitamin C untuk daya tahan tubuh! 🛡️' },
+                { organ: '💜', text: 'Serat dari apel membantu usus besar bekerja dengan baik! Feses jadi lebih lunak.' },
+                { organ: '🚽', text: '🎉 Proses selesai! Apel memberikan vitamin, mineral, dan serat untuk tubuh sehat!' }
+            ],
+            'susu': [
+                { organ: '👄', text: '🥛 Susu masuk ke mulut. Langsung tertelan karena bentuknya cair...' },
+                { organ: '🔽', text: 'Susu mengalir ke lambung dengan cepat...' },
+                { organ: '💚', text: 'Di lambung, protein susu (kasein) mulai dicerna oleh pepsin...' },
+                { organ: '💛', text: 'Pankreas mengeluarkan enzim untuk mencerna protein dan lemak susu...' },
+                { organ: '❤️', text: 'Hati memproses lemak susu yang sudah diemulsifikasi...' },
+                { organ: '💙', text: 'Usus halus menyerap kalsium, protein, dan vitamin D dari susu! Bagus untuk tulang! 🦴' },
+                { organ: '💜', text: 'Bagi yang intoleran laktosa, laktosa yang tidak tercerna bisa menyebabkan kembung...' },
+                { organ: '🚽', text: '🎉 Proses selesai! Kalsium dari susu membuat tulang dan gigimu kuat!' }
+            ]
+        };
+
+        function selectFood(food, btn) {
+            selectedFood = food;
+            document.querySelectorAll('.food-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            resetSimulation();
+        }
+
+        function startSimulation() {
+            simStep = 0;
+            updateSimulation();
+            document.getElementById('simStartBtn').disabled = true;
+            document.getElementById('simNextBtn').disabled = false;
+        }
+
+        function nextSimulationStep() {
+            const processes = foodProcesses[selectedFood];
+            if (simStep < processes.length - 1) {
+                simStep++;
+                updateSimulation();
+            } else {
+                document.getElementById('simNextBtn').disabled = true;
+            }
+        }
+
+        function updateSimulation() {
+            const processes = foodProcesses[selectedFood];
+            const current = processes[simStep];
+            
+            document.getElementById('simOrgan').textContent = current.organ;
+            document.getElementById('simText').innerHTML = current.text.replace(/\n/g, '<br>');
+            document.getElementById('simProgress').style.width = ((simStep + 1) / processes.length * 100) + '%';
+        }
+
+        function resetSimulation() {
+            simStep = 0;
+            document.getElementById('simOrgan').textContent = '👄';
+            document.getElementById('simText').textContent = 'Pilih makanan dan klik "Mulai" untuk memulai simulasi!';
+            document.getElementById('simProgress').style.width = '0%';
+            document.getElementById('simStartBtn').disabled = false;
+            document.getElementById('simNextBtn').disabled = true;
+        }
+
+        // ============ DRAG AND DROP GAME ============
+        let draggedItem = null;
+        let dragScore = 0;
+        let dragAttempts = 0;
+        const totalDragItems = 6;
+
+        // Setup drag and drop
+        document.querySelectorAll('.drag-item').forEach(item => {
+            item.addEventListener('dragstart', function(e) {
+                draggedItem = this;
+                this.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', this.dataset.organ);
+            });
+
+            item.addEventListener('dragend', function() {
+                this.classList.remove('dragging');
+                draggedItem = null;
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            });
+
+            zone.addEventListener('dragleave', function() {
+                this.classList.remove('drag-over');
+            });
+
+            zone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                
+                const droppedOrgan = e.dataTransfer.getData('text/plain');
+                const expectedFunction = this.dataset.function;
+                
+                dragAttempts++;
+                
+                if (droppedOrgan === expectedFunction) {
+                    this.classList.add('correct-drop');
+                    this.innerHTML += `<div class="dropped-item">✅ ${document.getElementById('drag-' + droppedOrgan).textContent}</div>`;
+                    document.getElementById('drag-' + droppedOrgan).style.display = 'none';
+                    dragScore++;
+                    document.getElementById('dragScore').textContent = `Skor: ${dragScore}/${totalDragItems}`;
+                    
+                    if (dragScore === totalDragItems) {
+                        setTimeout(() => {
+                            document.getElementById('dragScore').innerHTML = '🎉 <strong>Sempurna! Kamu Jago!</strong> 🎉';
+                        }, 500);
+                    }
+                } else {
+                    this.classList.add('wrong-drop');
+                    setTimeout(() => {
+                        this.classList.remove('wrong-drop');
+                    }, 1000);
+                    alert('❌ Kurang tepat! Coba lagi!');
+                }
+            });
+        });
+
+        function resetDragGame() {
+            dragScore = 0;
+            dragAttempts = 0;
+            document.getElementById('dragScore').textContent = '';
+            
+            // Reset drag items
+            document.querySelectorAll('.drag-item').forEach(item => {
+                item.style.display = '';
+            });
+            
+            // Reset drop zones
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.classList.remove('correct-drop', 'wrong-drop');
+                const droppedItem = zone.querySelector('.dropped-item');
+                if (droppedItem) droppedItem.remove();
+            });
+        }
+
+        // ============ QUIZ ============
+        const quizQuestions = [
+            {
+                question: 'Enzim apa yang bekerja di mulut untuk memecah tepung?',
+                options: ['Pepsin', 'Amilase', 'Lipase', 'Tripsin'],
+                correct: 1
+            },
+            {
+                question: 'Organ mana yang menghasilkan empedu?',
+                options: ['Lambung', 'Pankreas', 'Hati', 'Usus Halus'],
+                correct: 2
+            },
+            {
+                question: 'Di organ mana sebagian besar nutrisi diserap?',
+                options: ['Lambung', 'Usus Besar', 'Usus Halus', 'Esofagus'],
+                correct: 2
+            },
+            {
+                question: 'Apa fungsi utama enzim pepsin?',
+                options: ['Mencerna lemak', 'Mencerna karbohidrat', 'Mencerna protein', 'Mencerna vitamin'],
+                correct: 2
+            },
+            {
+                question: 'Gerakan apa yang mendorong makanan di esofagus?',
+                options: ['Gerak refleks', 'Gerak peristaltik', 'Gerak fagositosis', 'Gerak osmosis'],
+                correct: 1
+            },
+            {
+                question: 'Apa yang dihasilkan oleh pankreas?',
+                options: ['Empedu', 'Asam lambung', 'Enzim dan insulin', 'Air liur'],
+                correct: 2
+            },
+            {
+                question: 'Apa fungsi utama usus besar?',
+                options: ['Mencerna protein', 'Menyerap nutrisi', 'Menyerap air dan membentuk feses', 'Menghasilkan enzim'],
+                correct: 2
+            },
+            {
+                question: 'Apa yang terjadi jika seseorang kekurangan serat?',
+                options: ['Diare', 'Maag', 'Sembelit', 'GERD'],
+                correct: 2
+            },
+            {
+                question: 'Berapa panjang total saluran pencernaan manusia?',
+                options: ['3 meter', '6 meter', '9 meter', '12 meter'],
+                correct: 2
+            },
+            {
+                question: 'Apa peran empedu dalam pencernaan?',
+                options: ['Mencerna protein', 'Mengemulsifikasi lemak', 'Mencerna karbohidrat', 'Membunuh bakteri'],
+                correct: 1
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizCorrectCount = 0;
+        let quizAnswered = false;
+
+        function startQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            quizCorrectCount = 0;
+            
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCorrect').textContent = '0';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) {
+                endQuiz();
+                return;
+            }
+            
+            quizAnswered = false;
+            const q = quizQuestions[currentQuizIndex];
+            
+            document.getElementById('quizQuestion').textContent = q.question;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            
+            const optionsDiv = document.getElementById('quizOptions');
+            optionsDiv.innerHTML = q.options.map((opt, i) => 
+                `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`
+            ).join('');
+        }
+
+        function checkQuizAnswer(selected) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+            
+            const q = quizQuestions[currentQuizIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                } else if (i === selected && i !== q.correct) {
+                    opt.classList.add('wrong');
+                }
+            });
+            
+            if (selected === q.correct) {
+                quizScore += 10;
+                quizCorrectCount++;
+                document.getElementById('quizFeedback').innerHTML = '<span style="color: #2ed573;">✅ Benar! +10 poin</span>';
+            } else {
+                document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff6b6b;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`;
+            }
+            
+            document.getElementById('quizScore').textContent = quizScore;
+            document.getElementById('quizCorrect').textContent = quizCorrectCount;
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            showQuestion();
+        }
+
+        function endQuiz() {
+            document.getElementById('modalScore').textContent = quizScore;
+            
+            let message = '';
+            if (quizScore === 100) {
+                message = '🏆 SEMPURNA! Kamu benar-benar menguasai materi ini!';
+            } else if (quizScore >= 70) {
+                message = '👏 Bagus! Pemahamanmu sudah cukup baik!';
+            } else if (quizScore >= 50) {
+                message = '💪 Cukup bagus, tapi masih bisa ditingkatkan!';
+            } else {
+                message = '📚 Ayo pelajari lagi materinya, kamu pasti bisa!';
+            }
+            
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('quizModal').classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizModal').classList.add('hidden');
+            startQuiz();
+        }
+
+        // ============ INTERSECTION OBSERVER FOR ANIMATIONS ============
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.5s ease';
+            observer.observe(section);
+        });
+
+        // Initial section visible
+        setTimeout(() => {
+            document.getElementById('pengertian').style.opacity = '1';
+            document.getElementById('pengertian').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
+</body>
+</html>
