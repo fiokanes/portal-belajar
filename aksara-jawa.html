@@ -807,7 +807,9 @@
         .jawa-symbol {
             position: absolute;
             animation: floatJawa 25s linear infinite;
-            opacity: 0.07;
+            opacity: 0.12;
+            filter: blur(0.5px);
+            text-shadow: 0 0 20px rgba(109, 76, 65, 0.3);
         }
         @keyframes floatJawa {
             0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
@@ -1479,12 +1481,13 @@
             const sentence = sentences.shift();
             const utterance = new SpeechSynthesisUtterance(sentence);
             utterance.lang = lang;
-            utterance.rate = speechRate;
-            utterance.pitch = 1.05;
+            utterance.rate = 0.92; // Natural speed
+            utterance.pitch = 1.0; // Natural pitch
             utterance.volume = 1;
             const voice = getBestVoice(lang);
             if (voice) utterance.voice = voice;
-            utterance.onend = () => setTimeout(() => speakSentences(sentences, lang, sectionId), 150);
+            // Jeda 400ms antar kalimat agar natural
+            utterance.onend = () => setTimeout(() => speakSentences(sentences, lang, sectionId), 400);
             utterance.onerror = () => speakSentences(sentences, lang, sectionId);
             window.speechSynthesis.speak(utterance);
         }
@@ -1716,21 +1719,24 @@
             document.getElementById('pengertian').style.transform = 'translateY(0)';
         }, 100);
 
-        // Create floating Jawa symbols (wayang, batik, etc)
+        // Create floating Jawa symbols - LEBIH BESAR & RAMAI
         function createJawaBg() {
             const container = document.getElementById('jawaBg');
             const symbols = [
-                {text: '🎭', size: '4em'}, {text: '👑', size: '3.5em'}, {text: '🏛️', size: '4em'},
-                {text: '🌾', size: '3em'}, {text: '🐃', size: '3.5em'}, {text: '🌺', size: '3em'},
-                {text: '🎋', size: '4em'}, {text: '🏯', size: '4.5em'}, {text: '🎨', size: '3em'},
-                {text: '📜', size: '5em'}, {text: '✨', size: '3em'}, {text: '🌙', size: '4em'},
-                {text: '☀️', size: '3.5em'}, {text: '🏔️', size: '4em'}, {text: '🌊', size: '3em'},
-                // Aksara Jawa characters
-                {text: 'ꦲ', size: '6em'}, {text: 'ꦤ', size: '5em'}, {text: 'ꦕ', size: '5em'},
-                {text: 'ꦫ', size: '6em'}, {text: 'ꦏ', size: '5em'}, {text: 'ꦢ', size: '5em'},
-                {text: 'ꦠ', size: '6em'}, {text: 'ꦱ', size: '5em'}, {text: 'ꦮ', size: '5em'}
+                {text: '🎭', size: '6em'}, {text: '👑', size: '5em'}, {text: '🏛️', size: '6em'},
+                {text: '🌾', size: '4.5em'}, {text: '🐃', size: '5em'}, {text: '🌺', size: '4em'},
+                {text: '🎋', size: '5.5em'}, {text: '🏯', size: '7em'}, {text: '🎨', size: '4.5em'},
+                {text: '📜', size: '8em'}, {text: '✨', size: '4em'}, {text: '🌙', size: '6em'},
+                {text: '☀️', size: '5em'}, {text: '🏔️', size: '6em'}, {text: '🌊', size: '4.5em'},
+                {text: '🏮', size: '5em'}, {text: '🎎', size: '5.5em'}, {text: '🎎', size: '5em'},
+                // Aksara Jawa characters - LEBIH BESAR
+                {text: 'ꦲ', size: '10em'}, {text: 'ꦤ', size: '9em'}, {text: 'ꦕ', size: '8em'},
+                {text: 'ꦫ', size: '10em'}, {text: 'ꦏ', size: '9em'}, {text: 'ꦢ', size: '8em'},
+                {text: 'ꦠ', size: '10em'}, {text: 'ꦱ', size: '9em'}, {text: 'ꦮ', size: '8em'},
+                {text: 'ꦭ', size: '9em'}, {text: 'ꦥ', size: '8em'}, {text: 'ꦗ', size: '10em'},
+                {text: 'ꦪ', size: '9em'}, {text: 'ꦩ', size: '8em'}, {text: 'ꦒ', size: '9em'}
             ];
-            for (let i = 0; i < 40; i++) {
+            for (let i = 0; i < 50; i++) {
                 const s = symbols[Math.floor(Math.random() * symbols.length)];
                 const symbol = document.createElement('div');
                 symbol.className = 'jawa-symbol';
