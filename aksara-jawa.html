@@ -1257,19 +1257,101 @@
     </div>
 
     <script>
+        // ============ AUDIO SYSTEM ============
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new AudioCtx();
+        }
+
+        // Play click sound
+        function playClick() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.frequency.value = 800; osc.type = 'sine';
+            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.1);
+        }
+
+        // Play success sound
+        function playSuccess() {
+            initAudio();
+            [523, 659, 784].forEach((freq, i) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.frequency.value = freq; osc.type = 'sine';
+                gain.gain.value = 0.2;
+                osc.start(audioCtx.currentTime + i * 0.15);
+                osc.stop(audioCtx.currentTime + i * 0.15 + 0.2);
+            });
+        }
+
+        // Play error sound
+        function playError() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.frequency.value = 200; osc.type = 'sawtooth';
+            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+        }
+
+        // ============ AKSARA JAWA SOUND (Speech Synthesis) ============
+        const aksaraPronunciation = {
+            'ha': 'ha', 'na': 'na', 'ca': 'ca', 'ra': 'ra', 'ka': 'ka',
+            'da': 'da', 'ta': 'ta', 'sa': 'sa', 'wa': 'wa', 'la': 'la',
+            'pa': 'pa', 'dha': 'dha', 'ja': 'ja', 'ya': 'ya', 'nya': 'nya',
+            'ma': 'ma', 'ga': 'ga', 'ba': 'ba', 'tha': 'tha', 'nga': 'nga'
+        };
+
+        function speak(text, lang = 'id-ID') {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang;
+                utterance.rate = 0.8;
+                utterance.pitch = 1.1;
+                utterance.volume = 1;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function playAksaraSound(aksara) {
+            initAudio();
+            const card = event.currentTarget;
+            
+            // Visual feedback
+            card.style.transform = 'scale(1.15)';
+            card.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.5)';
+            setTimeout(() => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            }, 400);
+
+            // Play a gentle tone
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.frequency.value = 440; osc.type = 'sine';
+            gain.gain.value = 0.2; gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+
+            // Speak the pronunciation
+            const pronunciation = aksaraPronunciation[aksara] || aksara;
+            speak(pronunciation);
+        }
+
         // ============ NAVIGATION ============
         function scrollToSection(id) {
+            playClick();
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
             document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-        }
-
-        // ============ AKSARA SOUND ============
-        function playAksaraSound(aksara) {
-            // Simple feedback
-            const card = event.currentTarget;
-            card.style.transform = 'scale(1.1)';
-            setTimeout(() => card.style.transform = '', 300);
         }
 
         // ============ DRAG AND DROP GAME ============
@@ -1384,8 +1466,12 @@
             if (selected === q.correct) {
                 quizScore += 10;
                 quizCorrectCount++;
+                playSuccess();
+                speak('Benar!');
                 document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>';
             } else {
+                playError();
+                speak('Salah');
                 document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`;
             }
             document.getElementById('quizScore').textContent = quizScore;
