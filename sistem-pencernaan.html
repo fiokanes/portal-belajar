@@ -224,7 +224,7 @@
         }
 
         h3 {
-            color: #e94560;
+            color: #1b5e20;
             font-size: 1.3em;
             margin: 20px 0 10px 0;
         }
@@ -241,13 +241,14 @@
         }
 
         li {
-            color: #555;
+            color: #2e7d32;
             margin-bottom: 10px;
             font-size: 1.05em;
         }
 
         strong {
-            color: #e94560;
+            color: #1b5e20;
+            font-weight: 700;
         }
 
         /* ============ ORGAN CARDS ============ */
@@ -1023,6 +1024,29 @@
             cursor: pointer;
         }
 
+        /* ============ FLOATING BIO SYMBOLS ============ */
+        .bio-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+
+        .bio-symbol {
+            position: absolute;
+            animation: floatBio 25s linear infinite;
+            opacity: 0.05;
+        }
+
+        @keyframes floatBio {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.05; }
+            90% { opacity: 0.05; }
+            100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+        }
+
+        section {
+            position: relative;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
@@ -1061,6 +1085,9 @@
     </style>
 </head>
 <body>
+    <!-- FLOATING BIO SYMBOLS -->
+    <div class="bio-bg" id="bioBg"></div>
+
     <!-- PORTAL NAVBAR -->
     <nav class="portal-navbar">
         <a href="index.html" class="nav-brand">
@@ -2212,6 +2239,32 @@
             document.getElementById('pengertian').style.opacity = '1';
             document.getElementById('pengertian').style.transform = 'translateY(0)';
         }, 100);
+
+        // Create floating bio symbols
+        function createBioBg() {
+            const container = document.getElementById('bioBg');
+            const symbols = [
+                {text: '🫀', size: '4em'}, {text: '🫁', size: '5em'}, {text: '🧬', size: '6em'},
+                {text: '🩸', size: '3em'}, {text: '🦷', size: '4em'}, {text: '👁️', size: '3.5em'},
+                {text: '🧠', size: '5em'}, {text: '💪', size: '4em'}, {text: '🦴', size: '3em'},
+                {text: '🩺', size: '4em'}, {text: '💉', size: '3em'}, {text: '🔬', size: '4.5em'},
+                {text: '🧪', size: '3.5em'}, {text: '❤️', size: '4em'}, {text: '💚', size: '3em'},
+                {text: '🍎', size: '3.5em'}, {text: '🥖', size: '3em'}, {text: '🥩', size: '3em'},
+                {text: '🥛', size: '3.5em'}, {text: '💧', size: '3em'}
+            ];
+            for (let i = 0; i < 35; i++) {
+                const s = symbols[Math.floor(Math.random() * symbols.length)];
+                const symbol = document.createElement('div');
+                symbol.className = 'bio-symbol';
+                symbol.textContent = s.text;
+                symbol.style.left = Math.random() * 100 + '%';
+                symbol.style.fontSize = s.size;
+                symbol.style.animationDelay = Math.random() * 25 + 's';
+                symbol.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                container.appendChild(symbol);
+            }
+        }
+        createBioBg();
     </script>
 </body>
 </html>
