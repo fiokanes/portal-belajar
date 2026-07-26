@@ -32,8 +32,9 @@
         .math-symbol {
             position: absolute; font-weight: 900;
             animation: floatMath 20s linear infinite;
-            opacity: 0.06;
-            text-shadow: 0 0 20px rgba(0, 137, 123, 0.3);
+            opacity: 0.12;
+            text-shadow: 0 0 30px rgba(0, 137, 123, 0.4);
+            filter: blur(0.3px);
         }
 
         @keyframes floatMath {
@@ -682,35 +683,37 @@
             document.getElementById('speedDisplay').textContent = speechRate + 'x';
         }
 
-        // Create floating math symbols - lebih besar dan beragam
+        // Create floating math symbols - LEBIH BESAR & RAMAI
         function createMathBg() {
             const container = document.getElementById('mathBg');
             const symbols = [
-                {text: '+', size: '4em', color: '#00897b'},
-                {text: '-', size: '3.5em', color: '#26a69a'},
-                {text: '×', size: '5em', color: '#00695c'},
-                {text: '÷', size: '4em', color: '#4db6ac'},
-                {text: '=', size: '3em', color: '#80cbc4'},
-                {text: 'π', size: '6em', color: '#00897b'},
-                {text: '∞', size: '5em', color: '#26a69a'},
-                {text: '∑', size: '7em', color: '#004d40'},
-                {text: '√', size: '4em', color: '#00695c'},
-                {text: '1', size: '8em', color: '#00897b'},
-                {text: '2', size: '6em', color: '#4db6ac'},
-                {text: '3', size: '5em', color: '#26a69a'},
-                {text: '4', size: '7em', color: '#00695c'},
-                {text: '5', size: '4em', color: '#80cbc4'},
-                {text: '6', size: '6em', color: '#00897b'},
-                {text: '7', size: '5em', color: '#4db6ac'},
-                {text: '8', size: '4em', color: '#26a69a'},
-                {text: '9', size: '7em', color: '#00695c'},
-                {text: '0', size: '6em', color: '#00897b'},
-                {text: '½', size: '5em', color: '#4db6ac'},
-                {text: '¾', size: '4em', color: '#26a69a'},
-                {text: '%', size: '5em', color: '#00695c'},
-                {text: '±', size: '4em', color: '#80cbc4'}
+                {text: '+', size: '7em', color: '#00897b'},
+                {text: '-', size: '6em', color: '#26a69a'},
+                {text: '×', size: '8em', color: '#00695c'},
+                {text: '÷', size: '7em', color: '#4db6ac'},
+                {text: '=', size: '5em', color: '#80cbc4'},
+                {text: 'π', size: '10em', color: '#00897b'},
+                {text: '∞', size: '9em', color: '#26a69a'},
+                {text: '∑', size: '12em', color: '#004d40'},
+                {text: '√', size: '7em', color: '#00695c'},
+                {text: '1', size: '14em', color: '#00897b'},
+                {text: '2', size: '11em', color: '#4db6ac'},
+                {text: '3', size: '9em', color: '#26a69a'},
+                {text: '4', size: '12em', color: '#00695c'},
+                {text: '5', size: '8em', color: '#80cbc4'},
+                {text: '6', size: '10em', color: '#00897b'},
+                {text: '7', size: '9em', color: '#4db6ac'},
+                {text: '8', size: '7em', color: '#26a69a'},
+                {text: '9', size: '11em', color: '#00695c'},
+                {text: '0', size: '10em', color: '#00897b'},
+                {text: '½', size: '8em', color: '#4db6ac'},
+                {text: '¾', size: '7em', color: '#26a69a'},
+                {text: '%', size: '9em', color: '#00695c'},
+                {text: '±', size: '7em', color: '#80cbc4'},
+                {text: '∫', size: '10em', color: '#004d40'},
+                {text: 'Δ', size: '8em', color: '#00897b'}
             ];
-            for (let i = 0; i < 40; i++) {
+            for (let i = 0; i < 50; i++) {
                 const s = symbols[Math.floor(Math.random() * symbols.length)];
                 const symbol = document.createElement('div');
                 symbol.className = 'math-symbol';
