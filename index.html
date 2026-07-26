@@ -12,10 +12,28 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #4a90d9;
+            --primary-dark: #0d47a1;
+            --secondary: #00bcd4;
+            --accent: #26c6da;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --dark: #0d1b2a;
+            --dark-2: #1b2838;
+            --light: #e3f2fd;
+            --white: #ffffff;
+            --gradient-main: linear-gradient(135deg, #0d47a1 0%, #1a73e8 50%, #42a5f5 100%);
+            --gradient-card: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%);
+            --gradient-accent: linear-gradient(135deg, #00bcd4 0%, #26c6da 100%);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: var(--gradient-main);
             overflow-x: hidden;
         }
 
@@ -28,13 +46,14 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
+            background: var(--gradient-main);
         }
 
         .bg-animation .bubble {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: floatBubble 15s infinite ease-in-out;
+            background: rgba(255, 255, 255, 0.08);
+            animation: floatBubble 20s infinite ease-in-out;
         }
 
         @keyframes floatBubble {
@@ -44,7 +63,7 @@
 
         /* ============ HEADER ============ */
         header {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 50%, #ff6348 100%);
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
             color: white;
             text-align: center;
             padding: 60px 20px 80px;
@@ -60,8 +79,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 50%);
-            animation: rotate 20s linear infinite;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: rotate 25s linear infinite;
         }
 
         @keyframes rotate {
@@ -89,7 +108,7 @@
             position: relative;
             z-index: 1;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         header .subtitle {
@@ -133,23 +152,24 @@
 
         /* ============ WELCOME SECTION ============ */
         .welcome-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             border-radius: 30px;
             padding: 40px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(13, 71, 161, 0.2);
             margin-bottom: 40px;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(26, 115, 232, 0.1);
         }
 
         .welcome-section h2 {
-            color: #2c3e50;
+            color: var(--primary-dark);
             font-size: 2em;
             margin-bottom: 15px;
         }
 
         .welcome-section p {
-            color: #666;
+            color: #555;
             font-size: 1.15em;
             max-width: 700px;
             margin: 0 auto 25px;
@@ -171,7 +191,7 @@
         .stat-item .stat-number {
             font-size: 2.5em;
             font-weight: bold;
-            color: #e74c3c;
+            color: var(--primary);
             display: block;
         }
 
@@ -203,7 +223,7 @@
             background: white;
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(13, 71, 161, 0.15);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             position: relative;
@@ -214,7 +234,7 @@
 
         .menu-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            box-shadow: 0 25px 60px rgba(13, 71, 161, 0.25);
         }
 
         .menu-card .card-image {
@@ -250,9 +270,10 @@
             50% { transform: scale(1.2); opacity: 0.8; }
         }
 
-        .card-math .card-image { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-bio .card-image { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
-        .card-geo .card-image { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .card-math .card-image { background: linear-gradient(135deg, #1565c0 0%, #1e88e5 100%); }
+        .card-bio .card-image { background: linear-gradient(135deg, #00838f 0%, #00acc1 100%); }
+        .card-geo .card-image { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); }
+        .card-english .card-image { background: linear-gradient(135deg, #0277bd 0%, #0288d1 100%); }
 
         .menu-card .card-content {
             padding: 30px;
@@ -267,13 +288,13 @@
             margin-bottom: 15px;
         }
 
-        .card-math .card-badge { background: #e8e4f8; color: #764ba2; }
-        .card-bio .card-badge { background: #e8f8f0; color: #11998e; }
-        .card-geo .card-badge { background: #fde8e8; color: #e74c3c; }
-        .card-english .card-badge { background: #e8f0fd; color: #3498db; }
+        .card-math .card-badge { background: #e3f2fd; color: #1565c0; }
+        .card-bio .card-badge { background: #e0f7fa; color: #00838f; }
+        .card-geo .card-badge { background: #e8eaf6; color: #283593; }
+        .card-english .card-badge { background: #e1f5fe; color: #0277bd; }
 
         .menu-card h3 {
-            color: #2c3e50;
+            color: var(--dark);
             font-size: 1.6em;
             margin-bottom: 12px;
         }
@@ -293,8 +314,8 @@
         }
 
         .menu-card .feature-tag {
-            background: #f8f9fa;
-            color: #555;
+            background: #e3f2fd;
+            color: var(--primary-dark);
             padding: 6px 14px;
             border-radius: 15px;
             font-size: 0.85em;
@@ -307,7 +328,7 @@
         }
 
         .menu-card .card-footer .start-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-card);
             color: white;
             padding: 12px 25px;
             border-radius: 25px;
@@ -316,8 +337,9 @@
             transition: all 0.3s ease;
         }
 
-        .card-bio .card-footer .start-btn { background: linear-gradient(135deg, #11998e, #38ef7d); }
-        .card-geo .card-footer .start-btn { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .card-bio .card-footer .start-btn { background: linear-gradient(135deg, #00838f, #00acc1); }
+        .card-geo .card-footer .start-btn { background: linear-gradient(135deg, #0d47a1, #1565c0); }
+        .card-english .card-footer .start-btn { background: linear-gradient(135deg, #0277bd, #0288d1); }
 
         .menu-card:hover .card-footer .start-btn {
             transform: translateX(10px);
@@ -330,21 +352,21 @@
         }
 
         .menu-card:hover .card-footer .arrow {
-            color: #e74c3c;
+            color: var(--primary);
             transform: translateX(10px);
         }
 
         /* ============ FEATURES SECTION ============ */
         .features-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             border-radius: 30px;
             padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(13, 71, 161, 0.15);
             margin-bottom: 40px;
         }
 
         .features-section h2 {
-            color: #2c3e50;
+            color: var(--primary-dark);
             text-align: center;
             font-size: 2em;
             margin-bottom: 40px;
@@ -364,7 +386,7 @@
         }
 
         .feature-item:hover {
-            background: #f8f9fa;
+            background: #e3f2fd;
             transform: translateY(-5px);
         }
 
@@ -381,7 +403,7 @@
         }
 
         .feature-item h4 {
-            color: #2c3e50;
+            color: var(--dark);
             font-size: 1.2em;
             margin-bottom: 10px;
         }
@@ -394,12 +416,12 @@
 
         /* ============ MOTIVATION SECTION ============ */
         .motivation-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-card);
             border-radius: 30px;
             padding: 50px 40px;
             text-align: center;
             color: white;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 60px rgba(21, 101, 192, 0.4);
             margin-bottom: 40px;
             position: relative;
             overflow: hidden;
@@ -450,15 +472,15 @@
 
         /* ============ TIPS SECTION ============ */
         .tips-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             border-radius: 30px;
             padding: 50px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(13, 71, 161, 0.15);
             margin-bottom: 40px;
         }
 
         .tips-section h2 {
-            color: #2c3e50;
+            color: var(--primary-dark);
             text-align: center;
             font-size: 2em;
             margin-bottom: 30px;
@@ -471,24 +493,24 @@
         }
 
         .tip-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
             border-radius: 20px;
             padding: 25px;
             display: flex;
             gap: 20px;
             align-items: flex-start;
             transition: all 0.3s ease;
-            border: 2px solid #eee;
+            border: 2px solid #bbdefb;
         }
 
         .tip-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+            border-color: var(--primary);
         }
 
         .tip-card .tip-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--gradient-card);
             color: white;
             width: 50px;
             height: 50px;
@@ -502,7 +524,7 @@
         }
 
         .tip-card h4 {
-            color: #2c3e50;
+            color: var(--dark);
             margin-bottom: 8px;
             font-size: 1.1em;
         }
@@ -515,7 +537,7 @@
 
         /* ============ FOOTER ============ */
         footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #0a1628 0%, #0d1b2a 100%);
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -529,7 +551,7 @@
             left: 0;
             right: 0;
             height: 30px;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #0a1628 0%, #0d1b2a 100%);
             clip-path: polygon(0 100%, 50% 0, 100% 100%);
         }
 
@@ -546,7 +568,7 @@
         footer h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
-            color: #ffd700;
+            color: var(--accent);
         }
 
         footer p {
@@ -564,7 +586,7 @@
         }
 
         .footer-links a {
-            color: #ffd700;
+            color: var(--accent);
             text-decoration: none;
             transition: all 0.3s ease;
             font-weight: bold;
@@ -588,7 +610,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: var(--gradient-card);
             color: white;
             width: 60px;
             height: 60px;
@@ -598,7 +620,7 @@
             justify-content: center;
             font-size: 1.5em;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 5px 20px rgba(21, 101, 192, 0.4);
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -700,11 +722,11 @@
                     <span class="stat-label">Materi Pembelajaran</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">30+</span>
+                    <span class="stat-number">40+</span>
                     <span class="stat-label">Soal & Kuis</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5+</span>
+                    <span class="stat-number">8+</span>
                     <span class="stat-label">Game Interaktif</span>
                 </div>
                 <div class="stat-item">
@@ -799,7 +821,7 @@
 
                 <!-- ENGLISH CARD -->
                 <a href="english-tenses.html" class="menu-card card-english">
-                    <div class="card-image" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                    <div class="card-image">
                         <span class="card-icon">🇬🇧</span>
                     </div>
                     <div class="card-content">
@@ -817,7 +839,7 @@
                             <span class="feature-tag">🎮 Game</span>
                         </div>
                         <div class="card-footer">
-                            <span class="start-btn" style="background: linear-gradient(135deg, #3498db, #2980b9);">Mulai Belajar →</span>
+                            <span class="start-btn">Mulai Belajar →</span>
                             <span class="arrow">→</span>
                         </div>
                     </div>
@@ -997,14 +1019,6 @@
             } else {
                 scrollTop.classList.remove('visible');
             }
-        });
-
-        // ============ CARD HOVER SOUND (Optional) ============
-        const cards = document.querySelectorAll('.menu-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                // Optional: Add hover sound effect
-            });
         });
 
         // ============ INTERSECTION OBSERVER FOR ANIMATIONS ============
