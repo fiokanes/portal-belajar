@@ -971,6 +971,57 @@
         }
 
         /* ============ RESPONSIVE ============ */
+        /* ============ READ ALOUD BUTTON ============ */
+        .read-aloud-btn {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            color: white; border: none; padding: 10px 20px;
+            border-radius: 25px; cursor: pointer; font-size: 0.95em;
+            font-weight: bold; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 8px;
+            margin: 10px 0;
+        }
+
+        .read-aloud-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.4);
+        }
+
+        .read-aloud-btn.reading {
+            background: linear-gradient(135deg, #c62828, #e53935);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ============ FLOATING AUDIO CONTROL ============ */
+        .audio-control {
+            position: fixed; bottom: 100px; right: 30px;
+            z-index: 999; display: flex; flex-direction: column; gap: 10px;
+        }
+
+        .audio-btn {
+            width: 55px; height: 55px; border-radius: 50%;
+            border: none; cursor: pointer; font-size: 1.3em;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .audio-btn:hover { transform: scale(1.1); }
+
+        .audio-btn.play-btn { background: linear-gradient(135deg, #2e7d32, #43a047); color: white; }
+        .audio-btn.pause-btn { background: linear-gradient(135deg, #e65100, #ff9800); color: white; }
+        .audio-btn.stop-btn { background: linear-gradient(135deg, #c62828, #e53935); color: white; }
+
+        .audio-speed {
+            background: rgba(0,0,0,0.8); color: white;
+            padding: 5px 10px; border-radius: 15px;
+            font-size: 0.8em; text-align: center;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8em;
@@ -1052,7 +1103,7 @@
     <main>
         <!-- PENGERTIAN -->
         <section id="pengertian">
-            <h2><span class="icon">📖</span> Apa Itu Sistem Pencernaan?</h2>
+            <h2><span class="icon">📖</span> Apa Itu Sistem Pencernaan? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🔊 Bacakan</button></h2>
             <p>Hey guys! 👋 Kalian pernah mikir gak sih, gimana sih makanan yang kita makan bisa jadi energi buat tubuh kita? Nah, itu semua berkat <strong>sistem pencernaan</strong>!</p>
             
             <div class="fun-fact">
@@ -1606,7 +1657,84 @@
         </div>
     </div>
 
+    <!-- FLOATING AUDIO CONTROL -->
+    <div class="audio-control">
+        <div class="audio-speed" onclick="changeSpeed()" id="speedDisplay">1x</div>
+        <button class="audio-btn pause-btn" onclick="pauseResume()" id="pauseBtn" title="Pause/Resume">⏸️</button>
+        <button class="audio-btn stop-btn" onclick="stopReading()" title="Stop">⏹️</button>
+    </div>
+
     <script>
+        // ============ READ ALOUD SYSTEM ============
+        let speechRate = 0.9;
+        let isReading = false;
+
+        function getTextFromSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return '';
+            let text = '';
+            const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            while (node = walker.nextNode()) {
+                const parent = node.parentElement;
+                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn')) {
+                    const trimmed = node.textContent.trim();
+                    if (trimmed && trimmed.length > 2) text += trimmed + ' ';
+                }
+            }
+            return text.replace(/\s+/g, ' ').trim();
+        }
+
+        function readSection(sectionId) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const text = getTextFromSection(sectionId);
+                if (!text) return;
+                document.querySelectorAll('section').forEach(s => s.style.borderLeft = '');
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.style.borderLeft = '5px solid #ffd700';
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'id-ID'; utterance.rate = speechRate; utterance.pitch = 1;
+                utterance.onstart = () => {
+                    isReading = true;
+                    document.querySelectorAll('.read-aloud-btn').forEach(btn => {
+                        if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🔊 Membaca...'; }
+                    });
+                };
+                utterance.onend = () => {
+                    isReading = false;
+                    document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🔊 Bacakan'; });
+                    if (section) section.style.borderLeft = '';
+                };
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function stopReading() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); isReading = false;
+                document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🔊 Bacakan'; });
+                document.querySelectorAll('section').forEach(s => s.style.borderLeft = '');
+            }
+        }
+
+        function pauseResume() {
+            if ('speechSynthesis' in window) {
+                if (window.speechSynthesis.paused) { window.speechSynthesis.resume(); document.getElementById('pauseBtn').innerHTML = '⏸️'; }
+                else if (window.speechSynthesis.speaking) { window.speechSynthesis.pause(); document.getElementById('pauseBtn').innerHTML = '▶️'; }
+            }
+        }
+
+        function changeSpeed() {
+            const speeds = [0.7, 0.8, 0.9, 1.0, 1.2, 1.5];
+            const currentIndex = speeds.indexOf(speechRate);
+            speechRate = speeds[(currentIndex + 1) % speeds.length];
+            document.getElementById('speedDisplay').textContent = speechRate + 'x';
+        }
+
         // ============ AUDIO SYSTEM ============
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         let audioCtx = null;
