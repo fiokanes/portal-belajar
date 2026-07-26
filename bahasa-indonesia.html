@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Bahasa Indonesia - Kurikulum Merdeka Kelas 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #4a90d9;
+            --primary-dark: #0d47a1;
+            --secondary: #00bcd4;
+            --accent: #26c6da;
+            --gold: #ffd700;
+            --dark: #0d1b2a;
+            --dark-2: #1b2838;
+            --light: #e3f2fd;
+            --success: #00c853;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ PORTAL NAVBAR ============ */
+        .portal-navbar {
+            background: linear-gradient(135deg, #0a1628 0%, #0d1b2a 100%);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .portal-navbar .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .portal-navbar .nav-brand:hover { color: var(--accent); }
+
+        .portal-navbar .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portal-navbar .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .portal-navbar .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .portal-navbar .nav-link.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1a237e 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .header-icon {
+            font-size: 5em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .kurikulum-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============ NAVIGATION TABS ============ */
+        .nav-tabs-container {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5px 0;
+            scrollbar-width: thin;
+        }
+
+        .nav-tab {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255,255,255,0.97);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(13, 71, 161, 0.15);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--primary-dark);
+            font-size: 2em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+
+        h4 {
+            color: #00838f;
+            font-size: 1.2em;
+            margin: 15px 0 10px 0;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        strong { color: var(--primary-dark); }
+
+        /* ============ MATERI CARDS ============ */
+        .materi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .materi-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-top: 5px solid var(--primary);
+        }
+
+        .materi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .materi-card .card-header {
+            background: linear-gradient(135deg, #0d47a1, #1565c0);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .materi-card .card-header .card-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .materi-card .card-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .materi-card .card-body {
+            padding: 25px;
+        }
+
+        .materi-card .card-body p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .materi-card .card-body .key-points {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .materi-card .card-body .key-points h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+            font-size: 1em;
+        }
+
+        /* ============ EXAMPLE BOX ============ */
+        .example-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid var(--primary);
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+
+        /* ============ FUN FACT ============ */
+        .fun-fact {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid var(--accent);
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .fun-fact h4 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* ============ TEKS BOX ============ */
+        .teks-box {
+            background: white;
+            border: 2px solid #e3f2fd;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .teks-box::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4em;
+            color: var(--primary);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .teks-box .teks-content {
+            font-style: italic;
+            color: #555;
+            padding-left: 20px;
+        }
+
+        .teks-box .teks-label {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* ============ TABLE ============ */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #0d47a1, #1565c0);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-size: 1.05em;
+        }
+
+        .comparison-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #e3f2fd;
+            color: #555;
+        }
+
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #e3f2fd; }
+
+        /* ============ QUIZ ============ */
+        .quiz-container {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 20px;
+            padding: 35px;
+            color: white;
+        }
+
+        .quiz-container h3 {
+            color: var(--gold);
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+
+        .quiz-question {
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 1.05em;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: var(--gold);
+            transform: translateX(10px);
+        }
+
+        .quiz-option.correct {
+            background: linear-gradient(135deg, #00838f, #00acc1);
+            border-color: #00acc1;
+        }
+
+        .quiz-option.wrong {
+            background: linear-gradient(135deg, #c62828, #e53935);
+            border-color: #e53935;
+        }
+
+        .quiz-feedback {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 20px 0;
+            min-height: 50px;
+        }
+
+        .score-display {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .score-item {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .score-item .label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .score-item .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        /* ============ GAME SECTION ============ */
+        .game-container {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 20px;
+            padding: 35px;
+            color: white;
+        }
+
+        .game-container h3 {
+            color: var(--gold);
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+
+        .drag-container { margin: 25px 0; }
+
+        .drag-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .drag-item {
+            background: white;
+            color: var(--dark);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: grab;
+            transition: all 0.3s ease;
+            user-select: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .drag-item:active { cursor: grabbing; transform: scale(1.1); }
+        .drag-item.matched { background: #00acc1; color: white; cursor: default; }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .drop-zone {
+            background: rgba(255,255,255,0.15);
+            border: 3px dashed rgba(255,255,255,0.4);
+            border-radius: 15px;
+            padding: 25px;
+            min-height: 100px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone.drag-over {
+            background: rgba(255,255,255,0.25);
+            border-color: var(--gold);
+        }
+
+        .drop-zone.matched {
+            background: rgba(0, 188, 212, 0.3);
+            border-color: #00acc1;
+            border-style: solid;
+        }
+
+        .drop-zone .zone-icon { font-size: 2.5em; margin-bottom: 10px; }
+
+        .drop-zone .zone-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .drop-zone .zone-desc {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.7);
+            margin-top: 5px;
+        }
+
+        .drop-zone .dropped-item {
+            background: white;
+            color: var(--dark);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* ============ BUTTONS ============ */
+        .game-btn {
+            background: linear-gradient(135deg, #1565c0, #1e88e5);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .game-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(21, 101, 192, 0.4);
+        }
+
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: var(--dark); }
+
+        /* ============ MODAL ============ */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            border: 3px solid var(--gold);
+        }
+
+        .modal h2 {
+            color: var(--gold);
+            border: none;
+            justify-content: center;
+            padding-bottom: 0;
+        }
+
+        .modal .final-score {
+            font-size: 4em;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .hidden { display: none !important; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: linear-gradient(135deg, #0a1628 0%, #0d1b2a 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer p { color: white; margin-bottom: 5px; }
+
+        footer p:last-child {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            section { padding: 20px; }
+            h2 { font-size: 1.5em; }
+            .quiz-options { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTAL NAVBAR -->
+    <nav class="portal-navbar">
+        <a href="index.html" class="nav-brand">
+            <span style="font-size: 1.5em;">📚</span>
+            Portal Belajar Fiona
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+            <a href="belajar-aritmatika.html" class="nav-link">🔢 Aritmatika</a>
+            <a href="sistem-pencernaan.html" class="nav-link">🫁 Pencernaan</a>
+            <a href="geografis-indonesia.html" class="nav-link">🇮🇩 Geografis</a>
+            <a href="english-tenses.html" class="nav-link">🇬🇧 English</a>
+            <a href="aksara-jawa.html" class="nav-link">📜 Aksara Jawa</a>
+            <a href="bahasa-indonesia.html" class="nav-link active">📝 B.Indonesia</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-icon">📝</div>
+        <h1>BAHASA INDONESIA</h1>
+        <p class="subtitle">Kurikulum Merdeka - Kelas 8 SMP</p>
+        <div class="kurikulum-badge">🎓 Kurikulum Merdeka</div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-tab" onclick="scrollToSection('teks-prosedur')">📋 Teks Prosedur</button>
+            <button class="nav-tab" onclick="scrollToSection('teks-eksposisi')">📰 Teks Eksposisi</button>
+            <button class="nav-tab" onclick="scrollToSection('teks-narasi')">📖 Teks Narasi</button>
+            <button class="nav-tab" onclick="scrollToSection('puisi')">🎭 Puisi</button>
+            <button class="nav-tab" onclick="scrollToSection('cerpen')">📚 Cerpen</button>
+            <button class="nav-tab" onclick="scrollToSection('surat-dinas')">✉️ Surat Dinas</button>
+            <button class="nav-tab" onclick="scrollToSection('kalimat-efektif')">✍️ Kalimat Efektif</button>
+            <button class="nav-tab" onclick="scrollToSection('majas')">🎨 Majas</button>
+            <button class="nav-tab" onclick="scrollToSection('game')">🎮 Game</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span>📖</span> Apa yang Dipelajari di Kelas 8?</h2>
+            <p>Di kelas 8 Kurikulum Merdeka, kita akan mempelajari berbagai jenis teks dan keterampilan berbahasa yang sangat penting! 🚀</p>
+
+            <div class="fun-fact">
+                <h4>🎯 Kompetensi yang Dipelajari:</h4>
+                <p>Di kelas 8, fokus utama adalah <strong>membaca, memahami, dan menghasilkan berbagai jenis teks</strong> dengan baik dan benar. Kita juga akan belajar tentang <strong>kalimat efektif</strong> dan <strong>majas</strong> dalam bahasa Indonesia.</p>
+            </div>
+
+            <div class="materi-grid">
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <h3>Teks Prosedur</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Teks yang berisi langkah-langkah atau cara melakukan sesuatu secara berurutan.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Struktur teks prosedur</li>
+                                <li>Ciri-ciri kebahasaan</li>
+                                <li>Menulis teks prosedur</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">📰</div>
+                        <h3>Teks Eksposisi</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Teks yang berisi argumen atau pendapat yang disertai data dan fakta.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Struktur teks eksposisi</li>
+                                <li>Tesis, argumen, reiteration</li>
+                                <li>Menulis teks eksposisi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <h3>Teks Narasi</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Teks yang menceritakan suatu peristiwa secara berurutan waktu.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Teks narasi fiksi & nonfiksi</li>
+                                <li>Unsur-unsur intrinsik</li>
+                                <li>Menulis teks narasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎭</div>
+                        <h3>Puisi</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Karya sastra yang menggunakan bahasa yang indah dan penuh makna.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Jenis-jenis puisi</li>
+                                <li>Diksi dan rima</li>
+                                <li>Menulis puisi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3>Cerpen</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Cerita fiksi yang pendek dan dapat dibaca sekali duduk.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Unsur intrinsik & ekstrinsik</li>
+                                <li>Alur dan penokohan</li>
+                                <li>Menulis cerpen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3>Kalimat Efektif & Majas</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Cara menyusun kalimat yang baik dan penggunaan gaya bahasa.</p>
+                        <div class="key-points">
+                            <h4>Yang Dipelajari:</h4>
+                            <ul>
+                                <li>Kaidah kalimat efektif</li>
+                                <li>Jenis-jenis majas</li>
+                                <li>Menyunting kalimat</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEKS PROSEDUR -->
+        <section id="teks-prosedur">
+            <h2><span>📋</span> Teks Prosedur</h2>
+            <p>Teks prosedur adalah teks yang berisi <strong>langkah-langkah atau cara melakukan sesuatu</strong> secara berurutan dan sistematis.</p>
+
+            <h3>📐 Struktur Teks Prosedur:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Struktur</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td><strong>Judul</strong></td>
+                        <td>Menunjukkan tujuan atau kegiatan yang akan dilakukan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td><strong>Tujuan/Materi</strong></td>
+                        <td>Menjelaskan tujuan dan bahan/alat yang dibutuhkan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td><strong>Langkah-langkah</strong></td>
+                        <td>Urutan kegiatan yang harus dilakukan secara berurutan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔑 Ciri-Ciri Kebahasaan:</h3>
+            <ul>
+                <li>Menggunakan <strong>kata kerja imperatif</strong> (perintah): <em>masukkan, aduk, potong, tuang</em></li>
+                <li>Menggunakan <strong>kata penghubung temporal</strong>: <em>kemudian, selanjutnya, setelah itu</em></li>
+                <li>Menggunakan <strong>kalimat berita dan kalimat perintah</strong></li>
+                <li>Menggunakan <strong>teknis ukuran</strong>: <em>2 sendok makan, 500 ml, 10 menit</em></li>
+            </ul>
+
+            <div class="example-box">
+                <h4>✨ Contoh Teks Prosedur:</h4>
+                <div class="teks-box">
+                    <span class="teks-label">Judul</span>
+                    <div class="teks-content"><strong>Cara Membuat Teh Manis Hangat</strong></div>
+                </div>
+                <div class="teks-box">
+                    <span class="teks-label">Tujuan</span>
+                    <div class="teks-content">Untuk membuat minuman teh manis hangat yang segar.</div>
+                </div>
+                <div class="teks-box">
+                    <span class="teks-label">Langkah-langkah</span>
+                    <div class="teks-content">
+                        <ol>
+                            <li><strong>Pertama</strong>, siapkan bahan: teh celup, gula, dan air panas.</li>
+                            <li><strong>Kedua</strong>, masukkan teh celup ke dalam gelas.</li>
+                            <li><strong>Ketiga</strong>, tuangkan air panas ke dalam gelas.</li>
+                            <li><strong>Keempat</strong>, tambahkan gula secukupnya dan aduk rata.</li>
+                            <li><strong>Terakhir</strong>, teh manis hangat siap disajikan.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEKS EKSPOSISI -->
+        <section id="teks-eksposisi">
+            <h2><span>📰</span> Teks Eksposisi</h2>
+            <p>Teks eksposisi adalah teks yang berisi <strong>informasi, pengetahuan, atau pendapat</strong> yang disertai dengan data dan fakta.</p>
+
+            <h3>📐 Struktur Teks Eksposisi:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Struktur</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td><strong>Tesis (Pernyataan Pendapat)</strong></td>
+                        <td>Pendapat atau pandangan penulis tentang suatu isu</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td><strong>Argumentasi</strong></td>
+                        <td>Alasan-alasan yang mendukung tesis, disertai data/fakta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td><strong>Reiteration (Penegasan Ulang)</strong></td>
+                        <td>Kesimpulan atau penguatan kembali tesis</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔑 Ciri-Ciri Kebahasaan:</h3>
+            <ul>
+                <li>Menggunakan <strong>fakta dan data</strong> sebagai pendukung argumen</li>
+                <li>Bersifat <strong>objektif dan informatif</strong></li>
+                <li>Menggunakan <strong>kata hubung kontraargumentatif</strong>: <em>namun, akan tetapi, meskipun</em></li>
+                <li>Menggunakan <strong>kata teknis/istilah</strong> sesuai bidang</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>✨ Contoh Teks Eksposisi Singkat:</h4>
+                <div class="teks-box">
+                    <span class="teks-label">Tesis</span>
+                    <div class="teks-content">Sampah plastik menjadi masalah serius di Indonesia.</div>
+                </div>
+                <div class="teks-box">
+                    <span class="teks-label">Argumentasi</span>
+                    <div class="teks-content">Berdasarkan data Kementerian Lingkungan Hidup, Indonesia menghasilkan 6,8 juta ton sampah plastik per tahun. <strong>Namun</strong>, hanya 10% yang didaur ulang. Plastik membutuhkan waktu 100-500 tahun untuk terurai.</div>
+                </div>
+                <div class="teks-box">
+                    <span class="teks-label">Reiteration</span>
+                    <div class="teks-content">Oleh karena itu, diperlukan kesadaran masyarakat untuk mengurangi penggunaan plastik sekali pakai.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEKS NARASI -->
+        <section id="teks-narasi">
+            <h2><span>📖</span> Teks Narasi</h2>
+            <p>Teks narasi adalah teks yang menceritakan <strong>suatu peristiwa atau kejadian</strong> secara berurutan waktu (kronologis).</p>
+
+            <h3>🎭 Jenis Teks Narasi:</h3>
+            <div class="materi-grid">
+                <div class="materi-card">
+                    <div class="card-header" style="background: linear-gradient(135deg, #1565c0, #1e88e5);">
+                        <div class="card-icon">📚</div>
+                        <h3>Narasi Fiksi</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Cerita yang <strong>diangkat dari imajinasi</strong> pengarang, tidak benar-benar terjadi.</p>
+                        <p><strong>Contoh:</strong> Novel, cerpen, dongeng, fabel</p>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header" style="background: linear-gradient(135deg, #0277bd, #0288d1);">
+                        <div class="card-icon">📰</div>
+                        <h3>Narasi Nonfiksi</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Cerita yang <strong>berdasarkan kejadian nyata</strong> atau fakta.</p>
+                        <p><strong>Contoh:</strong> Biografi, autobiografi, laporan perjalanan</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🧩 Unsur-Unsur Intrinsik:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Unsur</th>
+                        <th>Penjelasan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tema</strong></td>
+                        <td>Pokok cerita atau gagasan utama</td>
+                        <td>Persahabatan, perjuangan, cinta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alur</strong></td>
+                        <td>Rangkaian peristiwa dalam cerita</td>
+                        <td>Maju, mundur, campuran</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penokohan</strong></td>
+                        <td>Pelaku dalam cerita</td>
+                        <td>Protagonis, antagonis, tritagonis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Latar</strong></td>
+                        <td>Tempat, waktu, suasana cerita</td>
+                        <td>Di sekolah, pagi hari, tegang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sudut Pandang</strong></td>
+                        <td>Posisi pengarang dalam cerita</td>
+                        <td>Orang pertama, orang ketiga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amanat</strong></td>
+                        <td>Pesan moral dalam cerita</td>
+                        <td>Jangan menyerah, hormati orang tua</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PUISI -->
+        <section id="puisi">
+            <h2><span>🎭</span> Puisi</h2>
+            <p>Puisi adalah karya sastra yang menggunakan <strong>bahasa yang indah, irama, dan rima</strong> untuk mengungkapkan perasaan atau pikiran.</p>
+
+            <h3>📝 Jenis-Jenis Puisi:</h3>
+            <div class="materi-grid">
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">📜</div>
+                        <h3>Puisi Lama</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Puisi yang masih terikat aturan seperti jumlah baris, rima, dan irama.</p>
+                        <p><strong>Contoh:</strong> Pantun, syair, gurindam, mantra</p>
+                    </div>
+                </div>
+
+                <div class="materi-card">
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3>Puisi Baru</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Puisi yang lebih bebas dalam struktur dan bentuk.</p>
+                        <p><strong>Contoh:</strong> Balada, himne, ode, romansa, elegi</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🎵 Unsur-Unsur Puisi:</h3>
+            <ul>
+                <li><strong>Diksi:</strong> Pilihan kata yang tepat dan bermakna</li>
+                <li><strong>Imaji:</strong> Gambaran yang membangkitkan kesan indra (penglihatan, pendengaran, perabaan)</li>
+                <li><strong>Rima:</strong> Persamaan bunyi di akhir baris</li>
+                <li><strong>Irama:</strong> Suatu alunan yang terjadi karena pengulangan dan pergantian tekanan</li>
+                <li><strong>Tiruan Bunyi (Onomatope):</strong> Kata yang menirukan bunyi</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>✨ Contoh Pantun:</h4>
+                <div class="teks-box">
+                    <div class="teks-content">
+                        <em>Buah rambutan di atas peti<br>
+                        Manis rasanya enak dimakan<br>
+                        Rajinlah belajar sejak kecil<br>
+                        Agar masa depan cemerlang</em>
+                    </div>
+                </div>
+                <p><strong>Analisis:</strong> Pantun terdiri dari 4 baris, bersajak a-b-a-b, baris 1-2 sampiran, baris 3-4 isi.</p>
+            </div>
+        </section>
+
+        <!-- CERPEN -->
+        <section id="cerpen">
+            <h2><span>📚</span> Cerita Pendek (Cerpen)</h2>
+            <p>Cerpen adalah karya sastra berbentuk prosa yang <strong>pendek</strong> dan dapat dibaca sekali duduk.</p>
+
+            <h3>📏 Ciri-Ciri Cerpen:</h3>
+            <ul>
+                <li><strong>Pendek:</strong> Biasanya 5-10 halaman atau 500-10.000 kata</li>
+                        <li><strong>Sederhana:</strong> Hanya memiliki satu alur cerita</li>
+                        <li><strong>Tokoh sedikit:</strong> Biasanya 2-4 tokoh</li>
+                        <li><strong>Langsung pada inti:</strong> Tidak bertele-tele</li>
+            </ul>
+
+            <h3>🧩 Unsur-Unsur Cerpen:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Unsur Intrinsik</th>
+                        <th>Unsur Ekstrinsik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tema</td>
+                        <td>Latar belakang pengarang</td>
+                    </tr>
+                    <tr>
+                        <td>Alur (plot)</td>
+                        <td>Nilai-nilai yang terkandung</td>
+                    </tr>
+                    <tr>
+                        <td>Penokohan</td>
+                        <td>Kondisi sosial budaya</td>
+                    </tr>
+                    <tr>
+                        <td>Latar (setting)</td>
+                        <td>Kondisi ekonomi</td>
+                    </tr>
+                    <tr>
+                        <td>Sudut pandang</td>
+                        <td>Kondisi politik</td>
+                    </tr>
+                    <tr>
+                        <td>Amanat</td>
+                        <td>Aspek psikologis</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📐 Alur Cerita (Plot):</h3>
+            <ol>
+                <li><strong>Perkenalan (Orientasi):</strong> Pengenalan tokoh, latar, dan suasana</li>
+                <li><strong>Perumitan (Komplikasi):</strong> Munculnya konflik atau masalah</li>
+                <li><strong>Puncak Konflik (Klimaks):</strong> Ketegangan mencapai titik tertinggi</li>
+                <li><strong>Peleraian (Resolusi):</strong> Penyelesaian masalah</li>
+                <li><strong>Koda:</strong> Akhir cerita dan pesan moral</li>
+            </ol>
+        </section>
+
+        <!-- SURAT DINAS -->
+        <section id="surat-dinas">
+            <h2><span>✉️</span> Surat Dinas</h2>
+            <p>Surat dinas adalah surat resmi yang digunakan dalam <strong>keperluan instansi, organisasi, atau lembaga</strong>.</p>
+
+            <h3>📐 Struktur Surat Dinas:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Bagian</th>
+                        <th>Isi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Kop Surat</td>
+                        <td>Nama instansi, alamat, logo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Nomor Surat</td>
+                        <td>Nomor registrasi surat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Lampiran</td>
+                        <td>Jumlah lampiran (jika ada)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Perihal</td>
+                        <td>Hal yang dibahas dalam surat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Tempat & Tanggal</td>
+                        <td>Lokasi dan waktu pembuatan surat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>Alamat Tujuan</td>
+                        <td>Nama dan alamat penerima</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7</strong></td>
+                        <td>Salut Pembuka</td>
+                        <td>Salam hormat (Yth., Kepada)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>8</strong></td>
+                        <td>Isi Surat</td>
+                        <td>Paragraf pembuka, isi, penutup</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9</strong></td>
+                        <td>Salut Penutup</td>
+                        <td>Salam penutup (Hormat kami)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10</strong></td>
+                        <td>Tanda Tangan & Nama Terang</td>
+                        <td>Tanda tangan pengirim dan nama jelas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>11</strong></td>
+                        <td>Tembusan</td>
+                        <td>Pihak lain yang menerima tembusan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔑 Ciri-Ciri Surat Dinas:</h3>
+            <ul>
+                <li>Menggunakan <strong>bahasa resmi dan baku</strong></li>
+                <li>Ada <strong>kop surat</strong> instansi</li>
+                <li>Ada <strong>nomor surat</strong></li>
+                <li>Menggunakan <strong>salam pembuka dan penutup</strong> yang resmi</li>
+                <li>Ada <strong>tanda tangan dan cap</strong> resmi</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>✨ Contoh Surat Dinas:</h4>
+                <div class="teks-box">
+                    <div class="teks-content">
+                        <p style="text-align: center;"><strong>SMP NEGERI 1 JAKARTA</strong><br>
+                        Jl. Pendidikan No. 123, Jakarta<br>
+                        Telp: (021) 1234567</p>
+                        <hr>
+                        <p>Nomor: 001/SMP-1/2024<br>
+                        Perihal: Undangan Rapat</p>
+                        <p>Kepada Yth.<br>
+                        Orang Tua/Wali Murid Kelas 8<br>
+                        di Tempat</p>
+                        <p>Dengan hormat,<br>
+                        Kami mengundang Bapak/Ibu untuk hadir dalam rapat orang tua murid pada:</p>
+                        <p>Hari/Tanggal: Sabtu, 15 Januari 2024<br>
+                        Waktu: 08.00 - 11.00 WIB<br>
+                        Tempat: Aula SMP Negeri 1 Jakarta</p>
+                        <p>Demikian undangan ini kami sampaikan. Atas perhatiannya, kami ucapkan terima kasih.</p>
+                        <p style="text-align: right;">Hormat kami,<br><br><br>
+                        <strong>Ani Sulastri, S.Pd.</strong><br>
+                        Kepala Sekolah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KALIMAT EFEKTIF -->
+        <section id="kalimat-efektif">
+            <h2><span>✍️</span> Kalimat Efektif</h2>
+            <p>Kalimat efektif adalah kalimat yang <strong>jelas, padat, dan mudah dipahami</strong> oleh pembaca atau pendengar.</p>
+
+            <h3>📐 Syarat Kalimat Efektif:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Syarat</th>
+                        <th>Contoh Salah</th>
+                        <th>Contoh Benar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Kesepadanan Struktur</td>
+                        <td><em>Dia pergi <strong>dari</strong> Jakarta <strong>ke</strong> Bandung naik kereta</em></td>
+                        <td><em>Dia pergi <strong>ke</strong> Bandung <strong>dari</strong> Jakarta naik kereta</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Kecermatan Pilihan Kata</td>
+                        <td><em>Acara tersebut <strong>berlangsung</strong> meriah</em></td>
+                        <td><em>Acara tersebut <strong>berjalan</strong> meriah</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Kehematan Kata</td>
+                        <td><em><strong>Pada saat</strong> hujan turun...</em></td>
+                        <td><em><strong>Saat</strong> hujan turun...</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Kelogisan Hubungan</td>
+                        <td><em><strong>Dengan demikian</strong>, ia menangis</em></td>
+                        <td><em><strong>Oleh karena itu</strong>, ia menangis</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Kepaduan Gagasan</td>
+                        <td><em>Ia pandai. Ia rajin. Ia tampan.</em></td>
+                        <td><em>Ia pandai, rajin, dan tampan.</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>Paralelisme</td>
+                        <td><em>Hobi saya <strong>membaca, berenang,</strong> dan <strong>menulis</strong></em></td>
+                        <td><em>Hobi saya <strong>membaca, berenang,</strong> dan <strong>menulis</strong></em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="fun-fact">
+                <h4>💡 Tips Menulis Kalimat Efektif:</h4>
+                <ul>
+                    <li>Hindari <strong>pleonasme</strong> (pengulangan makna): <em>naik ke atas</em> (salah) → <em>naik</em> (benar)</li>
+                    <li>Hindari <strong>ambiguitas</strong> (makna ganda)</li>
+                    <li>Gunakan <strong>kata baku</strong> dan <strong>kalimat sederhana</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MAJAS -->
+        <section id="majas">
+            <h2><span>🎨</span> Majas (Gaya Bahasa)</h2>
+            <p>Majas adalah <strong>penggunaan bahasa secara kiasan</strong> untuk memberikan kesan tertentu dan membuat tulisan lebih hidup.</p>
+
+            <h3>🎭 Jenis-Jenis Majas:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Majas</th>
+                        <th>Penjelasan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Majas Simile (Perumpamaan)</strong></td>
+                        <td>Perbandingan eksplisit menggunakan kata <strong>bagai, seperti, laksana</strong></td>
+                        <td><em>Wajahnya cantik <strong>bagai</strong> bintang di malam hari.</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Metafora</strong></td>
+                        <td>Perbandingan implisit tanpa kata pembanding</td>
+                        <td><em>Dia adalah <strong>harimau</strong> di lapangan.</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Personifikasi</strong></td>
+                        <td>Memberikan sifat manusia pada benda/makhluk lain</td>
+                        <td><em><strong>Angin berbisik</strong> di telingaku.</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Hiperbola</strong></td>
+                        <td>Melebih-lebihkan sesuatu</td>
+                        <td><em>Suara itu <strong>menggelegar</strong> membelah langit.</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Metonimia</strong></td>
+                        <td>Menyebut nama merek untuk barang sejenis</td>
+                        <td><em>Minum <strong>Aqua</strong> (air mineral)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Eufemisme</strong></td>
+                        <td>Halus untuk mengganti kata kasar</td>
+                        <td><em>Dia sudah <strong>tiada</strong> (meninggal)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Sinekdoke</strong></td>
+                        <td>Menyebut sebagian untuk keseluruhan</td>
+                        <td><em><strong>Kepala</strong> desa datang (perwakilan desa)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Majas Alegori</strong></td>
+                        <td>Perbandingan secara utuh dengan cerita</td>
+                        <td><em>Hidup ini seperti <strong>roda yang berputar</strong>.</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="fun-fact">
+                <h4>💡 Manfaat Majas dalam Tulisan:</h4>
+                <ul>
+                    <li>Membuat tulisan lebih <strong>hidup dan menarik</strong></li>
+                    <li>Membantu pembaca <strong>membayangkan</strong> dengan lebih jelas</li>
+                    <li>Menambah <strong>keindahan</strong> bahasa</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- GAME SECTION -->
+        <section id="game">
+            <h2><span>🎮</span> Game: Cocokkan Jenis Teks!</h2>
+            <p>Seret jenis teks ke contoh yang sesuai! 🎯</p>
+
+            <div class="game-container">
+                <h3>🎯 Drag & Drop Jenis Teks</h3>
+                <p style="text-align: center; color: rgba(255,255,255,0.8);">Seret nama teks ke contohnya!</p>
+
+                <div class="drag-container">
+                    <div class="drag-items" id="dragItems">
+                        <div class="drag-item" draggable="true" data-type="prosedur" id="drag-prosedur">📋 Teks Prosedur</div>
+                        <div class="drag-item" draggable="true" data-type="eksposisi" id="drag-eksposisi">📰 Teks Eksposisi</div>
+                        <div class="drag-item" draggable="true" data-type="narasi" id="drag-narasi">📖 Teks Narasi</div>
+                        <div class="drag-item" draggable="true" data-type="puisi" id="drag-puisi">🎭 Puisi</div>
+                        <div class="drag-item" draggable="true" data-type="cerpen" id="drag-cerpen">📚 Cerpen</div>
+                        <div class="drag-item" draggable="true" data-type="surat" id="drag-surat">✉️ Surat Dinas</div>
+                    </div>
+
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-zone="prosedur" id="zone-prosedur">
+                            <div class="zone-icon">🍜</div>
+                            <div class="zone-title">Cara Mie Instan</div>
+                            <div class="zone-desc">Langkah 1, 2, 3...</div>
+                        </div>
+                        <div class="drop-zone" data-zone="eksposisi" id="zone-eksposisi">
+                            <div class="zone-icon">📊</div>
+                            <div class="zone-title">Dampak Sampah</div>
+                            <div class="zone-desc">Tesis + Argumen + Data</div>
+                        </div>
+                        <div class="drop-zone" data-zone="narasi" id="zone-narasi">
+                            <div class="zone-icon">📚</div>
+                            <div class="zone-title">Kisah Perjuangan</div>
+                            <div class="zone-desc">Cerita berurutan waktu</div>
+                        </div>
+                        <div class="drop-zone" data-zone="puisi" id="zone-puisi">
+                            <div class="zone-icon">🌸</div>
+                            <div class="zone-title">Pantun & Syair</div>
+                            <div class="zone-desc">Bersajak dan berirama</div>
+                        </div>
+                        <div class="drop-zone" data-zone="cerpen" id="zone-cerpen">
+                            <div class="zone-icon">📖</div>
+                            <div class="zone-title">Cerita Fiksi Pendek</div>
+                            <div class="zone-desc">Sekali duduk selesai</div>
+                        </div>
+                        <div class="drop-zone" data-zone="surat" id="zone-surat">
+                            <div class="zone-icon">🏢</div>
+                            <div class="zone-title">Undangan Rapat</div>
+                            <div class="zone-desc">Ada kop & nomor surat</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 25px;">
+                        <p id="dragScore" style="font-size: 1.5em; color: #ffd700;"></p>
+                        <button class="game-btn" onclick="resetDragGame()">🔄 Main Lagi</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Bahasa Indonesia</h2>
+            <p>Uji pemahamanmu tentang materi Bahasa Indonesia! 💪</p>
+
+            <div class="quiz-container">
+                <h3>🧠 Kuis Bahasa Indonesia Kelas 8</h3>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="quizScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Soal</div>
+                        <div class="value" id="quizCount">0/10</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Benar</div>
+                        <div class="value" id="quizCorrect">0</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question" id="quizQuestion"></div>
+                
+                <div class="quiz-options" id="quizOptions"></div>
+                
+                <div class="quiz-feedback" id="quizFeedback"></div>
+
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📚 Materi Bahasa Indonesia - Kurikulum Merdeka Kelas 8</p>
+        <p>📝 Belajar Bahasa, Belajar Berkarya! ✨</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;">
+                <button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ NAVIGATION ============
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // ============ DRAG AND DROP GAME ============
+        let dragScore = 0;
+
+        document.querySelectorAll('.drag-item').forEach(item => {
+            item.addEventListener('dragstart', function(e) {
+                this.classList.add('dragging');
+                e.dataTransfer.setData('text/plain', this.dataset.type);
+            });
+            item.addEventListener('dragend', function() {
+                this.classList.remove('dragging');
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            });
+            zone.addEventListener('dragleave', function() {
+                this.classList.remove('drag-over');
+            });
+            zone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                const droppedType = e.dataTransfer.getData('text/plain');
+                const expectedZone = this.dataset.zone;
+                
+                if (droppedType === expectedZone) {
+                    this.classList.add('matched');
+                    this.innerHTML += `<div class="dropped-item">✅ ${document.getElementById('drag-' + droppedType).textContent}</div>`;
+                    document.getElementById('drag-' + droppedType).style.display = 'none';
+                    dragScore++;
+                    document.getElementById('dragScore').textContent = `Skor: ${dragScore}/6`;
+                    if (dragScore === 6) {
+                        document.getElementById('dragScore').innerHTML = '🎉 <strong>SEMPURNA! Kamu Jago!</strong> 🎉';
+                    }
+                } else {
+                    this.style.background = 'rgba(198, 40, 40, 0.3)';
+                    setTimeout(() => this.style.background = '', 1000);
+                    alert('❌ Coba lagi!');
+                }
+            });
+        });
+
+        function resetDragGame() {
+            dragScore = 0;
+            document.getElementById('dragScore').textContent = '';
+            document.querySelectorAll('.drag-item').forEach(item => item.style.display = '');
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                zone.classList.remove('matched');
+                const dropped = zone.querySelector('.dropped-item');
+                if (dropped) dropped.remove();
+            });
+        }
+
+        // ============ QUIZ ============
+        const quizQuestions = [
+            { question: 'Teks yang berisi langkah-langkah secara berurutan disebut...', options: ['Teks Eksposisi', 'Teks Prosedur', 'Teks Narasi', 'Cerpen'], correct: 1 },
+            { question: 'Struktur teks eksposisi yang berisi pendapat penulis adalah...', options: ['Argumentasi', 'Reiteration', 'Tesis', 'Koda'], correct: 2 },
+            { question: 'Yang BUKAN termasuk unsur intrinsik cerpen adalah...', options: ['Tema', 'Alur', 'Kondisi Sosial', 'Penokohan'], correct: 2 },
+            { question: 'Penggunaan kata "bagai" dalam kalimat termasuk majas...', options: ['Metafora', 'Hiperbola', 'Simile', 'Personifikasi'], correct: 2 },
+            { question: 'Ciri surat dinas yang benar adalah...', options: ['Bahasa informal', 'Ada kop surat', 'Tidak ada nomor', 'Tanpa tanda tangan'], correct: 1 },
+            { question: 'Puisi yang terdiri dari 4 baris dan bersajak a-b-a-b adalah...', options: ['Syair', 'Gurindam', 'Pantun', 'Mantra'], correct: 2 },
+            { question: 'Kalimat efektif harus memiliki...', options: ['Banyak kata', 'Kata baku', 'Bahasa gaul', 'Pengulangan kata'], correct: 1 },
+            { question: 'Majas "Angin berbisik" termasuk majas...', options: ['Simile', 'Metafora', 'Personifikasi', 'Hiperbola'], correct: 2 },
+            { question: 'Paragraf pembuka surat dinas disebut...', options: ['Isi surat', 'Salut pembuka', 'Kop surat', 'Lampiran'], correct: 1 },
+            { question: 'Cerpen memiliki ciri...', options: ['Panjang', 'Banyak alur', 'Sederhana dan pendek', 'Banyak tokoh'], correct: 2 }
+        ];
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizCorrectCount = 0;
+        let quizAnswered = false;
+
+        function startQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            quizCorrectCount = 0;
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCorrect').textContent = '0';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; }
+            quizAnswered = false;
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => 
+                `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`
+            ).join('');
+        }
+
+        function checkQuizAnswer(selected) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+            const q = quizQuestions[currentQuizIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === q.correct) opt.classList.add('correct');
+                else if (i === selected) opt.classList.add('wrong');
+            });
+            if (selected === q.correct) {
+                quizScore += 10;
+                quizCorrectCount++;
+                document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>';
+            } else {
+                document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`;
+            }
+            document.getElementById('quizScore').textContent = quizScore;
+            document.getElementById('quizCorrect').textContent = quizCorrectCount;
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            showQuizQuestion();
+        }
+
+        function endQuiz() {
+            document.getElementById('modalScore').textContent = quizScore;
+            let message = quizScore === 100 ? '🏆 SEMPURNA! Kamu ahli Bahasa Indonesia!' :
+                          quizScore >= 70 ? '👏 Bagus! Pemahamanmu sudah baik!' :
+                          quizScore >= 50 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('quizModal').classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizModal').classList.add('hidden');
+            startQuiz();
+        }
+
+        // ============ INTERSECTION OBSERVER ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(40px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+
+        setTimeout(() => {
+            document.getElementById('pengertian').style.opacity = '1';
+            document.getElementById('pengertian').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
+</body>
+</html>
