@@ -1033,7 +1033,9 @@
         .bio-symbol {
             position: absolute;
             animation: floatBio 25s linear infinite;
-            opacity: 0.05;
+            opacity: 0.12;
+            filter: blur(0.3px);
+            text-shadow: 0 0 25px rgba(46, 125, 50, 0.3);
         }
 
         @keyframes floatBio {
@@ -2253,19 +2255,21 @@
             document.getElementById('pengertian').style.transform = 'translateY(0)';
         }, 100);
 
-        // Create floating bio symbols
+        // Create floating bio symbols - LEBIH BESAR & RAMAI
         function createBioBg() {
             const container = document.getElementById('bioBg');
             const symbols = [
-                {text: '🫀', size: '4em'}, {text: '🫁', size: '5em'}, {text: '🧬', size: '6em'},
-                {text: '🩸', size: '3em'}, {text: '🦷', size: '4em'}, {text: '👁️', size: '3.5em'},
-                {text: '🧠', size: '5em'}, {text: '💪', size: '4em'}, {text: '🦴', size: '3em'},
-                {text: '🩺', size: '4em'}, {text: '💉', size: '3em'}, {text: '🔬', size: '4.5em'},
-                {text: '🧪', size: '3.5em'}, {text: '❤️', size: '4em'}, {text: '💚', size: '3em'},
-                {text: '🍎', size: '3.5em'}, {text: '🥖', size: '3em'}, {text: '🥩', size: '3em'},
-                {text: '🥛', size: '3.5em'}, {text: '💧', size: '3em'}
+                {text: '🫀', size: '7em'}, {text: '🫁', size: '8em'}, {text: '🧬', size: '10em'},
+                {text: '🩸', size: '5em'}, {text: '🦷', size: '6em'}, {text: '👁️', size: '5.5em'},
+                {text: '🧠', size: '9em'}, {text: '💪', size: '7em'}, {text: '🦴', size: '5em'},
+                {text: '🩺', size: '6em'}, {text: '💉', size: '5em'}, {text: '🔬', size: '7em'},
+                {text: '🧪', size: '6em'}, {text: '❤️', size: '7em'}, {text: '💚', size: '5em'},
+                {text: '🍎', size: '6em'}, {text: '🥖', size: '5em'}, {text: '🥩', size: '5em'},
+                {text: '🥛', size: '6em'}, {text: '💧', size: '5em'},
+                {text: '🧫', size: '6em'}, {text: '🏥', size: '7em'}, {text: '⚕️', size: '6em'},
+                {text: '🫁', size: '8em'}, {text: '🧬', size: '9em'}, {text: '🩸', size: '6em'}
             ];
-            for (let i = 0; i < 35; i++) {
+            for (let i = 0; i < 50; i++) {
                 const s = symbols[Math.floor(Math.random() * symbols.length)];
                 const symbol = document.createElement('div');
                 symbol.className = 'bio-symbol';
