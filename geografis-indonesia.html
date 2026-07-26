@@ -1116,7 +1116,9 @@
         .geo-symbol {
             position: absolute;
             animation: floatGeo 25s linear infinite;
-            opacity: 0.06;
+            opacity: 0.12;
+            filter: blur(0.3px);
+            text-shadow: 0 0 25px rgba(198, 40, 40, 0.3);
         }
 
         @keyframes floatGeo {
@@ -2540,19 +2542,21 @@
             document.getElementById('letak').style.transform = 'translateY(0)';
         }, 100);
 
-        // Create floating geo symbols
+        // Create floating geo symbols - LEBIH BESAR & RAMAI
         function createGeoBg() {
             const container = document.getElementById('geoBg');
             const symbols = [
-                {text: '🇮🇩', size: '5em'}, {text: '🗺️', size: '4em'}, {text: '🏔️', size: '4.5em'},
-                {text: '🌋', size: '5em'}, {text: '🌊', size: '4em'}, {text: '🏝️', size: '4.5em'},
-                {text: '🌴', size: '3.5em'}, {text: '🦅', size: '5em'}, {text: '🧭', size: '3em'},
-                {text: '🌍', size: '6em'}, {text: '🌏', size: '5em'}, {text: '☀️', size: '4em'},
-                {text: '🌧️', size: '3.5em'}, {text: '🌿', size: '3em'}, {text: '🐘', size: '4em'},
-                {text: '🦜', size: '3.5em'}, {text: '🐟', size: '3em'}, {text: '⛵', size: '3.5em'},
-                {text: '🏠', size: '3em'}, {text: '🚢', size: '4em'}
+                {text: '🇮🇩', size: '9em'}, {text: '🗺️', size: '7em'}, {text: '🏔️', size: '8em'},
+                {text: '🌋', size: '9em'}, {text: '🌊', size: '7em'}, {text: '🏝️', size: '8em'},
+                {text: '🌴', size: '6em'}, {text: '🦅', size: '9em'}, {text: '🧭', size: '5em'},
+                {text: '🌍', size: '11em'}, {text: '🌏', size: '10em'}, {text: '☀️', size: '7em'},
+                {text: '🌧️', size: '6em'}, {text: '🌿', size: '5em'}, {text: '🐘', size: '7em'},
+                {text: '🦜', size: '6em'}, {text: '🐟', size: '5em'}, {text: '⛵', size: '6em'},
+                {text: '🏠', size: '5em'}, {text: '🚢', size: '7em'},
+                {text: '🌺', size: '5em'}, {text: '🦎', size: '6em'}, {text: '🐃', size: '6em'},
+                {text: '🌾', size: '5em'}, {text: '🏖️', size: '7em'}, {text: '🌄', size: '8em'}
             ];
-            for (let i = 0; i < 35; i++) {
+            for (let i = 0; i < 50; i++) {
                 const s = symbols[Math.floor(Math.random() * symbols.length)];
                 const symbol = document.createElement('div');
                 symbol.className = 'geo-symbol';

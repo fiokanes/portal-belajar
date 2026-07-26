@@ -818,9 +818,11 @@
         .english-word {
             position: absolute;
             animation: floatEnglish 25s linear infinite;
-            opacity: 0.06;
+            opacity: 0.12;
             font-weight: 900;
             font-style: italic;
+            text-shadow: 0 0 25px rgba(21, 101, 192, 0.3);
+            filter: blur(0.3px);
         }
         @keyframes floatEnglish {
             0% { transform: translateY(100vh) rotate(-10deg); opacity: 0; }
@@ -1897,20 +1899,22 @@
             document.getElementById('pengertian').style.transform = 'translateY(0)';
         }, 100);
 
-        // Create floating English words
+        // Create floating English words - LEBIH BESAR & RAMAI
         function createEnglishBg() {
             const container = document.getElementById('englishBg');
             const words = [
-                {text: 'Hello', size: '4em'}, {text: 'Good', size: '3.5em'}, {text: 'Morning', size: '5em'},
-                {text: 'Beautiful', size: '4em'}, {text: 'Learning', size: '4.5em'}, {text: 'Happy', size: '3em'},
-                {text: 'Future', size: '5em'}, {text: 'Dream', size: '4em'}, {text: 'Study', size: '3.5em'},
-                {text: 'School', size: '4em'}, {text: 'Friend', size: '3.5em'}, {text: 'Success', size: '5em'},
-                {text: 'English', size: '4.5em'}, {text: 'Simple', size: '3em'}, {text: 'Present', size: '4em'},
-                {text: 'Past', size: '3.5em'}, {text: 'Future', size: '5em'}, {text: 'Tense', size: '4em'},
-                {text: 'Play', size: '3em'}, {text: 'Read', size: '3.5em'}, {text: 'Write', size: '4em'},
-                {text: 'Speak', size: '4.5em'}, {text: 'Listen', size: '3em'}, {text: 'Love', size: '5em'}
+                {text: 'Hello', size: '7em'}, {text: 'Good', size: '6em'}, {text: 'Morning', size: '8em'},
+                {text: 'Beautiful', size: '7em'}, {text: 'Learning', size: '8em'}, {text: 'Happy', size: '5em'},
+                {text: 'Future', size: '9em'}, {text: 'Dream', size: '7em'}, {text: 'Study', size: '6em'},
+                {text: 'School', size: '7em'}, {text: 'Friend', size: '6em'}, {text: 'Success', size: '9em'},
+                {text: 'English', size: '8em'}, {text: 'Simple', size: '5em'}, {text: 'Present', size: '7em'},
+                {text: 'Past', size: '6em'}, {text: 'Future', size: '9em'}, {text: 'Tense', size: '7em'},
+                {text: 'Play', size: '5em'}, {text: 'Read', size: '6em'}, {text: 'Write', size: '7em'},
+                {text: 'Speak', size: '8em'}, {text: 'Listen', size: '5em'}, {text: 'Love', size: '9em'},
+                {text: 'Grammar', size: '7em'}, {text: 'Vocabulary', size: '8em'}, {text: 'Sentence', size: '6em'},
+                {text: 'Word', size: '5em'}, {text: 'Language', size: '8em'}, {text: 'Knowledge', size: '7em'}
             ];
-            for (let i = 0; i < 35; i++) {
+            for (let i = 0; i < 50; i++) {
                 const w = words[Math.floor(Math.random() * words.length)];
                 const word = document.createElement('div');
                 word.className = 'english-word';
