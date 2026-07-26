@@ -733,21 +733,22 @@
         /* ============ READ ALOUD BUTTON ============ */
         .read-aloud-btn {
             background: linear-gradient(135deg, #6d4c41, #8d6e63);
-            color: white; border: none; padding: 10px 20px;
-            border-radius: 25px; cursor: pointer; font-size: 0.95em;
+            color: white; border: none; padding: 8px 16px;
+            border-radius: 20px; cursor: pointer; font-size: 0.85em;
             font-weight: bold; transition: all 0.3s ease;
-            display: inline-flex; align-items: center; gap: 8px;
-            margin: 10px 0;
+            display: inline-flex; align-items: center; gap: 6px;
+            margin: 10px 0; letter-spacing: 0.5px;
         }
 
         .read-aloud-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(109, 76, 65, 0.4);
+            box-shadow: 0 3px 10px rgba(109, 76, 65, 0.3);
+            background: linear-gradient(135deg, #8d6e63, #a1887f);
         }
 
         .read-aloud-btn.reading {
-            background: linear-gradient(135deg, #c62828, #e53935);
-            animation: pulse 1s infinite;
+            background: linear-gradient(135deg, #ff8f00, #ffa000);
+            animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
@@ -837,7 +838,7 @@
     <main>
         <!-- PENGERTIAN -->
         <section id="pengertian">
-            <h2><span>📖</span> Apa Itu Aksara Jawa? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🔊 Bacakan</button></h2>
+            <h2><span>📖</span> Apa Itu Aksara Jawa? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🎧 Bacain dong</button></h2>
             <p>Halo guys! 👋 Kalian tau gak sih, Indonesia punya sistem tulisan tradisional yang sangat keren? Namanya <strong>Aksara Jawa</strong> (Hanacaraka)!</p>
             
             <div class="fun-fact">
@@ -880,7 +881,7 @@
 
         <!-- AKSARA NGLEGENA -->
         <section id="nglegena">
-            <h2><span>✍️</span> Aksara Nglegena (20 Huruf Dasar) <button class="read-aloud-btn" data-section="nglegena" onclick="readSection('nglegena')">🔊 Bacakan</button></h2>
+            <h2><span>✍️</span> Aksara Nglegena (20 Huruf Dasar) <button class="read-aloud-btn" data-section="nglegena" onclick="readSection('nglegena')">🎧 Bacain dong</button></h2>
             <p>Aksara Nglegena adalah huruf-huruf dasar dalam Aksara Jawa. Setiap huruf memiliki bunyi konsonan dan secara otomatis diikuti vokal <strong>"a"</strong>.</p>
 
             <div class="aksara-grid">
@@ -994,7 +995,7 @@
 
         <!-- SANDHANGAN -->
         <section id="sandhangan">
-            <h2><span>🔤</span> Sandhangan (Tanda Vokal & Konsonan) <button class="read-aloud-btn" data-section="sandhangan" onclick="readSection('sandhangan')">🔊 Bacakan</button></h2>
+            <h2><span>🔤</span> Sandhangan (Tanda Vokal & Konsonan) <button class="read-aloud-btn" data-section="sandhangan" onclick="readSection('sandhangan')">🎧 Bacain dong</button></h2>
             <p>Sandhangan adalah tanda-tanda yang ditambahkan ke aksara nglegena untuk mengubah cara bacanya.</p>
 
             <h3>1️⃣ Sandhangan Swara (Tanda Vokal)</h3>
@@ -1091,7 +1092,7 @@
 
         <!-- PASANGAN -->
         <section id="pasangan">
-            <h2><span>🔗</span> Pasangan (Huruf Mati) <button class="read-aloud-btn" data-section="pasangan" onclick="readSection('pasangan')">🔊 Bacakan</button></h2>
+            <h2><span>🔗</span> Pasangan (Huruf Mati) <button class="read-aloud-btn" data-section="pasangan" onclick="readSection('pasangan')">🎧 Bacain dong</button></h2>
             <p><strong>Pasangan</strong> digunakan ketika ada konsonan yang tidak diikuti vokal (mati) di tengah kata. Setiap aksara nglegana punya bentuk pasangan.</p>
 
             <div class="example-box">
@@ -1109,7 +1110,7 @@
 
         <!-- ANGKA -->
         <section id="angka">
-            <h2><span>🔢</span> Aksara Angka Jawa <button class="read-aloud-btn" data-section="angka" onclick="readSection('angka')">🔊 Bacakan</button></h2>
+            <h2><span>🔢</span> Aksara Angka Jawa <button class="read-aloud-btn" data-section="angka" onclick="readSection('angka')">🎧 Bacain dong</button></h2>
             <p>Aksara Jawa juga memiliki simbol angka tersendiri! Ini digunakan untuk menulis angka dalam dokumen tradisional.</p>
 
             <table class="comparison-table">
@@ -1163,7 +1164,7 @@
 
         <!-- CARA MENULIS -->
         <section id="cara-tulis">
-            <h2><span>📝</span> Cara Menulis Aksara Jawa <button class="read-aloud-btn" data-section="cara-tulis" onclick="readSection('cara-tulis')">🔊 Bacakan</button></h2>
+            <h2><span>📝</span> Cara Menulis Aksara Jawa <button class="read-aloud-btn" data-section="cara-tulis" onclick="readSection('cara-tulis')">🎧 Bacain dong</button></h2>
             <p>Menulis Aksara Jawa memiliki aturan tersendiri. Ikuti panduan berikut!</p>
 
             <div class="writing-guide">
@@ -1407,7 +1408,7 @@
         }
 
         // ============ READ ALOUD SYSTEM ============
-        let speechRate = 0.9;
+        let speechRate = 0.85;
         let isReading = false;
         let currentSection = null;
 
@@ -1415,20 +1416,21 @@
             const section = document.getElementById(sectionId);
             if (!section) return '';
             
-            // Get all text content, excluding buttons and interactive elements
+            // Get text content, clean it up for natural reading
             let text = '';
             const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
             let node;
             while (node = walker.nextNode()) {
                 const parent = node.parentElement;
-                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.aksara-card')) {
-                    const trimmed = node.textContent.trim();
-                    if (trimmed && trimmed.length > 2) {
-                        text += trimmed + ' ';
-                    }
+                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.aksara-card') && !parent.closest('.read-aloud-btn')) {
+                    let cleaned = node.textContent.trim()
+                        .replace(/[📖✍️🔤🔗🔢📝🎮❓✨📋💡🔑📐📝🎯🚀😎🤔💡📌📝🔑✨🎯🔢➕➖✖️➗✅❌⚠️🔑💡📝🎯📋✨💡📝🎯✨💡📝🎯✨💡📝🎯✨💡📝🎯✨💡📝🎯✨💡📝🎯✨💡📝🎯✨]/g, '')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+                    if (cleaned.length > 3) text += cleaned + '. ';
                 }
             }
-            return text.replace(/\s+/g, ' ').trim();
+            return text.replace(/\.\.\./g, ' titik tiga').replace(/\./g, '. ').replace(/\s+/g, ' ').trim();
         }
 
         function readSection(sectionId) {
@@ -1453,18 +1455,23 @@
 
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'id-ID';
-                utterance.rate = speechRate;
-                utterance.pitch = 1;
-                utterance.volume = 1;
+                utterance.rate = 0.85; // Lebih pelan dan natural
+                utterance.pitch = 1.15; // Sedikit lebih tinggi, terdengar lebih muda/fun
+                utterance.volume = 0.9; // Sedikit lebih lembut
+
+                // Pilih voice yang lebih natural jika tersedia
+                const voices = window.speechSynthesis.getVoices();
+                const indonesianVoice = voices.find(v => v.lang.startsWith('id') && v.name.includes('Female')) || 
+                                        voices.find(v => v.lang.startsWith('id'));
+                if (indonesianVoice) utterance.voice = indonesianVoice;
 
                 utterance.onstart = () => {
                     isReading = true;
                     currentSection = sectionId;
-                    // Update all read buttons
                     document.querySelectorAll('.read-aloud-btn').forEach(btn => {
                         if (btn.dataset.section === sectionId) {
                             btn.classList.add('reading');
-                            btn.innerHTML = '🔊 Sedang Membaca...';
+                            btn.innerHTML = '🔊 Lagi dibacain...';
                         }
                     });
                 };
@@ -1472,17 +1479,14 @@
                 utterance.onend = () => {
                     isReading = false;
                     currentSection = null;
-                    // Reset all buttons
                     document.querySelectorAll('.read-aloud-btn').forEach(btn => {
                         btn.classList.remove('reading');
-                        btn.innerHTML = '🔊 Bacakan';
+                        btn.innerHTML = '🔊 Bacain dong';
                     });
                     if (section) section.style.borderLeft = '';
                 };
 
                 window.speechSynthesis.speak(utterance);
-            } else {
-                alert('Browser Anda tidak mendukung fitur bacakan.');
             }
         }
 
