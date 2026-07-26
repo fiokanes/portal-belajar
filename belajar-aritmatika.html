@@ -30,15 +30,31 @@
         }
 
         .math-symbol {
-            position: absolute; font-size: 2em; color: rgba(255,255,255,0.08);
-            animation: floatMath 15s linear infinite;
+            position: absolute; font-weight: 900;
+            animation: floatMath 20s linear infinite;
+            opacity: 0.06;
+            text-shadow: 0 0 20px rgba(0, 137, 123, 0.3);
         }
 
         @keyframes floatMath {
             0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.1; }
-            90% { opacity: 0.1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+            10% { opacity: 0.06; }
+            90% { opacity: 0.06; }
+            100% { transform: translateY(-200px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Section decoration */
+        section {
+            position: relative;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px; height: 150px;
+            background: radial-gradient(circle, rgba(0, 137, 123, 0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         /* Portal Navbar */
@@ -123,15 +139,16 @@
             display: inline-block;
         }
 
-        h3 { color: var(--primary); font-size: 1.3em; margin: 20px 0 10px 0; }
-        p { color: #555; margin-bottom: 15px; font-size: 1.05em; }
+        h3 { color: #00695c; font-size: 1.3em; margin: 20px 0 10px 0; }
+        p { color: #2e7d32; margin-bottom: 15px; font-size: 1.05em; }
         ul, ol { margin: 15px 0; padding-left: 30px; }
-        li { color: #555; margin-bottom: 8px; font-size: 1.05em; }
-        strong { color: var(--primary-dark); }
+        li { color: #2e7d32; margin-bottom: 8px; font-size: 1.05em; }
+        strong { color: #004d40; font-weight: 700; }
 
         /* Math Decorated Boxes */
         .fun-box {
             background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            position: relative; overflow: hidden;
             border-radius: 15px; padding: 20px; margin: 20px 0;
             border-left: 5px solid var(--primary);
             position: relative;
@@ -153,12 +170,12 @@
         .tip-box li { color: white; }
 
         .example-box {
-            background: #e8f5e9; border-left: 5px solid #4caf50;
+            background: #e8f5e9; border-left: 5px solid #00897b;
             border-radius: 10px; padding: 15px 20px; margin: 15px 0;
         }
 
         .warning-box {
-            background: #fff3e0; border-left: 5px solid #ff9800;
+            background: #fff8e1; border-left: 5px solid #ff8f00;
             border-radius: 10px; padding: 15px 20px; margin: 15px 0;
         }
 
@@ -652,18 +669,44 @@
             document.getElementById('speedDisplay').textContent = speechRate + 'x';
         }
 
-        // Create floating math symbols
+        // Create floating math symbols - lebih besar dan beragam
         function createMathBg() {
             const container = document.getElementById('mathBg');
-            const symbols = ['+', '-', '×', '÷', '=', '%', 'π', '∞', '∑', '√', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-            for (let i = 0; i < 30; i++) {
+            const symbols = [
+                {text: '+', size: '4em', color: '#00897b'},
+                {text: '-', size: '3.5em', color: '#26a69a'},
+                {text: '×', size: '5em', color: '#00695c'},
+                {text: '÷', size: '4em', color: '#4db6ac'},
+                {text: '=', size: '3em', color: '#80cbc4'},
+                {text: 'π', size: '6em', color: '#00897b'},
+                {text: '∞', size: '5em', color: '#26a69a'},
+                {text: '∑', size: '7em', color: '#004d40'},
+                {text: '√', size: '4em', color: '#00695c'},
+                {text: '1', size: '8em', color: '#00897b'},
+                {text: '2', size: '6em', color: '#4db6ac'},
+                {text: '3', size: '5em', color: '#26a69a'},
+                {text: '4', size: '7em', color: '#00695c'},
+                {text: '5', size: '4em', color: '#80cbc4'},
+                {text: '6', size: '6em', color: '#00897b'},
+                {text: '7', size: '5em', color: '#4db6ac'},
+                {text: '8', size: '4em', color: '#26a69a'},
+                {text: '9', size: '7em', color: '#00695c'},
+                {text: '0', size: '6em', color: '#00897b'},
+                {text: '½', size: '5em', color: '#4db6ac'},
+                {text: '¾', size: '4em', color: '#26a69a'},
+                {text: '%', size: '5em', color: '#00695c'},
+                {text: '±', size: '4em', color: '#80cbc4'}
+            ];
+            for (let i = 0; i < 40; i++) {
+                const s = symbols[Math.floor(Math.random() * symbols.length)];
                 const symbol = document.createElement('div');
                 symbol.className = 'math-symbol';
-                symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                symbol.textContent = s.text;
                 symbol.style.left = Math.random() * 100 + '%';
-                symbol.style.fontSize = (Math.random() * 2 + 1) + 'em';
-                symbol.style.animationDelay = Math.random() * 15 + 's';
-                symbol.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                symbol.style.fontSize = s.size;
+                symbol.style.color = s.color;
+                symbol.style.animationDelay = Math.random() * 20 + 's';
+                symbol.style.animationDuration = (Math.random() * 15 + 15) + 's';
                 container.appendChild(symbol);
             }
         }
