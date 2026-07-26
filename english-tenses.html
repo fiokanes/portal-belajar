@@ -807,6 +807,29 @@
     </style>
 </head>
 <body>
+    <!-- FLOATING ENGLISH WORDS -->
+    <div class="english-bg" id="englishBg"></div>
+
+    <style>
+        .english-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0; overflow: hidden;
+        }
+        .english-word {
+            position: absolute;
+            animation: floatEnglish 25s linear infinite;
+            opacity: 0.06;
+            font-weight: 900;
+            font-style: italic;
+        }
+        @keyframes floatEnglish {
+            0% { transform: translateY(100vh) rotate(-10deg); opacity: 0; }
+            10% { opacity: 0.06; }
+            90% { opacity: 0.06; }
+            100% { transform: translateY(-200px) rotate(10deg); opacity: 0; }
+        }
+    </style>
+
     <!-- PORTAL NAVBAR -->
     <nav class="portal-navbar">
         <a href="index.html" class="nav-brand">
@@ -1873,6 +1896,34 @@
             document.getElementById('pengertian').style.opacity = '1';
             document.getElementById('pengertian').style.transform = 'translateY(0)';
         }, 100);
+
+        // Create floating English words
+        function createEnglishBg() {
+            const container = document.getElementById('englishBg');
+            const words = [
+                {text: 'Hello', size: '4em'}, {text: 'Good', size: '3.5em'}, {text: 'Morning', size: '5em'},
+                {text: 'Beautiful', size: '4em'}, {text: 'Learning', size: '4.5em'}, {text: 'Happy', size: '3em'},
+                {text: 'Future', size: '5em'}, {text: 'Dream', size: '4em'}, {text: 'Study', size: '3.5em'},
+                {text: 'School', size: '4em'}, {text: 'Friend', size: '3.5em'}, {text: 'Success', size: '5em'},
+                {text: 'English', size: '4.5em'}, {text: 'Simple', size: '3em'}, {text: 'Present', size: '4em'},
+                {text: 'Past', size: '3.5em'}, {text: 'Future', size: '5em'}, {text: 'Tense', size: '4em'},
+                {text: 'Play', size: '3em'}, {text: 'Read', size: '3.5em'}, {text: 'Write', size: '4em'},
+                {text: 'Speak', size: '4.5em'}, {text: 'Listen', size: '3em'}, {text: 'Love', size: '5em'}
+            ];
+            for (let i = 0; i < 35; i++) {
+                const w = words[Math.floor(Math.random() * words.length)];
+                const word = document.createElement('div');
+                word.className = 'english-word';
+                word.textContent = w.text;
+                word.style.left = Math.random() * 100 + '%';
+                word.style.fontSize = w.size;
+                word.style.color = `hsl(${Math.random() * 40 + 200}, 70%, 40%)`;
+                word.style.animationDelay = Math.random() * 25 + 's';
+                word.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                container.appendChild(word);
+            }
+        }
+        createEnglishBg();
     </script>
 </body>
 </html>
