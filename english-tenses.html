@@ -756,21 +756,22 @@
         /* ============ READ ALOUD BUTTON ============ */
         .read-aloud-btn {
             background: linear-gradient(135deg, #1565c0, #1e88e5);
-            color: white; border: none; padding: 10px 20px;
-            border-radius: 25px; cursor: pointer; font-size: 0.95em;
+            color: white; border: none; padding: 8px 16px;
+            border-radius: 20px; cursor: pointer; font-size: 0.85em;
             font-weight: bold; transition: all 0.3s ease;
-            display: inline-flex; align-items: center; gap: 8px;
-            margin: 10px 0;
+            display: inline-flex; align-items: center; gap: 6px;
+            margin: 10px 0; letter-spacing: 0.5px;
         }
 
         .read-aloud-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(21, 101, 192, 0.4);
+            box-shadow: 0 3px 10px rgba(21, 101, 192, 0.3);
+            background: linear-gradient(135deg, #1e88e5, #42a5f5);
         }
 
         .read-aloud-btn.reading {
-            background: linear-gradient(135deg, #c62828, #e53935);
-            animation: pulse 1s infinite;
+            background: linear-gradient(135deg, #ff8f00, #ffa000);
+            animation: pulse 1.5s infinite;
         }
 
         @keyframes pulse {
@@ -848,7 +849,7 @@
     <main>
         <!-- PENGERTIAN TENSES -->
         <section id="pengertian">
-            <h2><span class="icon">📖</span> Apa Itu Tenses? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🔊 Read Aloud</button></h2>
+            <h2><span class="icon">📖</span> Apa Itu Tenses? <button class="read-aloud-btn" data-section="pengertian" onclick="readSection('pengertian')">🎧 Listen</button></h2>
             <p>Halo guys! 👋 Kalian tau gak sih, kenapa orang Inggris bisa ngomong tentang masa lalu, sekarang, dan masa depan? Rahasianya ada di <strong>TENSES</strong>!</p>
             
             <div class="fun-fact">
@@ -1410,7 +1411,7 @@
 
     <script>
         // ============ READ ALOUD SYSTEM ============
-        let speechRate = 0.9;
+        let speechRate = 0.85;
         let isReading = false;
 
         function getTextFromSection(sectionId) {
@@ -1421,12 +1422,14 @@
             let node;
             while (node = walker.nextNode()) {
                 const parent = node.parentElement;
-                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn')) {
-                    const trimmed = node.textContent.trim();
-                    if (trimmed && trimmed.length > 2) text += trimmed + ' ';
+                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn') && !parent.closest('.read-aloud-btn')) {
+                    let cleaned = node.textContent.trim()
+                        .replace(/[📖🟢🔴🟠🔵🎮❓✨📋💡🔑📐📝🎯🚀😎🤔💡📌📝🔑✨]/g, '')
+                        .replace(/\s+/g, ' ').trim();
+                    if (cleaned.length > 3) text += cleaned + '. ';
                 }
             }
-            return text.replace(/\s+/g, ' ').trim();
+            return text.replace(/\.\.\./g, ' dot dot dot').replace(/\s+/g, ' ').trim();
         }
 
         function readSection(sectionId) {
@@ -1441,16 +1444,25 @@
                     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; utterance.rate = speechRate; utterance.pitch = 1;
+                utterance.lang = 'en-US';
+                utterance.rate = 0.85;
+                utterance.pitch = 1.1;
+                utterance.volume = 0.9;
+                // Pilih voice English yang lebih natural
+                const voices = window.speechSynthesis.getVoices();
+                const enVoice = voices.find(v => v.lang.startsWith('en') && v.name.includes('Female')) || 
+                                voices.find(v => v.lang.startsWith('en-US') && v.name.includes('Google')) ||
+                                voices.find(v => v.lang.startsWith('en'));
+                if (enVoice) utterance.voice = enVoice;
                 utterance.onstart = () => {
                     isReading = true;
                     document.querySelectorAll('.read-aloud-btn').forEach(btn => {
-                        if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🔊 Reading...'; }
+                        if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🎧 Reading...'; }
                     });
                 };
                 utterance.onend = () => {
                     isReading = false;
-                    document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🔊 Read Aloud'; });
+                    document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🎧 Listen'; });
                     if (section) section.style.borderLeft = '';
                 };
                 window.speechSynthesis.speak(utterance);
