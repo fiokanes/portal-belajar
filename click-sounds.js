@@ -1,24 +1,65 @@
 /**
- * Sistem Sound Effect untuk Klik
+ * Sistem Sound Effect untuk Klik - Mobile Friendly!
  * Menambahkan efek suara setiap kali user mengklik sesuatu
+ * Kompatibel dengan iOS dan Android
  */
 
 (function() {
     // Audio Context
     let audioContext = null;
+    let isUnlocked = false;
     
     // Inisialisasi Audio Context
     function initAudio() {
         if (!audioContext) {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
+        
+        // Resume jika suspended (penting untuk mobile)
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+        
         return audioContext;
     }
+    
+    // Unlock audio untuk mobile devices
+    function unlockAudio() {
+        if (isUnlocked) return;
+        
+        try {
+            const ctx = initAudio();
+            
+            // Buat buffer kosong untuk unlock
+            const buffer = ctx.createBuffer(1, 1, 22050);
+            const source = ctx.createBufferSource();
+            source.buffer = buffer;
+            source.connect(ctx.destination);
+            source.start(0);
+            
+            // Resume context
+            if (ctx.state === 'suspended') {
+                ctx.resume();
+            }
+            
+            isUnlocked = true;
+        } catch(e) {
+            console.log('Audio unlock failed:', e);
+        }
+    }
+    
+    // Unlock pada interaksi pertama (touch, click, keydown)
+    document.addEventListener('touchstart', unlockAudio, { once: true });
+    document.addEventListener('touchend', unlockAudio, { once: true });
+    document.addEventListener('click', unlockAudio, { once: true });
+    document.addEventListener('keydown', unlockAudio, { once: true });
     
     // Fungsi untuk membuat sound effect
     function playClickSound(type = 'click') {
         try {
             const ctx = initAudio();
+            if (!ctx || ctx.state !== 'running') return;
+            
             const oscillator = ctx.createOscillator();
             const gainNode = ctx.createGain();
             
@@ -110,19 +151,19 @@
     function addClickSounds() {
         // Klik pada button, a, input, dll
         document.addEventListener('click', function(e) {
-            const target = e.target.closest('button, a, input[type="radio"], input[type="checkbox"], .clickable, .quiz-option, .game-option-btn, .menu-card, .bab-card, .materi-card, .sila-card, .mapel-card');
+            const target = e.target.closest('button, a, input[type="radio"], input[type="checkbox"], .clickable, .quiz-option, .game-option-btn, .menu-card, .bab-card, .materi-card, .sila-card, .mapel-card, .island-group');
             if (target) {
                 playClickSound('click');
             }
         });
         
-        // Hover pada elemen interaktif
-        document.addEventListener('mouseover', function(e) {
-            const target = e.target.closest('button, a, .clickable, .quiz-option, .game-option-btn, .menu-card, .bab-card, .materi-card, .sila-card, .mapel-card');
+        // Touch events untuk mobile
+        document.addEventListener('touchstart', function(e) {
+            const target = e.target.closest('.island-group, .mapel-card, .bab-card');
             if (target) {
-                playClickSound('hover');
+                playClickSound('pop');
             }
-        });
+        }, { passive: true });
         
         // Khusus untuk quiz option
         document.addEventListener('change', function(e) {
@@ -135,7 +176,8 @@
     // Export fungsi untuk penggunaan manual
     window.ClickSounds = {
         play: playClickSound,
-        init: initAudio
+        init: initAudio,
+        unlock: unlockAudio
     };
     
     // Inisialisasi saat DOM ready
@@ -146,7 +188,5 @@
     }
     
     // Aktifkan audio context pada interaksi pertama
-    document.addEventListener('click', function() {
-        initAudio();
-    }, { once: true });
+    unlockAudio();
 })();
