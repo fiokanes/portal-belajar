@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPKn Bab 3: Peraturan di Negara Indonesia ⚖️</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 30%, #7b1fa2 60%, #9c27b0 100%);
+            overflow-x: hidden;
+            font-size: 17px; line-height: 1.8; color: #2c3e50;
+        }
+
+        .bg-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden;
+            background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 30%, #7b1fa2 60%, #9c27b0 100%);
+        }
+
+        .bg-animation .bubble {
+            position: absolute; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            animation: floatBubble 20s infinite ease-in-out;
+        }
+
+        @keyframes floatBubble {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; }
+        }
+
+        .back-nav {
+            position: fixed; top: 20px; left: 20px; z-index: 1000;
+            background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: #4a148c; font-weight: bold; font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); background: white; }
+
+        header {
+            background: linear-gradient(135deg, #311b92 0%, #4a148c 50%, #6a1b9a 100%);
+            color: white; text-align: center; padding: 60px 20px 80px;
+            position: relative; overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        header h1 { font-size: 2.8em; margin-bottom: 15px; position: relative; z-index: 1; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+
+        main { max-width: 1200px; margin: -40px auto 40px; padding: 0 20px; position: relative; z-index: 10; }
+
+        .section-box {
+            background: rgba(255, 255, 255, 0.97); border-radius: 30px; padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 40px;
+        }
+
+        .section-box h2 { color: #4a148c; font-size: 1.8em; margin-bottom: 25px; text-align: center; }
+        .section-box h3 { color: #6a1b9a; font-size: 1.3em; margin: 25px 0 15px 0; }
+        .section-box p { margin-bottom: 15px; text-align: justify; }
+        .section-box ul { margin: 15px 0 15px 30px; }
+        .section-box li { margin-bottom: 8px; }
+
+        .hero-section {
+            background: linear-gradient(135deg, #311b92 0%, #4a148c 50%, #6a1b9a 100%);
+            color: white; padding: 50px 40px; border-radius: 30px; text-align: center;
+            margin-bottom: 40px; position: relative; overflow: hidden;
+            box-shadow: 0 20px 60px rgba(49, 27, 146, 0.4);
+        }
+
+        .hero-section h2 { font-size: 2.2em; margin-bottom: 20px; position: relative; z-index: 1; }
+        .hero-section p { font-size: 1.1em; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+        .card-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; margin-top: 25px;
+        }
+
+        .card {
+            background: white; border-radius: 20px; padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease; text-align: center;
+            border-top: 5px solid #4a148c;
+        }
+
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .card .card-icon { font-size: 3.5em; margin-bottom: 20px; display: block; }
+        .card h4 { color: #4a148c; font-size: 1.2em; margin-bottom: 15px; }
+        .card p { color: #666; font-size: 0.95em; line-height: 1.6; }
+
+        .hierarchy-container {
+            max-width: 800px; margin: 30px auto;
+        }
+
+        .hierarchy-item {
+            background: white; border-radius: 15px; padding: 20px 25px; margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 20px;
+            transition: all 0.3s ease; border-left: 5px solid #4a148c;
+        }
+
+        .hierarchy-item:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+        .hierarchy-number {
+            background: linear-gradient(135deg, #4a148c, #7b1fa2);
+            color: white; width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3em; font-weight: bold; flex-shrink: 0;
+        }
+
+        .hierarchy-content h4 { color: #4a148c; margin-bottom: 5px; }
+        .hierarchy-content p { color: #666; font-size: 0.95em; margin: 0; }
+
+        .quiz-section {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            border-radius: 30px; padding: 40px; margin-top: 40px;
+            border: 3px solid #ffc107;
+        }
+
+        .quiz-section h2 { color: #f57f17; }
+
+        footer {
+            background: linear-gradient(135deg, #0d1b2a 0%, #311b92 100%);
+            color: white; text-align: center; padding: 40px 20px; position: relative;
+        }
+
+        footer::before {
+            content: ''; position: absolute; top: -30px; left: 0; right: 0; height: 30px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #311b92 100%);
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+
+        .footer-content { max-width: 800px; margin: 0 auto; }
+        .footer-logo { font-size: 2.5em; margin-bottom: 15px; }
+        footer h3 { font-size: 1.5em; margin-bottom: 10px; color: #ffd700; }
+        footer p { color: rgba(255,255,255,0.8); margin-bottom: 8px; }
+
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        .footer-links a:hover { color: white; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .card-grid { grid-template-columns: 1fr; }
+            .section-box { padding: 30px 20px; }
+            .hero-section { padding: 30px 20px; }
+            .hero-section h2 { font-size: 1.6em; }
+            .hierarchy-item { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <a href="ppkn.html" class="back-nav">← Kembali ke PPKn</a>
+
+    <header>
+        <h1>⚖️ BAB 3: PERATURAN DI NEGARA INDONESIA</h1>
+        <p class="subtitle">Pelajari tentang peraturan perundang-undangan dan hierarki hukum di Indonesia! 📋✨</p>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Apa Itu Peraturan Perundang-undangan? ⚖️</h2>
+            <p>Peraturan perundang-undangan adalah peraturan tertulis yang dibuat oleh berwenang dan bersifat mengikat secara umum. Di Indonesia, peraturan perundang-undangan memiliki hierarki atau tingkatan.</p>
+        </section>
+
+        <!-- Pengertian -->
+        <section class="section-box">
+            <h2>📋 Pengertian Peraturan Perundang-undangan</h2>
+            
+            <p><strong>Peraturan perundang-undangan</strong> adalah peraturan tertulis yang dibuat oleh berwenang dan bersifat mengikat secara umum. Peraturan ini dibuat untuk mengatur kehidupan bermasyarakat, berbangsa, dan bernegara.</p>
+            
+            <h3>Ciri-ciri Peraturan Perundang-undangan:</h3>
+            <ul>
+                <li><strong>Dibuat oleh berwenang:</strong> Hanya lembaga atau pejabat yang berwenang yang dapat membuat peraturan</li>
+                <li><strong>Bersifat mengikat:</strong> Semua orang wajib mematuhi peraturan yang berlaku</li>
+                <li><strong>Bersifat umum:</strong> Peraturan berlaku untuk semua orang tanpa terkecuali</li>
+                <li><strong>Tertulis:</strong> Peraturan dituangkan dalam bentuk tertulis</li>
+                <li><strong>Dapat dipaksakan:</strong> Pelanggaran terhadap peraturan dapat dikenakan sanksi</li>
+            </ul>
+        </section>
+
+        <!-- Hierarki Hukum -->
+        <section class="section-box">
+            <h2>📊 Hierarki Peraturan Perundang-undangan</h2>
+            
+            <p>Berdasarkan UU No. 12 Tahun 2011, hierarki peraturan perundang-undangan di Indonesia adalah sebagai berikut:</p>
+            
+            <div class="hierarchy-container">
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">1</div>
+                    <div class="hierarchy-content">
+                        <h4>Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 (UUD NRI Tahun 1945)</h4>
+                        <p>Hukum tertinggi di Indonesia yang menjadi sumber dari segala sumber hukum.</p>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">2</div>
+                    <div class="hierarchy-content">
+                        <h4>Ketetapan Majelis Permusyawaratan Rakyat (TAP MPR)</h4>
+                        <p>Ketetapan yang ditetapkan oleh MPR untuk melaksanakan tugas dan wewenangnya.</p>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">3</div>
+                    <div class="hierarchy-content">
+                        <h4>Undang-Undang (UU) / Peraturan Pemerintah Pengganti Undang-Undang (Perppu)</h4>
+                        <p>Peraturan yang dibuat oleh DPR bersama Presiden. Perppu dikeluarkan Presiden dalam keadaan darurat.</p>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">4</div>
+                    <div class="hierarchy-content">
+                        <h4>Peraturan Pemerintah (PP)</h4>
+                        <p>Peraturan yang dibuat oleh Presiden untuk menjalankan undang-undang.</p>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">5</div>
+                    <div class="hierarchy-content">
+                        <h4>Peraturan Presiden (Perpres)</h4>
+                        <p>Peraturan yang dibuat oleh Presiden untuk menjalankan pemerintahan.</p>
+                    </div>
+                </div>
+                
+                <div class="hierarchy-item">
+                    <div class="hierarchy-number">6</div>
+                    <div class="hierarchy-content">
+                        <h4>Peraturan Daerah (Perda)</h4>
+                        <p>Peraturan yang dibuat oleh pemerintah daerah (provinsi/kabupaten/kota) untuk menjalankan otonomi daerah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jenis-jenis Peraturan -->
+        <section class="section-box">
+            <h2>📝 Jenis-jenis Peraturan di Indonesia</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-icon">📜</span>
+                    <h4>UUD 1945</h4>
+                    <p>Hukum tertinggi di Indonesia. Memuat aturan-aturan dasar tentang penyelenggaraan negara.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">🏛️</span>
+                    <h4>Undang-Undang (UU)</h4>
+                    <p>Peraturan yang dibuat oleh DPR bersama Presiden. Contoh: UU No. 12 Tahun 2011 tentang Pembentukan Peraturan Perundang-undangan.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">⚡</span>
+                    <h4>Perppu</h4>
+                    <p>Peraturan Pemerintah Pengganti Undang-Undang. Dikeluarkan Presiden dalam keadaan darurat.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">📋</span>
+                    <h4>Peraturan Pemerintah (PP)</h4>
+                    <p>Peraturan yang dibuat Presiden untuk menjalankan UU. Contoh: PP No. 71 Tahun 2019 tentang Sistem Pendidikan Nasional.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">👤</span>
+                    <h4>Peraturan Presiden (Perpres)</h4>
+                    <p>Peraturan yang dibuat Presiden untuk menjalankan pemerintahan. Contoh: Perpres No. 87 Tahun 2017 tentang Penguatan Pendidikan Karakter.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">🏙️</span>
+                    <h4>Peraturan Daerah (Perda)</h4>
+                    <p>Peraturan yang dibuat oleh pemerintah daerah. Contoh: Perda Provinsi DKI Jakarta tentang Ketertiban Umum.</p>
+                </div>
+            </div>
+            
+            <h3>Contoh Peraturan Penting di Indonesia:</h3>
+            <ul>
+                <li><strong>UUD 1945:</strong> Konstitusi negara Indonesia</li>
+                <li><strong>UU No. 39 Tahun 1999:</strong> Tentang Hak Asasi Manusia</li>
+                <li><strong>UU No. 20 Tahun 2003:</strong> Tentang Sistem Pendidikan Nasional</li>
+                <li><strong>UU No. 24 Tahun 2007:</strong> Tentang Penanggulangan Bencana</li>
+                <li><strong>PP No. 71 Tahun 2019:</strong> Tentang Sistem Pendidikan Nasional</li>
+                <li><strong>Perpres No. 87 Tahun 2017:</strong> Tentang Penguatan Pendidikan Karakter</li>
+            </ul>
+        </section>
+
+        <!-- Lembaga Pembuat Peraturan -->
+        <section class="section-box">
+            <h2>🏛️ Lembaga yang Membuat Peraturan</h2>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-icon">🏛️</span>
+                    <h4>MPR (Majelis Permusyawaratan Rakyat)</h4>
+                    <p>Berwenang menetapkan UUD dan TAP MPR. Terdiri dari anggota DPR dan DPD.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">⚖️</span>
+                    <h4>DPR (Dewan Perwakilan Rakyat)</h4>
+                    <p>Berwenang membuat UU bersama Presiden. Memiliki fungsi legislasi, anggaran, dan pengawasan.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">👤</span>
+                    <h4>Presiden</h4>
+                    <p>Berwenang membuat PP dan Perpres. Juga dapat mengeluarkan Perppu dalam keadaan darurat.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">🏙️</span>
+                    <h4>Pemerintah Daerah</h4>
+                    <p>Berwenang membuat Perda untuk menjalankan otonomi daerah sesuai dengan kewenangannya.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pancasila sebagai Sumber Hukum -->
+        <section class="section-box">
+            <h2>⭐ Pancasila sebagai Sumber Hukum</h2>
+            
+            <p>Pancasila merupakan sumber dari segala sumber hukum di Indonesia. Semua peraturan perundang-undangan tidak boleh bertentangan dengan nilai-nilai Pancasila.</p>
+            
+            <h3>Hubungan Pancasila dengan Peraturan:</h3>
+            <ul>
+                <li><strong>Sila Pertama:</strong> Peraturan menjamin kebebasan beragama bagi setiap warga negara</li>
+                <li><strong>Sila Kedua:</strong> Peraturan melindungi hak asasi manusia</li>
+                <li><strong>Sila Ketiga:</strong> Peraturan menjaga persatuan dan kesatuan bangsa</li>
+                <li><strong>Sila Keempat:</strong> Peraturan dibuat melalui musyawarah dan permufakatan</li>
+                <li><strong>Sila Kelima:</strong> Peraturan menjamin keadilan sosial bagi seluruh rakyat</li>
+            </ul>
+        </section>
+
+        <!-- Kuis -->
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Uji pemahamanmu tentang peraturan di Indonesia!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">⚖️</div>
+            <h3>BAB 3: PERATURAN DI NEGARA INDONESIA</h3>
+            <p>PPKn - SMP Kelas 8</p>
+            <div class="footer-links">
+                <a href="index.html">📚 Portal Utama</a>
+                <a href="ppkn.html">🇮🇩 PPKn</a>
+                <a href="ppkn-bab1.html">⭐ Bab 1</a>
+                <a href="ppkn-bab2.html">📜 Bab 2</a>
+                <a href="kuis-ppkn.html">🎯 Kuis</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="click-sounds.js"></script>
+    <script src="quiz-game-system.js"></script>
+    <script>
+        // Tambahkan soal kuis tentang peraturan
+        const peraturanQuestions = [
+            { question: "Hukum tertinggi di Indonesia adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. Perpres"], answer: 2 },
+            { question: "Perppu dikeluarkan oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. MA"], answer: 1 },
+            { question: "Perda dibuat oleh...", options: ["A. Presiden", "B. DPR", "C. Pemerintah Daerah", "D. MPR"], answer: 2 },
+            { question: "UU dibuat oleh...", options: ["A. Presiden saja", "B. DPR saja", "C. DPR dan Presiden", "D. MPR"], answer: 2 },
+            { question: "PP dibuat untuk menjalankan...", options: ["A. UUD 1945", "B. UU", "C. Perpres", "D. Perda"], answer: 1 },
+            { question: "Hierarki pertama peraturan adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. TAP MPR"], answer: 2 },
+            { question: "Sumber dari segala sumber hukum di Indonesia adalah...", options: ["A. UUD 1945", "B. Pancasila", "C. UU", "D. Perpres"], answer: 1 },
+            { question: "Perpres dibuat oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. Pemerintah Daerah"], answer: 1 },
+            { question: "Perppu dikeluarkan dalam keadaan...", options: ["A. Normal", "B. Darurat", "C. Damai", "D. Biasa"], answer: 1 },
+            { question: "Peraturan yang bersifat mengikat secara umum adalah...", options: ["A. Perjanjian", "B. Kontrak", "C. Perundang-undangan", "D. Kesepakatan"], answer: 2 },
+            { question: "TAP MPR ditetapkan oleh...", options: ["A. Presiden", "B. DPR", "C. MPR", "D. MA"], answer: 2 },
+            { question: "Contoh Perda adalah peraturan tentang...", options: ["A. Pertahanan negara", "B. Ketertiban umum", "C. Hubungan luar negeri", "D. Moneter"], answer: 1 },
+            { question: "Peraturan perundang-undangan harus...", options: ["A. Lisan", "B. Tertulis", "C. Tidak tertulis", "D. Lisan dan tertulis"], answer: 1 },
+            { question: "Sila Pancasila yang menjamin kebebasan beragama adalah...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 4"], answer: 0 },
+            { question: "Peraturan yang melindungi HAM adalah sila...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 5"], answer: 1 }
+        ];
+
+        if(typeof QuizSystem!=='undefined') {
+            QuizSystem.quizDatabase['ppkn_peraturan'] = peraturanQuestions;
+            QuizSystem.createQuiz('ppkn_peraturan', 'quizContainer', 5);
+        }
+
+        // Create bubbles
+        function createBubbles() {
+            const container = document.getElementById('bgAnimation');
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 50 + 20;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.bottom = '-100px';
+                bubble.style.animationDelay = Math.random() * 10 + 's';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(bubble);
+            }
+        }
+        createBubbles();
+
+        // Animate elements
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .hierarchy-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

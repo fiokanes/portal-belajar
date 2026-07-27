@@ -1,0 +1,114 @@
+#!/bin/bash
+
+# Fungsi untuk membuat file bab
+create_bab() {
+    local num=$1
+    local title=$2
+    local icon=$3
+    local color1=$4
+    local color2=$5
+    local content=$6
+    local filename="mtk-bab${num}.html"
+    
+    cat > "$filename" << EOF
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Bab ${num}: ${title}</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, ${color1} 0%, ${color2} 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, ${color1} 0%, ${color2} 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .back-nav { position: fixed; top: 20px; left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; text-decoration: none; color: ${color1}; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; }
+        .back-nav:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); background: white; }
+        header { background: linear-gradient(135deg, ${color1} 0%, ${color2} 100%); color: white; text-align: center; padding: 60px 20px 80px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%); }
+        header h1 { font-size: 2.5em; margin-bottom: 15px; position: relative; z-index: 1; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        main { max-width: 1200px; margin: -40px auto 40px; padding: 0 20px; position: relative; z-index: 10; }
+        .section-box { background: rgba(255, 255, 255, 0.97); border-radius: 30px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 40px; }
+        .section-box h2 { color: ${color1}; font-size: 1.8em; margin-bottom: 25px; text-align: center; }
+        .section-box h3 { color: ${color1}; font-size: 1.3em; margin: 25px 0 15px 0; }
+        .section-box p { margin-bottom: 15px; text-align: justify; }
+        .section-box ul { margin: 15px 0 15px 30px; }
+        .section-box li { margin-bottom: 8px; }
+        .hero-section { background: linear-gradient(135deg, ${color1} 0%, ${color2} 100%); color: white; padding: 50px 40px; border-radius: 30px; text-align: center; margin-bottom: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .hero-section h2 { font-size: 2.2em; margin-bottom: 20px; position: relative; z-index: 1; }
+        .hero-section p { font-size: 1.1em; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; }
+        .card { background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center; border-top: 5px solid ${color1}; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .card .card-icon { font-size: 3.5em; margin-bottom: 20px; display: block; }
+        .card h4 { color: ${color1}; font-size: 1.2em; margin-bottom: 15px; }
+        .card p { color: #666; font-size: 0.95em; line-height: 1.6; }
+        .formula-box { background: linear-gradient(135deg, #f5f5f5, #eeeeee); border-radius: 15px; padding: 25px; border-left: 5px solid ${color1}; margin: 20px 0; }
+        .formula-box h4 { color: ${color1}; margin-bottom: 10px; }
+        .formula-box .formula { font-size: 1.4em; font-weight: bold; color: ${color1}; text-align: center; margin: 15px 0; background: white; padding: 15px; border-radius: 10px; }
+        .formula-box p { color: #555; font-size: 0.95em; }
+        .quiz-section { background: linear-gradient(135deg, #fff8e1, #fff3cd); border-radius: 30px; padding: 40px; margin-top: 40px; border: 3px solid #ffc107; }
+        .quiz-section h2 { color: #f57f17; }
+        footer { background: linear-gradient(135deg, #0d1b2a 0%, ${color1} 100%); color: white; text-align: center; padding: 40px 20px; position: relative; }
+        footer::before { content: ''; position: absolute; top: -30px; left: 0; right: 0; height: 30px; background: linear-gradient(135deg, #0d1b2a 0%, ${color1} 100%); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+        .footer-content { max-width: 800px; margin: 0 auto; }
+        .footer-logo { font-size: 2.5em; margin-bottom: 15px; }
+        footer h3 { font-size: 1.5em; margin-bottom: 10px; color: #ffd700; }
+        footer p { color: rgba(255,255,255,0.8); margin-bottom: 8px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        .footer-links a:hover { color: white; text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 1.8em; } .card-grid { grid-template-columns: 1fr; } .section-box { padding: 25px 15px; } .hero-section { padding: 25px 15px; } .hero-section h2 { font-size: 1.5em; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <a href="matematika.html" class="back-nav">← Kembali ke Matematika</a>
+    <header>
+        <h1>${icon} BAB ${num}: ${title^^}</h1>
+        <p class="subtitle">Pelajari materi ${title} dengan cara yang menyenangkan! ✨</p>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h2>${icon} ${title}</h2>
+            <p>${content}</p>
+        </section>
+        <section class="section-box">
+            <h2>📖 Materi Pembelajaran</h2>
+            ${content}
+        </section>
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Uji pemahamanmu tentang ${title}!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">${icon}</div>
+            <h3>BAB ${num}: ${title^^}</h3>
+            <p>Matematika - SMP Kelas 8</p>
+            <div class="footer-links">
+                <a href="index.html">📚 Portal Utama</a>
+                <a href="matematika.html">🔢 Matematika</a>
+                <a href="kuis-matematika.html">🎯 Kuis</a>
+            </div>
+        </div>
+    </footer>
+    <script src="click-sounds.js"><\/script>
+    <script src="quiz-game-system.js"><\/script>
+    <script>
+        if(typeof QuizSystem!=='undefined') QuizSystem.createQuiz('matematika', 'quizContainer', 5);
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for(let i=0;i<15;i++){const b=document.createElement('div');b.className='bubble';const s=Math.random()*50+20;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'%';b.style.bottom='-100px';b.style.animationDelay=Math.random()*10+'s';b.style.animationDuration=(Math.random()*10+10)+'s';c.appendChild(b);}} createBubbles();
+    <\/script>
+</body>
+</html>
+EOF
+    echo "Dibuat: $filename"
+}
+
+# Buat semua bab
+create_bab 1 "Pola Bilangan" "🔢" "#00897b" "#26a69a" "<p>Pelajari barisan bilangan, pola barisan aritmetika dan geometri, serta rumus suku ke-n!</p>"
+create_bab 2 "Bilangan Berpangkat dan Bentuk Akar" "💪" "#00695c" "#00897b" 
