@@ -1538,7 +1538,7 @@
                     </div>
                     <div class="score-item">
                         <div class="label">Soal</div>
-                        <div class="value" id="quizCount">0/10</div>
+                        <div class="value" id="quizCount">0/29</div>
                     </div>
                     <div class="score-item">
                         <div class="label">Benar</div>
@@ -1801,7 +1801,26 @@
             { question: 'Kalimat efektif harus memiliki...', options: ['Banyak kata', 'Kata baku', 'Bahasa gaul', 'Pengulangan kata'], correct: 1 },
             { question: 'Majas "Angin berbisik" termasuk majas...', options: ['Simile', 'Metafora', 'Personifikasi', 'Hiperbola'], correct: 2 },
             { question: 'Paragraf pembuka surat dinas disebut...', options: ['Isi surat', 'Salut pembuka', 'Kop surat', 'Lampiran'], correct: 1 },
-            { question: 'Cerpen memiliki ciri...', options: ['Panjang', 'Banyak alur', 'Sederhana dan pendek', 'Banyak tokoh'], correct: 2 }
+            { question: 'Cerpen memiliki ciri...', options: ['Panjang', 'Banyak alur', 'Sederhana dan pendek', 'Banyak tokoh'], correct: 2 },
+            { question: 'Sinonim dari kata "cantik" adalah...', options: ['Buruk', 'Indah', 'Jelek', 'Biasa'], correct: 1 },
+            { question: 'Antonim dari kata "tinggi" adalah...', options: ['Panjang', 'Pendek', 'Lebar', 'Luas'], correct: 1 },
+            { question: 'Kata baku yang benar adalah...', options: ['Resiko', 'Resiko', 'Risiko', 'Rhesiko'], correct: 2 },
+            { question: 'Majas "Bagaikan bintang di langit" termasuk...', options: ['Hiperbola', 'Simile', 'Personifikasi', 'Metafora'], correct: 1 },
+            { question: 'Struktur cerpen yang berisi pengenalan tokoh disebut...', options: ['Komplikasi', 'Orientasi', 'Resolusi', 'Koda'], correct: 1 },
+            { question: 'Kata "di mana" yang benar penggunaannya adalah...', options: ['Dimana kamu pergi?', 'Di mana rumahmu?', 'Dimana buku itu?', 'Semua benar'], correct: 1 },
+            { question: 'Puisi yang terdiri dari 2 baris dan bersajak a-a disebut...', options: ['Pantun', 'Syair', 'Gurindam', 'Mantra'], correct: 2 },
+            { question: 'Kata berimbuhan "berlari" terdiri dari...', options: ['ber + lari', 'be + rlari', 'berl + ari', 'berla + ri'], correct: 0 },
+            { question: 'Kalimat "Dia pergi ke pasar" memiliki pola...', options: ['SPO', 'SPOK', 'SP', 'SPK'], correct: 1 },
+            { question: 'Kata "efektif" berarti...', options: ['Berlebihan', 'Tidak perlu', 'Tepat guna', 'Bertele-tele'], correct: 2 },
+            { question: 'Majas yang melebih-lebihkan disebut...', options: ['Simile', 'Personifikasi', 'Hiperbola', 'Metafora'], correct: 2 },
+            { question: 'Unsur ekstrinsik cerpen meliputi...', options: ['Tema dan alur', 'Amanat dan tokoh', 'Latar dan sudut pandang', 'Nilai sosial dan budaya'], correct: 3 },
+            { question: 'Kata "efisien" berarti...', options: ['Menghabiskan waktu', 'Hemat dan tepat', 'Boros', 'Lambat'], correct: 1 },
+            { question: 'Surat lamaran pekerjaan termasuk jenis surat...', options: ['Surat dinas', 'Surat pribadi', 'Surat niaga', 'Surat edaran'], correct: 0 },
+            { question: 'Teks yang bertujuan meyakinkan pembaca disebut...', options: ['Teks narasi', 'Teks eksposisi', 'Teks deskripsi', 'Teks argumentasi'], correct: 3 },
+            { question: 'Paragraf yang gagasan utamanya di akhir disebut...', options: ['Deduktif', 'Induktif', 'Campuran', 'Naratif'], correct: 1 },
+            { question: 'Kata baku untuk "aktifitas" adalah...', options: ['Aktifitas', 'Aktivitas', 'Aktipitas', 'Aktivytas'], correct: 1 },
+            { question: 'Majas yang memberikan sifat manusia pada benda disebut...', options: ['Simile', 'Hiperbola', 'Personifikasi', 'Metafora'], correct: 2 },
+            { question: 'Pantun terdiri dari...', options: ['2 baris', '3 baris', '4 baris', '5 baris'], correct: 2 }
         ];
 
         let currentQuizIndex = 0;
@@ -1814,7 +1833,7 @@
             quizScore = 0;
             quizCorrectCount = 0;
             document.getElementById('quizScore').textContent = '0';
-            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCount').textContent = '0/29';
             document.getElementById('quizCorrect').textContent = '0';
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
@@ -1826,7 +1845,7 @@
             quizAnswered = false;
             const q = quizQuestions[currentQuizIndex];
             document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`;
-            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/29`;
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
             document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => 
@@ -1867,9 +1886,9 @@
 
         function endQuiz() {
             document.getElementById('modalScore').textContent = quizScore;
-            let message = quizScore === 100 ? '🏆 SEMPURNA! Kamu ahli Bahasa Indonesia!' :
-                          quizScore >= 70 ? '👏 Bagus! Pemahamanmu sudah baik!' :
-                          quizScore >= 50 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
+            let message = quizScore === 290 ? '🏆 SEMPURNA! Kamu ahli Bahasa Indonesia!' :
+                          quizScore >= 203 ? '👏 Bagus! Pemahamanmu sudah baik!' :
+                          quizScore >= 145 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
             document.getElementById('modalMessage').textContent = message;
             document.getElementById('quizModal').classList.remove('hidden');
         }

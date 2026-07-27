@@ -1703,7 +1703,7 @@
                     </div>
                     <div class="score-item">
                         <div class="label">Soal</div>
-                        <div class="value" id="quizCount">0/10</div>
+                        <div class="value" id="quizCount">0/20</div>
                     </div>
                     <div class="score-item">
                         <div class="label">Benar</div>
@@ -2415,6 +2415,56 @@
                 question: 'Apa nama garis imajiner yang melalui Indonesia?',
                 options: ['Garis Greenwich', 'Garis Khatulistiwa', 'Garis Internasional', 'Garis Bujur'],
                 correct: 1
+            },
+            {
+                question: 'Pulau terpadat di Indonesia adalah...',
+                options: ['Pulau Sumatera', 'Pulau Jawa', 'Pulau Kalimantan', 'Pulau Sulawesi'],
+                correct: 1
+            },
+            {
+                question: 'Gunung tertinggi di Asia Tenggara terletak di...',
+                options: ['Malaysia', 'Indonesia', 'Filipina', 'Thailand'],
+                correct: 1
+            },
+            {
+                question: 'Laut terbesar di Indonesia adalah...',
+                options: ['Laut Jawa', 'Laut Cina Selatan', 'Laut Banda', 'Laut Arafuru'],
+                correct: 1
+            },
+            {
+                question: 'Provinsi terluas di Indonesia adalah...',
+                options: ['Papua', 'Kalimantan Timur', 'Sumatera', 'Sulawesi'],
+                correct: 0
+            },
+            {
+                question: 'Sungai terpanjang di Indonesia terletak di...',
+                options: ['Sumatera', 'Jawa', 'Kalimantan', 'Papua'],
+                correct: 2
+            },
+            {
+                question: 'Indonesia terletak di antara dua samudra yaitu...',
+                options: ['Pasifik dan Atlantik', 'Hindia dan Pasifik', 'Hindia dan Arktik', 'Atlantik dan Hindia'],
+                correct: 1
+            },
+            {
+                question: 'Danau terbesar di Indonesia adalah...',
+                options: ['Danau Toba', 'Danau Singkarak', 'Danau Maninjau', 'Danau Sentani'],
+                correct: 0
+            },
+            {
+                question: 'Indonesia terdiri dari berapa provinsi?',
+                options: ['30', '34', '38', '42'],
+                correct: 2
+            },
+            {
+                question: 'Selat yang memisahkan Pulau Jawa dan Sumatera adalah...',
+                options: ['Selat Karimata', 'Selat Sunda', 'Selat Lombok', 'Selat Makassar'],
+                correct: 1
+            },
+            {
+                question: 'Pulau Komodo yang terkenal dengan kadal raksasa terletak di provinsi...',
+                options: ['Bali', 'NTT', 'NTB', 'Sulawesi Selatan'],
+                correct: 1
             }
         ];
 
@@ -2429,7 +2479,7 @@
             quizCorrectCount = 0;
             
             document.getElementById('quizScore').textContent = '0';
-            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCount').textContent = '0/20';
             document.getElementById('quizCorrect').textContent = '0';
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
@@ -2447,7 +2497,7 @@
             const q = quizQuestions[currentQuizIndex];
             
             document.getElementById('quizQuestion').textContent = q.question;
-            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/20`;
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
             
@@ -2499,11 +2549,11 @@
             document.getElementById('modalScore').textContent = quizScore;
             
             let message = '';
-            if (quizScore === 100) {
+            if (quizScore === 200) {
                 message = '🏆 SEMPURNA! Kamu ahli geografi Indonesia!';
-            } else if (quizScore >= 70) {
+            } else if (quizScore >= 140) {
                 message = '👏 Bagus! Pengetahuanmu tentang Indonesia sudah baik!';
-            } else if (quizScore >= 50) {
+            } else if (quizScore >= 100) {
                 message = '💪 Cukup bagus, tapi masih bisa ditingkatkan!';
             } else {
                 message = '📚 Ayo pelajari lagi materinya, kamu pasti bisa!';

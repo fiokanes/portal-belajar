@@ -1293,7 +1293,7 @@
                     </div>
                     <div class="score-item">
                         <div class="label">Soal</div>
-                        <div class="value" id="quizCount">0/10</div>
+                        <div class="value" id="quizCount">0/24</div>
                     </div>
                     <div class="score-item">
                         <div class="label">Benar</div>
@@ -1619,7 +1619,21 @@
             { question: 'Aksara Jawa ditulis dari...', options: ['Kanan ke kiri', 'Kiri ke kanan', 'Atas ke bawah', 'Bawah ke atas'], correct: 1 },
             { question: 'Berapa jumlah Aksara Nglegena?', options: ['10', '15', '20', '25'], correct: 2 },
             { question: 'Aksara Jawa berasal dari...', options: ['Aksara Arab', 'Aksara Brahmi', 'Aksara Latin', 'Aksara China'], correct: 1 },
-            { question: 'Sandhangan yang menambah bunyi "r" setelah vokal adalah...', options: ['Pengkal', 'Cakra', 'Layar', 'Cecak'], correct: 1 }
+            { question: 'Sandhangan yang menambah bunyi "r" setelah vokal adalah...', options: ['Pengkal', 'Cakra', 'Layar', 'Cecak'], correct: 1 },
+            { question: 'Sandhangan yang mengubah "a" menjadi "u" adalah...', options: ['Suku', 'Wulu', 'Taling', 'Pepet'], correct: 0 },
+            { question: 'Angka 9 dalam Aksara Jawa adalah...', options: ['꧗', '꧘', '꧙', '꧐'], correct: 2 },
+            { question: 'Aksara "Pa" dalam Aksara Jawa adalah...', options: ['ꦥ', 'ꦧ', 'ꦠ', 'ꦮ'], correct: 0 },
+            { question: 'Sandhangan untuk bunyi "ng" di tengah kata adalah...', options: ['Cecak', 'Pengkal', 'Layar', 'Wignyan'], correct: 0 },
+            { question: 'Pasangan digunakan untuk...', options: ['Mematikan vokal', 'Menandai konsonan tidak berpasangan', 'Menulis angka', 'Mengubah bunyi'], correct: 1 },
+            { question: 'Aksara "Ka" dalam Aksara Jawa adalah...', options: ['ꦏ', 'ꦒ', 'ꦗ', 'ꦛ'], correct: 0 },
+            { question: 'Sandhangan yang mengubah "a" menjadi "e" (pepet) adalah...', options: ['Suku', 'Wulu', 'Taling', 'Pepet'], correct: 3 },
+            { question: 'Angka 1 dalam Aksara Jawa adalah...', options: ['꧑', '꧒', '꧓', '꧔'], correct: 0 },
+            { question: 'Aksara Jawa "Ma" adalah...', options: ['ꦩ', 'ꦤ', 'ꦭ', 'ꦮ'], correct: 0 },
+            { question: 'Pangkon berfungsi untuk...', options: ['Menambah bunyi', 'Mematikan vokal', 'Mengubah nada', 'Menandai akhir kalimat'], correct: 1 },
+            { question: 'Aksara "Sa" dalam Aksara Jawa adalah...', options: ['ꦱ', 'ꦲ', 'ꦕ', 'ꦏ'], correct: 0 },
+            { question: 'Sandhangan yang menambah bunyi "h" di akhir kata adalah...', options: ['Cakra', 'Layar', 'Wignyan', 'Pengkal'], correct: 2 },
+            { question: 'Angka 0 dalam Aksara Jawa adalah...', options: ['꧐', '꧑', '꧒', '꧓'], correct: 0 },
+            { question: 'Aksara "Ra" dalam Aksara Jawa adalah...', options: ['ꦫ', 'ꦭ', 'ꦮ', 'ꦪ'], correct: 0 }
         ];
 
         let currentQuizIndex = 0;
@@ -1632,7 +1646,7 @@
             quizScore = 0;
             quizCorrectCount = 0;
             document.getElementById('quizScore').textContent = '0';
-            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCount').textContent = '0/24';
             document.getElementById('quizCorrect').textContent = '0';
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
@@ -1644,7 +1658,7 @@
             quizAnswered = false;
             const q = quizQuestions[currentQuizIndex];
             document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`;
-            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/24`;
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
             document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => 
@@ -1685,9 +1699,9 @@
 
         function endQuiz() {
             document.getElementById('modalScore').textContent = quizScore;
-            let message = quizScore === 100 ? '🏆 SEMPURNA! Kamu ahli Aksara Jawa!' :
-                          quizScore >= 70 ? '👏 Bagus! Pemahamanmu sudah baik!' :
-                          quizScore >= 50 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
+            let message = quizScore === 240 ? '🏆 SEMPURNA! Kamu ahli Aksara Jawa!' :
+                          quizScore >= 168 ? '👏 Bagus! Pemahamanmu sudah baik!' :
+                          quizScore >= 120 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
             document.getElementById('modalMessage').textContent = message;
             document.getElementById('quizModal').classList.remove('hidden');
         }

@@ -1647,7 +1647,7 @@
                     </div>
                     <div class="score-item">
                         <div class="label">Soal</div>
-                        <div class="value" id="quizCount">0/10</div>
+                        <div class="value" id="quizCount">0/20</div>
                     </div>
                     <div class="score-item">
                         <div class="label">Benar</div>
@@ -2125,6 +2125,56 @@
                 question: 'Apa peran empedu dalam pencernaan?',
                 options: ['Mencerna protein', 'Mengemulsifikasi lemak', 'Mencerna karbohidrat', 'Membunuh bakteri'],
                 correct: 1
+            },
+            {
+                question: 'Enzim yang mengubah protein menjadi asam amino adalah...',
+                options: ['Amilase', 'Lipase', 'Protease', 'Laktase'],
+                correct: 2
+            },
+            {
+                question: 'Di mana proses pencernaan makanan dimulai?',
+                options: ['Lambung', 'Mulut', 'Usus halus', 'Esofagus'],
+                correct: 1
+            },
+            {
+                question: 'Vitamin apa yang diserap di usus halus dengan bantuan empedu?',
+                options: ['Vitamin C', 'Vitamin B', 'Vitamin A, D, E, K', 'Vitamin B12'],
+                correct: 2
+            },
+            {
+                question: 'Apa yang dimaksud dengan absorbsi dalam sistem pencernaan?',
+                options: ['Penghancuran makanan', 'Penyerapan nutrisi ke darah', 'Pengeluaran sisa', 'Pencampuran makanan'],
+                correct: 1
+            },
+            {
+                question: 'Lambung menghasilkan asam yang disebut...',
+                options: ['Asam sulfat', 'Asam klorida', 'Asam nitrat', 'Asam asetat'],
+                correct: 1
+            },
+            {
+                question: 'Berapa lama makanan biasanya berada di lambung?',
+                options: ['30 menit', '2-6 jam', '12 jam', '24 jam'],
+                correct: 1
+            },
+            {
+                question: 'Apa fungsi air liur dalam pencernaan?',
+                options: ['Mencerna lemak', 'Melembabkan makanan dan memecah tepung', 'Mencerna protein', 'Membunuh bakteri'],
+                correct: 1
+            },
+            {
+                question: 'Organ terakhir dalam saluran pencernaan adalah...',
+                options: ['Usus halus', 'Usus besar', 'Rektum', 'Anus'],
+                correct: 2
+            },
+            {
+                question: 'Gerakan otot yang mendorong makanan disebut...',
+                options: ['Gerak refleks', 'Gerak peristaltik', 'Gerak Brown', 'Gerak osmosis'],
+                correct: 1
+            },
+            {
+                question: 'Penyakit akibat kekurangan vitamin C adalah...',
+                options: ['Rakhitis', 'Skorbut', 'Anemia', 'Kwashiorkor'],
+                correct: 1
             }
         ];
 
@@ -2139,7 +2189,7 @@
             quizCorrectCount = 0;
             
             document.getElementById('quizScore').textContent = '0';
-            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCount').textContent = '0/20';
             document.getElementById('quizCorrect').textContent = '0';
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
@@ -2157,7 +2207,7 @@
             const q = quizQuestions[currentQuizIndex];
             
             document.getElementById('quizQuestion').textContent = q.question;
-            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/20`;
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
             
@@ -2209,11 +2259,11 @@
             document.getElementById('modalScore').textContent = quizScore;
             
             let message = '';
-            if (quizScore === 100) {
+            if (quizScore === 200) {
                 message = '🏆 SEMPURNA! Kamu benar-benar menguasai materi ini!';
-            } else if (quizScore >= 70) {
+            } else if (quizScore >= 140) {
                 message = '👏 Bagus! Pemahamanmu sudah cukup baik!';
-            } else if (quizScore >= 50) {
+            } else if (quizScore >= 100) {
                 message = '💪 Cukup bagus, tapi masih bisa ditingkatkan!';
             } else {
                 message = '📚 Ayo pelajari lagi materinya, kamu pasti bisa!';

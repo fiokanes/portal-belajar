@@ -1387,7 +1387,7 @@
                     </div>
                     <div class="score-item">
                         <div class="label">Soal</div>
-                        <div class="value" id="quizCount">0/10</div>
+                        <div class="value" id="quizCount">0/21</div>
                     </div>
                     <div class="score-item">
                         <div class="label">Benar</div>
@@ -1770,6 +1770,72 @@
                 options: ['go', 'goes', 'went', 'will'],
                 correct: 3,
                 explanation: '"Tomorrow" = Simple Future: S + will + V1'
+            },
+            {
+                question: 'We _____ TV when the phone rang.',
+                options: ['watch', 'watched', 'were watching', 'are watching'],
+                correct: 2,
+                explanation: '"When the phone rang" = Past Continuous: was/were + V-ing'
+            },
+            {
+                question: 'He usually _____ breakfast at 7 AM.',
+                options: ['eat', 'eats', 'ate', 'eating'],
+                correct: 1,
+                explanation: '"Usually" = Simple Present. He = singular → eats (+s)'
+            },
+            {
+                question: 'I _____ never _____ to Paris.',
+                options: ['have ... been', 'has ... been', 'had ... been', 'was ... been'],
+                correct: 0,
+                explanation: 'Present Perfect: have/has + V3. I = have + never + been'
+            },
+            {
+                question: 'While she _____, her brother was playing.',
+                options: ['studied', 'was studying', 'is studying', 'studies'],
+                correct: 1,
+                explanation: 'While + Past Continuous: S + was/were + V-ing'
+            },
+            {
+                question: 'By next year, I _____ from university.',
+                options: ['graduate', 'will graduate', 'will have graduated', 'am graduating'],
+                correct: 2,
+                explanation: '"By next year" = Future Perfect: will have + V3'
+            },
+            {
+                question: 'They _____ here since 2020.',
+                options: ['live', 'lived', 'have lived', 'are living'],
+                correct: 2,
+                explanation: '"Since 2020" = Present Perfect: have/has + V3'
+            },
+            {
+                question: 'At this time yesterday, I _____ on a train.',
+                options: ['sit', 'sat', 'was sitting', 'am sitting'],
+                correct: 2,
+                explanation: '"At this time yesterday" = Past Continuous: was/were + V-ing'
+            },
+            {
+                question: 'She _____ her homework before she went out.',
+                options: ['finished', 'had finished', 'has finished', 'was finishing'],
+                correct: 1,
+                explanation: 'Sebelum kejadian lampau = Past Perfect: had + V3'
+            },
+            {
+                question: 'I _____ to music right now.',
+                options: ['listen', 'listened', 'am listening', 'have listened'],
+                correct: 2,
+                explanation: '"Right now" = Present Continuous: am/is/are + V-ing'
+            },
+            {
+                question: 'The train _____ at 8 AM tomorrow.',
+                options: ['leave', 'leaves', 'left', 'will leave'],
+                correct: 1,
+                explanation: 'Jadwal tetap (timetable) menggunakan Simple Present meski untuk masa depan'
+            },
+            {
+                question: '_____ you ever _____ sushi?',
+                options: ['Do ... eat', 'Did ... eat', 'Have ... eaten', 'Are ... eating'],
+                correct: 2,
+                explanation: '"Ever" = Present Perfect: Have/has + S + V3?'
             }
         ];
 
@@ -1784,7 +1850,7 @@
             quizCorrectCount = 0;
             
             document.getElementById('quizScore').textContent = '0';
-            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCount').textContent = '0/21';
             document.getElementById('quizCorrect').textContent = '0';
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
@@ -1802,7 +1868,7 @@
             const q = quizQuestions[currentQuizIndex];
             
             document.getElementById('quizQuestion').textContent = q.question;
-            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/21`;
             document.getElementById('quizFeedback').textContent = '';
             document.getElementById('nextBtn').classList.add('hidden');
             
@@ -1856,11 +1922,11 @@
             document.getElementById('modalScore').textContent = quizScore;
             
             let message = '';
-            if (quizScore === 100) {
+            if (quizScore === 210) {
                 message = '🏆 SEMPURNA! Kamu benar-benar menguasai tenses!';
-            } else if (quizScore >= 70) {
+            } else if (quizScore >= 147) {
                 message = '👏 Bagus! Pemahamanmu tentang tenses sudah baik!';
-            } else if (quizScore >= 50) {
+            } else if (quizScore >= 105) {
                 message = '💪 Cukup bagus, tapi masih bisa ditingkatkan!';
             } else {
                 message = '📚 Ayo pelajari lagi materinya, kamu pasti bisa!';

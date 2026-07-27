@@ -564,6 +564,36 @@
         <section class="game-section hidden" id="gameArea">
             <div id="gameContent"></div>
         </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="game-section" id="quizSection">
+            <h2>❓ Kuis Bilangan Bulat - 20 Soal!</h2>
+            <p style="text-align:center;margin-bottom:20px;">Uji pemahamanmu tentang bilangan bulat dengan kuis ini!</p>
+            
+            <div class="score-display">
+                <div class="score-item">
+                    <div class="label">Skor</div>
+                    <div class="value" id="quizScore">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Soal</div>
+                    <div class="value" id="quizCount">0/20</div>
+                </div>
+                <div class="score-item">
+                    <div class="label">Benar</div>
+                    <div class="value" id="quizCorrect">0</div>
+                </div>
+            </div>
+            
+            <div class="question-box" id="quizQuestion"></div>
+            <div class="options-grid" id="quizOptions"></div>
+            <div class="feedback" id="quizFeedback"></div>
+            <div style="text-align:center;margin-top:15px;">
+                <button class="game-btn hidden" id="nextQuizBtn" onclick="nextQuizQ()">➡️ Soal Berikutnya</button>
+                <button class="game-btn" onclick="startStaticQuiz()">🔄 Mulai Kuis</button>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -956,6 +986,96 @@
             document.getElementById('gameOverModal').classList.add('hidden');
             document.getElementById('gameArea').classList.add('hidden');
             document.getElementById('gameSection').classList.remove('hidden');
+        }
+
+        // ============ STATIC QUIZ ============
+        const staticQuizQuestions = [
+            { question: '(-5) + 8 = ...', options: ['3', '-3', '13', '-13'], correct: 0 },
+            { question: '(-12) - (-7) = ...', options: ['-19', '-5', '5', '19'], correct: 1 },
+            { question: '(-6) × (-4) = ...', options: ['-24', '24', '-10', '10'], correct: 1 },
+            { question: '15 ÷ (-3) = ...', options: ['5', '-5', '-45', '45'], correct: 1 },
+            { question: '(-3) + (-7) = ...', options: ['-10', '10', '-4', '4'], correct: 0 },
+            { question: '20 - (-5) = ...', options: ['15', '-15', '25', '-25'], correct: 2 },
+            { question: '(-8) × 3 = ...', options: ['24', '-24', '11', '-11'], correct: 1 },
+            { question: '(-36) ÷ (-6) = ...', options: ['-6', '6', '-42', '42'], correct: 1 },
+            { question: '5 + (-13) = ...', options: ['18', '-18', '8', '-8'], correct: 3 },
+            { question: '(-15) + 15 = ...', options: ['30', '-30', '0', '-1'], correct: 2 },
+            { question: '(-2) × (-3) × (-4) = ...', options: ['24', '-24', '9', '-9'], correct: 1 },
+            { question: 'Suhu di luar -5°C, naik 12°C. Suhu sekarang...', options: ['7°C', '-7°C', '17°C', '-17°C'], correct: 0 },
+            { question: '(-10) + 3 - (-2) = ...', options: ['-5', '5', '-15', '-9'], correct: 0 },
+            { question: 'Hasil dari 2³ - 3² = ...', options: ['-1', '1', '17', '-17'], correct: 0 },
+            { question: 'Jika a = -4 dan b = 6, maka a × b = ...', options: ['24', '-24', '10', '-10'], correct: 1 },
+            { question: '(-1) × (-1) × (-1) = ...', options: ['1', '-1', '3', '-3'], correct: 1 },
+            { question: 'Utang Rp50.000 dibayar Rp30.000. Sisa utang...', options: ['Rp20.000', '-Rp20.000', 'Rp80.000', '-Rp80.000'], correct: 0 },
+            { question: '(-7)² = ...', options: ['-49', '49', '14', '-14'], correct: 1 },
+            { question: 'Nilai dari |−15| + |8| = ...', options: ['7', '-7', '23', '-23'], correct: 2 },
+            { question: 'Suhu awal -8°C turun 5°C. Suhu akhir...', options: ['-3°C', '-13°C', '3°C', '13°C'], correct: 1 }
+        ];
+
+        let currentStaticQuiz = 0;
+        let staticQuizScore = 0;
+        let staticQuizCorrect = 0;
+        let staticQuizAnswered = false;
+
+        function startStaticQuiz() {
+            currentStaticQuiz = 0;
+            staticQuizScore = 0;
+            staticQuizCorrect = 0;
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('quizCount').textContent = '0/20';
+            document.getElementById('quizCorrect').textContent = '0';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextQuizBtn').classList.add('hidden');
+            showStaticQuizQ();
+        }
+
+        function showStaticQuizQ() {
+            if (currentStaticQuiz >= staticQuizQuestions.length) {
+                let msg = staticQuizScore === 200 ? '🏆 SEMPURNA!' :
+                          staticQuizScore >= 140 ? '👏 Bagus!' :
+                          staticQuizScore >= 100 ? '💪 Cukup bagus!' : '📚 Belajar lagi ya!';
+                document.getElementById('quizFeedback').innerHTML = `<span style="color:gold;">${msg} Skor: ${staticQuizScore}/200</span>`;
+                document.getElementById('quizQuestion').textContent = 'Kuis selesai! Klik Mulai Kuis untuk coba lagi.';
+                document.getElementById('quizOptions').innerHTML = '';
+                document.getElementById('nextQuizBtn').classList.add('hidden');
+                return;
+            }
+            staticQuizAnswered = false;
+            const q = staticQuizQuestions[currentStaticQuiz];
+            document.getElementById('quizQuestion').textContent = q.question;
+            document.getElementById('quizCount').textContent = `${currentStaticQuiz + 1}/20`;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextQuizBtn').classList.add('hidden');
+            document.getElementById('quizOptions').innerHTML = q.options.map((o, i) =>
+                `<button class="option-btn" onclick="checkStaticQuiz(${i})">${o}</button>`
+            ).join('');
+        }
+
+        function checkStaticQuiz(selected) {
+            if (staticQuizAnswered) return;
+            staticQuizAnswered = true;
+            const q = staticQuizQuestions[currentStaticQuiz];
+            const btns = document.querySelectorAll('#quizOptions .option-btn');
+            btns.forEach((b, i) => {
+                b.disabled = true;
+                if (i === q.correct) b.classList.add('correct');
+                else if (i === selected) b.classList.add('wrong');
+            });
+            if (selected === q.correct) {
+                staticQuizScore += 10;
+                staticQuizCorrect++;
+                document.getElementById('quizFeedback').innerHTML = '<span style="color:#2ed573;">✅ Benar!</span>';
+            } else {
+                document.getElementById('quizFeedback').innerHTML = `<span style="color:#ff6b6b;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`;
+            }
+            document.getElementById('quizScore').textContent = staticQuizScore;
+            document.getElementById('quizCorrect').textContent = staticQuizCorrect;
+            document.getElementById('nextQuizBtn').classList.remove('hidden');
+        }
+
+        function nextQuizQ() {
+            currentStaticQuiz++;
+            showStaticQuizQ();
         }
     </script>
 </body>
