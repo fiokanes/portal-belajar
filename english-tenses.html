@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar English Tenses - SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
     <style>
         /* ============ GLOBAL STYLES ============ */
         * {
@@ -834,9 +835,34 @@
 
     <!-- HEADER -->
     <header>
+        <!-- Floating Books -->
+        <div style="position: absolute; top: 20px; left: 30px; animation: floatRandom 8s ease-in-out infinite;">
+            <div class="animated-book" style="transform: scale(0.7);">
+                <div class="book-cover" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                    <div class="book-pages"></div>
+                    <div class="book-title">📝</div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; top: 40px; right: 50px; animation: floatRandom 10s ease-in-out infinite; animation-delay: 2s;">
+            <div class="animated-book" style="transform: scale(0.6);">
+                <div class="book-cover" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                    <div class="book-pages"></div>
+                    <div class="book-title">📚</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="header-icon">🇬🇧</div>
         <h1>ENGLISH TENSES</h1>
         <p class="subtitle">Belajar Bahasa Inggris untuk SMP Kelas 8 📖</p>
+        
+        <!-- Animated Badges -->
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <span class="badge badge-gold">⭐ Mudah Dipahami</span>
+            <span class="badge badge-green">🎮 Interaktif</span>
+            <span class="badge badge-blue">📝 Lengkap</span>
+        </div>
     </header>
 
     <!-- NAVIGATION TABS -->
@@ -857,15 +883,15 @@
     <main>
         <!-- PENGERTIAN TENSES -->
         <section id="pengertian">
-            <h2><span class="icon">📖</span> Apa Itu Tenses?</h2>
-            <p>Halo guys! 👋 Kalian tau gak sih, kenapa orang Inggris bisa ngomong tentang masa lalu, sekarang, dan masa depan? Rahasianya ada di <strong>TENSES</strong>!</p>
+            <h2 class="animated-header"><span class="icon">📖</span> Apa Itu Tenses?</h2>
+            <p>Halo guys! 👋 Kalian tau gak sih, kenapa orang Inggris bisa ngomong tentang masa lalu, sekarang, dan masa depan? Rahasianya ada di <span class="highlight highlight-yellow highlight-glow"><strong>TENSES</strong></span>!</p>
             
-            <div class="fun-fact">
+            <div class="fun-fact interactive-card">
                 <h4>🤔 Fun Fact!</h4>
-                <p><strong>Tenses</strong> berasal dari bahasa Latin "tempus" yang berarti "waktu". Jadi, tenses adalah cara kita menunjukkan <strong>kapan</strong> suatu kejadian terjadi!</p>
+                <p><span class="highlight highlight-blue"><strong>Tenses</strong></span> berasal dari bahasa Latin "tempus" yang berarti "waktu". Jadi, tenses adalah cara kita menunjukkan <strong>kapan</strong> suatu kejadian terjadi!</p>
             </div>
 
-            <p>Di SMP Kelas 8, kita akan belajar <strong>4 tenses utama</strong>:</p>
+            <p>Di SMP Kelas 8, kita akan belajar <span class="highlight highlight-green"><strong>4 tenses utama</strong></span>:</p>
 
             <div class="tenses-grid">
                 <div class="tense-card present">
@@ -1950,5 +1976,6 @@
         createEnglishBg();
     </script>
     <script src="audio-system.js"></script>
+    <script src="visual-effects.js"></script>
 </body>
 </html>

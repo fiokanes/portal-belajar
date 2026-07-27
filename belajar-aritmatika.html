@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belajar Aritmatika Bilangan Bulat - SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -424,42 +425,75 @@
 
     <div class="page-wrapper">
     <header>
+        <!-- Floating Books -->
+        <div style="position: absolute; top: 20px; left: 30px; animation: floatRandom 8s ease-in-out infinite;">
+            <div class="animated-book" style="transform: scale(0.7);">
+                <div class="book-cover" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);">
+                    <div class="book-pages"></div>
+                    <div class="book-title">📐</div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; top: 40px; right: 50px; animation: floatRandom 10s ease-in-out infinite; animation-delay: 2s;">
+            <div class="animated-book" style="transform: scale(0.6);">
+                <div class="book-cover" style="background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);">
+                    <div class="book-pages"></div>
+                    <div class="book-title">🔢</div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 30px; left: 50%; animation: floatRandom 12s ease-in-out infinite; animation-delay: 4s;">
+            <div class="animated-book" style="transform: scale(0.5);">
+                <div class="book-cover" style="background: linear-gradient(135deg, #2196f3 0%, #03a9f4 100%);">
+                    <div class="book-pages"></div>
+                    <div class="book-title">✏️</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="header-icon">🔢</div>
         <h1>ARITMATIKA BILANGAN BULAT</h1>
         <p class="subtitle">Matematika SMP Kelas 8 - Belajar Jadi Mudah! 📐</p>
+        
+        <!-- Animated Badges -->
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <span class="badge badge-gold">⭐ Materi Favorit</span>
+            <span class="badge badge-green">🎮 Interaktif</span>
+            <span class="badge badge-blue">📚 Lengkap</span>
+        </div>
     </header>
 
     <main>
         <section id="section1">
-            <h2>😎 Apa Sih Bilangan Bulat Itu?</h2>
-            <p>Hey guys! <strong>bilangan bulat</strong> adalah kumpulan angka yang sering kita temuin sehari-hari.</p>
-            <div class="fun-box">
+            <h2 class="animated-header">😎 Apa Sih Bilangan Bulat Itu?</h2>
+            <p>Hey guys! <span class="highlight highlight-yellow highlight-glow"><strong>bilangan bulat</strong></span> adalah kumpulan angka yang sering kita temuin sehari-hari.</p>
+            <div class="fun-box interactive-card">
                 <h3>🎯 Tiga Jenis Bilangan Bulat:</h3>
-                <ul>
-                    <li><strong>Bilangan Positif (+)</strong>: 1, 2, 3, 4, 5, ... 😄</li>
-                    <li><strong>Bilangan Negatif (-)</strong>: -1, -2, -3, -4, -5, ... 🌡️</li>
-                    <li><strong>Nol (0)</strong>: Bukan positif, bukan negatif 😂</li>
+                <ul class="interactive-list">
+                    <li><span class="highlight highlight-green"><strong>Bilangan Positif (+)</strong></span>: 1, 2, 3, 4, 5, ... 😄</li>
+                    <li><span class="highlight highlight-pink"><strong>Bilangan Negatif (-)</strong></span>: -1, -2, -3, -4, -5, ... 🌡️</li>
+                    <li><span class="highlight highlight-blue"><strong>Nol (0)</strong></span>: Bukan positif, bukan negatif 😂</li>
                 </ul>
             </div>
-            <p style="text-align: center; font-size: 1.5em; color: var(--primary-dark); font-weight: bold; background: #e0f2f1; padding: 15px; border-radius: 10px;">
-                ... -4, -3, -2, -1, 0, +1, +2, +3, +4 ...
+            <p style="text-align: center; font-size: 1.5em; color: var(--primary-dark); font-weight: bold; background: linear-gradient(135deg, #e0f2f1, #b2dfdb); padding: 20px; border-radius: 15px; border: 3px dashed var(--primary);">
+                <span class="sparkle">... -4, -3, -2, -1, 0, +1, +2, +3, +4 ...</span>
             </p>
         </section>
 
         <section id="section2">
-            <h2>➕ Penjumlahan Bilangan Bulat</h2>
+            <h2 class="animated-header">➕ Penjumlahan Bilangan Bulat</h2>
             <h3>1️⃣ Tanda Sama = Jumlahkan</h3>
-            <div class="example-box">
-                <ul>
-                    <li>(+3) + (+5) = <strong>+8</strong></li>
-                    <li>(-4) + (-6) = <strong>-10</strong></li>
+            <div class="example-box interactive-card">
+                <ul class="interactive-list">
+                    <li><span class="highlight highlight-green">(+3) + (+5) = <strong>+8</strong></span></li>
+                    <li><span class="highlight highlight-pink">(-4) + (-6) = <strong>-10</strong></span></li>
                 </ul>
             </div>
             <h3>2️⃣ Tanda Beda = Adu Kuat 💪</h3>
-            <div class="example-box">
-                <ul>
-                    <li>(+7) + (-3) = <strong>+4</strong> (7 lebih besar!)</li>
-                    <li>(-9) + (+5) = <strong>-4</strong> (9 lebih besar!)</li>
+            <div class="example-box interactive-card">
+                <ul class="interactive-list">
+                    <li><span class="highlight highlight-yellow">(+7) + (-3) = <strong>+4</strong></span> (7 lebih besar!)</li>
+                    <li><span class="highlight highlight-orange">(-9) + (+5) = <strong>-4</strong></span> (9 lebih besar!)</li>
                 </ul>
             </div>
         </section>
@@ -1066,5 +1100,6 @@
         }
     </script>
     <script src="audio-system.js"></script>
+    <script src="visual-effects.js"></script>
 </body>
 </html>
