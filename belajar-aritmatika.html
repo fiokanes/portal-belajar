@@ -323,31 +323,7 @@
             font-size: 1.2em; margin-top: 10px; font-weight: bold; color: var(--gold);
         }
 
-        /* ============ READ ALOUD BUTTON ============ */
-        .read-aloud-btn {
-            background: linear-gradient(135deg, #00695c, #00897b);
-            color: white; border: none; padding: 8px 16px;
-            border-radius: 20px; cursor: pointer; font-size: 0.85em;
-            font-weight: bold; transition: all 0.3s ease;
-            display: inline-flex; align-items: center; gap: 6px;
-            margin: 10px 0; letter-spacing: 0.5px;
-        }
 
-        .read-aloud-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 3px 10px rgba(0, 105, 92, 0.3);
-            background: linear-gradient(135deg, #26a69a, #4db6ac);
-        }
-
-        .read-aloud-btn.reading {
-            background: linear-gradient(135deg, #ff8f00, #ffa000);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
 
         /* ============ FLOATING AUDIO CONTROL ============ */
         .audio-control {
@@ -415,7 +391,7 @@
 
     <main>
         <section id="section1">
-            <h2>😎 Apa Sih Bilangan Bulat Itu? <button class="read-aloud-btn" data-section="section1" onclick="readSection('section1')">🎧 Bacain dong</button></h2>
+            <h2>😎 Apa Sih Bilangan Bulat Itu?</h2>
             <p>Hey guys! <strong>bilangan bulat</strong> adalah kumpulan angka yang sering kita temuin sehari-hari.</p>
             <div class="fun-box">
                 <h3>🎯 Tiga Jenis Bilangan Bulat:</h3>
@@ -431,7 +407,7 @@
         </section>
 
         <section id="section2">
-            <h2>➕ Penjumlahan Bilangan Bulat <button class="read-aloud-btn" data-section="section2" onclick="readSection('section2')">🎧 Bacain dong</button></h2>
+            <h2>➕ Penjumlahan Bilangan Bulat</h2>
             <h3>1️⃣ Tanda Sama = Jumlahkan</h3>
             <div class="example-box">
                 <ul>
@@ -652,7 +628,6 @@
             </div>
             
             <div style="text-align: center; margin-top: 20px;">
-                <button class="game-btn" onclick="readSection('summarySection')" style="font-size: 1.1em; padding: 15px 30px;">🎧 Bacain Rangkuman</button>
                 <button class="game-btn" onclick="window.print()" style="font-size: 1.1em; padding: 15px 30px; background: linear-gradient(135deg, #11998e, #38ef7d);">🖨️ Cetak Rangkuman</button>
             </div>
         </section>
@@ -685,97 +660,6 @@
     </div>
 
     <script>
-        // ============ READ ALOUD SYSTEM (Natural Voice) ============
-        let speechRate = 0.95;
-        let isReading = false;
-
-        function getTextFromSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (!section) return '';
-            let text = '';
-            const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
-            let node;
-            while (node = walker.nextNode()) {
-                const parent = node.parentElement;
-                if (parent && !parent.closest('button') && !parent.closest('.quiz-option') && !parent.closest('.option-btn') && !parent.closest('.read-aloud-btn') && !parent.closest('.quiz-feedback')) {
-                    let cleaned = node.textContent.trim()
-                        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
-                        .replace(/[✅❌⚠️🔑💡📝🎯✨➕➖✖️➗]/g, '')
-                        .replace(/\s+/g, ' ').trim();
-                    if (cleaned.length > 2) text += cleaned + ' ';
-                }
-            }
-            return text.replace(/\.\.\./g, ',').replace(/\.{2,}/g, '.').replace(/\s+/g, ' ').trim();
-        }
-
-        function getBestVoice(lang) {
-            const voices = window.speechSynthesis.getVoices();
-            if (lang === 'id-ID') {
-                return voices.find(v => v.lang.startsWith('id') && v.name.includes('Google')) ||
-                       voices.find(v => v.lang.startsWith('id') && (v.name.includes('Female') || v.name.includes('Wanita'))) ||
-                       voices.find(v => v.lang.startsWith('id'));
-            }
-            return voices.find(v => v.lang.startsWith('en') && v.name.includes('Google')) ||
-                   voices.find(v => v.lang.startsWith('en-US') && v.name.includes('Natural')) ||
-                   voices.find(v => v.lang.startsWith('en'));
-        }
-
-        function speakSentences(sentences, lang, sectionId) {
-            if (sentences.length === 0) {
-                isReading = false;
-                document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🎧 Bacain dong'; });
-                const section = document.getElementById(sectionId);
-                if (section) section.style.borderLeft = '';
-                return;
-            }
-            const sentence = sentences.shift();
-            const utterance = new SpeechSynthesisUtterance(sentence);
-            utterance.lang = lang; utterance.rate = speechRate; utterance.pitch = 1.05; utterance.volume = 1;
-            const voice = getBestVoice(lang);
-            if (voice) utterance.voice = voice;
-            utterance.onend = () => setTimeout(() => speakSentences(sentences, lang, sectionId), 150);
-            utterance.onerror = () => speakSentences(sentences, lang, sectionId);
-            window.speechSynthesis.speak(utterance);
-        }
-
-        function readSection(sectionId) {
-            if (!('speechSynthesis' in window)) return;
-            window.speechSynthesis.cancel();
-            const text = getTextFromSection(sectionId);
-            if (!text) return;
-            document.querySelectorAll('section').forEach(s => { s.style.borderLeft = ''; });
-            const section = document.getElementById(sectionId);
-            if (section) { section.style.borderLeft = '5px solid #ffd700'; section.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            isReading = true;
-            document.querySelectorAll('.read-aloud-btn').forEach(btn => {
-                if (btn.dataset.section === sectionId) { btn.classList.add('reading'); btn.innerHTML = '🎧 Lagi dibacain...'; }
-            });
-            const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
-            speakSentences(sentences.map(s => s.trim()).filter(s => s.length > 0), 'id-ID', sectionId);
-        }
-
-        function stopReading() {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel(); isReading = false;
-                document.querySelectorAll('.read-aloud-btn').forEach(btn => { btn.classList.remove('reading'); btn.innerHTML = '🔊 Bacakan'; });
-                document.querySelectorAll('section').forEach(s => s.style.borderLeft = '');
-            }
-        }
-
-        function pauseResume() {
-            if ('speechSynthesis' in window) {
-                if (window.speechSynthesis.paused) { window.speechSynthesis.resume(); document.getElementById('pauseBtn').innerHTML = '⏸️'; }
-                else if (window.speechSynthesis.speaking) { window.speechSynthesis.pause(); document.getElementById('pauseBtn').innerHTML = '▶️'; }
-            }
-        }
-
-        function changeSpeed() {
-            const speeds = [0.7, 0.8, 0.9, 1.0, 1.2, 1.5];
-            const currentIndex = speeds.indexOf(speechRate);
-            speechRate = speeds[(currentIndex + 1) % speeds.length];
-            document.getElementById('speedDisplay').textContent = speechRate + 'x';
-        }
-
         // Create floating math symbols - LEBIH BESAR & RAMAI
         function createMathBg() {
             const container = document.getElementById('mathBg');
