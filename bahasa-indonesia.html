@@ -28,9 +28,15 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #7f0000 0%, #b71c1c 50%, #c62828 100%);
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.8;
             overflow-x: hidden;
+            font-size: 17px; color: #2c3e50;
         }
+
+        section p { font-size: 1.08em; line-height: 1.9; color: #37474f; margin-bottom: 12px; }
+        section h2 { font-size: 1.6em; line-height: 1.4; }
+        section h3 { font-size: 1.25em; line-height: 1.4; }
+        section li { font-size: 1.02rem; line-height: 1.8; color: #455a64; margin-bottom: 6px; }
 
         /* ============ PORTAL NAVBAR ============ */
         .portal-navbar {
@@ -1612,3 +1618,175 @@
 
     <script>
         // ============ AUDIO SYSTEM ============
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        let audioCtx = null;
+
+        function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
+
+        function playClick() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.frequency.value = 800; osc.type = 'sine';
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        function playSuccess() {
+            initAudio();
+            [523, 659, 784].forEach((freq, i) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.frequency.value = freq; osc.type = 'sine';
+                gain.gain.setValueAtTime(0.18, audioCtx.currentTime + i * 0.12);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.12 + 0.2);
+                osc.start(audioCtx.currentTime + i * 0.12);
+                osc.stop(audioCtx.currentTime + i * 0.12 + 0.2);
+            });
+        }
+
+        function playError() {
+            initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.frequency.value = 200; osc.type = 'sawtooth';
+            gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.25);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.25);
+        }
+
+        // ============ QUIZ ============
+        const quizQuestions = [
+            { question: 'Teks yang berisi langkah-langkah secara berurutan disebut...', options: ['Teks Eksposisi', 'Teks Prosedur', 'Teks Narasi', 'Cerpen'], correct: 1 },
+            { question: 'Struktur teks eksposisi yang berisi pendapat penulis adalah...', options: ['Argumentasi', 'Reiteration', 'Tesis', 'Koda'], correct: 2 },
+            { question: 'Yang BUKAN termasuk unsur intrinsik cerpen adalah...', options: ['Tema', 'Alur', 'Kondisi Sosial', 'Penokohan'], correct: 2 },
+            { question: 'Penggunaan kata "bagai" dalam kalimat termasuk majas...', options: ['Metafora', 'Hiperbola', 'Simile', 'Personifikasi'], correct: 2 },
+            { question: 'Ciri surat dinas yang benar adalah...', options: ['Bahasa informal', 'Ada kop surat', 'Tidak ada nomor', 'Tanpa tanda tangan'], correct: 1 },
+            { question: 'Puisi yang terdiri dari 4 baris dan bersajak a-b-a-b adalah...', options: ['Syair', 'Gurindam', 'Pantun', 'Mantra'], correct: 2 },
+            { question: 'Kalimat efektif harus memiliki...', options: ['Banyak kata', 'Kata baku', 'Bahasa gaul', 'Pengulangan kata'], correct: 1 },
+            { question: 'Majas "Angin berbisik" termasuk majas...', options: ['Simile', 'Metafora', 'Personifikasi', 'Hiperbola'], correct: 2 },
+            { question: 'Paragraf pembuka surat dinas disebut...', options: ['Isi surat', 'Salut pembuka', 'Kop surat', 'Lampiran'], correct: 1 },
+            { question: 'Cerpen memiliki ciri...', options: ['Panjang', 'Banyak alur', 'Sederhana dan pendek', 'Banyak tokoh'], correct: 2 },
+            { question: 'Sinonim dari kata "cantik" adalah...', options: ['Buruk', 'Indah', 'Jelek', 'Biasa'], correct: 1 },
+            { question: 'Antonim dari kata "tinggi" adalah...', options: ['Panjang', 'Pendek', 'Lebar', 'Luas'], correct: 1 },
+            { question: 'Kata baku yang benar adalah...', options: ['Resiko', 'Resiko', 'Risiko', 'Rhesiko'], correct: 2 },
+            { question: 'Majas "Bagaikan bintang di langit" termasuk...', options: ['Hiperbola', 'Simile', 'Personifikasi', 'Metafora'], correct: 1 },
+            { question: 'Struktur cerpen yang berisi pengenalan tokoh disebut...', options: ['Komplikasi', 'Orientasi', 'Resolusi', 'Koda'], correct: 1 },
+            { question: 'Kata "di mana" yang benar penggunaannya adalah...', options: ['Dimana kamu pergi?', 'Di mana rumahmu?', 'Dimana buku itu?', 'Semua benar'], correct: 1 },
+            { question: 'Puisi yang terdiri dari 2 baris dan bersajak a-a disebut...', options: ['Pantun', 'Syair', 'Gurindam', 'Mantra'], correct: 2 },
+            { question: 'Kata berimbuhan "berlari" terdiri dari...', options: ['ber + lari', 'be + rlari', 'berl + ari', 'berla + ri'], correct: 0 },
+            { question: 'Kalimat "Dia pergi ke pasar" memiliki pola...', options: ['SPO', 'SPOK', 'SP', 'SPK'], correct: 1 },
+            { question: 'Kata "efektif" berarti...', options: ['Berlebihan', 'Tidak perlu', 'Tepat guna', 'Bertele-tele'], correct: 2 },
+            { question: 'Majas yang melebih-lebihkan disebut...', options: ['Simile', 'Personifikasi', 'Hiperbola', 'Metafora'], correct: 2 },
+            { question: 'Unsur ekstrinsik cerpen meliputi...', options: ['Tema dan alur', 'Amanat dan tokoh', 'Latar dan sudut pandang', 'Nilai sosial dan budaya'], correct: 3 },
+            { question: 'Kata "efisien" berarti...', options: ['Menghabiskan waktu', 'Hemat dan tepat', 'Boros', 'Lambat'], correct: 1 },
+            { question: 'Surat lamaran pekerjaan termasuk jenis surat...', options: ['Surat dinas', 'Surat pribadi', 'Surat niaga', 'Surat edaran'], correct: 0 },
+            { question: 'Teks yang bertujuan meyakinkan pembaca disebut...', options: ['Teks narasi', 'Teks eksposisi', 'Teks deskripsi', 'Teks argumentasi'], correct: 3 },
+            { question: 'Paragraf yang gagasan utamanya di akhir disebut...', options: ['Deduktif', 'Induktif', 'Campuran', 'Naratif'], correct: 1 },
+            { question: 'Kata baku untuk "aktifitas" adalah...', options: ['Aktifitas', 'Aktivitas', 'Aktipitas', 'Aktivytas'], correct: 1 },
+            { question: 'Majas yang memberikan sifat manusia pada benda disebut...', options: ['Simile', 'Hiperbola', 'Personifikasi', 'Metafora'], correct: 2 },
+            { question: 'Pantun terdiri dari...', options: ['2 baris', '3 baris', '4 baris', '5 baris'], correct: 2 }
+        ];
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+        let quizCorrectCount = 0;
+        let quizAnswered = false;
+
+        function startQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            quizCorrectCount = 0;
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('quizCount').textContent = '0/29';
+            document.getElementById('quizCorrect').textContent = '0';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; }
+            quizAnswered = false;
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quizQuestion').textContent = q.question;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/29`;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('quizOptions').innerHTML = q.options.map((o, i) =>
+                `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${o}</button>`
+            ).join('');
+        }
+
+        function checkQuizAnswer(selected) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+            const q = quizQuestions[currentQuizIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === q.correct) opt.classList.add('correct');
+                else if (i === selected && i !== q.correct) opt.classList.add('wrong');
+            });
+            if (selected === q.correct) {
+                quizScore += 10;
+                quizCorrectCount++;
+                playSuccess();
+                document.getElementById('quizFeedback').innerHTML = '<span style="color: #2ed573;">✅ Benar!</span>';
+            } else {
+                playError();
+                document.getElementById('quizFeedback').innerHTML = '<span style="color: #ff6b6b;">❌ Salah! Jawaban: ' + q.options[q.correct] + '</span>';
+            }
+            document.getElementById('quizScore').textContent = quizScore;
+            document.getElementById('quizCorrect').textContent = quizCorrectCount;
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            showQuizQuestion();
+        }
+
+        function endQuiz() {
+            document.getElementById('modalScore').textContent = quizScore;
+            let message = quizScore === 290 ? '🏆 SEMPURNA! Kamu ahli Bahasa Indonesia!' :
+                          quizScore >= 203 ? '👏 Bagus! Pemahamanmu sudah baik!' :
+                          quizScore >= 145 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('quizModal').classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizModal').classList.add('hidden');
+            startQuiz();
+        }
+
+        // ============ INTERSECTION OBSERVER ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(40px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+
+        setTimeout(() => {
+            document.querySelector('section').style.opacity = '1';
+            document.querySelector('section').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
+    <script src="audio-system.js"></script>
+</body>
+</html>
