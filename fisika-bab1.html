@@ -48,40 +48,6 @@
 
         .back-nav:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); background: white; }
 
-        /* Mapel Switcher */
-        .mapel-switcher {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
-        }
-
-        .mapel-switcher-btn {
-            background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px;
-            text-decoration: none; color: #e65100; font-weight: bold; font-size: 1rem;
-            transition: all 0.3s ease; backdrop-filter: blur(10px); cursor: pointer; border: none;
-        }
-
-        .mapel-switcher-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); background: white; }
-
-        .mapel-dropdown {
-            display: none; position: absolute; top: 100%; right: 0; margin-top: 10px;
-            background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            min-width: 250px; overflow: hidden; animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .mapel-dropdown.show { display: block; }
-
-        .mapel-dropdown a {
-            display: flex; align-items: center; gap: 12px; padding: 15px 20px;
-            text-decoration: none; color: #333; transition: all 0.3s ease; border-bottom: 1px solid #f0f0f0;
-        }
-
-        .mapel-dropdown a:hover { background: #f5f5f5; }
-        .mapel-dropdown a:last-child { border-bottom: none; }
-        .mapel-dropdown a .mapel-icon { font-size: 1.5em; }
-        .mapel-dropdown a .mapel-name { font-weight: 500; }
-
         header {
             background: linear-gradient(135deg, #bf360c 0%, #e65100 50%, #f57c00 100%);
             color: white; text-align: center; padding: 60px 20px 80px;
@@ -152,50 +118,6 @@
 
         .quiz-section h2 { color: #f57f17; }
 
-        .quiz-question {
-            background: white; padding: 25px; border-radius: 20px;
-            margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .quiz-question p { font-weight: bold; font-size: 1.1em; color: #333; margin-bottom: 15px; }
-
-        .quiz-options { display: flex; flex-direction: column; gap: 12px; }
-
-        .quiz-option {
-            display: flex; align-items: center; gap: 12px;
-            padding: 15px; background: #f8f9fa; border-radius: 12px;
-            cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent;
-        }
-
-        .quiz-option:hover { background: #fff3e0; border-color: #ffb74d; transform: translateX(5px); }
-        .quiz-option input[type="radio"] { width: 20px; height: 20px; accent-color: #e65100; }
-
-        .quiz-btn {
-            display: block; margin: 30px auto 0; padding: 18px 50px;
-            background: linear-gradient(135deg, #e65100, #f57c00);
-            color: white; border: none; border-radius: 30px;
-            font-size: 1.2em; font-weight: bold; cursor: pointer;
-            transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(230, 81, 0, 0.4);
-        }
-
-        .quiz-btn:hover { transform: translateY(-3px) scale(1.05); }
-
-        .quiz-result {
-            margin-top: 25px; padding: 25px; border-radius: 20px;
-            text-align: center; display: none; font-size: 1.1em;
-        }
-
-        .quiz-result.show { display: block; animation: fadeInUp 0.5s ease; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .quiz-result.excellent { background: linear-gradient(135deg, #c8e6c9, #a5d6a7); border: 3px solid #4caf50; color: #1b5e20; }
-        .quiz-result.good { background: linear-gradient(135deg, #fff9c4, #fff59d); border: 3px solid #ffeb3b; color: #f57f17; }
-        .quiz-result.try-again { background: linear-gradient(135deg, #ffcdd2, #ef9a9a); border: 3px solid #f44336; color: #b71c1c; }
-
         footer {
             background: linear-gradient(135deg, #0d1b2a 0%, #bf360c 100%);
             color: white; text-align: center; padding: 40px 20px; position: relative;
@@ -222,8 +144,6 @@
             .section-box { padding: 30px 20px; }
             .hero-section { padding: 30px 20px; }
             .hero-section h2 { font-size: 1.6em; }
-            .mapel-switcher { top: 70px; right: 10px; }
-            .mapel-switcher-btn { padding: 10px 15px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -232,4 +152,182 @@
 
     <a href="ipa-fisika.html" class="back-nav">← Kembali ke Fisika</a>
 
-    <!-- Mapel Switcher -->
+    <header>
+        <h1>⚡ BAB 1: USAHA, ENERGI, DAN PESAWAT SEDERHANA</h1>
+        <p class="subtitle">Pelajari konsep usaha, energi, dan pesawat sederhana! 💪✨</p>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>💪 Usaha dan Energi</h2>
+            <p>Dalam bab ini, kamu akan mempelajari tentang konsep usaha dan energi, hukum kekekalan energi, serta berbagai jenis pesawat sederhana dan penerapannya.</p>
+        </section>
+
+        <section class="section-box">
+            <h2>📖 Materi Pembelajaran</h2>
+            
+            <h3>1. Usaha (Work)</h3>
+            <p>Usaha dalam fisika didefinisikan sebagai hasil kali gaya dengan perpindahan benda. Usaha terjadi ketika gaya menyebabkan benda berpindah posisi.</p>
+            
+            <div class="formula-box">
+                <h4>📐 Rumus Usaha</h4>
+                <div class="formula">W = F × s × cos θ</div>
+                <p>Keterangan:<br>
+                W = Usaha (Joule/J)<br>
+                F = Gaya (Newton/N)<br>
+                s = Perpindahan (meter/m)<br>
+                θ = Sudut antara gaya dan perpindahan</p>
+            </div>
+
+            <h3>2. Energi</h3>
+            <p>Energi adalah kemampuan untuk melakukan usaha. Energi memiliki berbagai bentuk:</p>
+            <ul>
+                <li><strong>Energi Kinetik:</strong> Energi yang dimiliki benda karena gerakannya (½mv²)</li>
+                <li><strong>Energi Potensial:</strong> Energi yang dimiliki benda karena kedudukannya (mgh)</li>
+                <li><strong>Energi Panas:</strong> Energi yang berpindah karena perbedaan suhu</li>
+                <li><strong>Energi Kimia:</strong> Energi yang tersimpan dalam ikatan kimia</li>
+            </ul>
+
+            <div class="formula-box">
+                <h4>📐 Rumus Energi Kinetik dan Potensial</h4>
+                <div class="formula">Ek = ½mv²</div>
+                <div class="formula">Ep = mgh</div>
+                <p>Keterangan:<br>
+                m = massa (kg), v = kecepatan (m/s)<br>
+                g = percepatan gravitasi (9,8 m/s²), h = ketinggian (m)</p>
+            </div>
+
+            <h3>3. Hukum Kekekalan Energi</h3>
+            <p>Energi tidak dapat diciptakan atau dimusnahkan, hanya dapat diubah dari satu bentuk ke bentuk lain. Jumlah total energi dalam sistem tertutup selalu tetap.</p>
+
+            <h3>4. Pesawat Sederhana</h3>
+            <p>Pesawat sederhana adalah alat yang digunakan untuk mempermudah pekerjaan. Jenis-jenis pesawat sederhana:</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-icon">⚖️</span>
+                    <h4>Tuas</h4>
+                    <p>Batang yang dapat diputar pada titik tumpu. Contoh: gunting, jungkat-jangkit, linggis.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">🔄</span>
+                    <h4>Katrol</h4>
+                    <p>Roda berporos dengan tali yang melingkarinya. Contoh: katrol tetap, katrol bebas, katrol majemuk.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">📐</span>
+                    <h4>Bidang Miring</h4>
+                    <p>Permukaan datar yang membentuk sudut dengan horizontal. Contoh: tangga, jalan berliku di gunung.</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">🔧</span>
+                    <h4>Roda dan Poros</h4>
+                    <p>Dua silinder dengan diameter berbeda yang menyatu. Contoh: lingkar kemudi, kunci Inggris.</p>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <h4>📐 Rumus Pesawat Sederhana</h4>
+                <div class="formula">MA = F₂/F₁ (Keuntungan Mekanis)</div>
+                <div class="formula">η = (Wout/Win) × 100% (Efisiensi)</div>
+                <p>Keterangan:<br>
+                MA = Keuntungan Mekanis<br>
+                F₂ = Gaya beban, F₁ = Gaya kuasa<br>
+                η = Efisiensi (%), Wout = Usaha keluar, Win = Usaha masuk</p>
+            </div>
+
+            <h3>5. Daya</h3>
+            <p>Daya adalah kecepatan melakukan usaha atau laju perubahan energi.</p>
+            
+            <div class="formula-box">
+                <h4>📐 Rumus Daya</h4>
+                <div class="formula">P = W/t</div>
+                <p>Keterangan:<br>
+                P = Daya (Watt/W)<br>
+                W = Usaha (Joule/J)<br>
+                t = Waktu (sekon/s)</p>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Uji pemahamanmu tentang Usaha, Energi, dan Pesawat Sederhana!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">⚡</div>
+            <h3>BAB 1: USAHA, ENERGI, DAN PESAWAT SEDERHANA</h3>
+            <p>Fisika - IPA - SMP Kelas 8</p>
+            <div class="footer-links">
+                <a href="index.html">📚 Portal Utama</a>
+                <a href="ipa.html">🔬 IPA</a>
+                <a href="ipa-fisika.html">⚡ Fisika</a>
+                <a href="fisika-bab2.html">💧 Bab 2</a>
+                <a href="kuis-fisika.html">🎯 Kuis</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="audio-system.js"></script>
+    <script src="visual-effects.js"></script>
+    <script src="mapel-switcher.js"></script>
+    <script src="click-sounds.js"></script>
+    <script src="emoji-effects.js"></script>
+    <script src="quiz-game-system.js"></script>
+    <script>
+        // Create bubbles
+        function createBubbles() {
+            const container = document.getElementById('bgAnimation');
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 50 + 20;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.bottom = '-100px';
+                bubble.style.animationDelay = Math.random() * 10 + 's';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(bubble);
+            }
+        }
+        createBubbles();
+
+        // Quiz
+        if(typeof QuizSystem !== 'undefined') {
+            QuizSystem.createQuiz('fisika', 'quizContainer', 5);
+        }
+
+        // Scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollTop');
+            if (scrollBtn) {
+                scrollBtn.classList.toggle('visible', window.scrollY > 500);
+            }
+        });
+
+        // Animate elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .formula-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

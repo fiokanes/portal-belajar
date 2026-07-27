@@ -63,23 +63,70 @@
             <p>Bilangan berpangkat adalah bilangan yang dinyatakan dengan pangkat (eksponen). Bentuk akar adalah bilangan yang menggunakan tanda akar (√).</p>
         </section>
         <section class="section-box">
-            <h2>💪 Sifat-sifat Bilangan Berpangkat</h2>
+            <h2>📖 Materi Pembelajaran</h2>
+            
+            <h3>1. Bilangan Berpangkat</h3>
+            <p>Bilangan berpangkat adalah cara singkat untuk menuliskan perkalian berulang dari suatu bilangan yang sama. Notasi: a^n dibaca "a pangkat n"</p>
+            
             <div class="formula-box">
                 <h4>📐 Sifat Bilangan Berpangkat</h4>
                 <div class="formula">a^m × a^n = a^(m+n)</div>
-                <div class="formula">a^m : a^n = a^(m-n)</div>
+                <div class="formula">a^m ÷ a^n = a^(m-n)</div>
                 <div class="formula">(a^m)^n = a^(m×n)</div>
                 <div class="formula">a^0 = 1 (a ≠ 0)</div>
                 <div class="formula">a^(-n) = 1/a^n</div>
             </div>
+
+            <h3>2. Bentuk Akar</h3>
+            <p>Bentuk akar adalah bilangan yang menggunakan tanda akar (√). Akar kuadrat dari suatu bilangan positif adalah bilangan positif yang jika dikuadratkan menghasilkan bilangan tersebut.</p>
+            
             <div class="formula-box">
                 <h4>📐 Sifat Bentuk Akar</h4>
                 <div class="formula">√(a×b) = √a × √b</div>
                 <div class="formula">√(a/b) = √a / √b</div>
-                <div class="formula">a√b × c√d = ac√(bd)</div>
                 <div class="formula">√a × √a = a</div>
+                <div class="formula">(√a)^2 = a</div>
+            </div>
+
+            <h3>3. Operasi pada Bentuk Akar</h3>
+            <p>Operasi penjumlahan dan pengurangan bentuk akar hanya bisa dilakukan pada bentuk akar yang sama (seakar).</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-icon">➕</span>
+                    <h4>Penjumlahan</h4>
+                    <p>a√x + b√x = (a+b)√x<br>Contoh: 3√2 + 5√2 = 8√2</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">➖</span>
+                    <h4>Pengurangan</h4>
+                    <p>a√x - b√x = (a-b)√x<br>Contoh: 7√3 - 2√3 = 5√3</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">✖️</span>
+                    <h4>Perkalian</h4>
+                    <p>a√x × b√y = ab√(xy)<br>Contoh: 2√3 × 3√5 = 6√15</p>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">➗</span>
+                    <h4>Pembagian</h4>
+                    <p>a√x ÷ b√y = (a/b)√(x/y)<br>Contoh: 6√10 ÷ 2√5 = 3√2</p>
+                </div>
+            </div>
+
+            <h3>4. Rasionalisasi Penyebut</h3>
+            <p>Rasionalisasi penyebut adalah proses menghilangkan bentuk akar dari penyebut suatu pecahan dengan mengalikan pembilang dan penyebut dengan pasangannya.</p>
+            
+            <div class="formula-box">
+                <h4>📐 Contoh Rasionalisasi</h4>
+                <div class="formula">5/√3 = (5×√3)/(√3×√3) = 5√3/3</div>
+                <div class="formula">1/(√2+1) = (√2-1)/((√2+1)(√2-1)) = (√2-1)/1 = √2-1</div>
             </div>
         </section>
+
         <section class="quiz-section">
             <h2>🧠 Kuis Pemahaman</h2>
             <p style="text-align: center; margin-bottom: 30px;">Uji pemahamanmu tentang bilangan berpangkat dan bentuk akar!</p>
@@ -94,12 +141,17 @@
             <div class="footer-links">
                 <a href="index.html">📚 Portal Utama</a>
                 <a href="matematika.html">🔢 Matematika</a>
+                <a href="mtk-bab1.html">📐 Bab 1</a>
                 <a href="kuis-matematika.html">🎯 Kuis</a>
             </div>
         </div>
     </footer>
     <script src="click-sounds.js"></script>
     <script src="quiz-game-system.js"></script>
+    <script src="mapel-switcher.js"></script>
     <script>
         if(typeof QuizSystem!=='undefined') QuizSystem.createQuiz('matematika', 'quizContainer', 5);
-        function createBubbles() { const c = document.getElemen
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for(let i=0;i<15;i++){const b=document.createElement('div');b.className='bubble';const s=Math.random()*50+20;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'%';b.style.bottom='-100px';b.style.animationDelay=Math.random()*10+'s';b.style.animationDuration=(Math.random()*10+10)+'s';c.appendChild(b);}} createBubbles();
+    </script>
+</body>
+</html>
