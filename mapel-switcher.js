@@ -1,5 +1,5 @@
 /**
- * Tombol Ganti Mapel Konsisten
+ * Tombol Ganti Mapel Konsisten - Scrollable!
  * Tambahkan script ini di setiap halaman untuk tombol ganti mapel yang sama
  */
 
@@ -26,7 +26,27 @@
         .mapel-dropdown {
             display: none; position: absolute; top: 100%; right: 0; margin-top: 10px;
             background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            min-width: 280px; overflow: hidden; animation: fadeInMapel 0.3s ease;
+            min-width: 280px; max-height: 70vh; overflow-y: auto; overflow-x: hidden;
+            animation: fadeInMapel 0.3s ease;
+        }
+
+        /* Scrollbar styling */
+        .mapel-dropdown::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .mapel-dropdown::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .mapel-dropdown::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .mapel-dropdown::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         @keyframes fadeInMapel { 
@@ -44,18 +64,28 @@
 
         .mapel-dropdown a:hover { background: #f5f5f5; }
         .mapel-dropdown a:last-child { border-bottom: none; }
-        .mapel-dropdown a .mapel-icon { font-size: 1.5em; }
+        .mapel-dropdown a .mapel-icon { font-size: 1.5em; flex-shrink: 0; }
         .mapel-dropdown a .mapel-name { font-weight: 500; }
 
         .mapel-dropdown-title {
             padding: 15px 20px; background: #f8f9fa; font-weight: bold; 
             color: #666; font-size: 0.9em; border-bottom: 2px solid #e0e0e0;
+            position: sticky; top: 0; z-index: 1;
         }
 
         @media (max-width: 768px) {
             .mapel-switcher { top: 70px; right: 10px; }
             .mapel-switcher-btn { padding: 10px 15px; font-size: 0.9rem; }
-            .mapel-dropdown { min-width: 250px; }
+            .mapel-dropdown { 
+                min-width: 250px; 
+                max-height: 60vh;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .mapel-dropdown {
+                max-height: 50vh;
+            }
         }
     `;
 
@@ -84,6 +114,11 @@
         const dropdown = document.getElementById('mapelDropdown');
         if (dropdown) {
             dropdown.classList.toggle('show');
+            
+            // Scroll ke atas saat dibuka
+            if (dropdown.classList.contains('show')) {
+                dropdown.scrollTop = 0;
+            }
         }
     };
 
@@ -95,6 +130,17 @@
             if (dropdown) {
                 dropdown.classList.remove('show');
             }
+        }
+    });
+
+    // Support touch scroll di dropdown (mobile)
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('mapelDropdown');
+        if (dropdown) {
+            // Prevent page scroll when scrolling inside dropdown
+            dropdown.addEventListener('touchmove', function(e) {
+                e.stopPropagation();
+            }, { passive: true });
         }
     });
 
