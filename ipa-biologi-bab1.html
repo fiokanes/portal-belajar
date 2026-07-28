@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Pilih Materi - Biologi SMP Kelas 8</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #c62828 0%, #d32f2f 50%, #e53935 100%); display: flex; align-items: center; justify-content: center; overflow-x: hidden; }
+        .container { max-width: 900px; width: 95%; padding: 20px; }
+        .back-nav { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 30px; text-decoration: none; color: #c62828; font-weight: bold; margin-bottom: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+        .back-nav:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+        .header-card { background: rgba(255,255,255,0.97); border-radius: 30px; padding: 40px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 30px; }
+        .header-card .icon { font-size: 5em; margin-bottom: 15px; animation: bounce 2s ease-in-out infinite; display: inline-block; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .header-card h1 { color: #c62828; font-size: 2.2em; margin-bottom: 10px; }
+        .header-card p { color: #666; font-size: 1.1em; line-height: 1.8; }
+        .choices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
+        .choice-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.15); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none; color: inherit; display: block; }
+        .choice-card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 25px 60px rgba(0,0,0,0.25); }
+        .choice-card .card-image { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .choice-card .card-image .card-icon { font-size: 6em; z-index: 2; transition: transform 0.4s ease; }
+        .choice-card:hover .card-image .card-icon { transform: scale(1.2) rotate(10deg); }
+        .choice-card .card-image::before { content: ''; position: absolute; width: 150%; height: 150%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%); animation: pulse 3s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(0.8); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } }
+        .card-pencernaan .card-image { background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%); }
+        .card-peredaran .card-image { background: linear-gradient(135deg, #c62828 0%, #e53935 100%); }
+        .choice-card .card-content { padding: 25px; }
+        .choice-card .card-badge { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; margin-bottom: 12px; }
+        .card-pencernaan .card-badge { background: #fff3e0; color: #ff6f00; }
+        .card-peredaran .card-badge { background: #ffebee; color: #c62828; }
+        .choice-card h3 { color: #333; font-size: 1.4em; margin-bottom: 10px; }
+        .choice-card p { color: #666; font-size: 0.95em; line-height: 1.7; margin-bottom: 15px; }
+        .choice-card .card-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .choice-card .topic-tag { padding: 5px 12px; border-radius: 12px; font-size: 0.8em; }
+        .card-pencernaan .topic-tag { background: #fff3e0; color: #ff6f00; }
+        .card-peredaran .topic-tag { background: #ffebee; color: #c62828; }
+        .choice-card .card-footer { display: flex; align-items: center; justify-content: space-between; }
+        .choice-card .start-btn { color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; font-size: 1em; transition: all 0.3s ease; }
+        .card-pencernaan .start-btn { background: linear-gradient(135deg, #ff6f00, #ff8f00); }
+        .card-peredaran .start-btn { background: linear-gradient(135deg, #c62828, #e53935); }
+        .choice-card:hover .start-btn { transform: translateX(10px); }
+        .choice-card .arrow { font-size: 1.5em; color: #ccc; transition: all 0.3s ease; }
+        .choice-card:hover .arrow { color: #333; transform: translateX(10px); }
+        @media (max-width: 768px) { .choices-grid { grid-template-columns: 1fr; } .header-card { padding: 25px; } .header-card h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="ipa-biologi.html" class="back-nav">← Kembali ke Pilih Bab</a>
+
+        <div class="header-card">
+            <div class="icon">❤️</div>
+            <h1>Bab 1: Pilih Materi</h1>
+            <p>Pilih materi yang ingin kamu pelajari di Bab 1 ini. Klik pada kartu untuk mulai belajar!</p>
+        </div>
+
+        <div class="choices-grid">
+            <a href="sistem-pencernaan.html" class="choice-card card-pencernaan">
+                <div class="card-image"><span class="card-icon">🍽️</span></div>
+                <div class="card-content">
+                    <span class="card-badge">🍽️ Biologi</span>
+                    <h3>Sistem Pencernaan Manusia</h3>
+                    <p>Pelajari proses pencernaan makanan dari mulai masuk hingga menjadi energi untuk tubuh!</p>
+                    <div class="card-topics">
+                        <span class="topic-tag">👄 Mulut</span>
+                        <span class="topic-tag">🫁 Kerongkongan</span>
+                        <span class="topic-tag">🧫 Lambung</span>
+                        <span class="topic-tag">🔬 Usus</span>
+                        <span class="topic-tag">💊 Enzim</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="start-btn">Mulai Belajar →</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="sistem-peredaran-darah.html" class="choice-card card-peredaran">
+                <div class="card-image"><span class="card-icon">❤️</span></div>
+                <div class="card-content">
+                    <span class="card-badge">❤️ Biologi</span>
+                    <h3>Sistem Peredaran Darah Manusia</h3>
+                    <p>Pelajari bagaimana jantung memompa darah ke seluruh tubuh melalui pembuluh darah!</p>
+                    <div class="card-topics">
+                        <span class="topic-tag">❤️ Jantung</span>
+                        <span class="topic-tag">🔴 Sel Darah</span>
+                        <span class="topic-tag">🩸 Plasma Darah</span>
+                        <span class="topic-tag">🫀 Pembuluh Darah</span>
+                        <span class="topic-tag">💉 Sirkulasi</span>
+                    </div>
+                    <div class="card-footer">
+                        <span class="start-btn">Mulai Belajar →</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('.choice-card').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'all 0.6s ease'; observer.observe(el); });
+    </script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>
