@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Kondisi Geografis Dan Pelestarian Alam - IPS SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #1b5e20; border-color: #1b5e20; }
+        header { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #1b5e20; border-color: #1b5e20; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #1b5e20; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #2e7d32; }
+        h3 { color: #1b5e20; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #2e7d32; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #1b5e20; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #2e7d32; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #2e7d32; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #1b5e20; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #1565c0; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #0d47a1; margin-top: 0; }
+        .warning-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #ff9800; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .warning-box h4 { color: #e65100; margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #e8f5e9; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #e8f5e9; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(27,94,32,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #2e7d32; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #1b5e20 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="ips.html" class="nav-brand"><span style="font-size: 1.5em;">🌏</span> IPS - Bab 1</a>
+        <div class="nav-links">
+            <a href="ips.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="ips-bab1.html" class="nav-link active">🌍 Bab 1</a>
+            <a href="ips-bab2.html" class="nav-link">⏳ Bab 2</a>
+            <a href="ips-bab3.html" class="nav-link">📊 Bab 3</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">🌍</div>
+        <h1>KONDISI GEOGRAFIS DAN PELESTARIAN ALAM</h1>
+        <p class="subtitle">Bab 1 - IPS SMP Kelas 8 📚🌿</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('keragaman')">🌿 Keragaman Alam</button>
+            <button class="nav-tab" onclick="scrollToSection('sda')">⛏️ Pemanfaatan SDA</button>
+            <button class="nav-tab" onclick="scrollToSection('sdm')">👥 SDM</button>
+            <button class="nav-tab" onclick="scrollToSection('lembaga')">🏛️ Lembaga Sosial</button>
+            <button class="nav-tab" onclick="scrollToSection('geografis')">🗺️ Kondisi Geografis</button>
+            <button class="nav-tab" onclick="scrollToSection('interaksi')">🌐 Interaksi Bangsa Asing</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- KERAGAMAN ALAM INDONESIA -->
+        <section id="keragaman">
+            <h2><span>🌿</span> Keragaman Alam Indonesia</h2>
+            <p>Indonesia adalah negara kepulauan terbesar di dunia dengan keanekaragaman alam yang sangat kaya! 🇮🇩</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Tahukah Kamu?</h4>
+                <p>Indonesia terdiri dari <strong>17.504 pulau</strong> yang membentang sepanjang <strong>5.120 km</strong> dari Sabang sampai Merauke! Luas wilayah Indonesia mencapai <strong>1.904.569 km²</strong>.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🏔️</div>
+                    <h3>Keragaman Daratan</h3>
+                    <p>Indonesia memiliki berbagai bentuk permukaan bumi:</p>
+                    <ul>
+                        <li><strong>Gunung berapi</strong> — Lebih dari 130 gunung api aktif</li>
+                        <li><strong>Dataran tinggi</strong> — Pegunungan, plateau</li>
+                        <li><strong>Dataran rendah</strong> — Lembah, delta, pantai</li>
+                        <li><strong>Perbukitan</strong> — Bukit-bukit kapur, granit</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌊</div>
+                    <h3>Keragaman Lautan</h3>
+                    <p>Indonesia memiliki wilayah laut yang sangat luas:</p>
+                    <ul>
+                        <li><strong>Laut teritorial</strong> — 12 mil dari pantai</li>
+                        <li><strong>Zona ekonomi eksklusif</strong> — 200 mil dari pantai</li>
+                        <li><strong>Selat dan teluk</strong> — Selat Malaka, Teluk Tomini</li>
+                        <li><strong>Terumbu karang</strong> — Keanekaragaman hayati laut</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌴</div>
+                    <h3>Keragaman Flora</h3>
+                    <p>Indonesia memiliki keanekaragaman flora yang luar biasa:</p>
+                    <ul>
+                        <li><strong>Hutan hujan tropis</strong> — Kalimantan, Sumatera</li>
+                        <li><strong>Hutan bakau</strong> — Pesisir pantai</li>
+                        <li><strong>Sabana</strong> — Nusa Tenggara</li>
+                        <li><strong>Flora endemik</strong> — Bunga Bangkai, Anggrek Hitam</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🦜</div>
+                    <h3>Keragaman Fauna</h3>
+                    <p>Indonesia memiliki keanekaragaman fauna yang unik:</p>
+                    <ul>
+                        <li><strong>Fauna Asiatis</strong> — Harimau, Gajah, Badak (Sumatera, Jawa, Kalimantan)</li>
+                        <li><strong>Fauna Australis</strong> — Cendrawasih, Kanguru Pohon (Papua)</li>
+                        <li><strong>Fauna Peralihan</strong> — Komodo, Anoa (Sulawesi, Nusa Tenggara)</li>
+                        <li><strong>Fauna endemik</strong> — Orangutan, Komodo, Badak Jawa</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Flora Khas</th>
+                        <th>Fauna Khas</th>
+                        <th>Contoh Wilayah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Asiatis</strong></td>
+                        <td>Raflesia, Kantung Semar</td>
+                        <td>Harimau Sumatera, Gajah</td>
+                        <td>Sumatera, Jawa, Kalimantan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Peralihan</strong></td>
+                        <td>Anggrek Hitam, Nipa</td>
+                        <td>Komodo, Anoa, Babirusa</td>
+                        <td>Sulawesi, Nusa Tenggara</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Australis</strong></td>
+                        <td>Matoa, Nibung</td>
+                        <td>Cendrawasih, Kanguru Pohon</td>
+                        <td>Papua, Maluku</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📝 Garis Wallace dan Garis Weber:</h4>
+                <p>Pembagian flora dan fauna Indonesia dipengaruhi oleh:</p>
+                <ul>
+                    <li><strong>Garis Wallace</strong> — Membagi Indonesia bagian barat (Asiatis) dan tengah (Peralihan)</li>
+                    <li><strong>Garis Weber</strong> — Membagi Indonesia bagian tengah (Peralihan) dan timur (Australis)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PEMANFAATAN SDA -->
+        <section id="sda">
+            <h2><span>⛏️</span> Pemanfaatan Sumber Daya Alam (SDA)</h2>
+            <p>Sumber Daya Alam (SDA) adalah semua kekayaan alam yang dapat dimanfaatkan untuk kehidupan manusia.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">⛏️</div>
+                    <h3>SDA Tidak Terbarukan</h3>
+                    <p>SDA yang jumlahnya terbatas dan tidak dapat diperbarui:</p>
+                    <ul>
+                        <li><strong>Minyak bumi</strong> — Bahan bakar, plastik</li>
+                        <li><strong>Gas alam</strong> — Bahan bakar, pupuk</li>
+                        <li><strong>Batu bara</strong> — Pembangkit listrik</li>
+                        <li><strong>Tambang</strong> — Emas, perak, tembaga, timah</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌱</div>
+                    <h3>SDA Terbarukan</h3>
+                    <p>SDA yang dapat diperbarui atau dipulihkan:</p>
+                    <ul>
+                        <li><strong>Air</strong> — Irigasi, PLTA, minum</li>
+                        <li><strong>Hutan</strong> — Kayu, obat, oksigen</li>
+                        <li><strong>Tanah</strong> — Pertanian, perkebunan</li>
+                        <li><strong>Ikan</strong> — Perikanan, akuakultur</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌞</div>
+                    <h3>SDA Energi</h3>
+                    <p>SDA yang dapat dimanfaatkan sebagai sumber energi:</p>
+                    <ul>
+                        <li><strong>Matahari</strong> — Energi surya/solar cell</li>
+                        <li><strong>Angin</strong> — Kincir angin, pembangkit listrik</li>
+                        <li><strong>Panas bumi</strong> — PLTP (Pembangkit Listrik Tenaga Panas Bumi)</li>
+                        <li><strong>Air</strong> — PLTA (Pembangkit Listrik Tenaga Air)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌊</div>
+                    <h3>SDA Kelautan</h3>
+                    <p>Indonesia memiliki SDA kelautan yang sangat kaya:</p>
+                    <ul>
+                        <li><strong>Ikan</strong> — Tuna, cakalang, tongkol</li>
+                        <li><strong>Rumput laut</strong> — Makanan, kosmetik</li>
+                        <li><strong>Terumbu karang</strong> — Ekosistem, pariwisata</li>
+                        <li><strong>Garam</strong> — Kebutuhan sehari-hari</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Peringatan!</h4>
+                <p>Pemanfaatan SDA harus dilakukan secara <strong>bijak dan lestari</strong>. Jika tidak, SDA akan habis dan lingkungan akan rusak. Contoh masalah:</p>
+                <ul>
+                    <li>❌ <strong>Illegal logging</strong> — Penebangan liar</li>
+                    <li>❌ <strong>Over fishing</strong> — Penangkapan ikan berlebihan</li>
+                    <li>❌ <strong>Pencemaran</strong> — Limbah industri, sampah</li>
+                    <li>❌ <strong>Pertambangan liar</strong> — Merusak lingkungan</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>✅ Prinsip Pemanfaatan SDA yang Bijak:</h4>
+                <ul>
+                    <li>✅ <strong>Konservasi</strong> — Pelestarian alam</li>
+                    <li>✅ <strong>Daur ulang</strong> — Menggunakan kembali</li>
+                    <li>✅ <strong>Efisiensi</strong> — Menghemat penggunaan</li>
+                    <li>✅ <strong>Reboisasi</strong> — Penanaman kembali hutan</li>
+                    <li>✅ <strong>Teknologi ramah lingkungan</strong> — Energi terbarukan</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SUMBER DAYA MANUSIA -->
+        <section id="sdm">
+            <h2><span>👥</span> Sumber Daya Manusia (SDM)</h2>
+            <p>Selain SDA, Indonesia juga memiliki <strong>Sumber Daya Manusia (SDM)</strong> yang melimpah. SDM adalah kemampuan manusia yang dapat dimanfaatkan untuk pembangunan.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Jumlah Penduduk</h3>
+                    <p>Indonesia memiliki penduduk terbesar <strong>ke-4 di dunia</strong>:</p>
+                    <ul>
+                        <li>Jumlah: <strong>±275 juta jiwa</strong></li>
+                        <li>Usia produktif: <strong>±70%</strong></li>
+                        <li>Kepadatan: <strong>±150 jiwa/km²</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Kualitas SDM</h3>
+                    <p>Kualitas SDM Indonesia terus meningkat:</p>
+                    <ul>
+                        <li><strong>Pendidikan</strong> — Angka melek huruf meningkat</li>
+                        <li><strong>Kesehatan</strong> — Angka harapan hidup naik</li>
+                        <li><strong>Keterampilan</strong> — Banyak tenaga terampil</li>
+                        <li><strong>Kewirausahaan</strong> — Banyak wirausahawan muda</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💼</div>
+                    <h3>Peran SDM</h3>
+                    <p>SDM berperan penting dalam pembangunan:</p>
+                    <ul>
+                        <li><strong>Produktivitas</strong> — Menghasilkan barang dan jasa</li>
+                        <li><strong>Inovasi</strong> — Menciptakan teknologi baru</li>
+                        <li><strong>Pelayanan</strong> — Melayani masyarakat</li>
+                        <li><strong>Pengelolaan</strong> — Mengelola SDA dengan bijak</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Tantangan SDM</h3>
+                    <p>Tantangan pengembangan SDM Indonesia:</p>
+                    <ul>
+                        <li><strong>Ketimpangan</strong> — Perbedaan kualitas antar daerah</li>
+                        <li><strong>Pengangguran</strong> — Masih ada pengangguran</li>
+                        <li><strong>Kemiskinan</strong> — Masih ada penduduk miskin</li>
+                        <li><strong>Brain drain</strong> — SDM berkualitas ke luar negeri</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>💡 Hubungan SDA dan SDM:</h4>
+                <p>SDA yang melimpah membutuhkan SDM yang berkualitas untuk mengelolanya. Tanpa SDM yang baik, SDA tidak akan dimanfaatkan secara optimal. Sebaliknya, SDM yang berkualitas dapat mengolah SDA menjadi barang bernilai tinggi.</p>
+            </div>
+        </section>
+
+        <!-- PERAN LEMBAGA SOSIAL -->
+        <section id="lembaga">
+            <h2><span>🏛️</span> Peran Lembaga Sosial dalam Pemanfaatan SDA</h2>
+            <p>Berbagai lembaga sosial berperan penting dalam pemanfaatan dan pelestarian SDA di Indonesia.</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Pemerintah</h3>
+                    <p>Pemerintah berperan dalam:</p>
+                    <ul>
+                        <li><strong>Membuat peraturan</strong> — UU Lingkungan Hidup, UU Kehutanan</li>
+                        <li><strong>Memberikan izin</strong> — Izin tambang, izin penebangan</li>
+                        <li><strong>Mengawasi</strong> — Pengawasan pemanfaatan SDA</li>
+                        <li><strong>Melestarikan</strong> — Taman nasional, cagar alam</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">🏢</div>
+                    <h3>Perusahaan/Swasta</h3>
+                    <p>Perusahaan berperan dalam:</p>
+                    <ul>
+                        <li><strong>Mengelola SDA</strong> — Pertambangan, perkebunan</li>
+                        <li><strong>Menciptakan lapangan kerja</strong> — Tenaga kerja</li>
+                        <li><strong>Tanggung jawab sosial</strong> — CSR (Corporate Social Responsibility)</li>
+                        <li><strong>Ramah lingkungan</strong> — Teknologi hijau</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">👥</div>
+                    <h3>Masyarakat</h3>
+                    <p>Masyarakat berperan dalam:</p>
+                    <ul>
+                        <li><strong>Menjaga lingkungan</strong> — Gotong royong, kerja bakti</li>
+                        <li><strong>Mengawasi</strong> — Pelaporan kerusakan</li>
+                        <li><strong>Melestarikan</strong> — Tradisi ramah lingkungan</li>
+                        <li><strong>Mematuhi aturan</strong> — Tidak merusak alam</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">🌍</div>
+                    <h3>Organisasi Lingkungan</h3>
+                    <p>Organisasi lingkungan berperan dalam:</p>
+                    <ul>
+                        <li><strong>Advokasi</strong> — Membela hak lingkungan</li>
+                        <li><strong>Edukasi</strong> — Mengedukasi masyarakat</li>
+                        <li><strong>Konservasi</strong> — Pelestarian alam</li>
+                        <li><strong>Riset</strong> — Penelitian lingkungan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📋 Contoh Lembaga Sosial:</h4>
+                <ul>
+                    <li><strong>KLHK</strong> — Kementerian Lingkungan Hidup dan Kehutanan</li>
+                    <li><strong>BKSDA</strong> — Balai Konservasi Sumber Daya Alam</li>
+                    <li><strong>WALHI</strong> — Wahana Lingkungan Hidup Indonesia</li>
+                    <li><strong>WWF Indonesia</strong> — World Wide Fund for Nature</li>
+                    <li><strong>Greenpeace Indonesia</strong> — Organisasi lingkungan internasional</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KONDISI GEOGRAFIS -->
+        <section id="geografis">
+            <h2><span>🗺️</span> Kondisi Geografis Indonesia</h2>
+            <p>Kondisi geografis Indonesia sangat mempengaruhi kehidupan masyarakat dan interaksi dengan bangsa asing.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📍</div>
+                    <h3>Letak Astronomis</h3>
+                    <p>Indonesia terletak di antara:</p>
+                    <ul>
+                        <li><strong>Lintang:</strong> 6°LU - 11°LS</li>
+                        <li><strong>Bujur:</strong> 95°BT - 141°BT</li>
+                        <li><strong>Iklim:</strong> Tropis (2 musim)</li>
+                        <li><strong>Suhu:</strong> 23°C - 33°C</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Letak Geologis</h3>
+                    <p>Indonesia terletak di pertemuan 3 lempeng tektonik:</p>
+                    <ul>
+                        <li><strong>Lempeng Eurasia</strong> — Di utara</li>
+                        <li><strong>Lempeng Indo-Australia</strong> — Di selatan</li>
+                        <li><strong>Lempeng Pasifik</strong> — Di timur</li>
+                        <li><strong>Akibat:</strong> Banyak gunung api dan gempa bumi</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌊</div>
+                    <h3>Letak Strategis</h3>
+                    <p>Indonesia terletak di posisi strategis:</p>
+                    <ul>
+                        <li><strong>Di antara 2 benua</strong> — Asia dan Australia</li>
+                        <li><strong>Di antara 2 samudra</strong> — Hindia dan Pasifik</li>
+                        <li><strong>Jalur perdagangan</strong> — Selat Malaka, Selat Sunda</li>
+                        <li><strong>Jalur pelayaran</strong> — Internasional</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌤️</div>
+                    <h3>Iklim Indonesia</h3>
+                    <p>Indonesia memiliki iklim tropis:</p>
+                    <ul>
+                        <li><strong>Musim kemarau</strong> — April - Oktober</li>
+                        <li><strong>Musim hujan</strong> — Oktober - April</li>
+                        <li><strong>Suhu rata-rata</strong> — 25°C - 28°C</li>
+                        <li><strong>Curah hujan</strong> — 2.000 - 4.000 mm/tahun</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>🏔️ Dampak Letak Geologis:</h4>
+                <ul>
+                    <li>✅ <strong>Tanah subur</strong> — Material vulkanik</li>
+                    <li>✅ <strong>Sumber air</strong> — Sungai dan danau</li>
+                    <li>✅ <strong>Pariwisata</strong> — Gunung, pantai, danau</li>
+                    <li>❌ <strong>Bencana alam</strong> — Gempa bumi, tsunami, letusan gunung api</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- INTERAKSI DENGAN BANGSA ASING -->
+        <section id="interaksi">
+            <h2><span>🌐</span> Interaksi dengan Bangsa Asing</h2>
+            <p>Kondisi geografis Indonesia yang strategis menyebabkan interaksi dengan bangsa asing sejak zaman dahulu.</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">⚓</div>
+                    <h3>Zaman Perdagangan</h3>
+                    <p>Pada abad ke-7 - 16, Indonesia menjadi pusat perdagangan dunia:</p>
+                    <ul>
+                        <li><strong>Pedagang India</strong> — Membawa agama Hindu-Buddha</li>
+                        <li><strong>Pedagang Arab</strong> — Membawa agama Islam</li>
+                        <li><strong>Pedagang China</strong> — Membawa sutra, porselen</li>
+                        <li><strong>Pedagang Eropa</strong> — Portugis, Spanyol, Belanda, Inggris</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">🏴</div>
+                    <h3>Zaman Kolonial</h3>
+                    <p>Pada abad ke-16 - 20, Indonesia dijajah oleh bangsa asing:</p>
+                    <ul>
+                        <li><strong>Portugis</strong> (1512-1605) — Maluku</li>
+                        <li><strong>Spanyol</strong> (1521-1692) — Sulawesi Utara</li>
+                        <li><strong>VOC/Belanda</strong> (1602-1942) — Seluruh Indonesia</li>
+                        <li><strong>Jepang</strong> (1942-1945) — Seluruh Indonesia</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">🤝</div>
+                    <h3>Zaman Modern</h3>
+                    <p>Saat ini, Indonesia berinteraksi dengan bangsa asing dalam berbagai bidang:</p>
+                    <ul>
+                        <li><strong>Ekonomi</strong> — Perdagangan, investasi</li>
+                        <li><strong>Pendidikan</strong> — Pertukaran pelajar, beasiswa</li>
+                        <li><strong>Budaya</strong> — Pariwisata, festival budaya</li>
+                        <li><strong>Politik</strong> — Diplomasi, kerjasama regional</li>
+                    </ul>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">🌏</div>
+                    <h3>Organisasi Internasional</h3>
+                    <p>Indonesia aktif dalam organisasi internasional:</p>
+                    <ul>
+                        <li><strong>PBB</strong> — Perserikatan Bangsa-Bangsa</li>
+                        <li><strong>ASEAN</strong> — Perhimpunan Bangsa Asia Tenggara</li>
+                        <li><strong>G20</strong> — Kelompok 20 negara besar</li>
+                        <li><strong>Non-Blok</strong> — Gerakan Non-Blok</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>⚓ Jalur Perdagangan Internasional:</h4>
+                <p>Indonesia dilalui oleh jalur perdagangan internasional:</p>
+                <ul>
+                    <li><strong>Selat Malaka</strong> — Jalur tersibuk di dunia</li>
+                    <li><strong>Selat Sunda</strong> — Menghubungkan Jawa dan Sumatera</li>
+                    <li><strong>Selat Lombok</strong> — Menghubungkan Samudra Hindia dan Pasifik</li>
+                    <li><strong>Selat Makassar</strong> — Menghubungkan Kalimantan dan Sulawesi</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Bab 1</h2>
+            <p>Uji pemahamanmu tentang Kondisi Geografis Dan Pelestarian Alam! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis IPS Bab 1</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/15</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 1: Kondisi Geografis Dan Pelestarian Alam</h2>
+            <div style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🌿 Keragaman Alam Indonesia</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Indonesia memiliki <strong>17.504 pulau</strong> dengan keragaman daratan, lautan, flora, dan fauna.</p>
+                    <p>Flora dan fauna dibagi menjadi 3 region: <strong>Asiatis, Peralihan, Australis</strong>.</p>
+                    <p>Pembagian dipengaruhi oleh <strong>Garis Wallace dan Garis Weber</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">⛏️ Pemanfaatan SDA & SDM</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>SDA terbagi menjadi: <strong>tidak terbarukan, terbarukan, energi, kelautan</strong>.</p>
+                    <p>SDM berperan dalam <strong>produktivitas, inovasi, dan pengelolaan SDA</strong>.</p>
+                    <p>Pemanfaatan SDA harus <strong>bijak dan lestari</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🏛️ Lembaga Sosial & Interaksi</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Lembaga sosial: <strong>pemerintah, perusahaan, masyarakat, organisasi lingkungan</strong>.</p>
+                    <p>Indonesia terletak di <strong>posisi strategis</strong> antara 2 benua dan 2 samudra.</p>
+                    <p>Interaksi dengan bangsa asing: <strong>perdagangan, kolonial, modern</strong>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">🌏</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">IPS - Bab 1: Kondisi Geografis Dan Pelestarian Alam</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="ips.html">📚 Pilih Bab</a>
+                <a href="ips-bab2.html">⏳ Bab 2</a>
+                <a href="ips-bab3.html">📊 Bab 3</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: 'Indonesia terdiri dari berapa pulau?', options: ['10.000', '15.000', '17.504', '20.000'], correct: 2 },
+            { question: 'Garis Wallace membagi Indonesia menjadi...', options: ['2 bagian', '3 bagian', '4 bagian', '5 bagian'], correct: 1 },
+            { question: 'Fauna Asiatis contohnya adalah...', options: ['Cendrawasih', 'Komodo', 'Harimau Sumatera', 'Kanguru Pohon'], correct: 2 },
+            { question: 'SDA yang tidak dapat diperbarui disebut...', options: ['SDA Terbarukan', 'SDA Tidak Terbarukan', 'SDA Energi', 'SDA Kelautan'], correct: 1 },
+            { question: 'Contoh SDA energi terbarukan adalah...', options: ['Minyak bumi', 'Batu bara', 'Matahari', 'Gas alam'], correct: 2 },
+            { question: 'Indonesia terletak di pertemuan berapa lempeng tektonik?', options: ['2', '3', '4', '5'], correct: 1 },
+            { question: 'Lembaga yang mengurus lingkungan hidup adalah...', options: ['Kemenkeu', 'KLHK', 'Kemendikbud', 'Kemenkes'], correct: 1 },
+            { question: 'Selat tersibuk di dunia yang melalui Indonesia adalah...', options: ['Selat Sunda', 'Selat Lombok', 'Selat Malaka', 'Selat Makassar'], correct: 2 },
+            { question: 'Fauna Australis contohnya adalah...', options: ['Gajah', 'Harimau', 'Komodo', 'Cendrawasih'], correct: 3 },
+            { question: 'Indonesia menjadi anggota ASEAN sejak tahun...', options: ['1955', '1960', '1967', '1975'], correct: 2 },
+            { question: 'Contoh SDA kelautan adalah...', options: ['Emas', 'Batu bara', 'Ikan', 'Minyak bumi'], correct: 2 },
+            { question: 'Lempeng yang berada di selatan Indonesia adalah...', options: ['Eurasia', 'Pasifik', 'Indo-Australia', 'Filipina'], correct: 2 },
+            { question: 'Kewajiban perusahaan terhadap lingkungan disebut...', options: ['CSR', 'GDP', 'APBN', 'OPEC'], correct: 0 },
+            { question: 'Indonesia beriklim...', options: ['Subtropis', 'Tropis', 'Kutub', 'Gurun'], correct: 1 },
+            { question: 'Prinsip pemanfaatan SDA yang bijak adalah...', options: ['Eksploitasi', 'Konservasi', 'Polusi', 'Deforestasi'], correct: 1 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/15'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/15`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 150 ? '🏆 SEMPURNA!' : quizScore >= 100 ? '👏 Bagus!' : quizScore >= 70 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('keragaman').style.opacity = '1'; document.getElementById('keragaman').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Kemajemukan Masyarakat Indonesia - IPS SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #7b1fa2 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #7b1fa2 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #4a148c; border-color: #4a148c; }
+        header { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #7b1fa2 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #4a148c; border-color: #4a148c; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #4a148c; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #6a1b9a; }
+        h3 { color: #4a148c; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #6a1b9a; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #4a148c; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #6a1b9a; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left: 5px solid #6a1b9a; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #4a148c; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #1565c0; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #0d47a1; margin-top: 0; }
+        .warning-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #ff9800; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .warning-box h4 { color: #e65100; margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #4a148c, #6a1b9a); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #f3e5f5; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #f3e5f5; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #4a148c, #6a1b9a); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(74,20,140,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #6a1b9a; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #4a148c 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="ips.html" class="nav-brand"><span style="font-size: 1.5em;">👥</span> IPS - Bab 2</a>
+        <div class="nav-links">
+            <a href="ips.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="ips-bab1.html" class="nav-link">🌍 Bab 1</a>
+            <a href="ips-bab2.html" class="nav-link active">👥 Bab 2</a>
+            <a href="ips-bab3.html" class="nav-link">🇮🇩 Bab 3</a>
+            <a href="ips-bab4.html" class="nav-link">💰 Bab 4</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">👥</div>
+        <h1>KEMAJEMUKAN MASYARAKAT INDONESIA</h1>
+        <p class="subtitle">Bab 2 - IPS SMP Kelas 8 📚🤝</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('ekonomi')">💰 Aktivitas Ekonomi</button>
+            <button class="nav-tab" onclick="scrollToSection('mobilitas')">🔄 Mobilitas Sosial</button>
+            <button class="nav-tab" onclick="scrollToSection('interaksi')">🕌 Interaksi Budaya Islam</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- KERAGAMAN AKTIVITAS EKONOMI -->
+        <section id="ekonomi">
+            <h2><span>💰</span> Keragaman Aktivitas Ekonomi Masyarakat</h2>
+            <p>Indonesia adalah negara yang memiliki keragaman aktivitas ekonomi yang sangat luas, dipengaruhi oleh letak geografis, sumber daya alam, dan budaya masyarakat.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Tahukah Kamu?</h4>
+                <p>Ekonomi Indonesia adalah <strong>ekonomi terbesar di Asia Tenggara</strong> dan <strong>terbesar ke-16 di dunia</strong> berdasarkan PDB nominal!</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🌾</div>
+                    <h3>Sektor Pertanian</h3>
+                    <p>Sektor pertanian menjadi tulang punggung ekonomi Indonesia:</p>
+                    <ul>
+                        <li><strong>Padi</strong> — Makanan pokok masyarakat</li>
+                        <li><strong>Kelapa sawit</strong> — Ekspor terbesar</li>
+                        <li><strong>Karet</strong> — Bahan industri</li>
+                        <li><strong>Kopi, teh, cokelat</strong> — Komoditas ekspor</li>
+                        <li><strong>Sayur & buah</strong> — Kebutuhan sehari-hari</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🐟</div>
+                    <h3>Sektor Perikanan</h3>
+                    <p>Indonesia memiliki wilayah laut yang sangat luas:</p>
+                    <ul>
+                        <li><strong>Perikanan tangkap</strong> — Nelayan tradisional</li>
+                        <li><strong>Budidaya</strong> — Tambak udang, ikan</li>
+                        <li><strong>Rumput laut</strong> — Ekspor dan industri</li>
+                        <li><strong>Perikanan modern</strong> — Kapal besar, teknologi</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🏭</div>
+                    <h3>Sektor Industri</h3>
+                    <p>Sektor industri terus berkembang pesat:</p>
+                    <ul>
+                        <li><strong>Industri manufaktur</strong> — Pakaian, elektronik</li>
+                        <li><strong>Industri makanan</strong> — Pengolahan makanan</li>
+                        <li><strong>Industri otomotif</strong> — Mobil, motor</li>
+                        <li><strong>Industri kerajinan</strong> — Batik, tenun, ukiran</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Sektor Jasa & Digital</h3>
+                    <p>Sektor jasa dan digital berkembang pesat:</p>
+                    <ul>
+                        <li><strong>Perdagangan</strong> — Pasar, toko, online shop</li>
+                        <li><strong>Transportasi</strong> — Ojek, taksi, logistik</li>
+                        <li><strong>Pariwisata</strong> — Hotel, restoran, wisata</li>
+                        <li><strong>Digital</strong> — E-commerce, startup, fintech</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Sektor</th>
+                        <th>Contoh Aktivitas</th>
+                        <th>Wilayah Utama</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Pertanian</strong></td><td>Padi, jagung, sayuran</td><td>Jawa, Sumatera, Sulawesi</td></tr>
+                    <tr><td><strong>Perkebunan</strong></td><td>Kelapa sawit, karet, kopi</td><td>Sumatera, Kalimantan</td></tr>
+                    <tr><td><strong>Perikanan</strong></td><td>Ikan, udang, rumput laut</td><td>Sulawesi, Maluku, Papua</td></tr>
+                    <tr><td><strong>Pertambangan</strong></td><td>Minyak, gas, batu bara, emas</td><td>Kalimantan, Papua, Riau</td></tr>
+                    <tr><td><strong>Industri</strong></td><td>Tekstil, otomotif, elektronik</td><td>Jawa, Banten, Jawa Barat</td></tr>
+                    <tr><td><strong>Pariwisata</strong></td><td>Hotel, restoran, wisata</td><td>Bali, Yogyakarta, Lombok</td></tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📝 Keragaman Berdasarkan Letak Geografis:</h4>
+                <ul>
+                    <li><strong>Pesisir pantai</strong> — Nelayan, perdagangan laut</li>
+                    <li><strong>Dataran rendah</strong> — Petani, industri</li>
+                    <li><strong>Dataran tinggi</strong> — Perkebunan, peternakan</li>
+                    <li><strong>Perkotaan</strong> — Jasa, industri, perdagangan</li>
+                    <li><strong>Perdesaan</strong> — Pertanian, kerajinan</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MOBILITAS SOSIAL -->
+        <section id="mobilitas">
+            <h2><span>🔄</span> Mobilitas Sosial</h2>
+            <p><strong>Mobilitas sosial</strong> adalah perpindahan status sosial seseorang atau kelompok dalam masyarakat. Mobilitas sosial terjadi karena berbagai faktor.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📐</div>
+                    <h3>Jenis Mobilitas Sosial</h3>
+                    <p><strong>1. Vertikal</strong> — Perpindahan naik atau turun:</p>
+                    <ul>
+                        <li><strong>Sosial climbing</strong> — Naik status (misal: petani → pengusaha)</li>
+                        <li><strong>Social sinking</strong> — Turun status (misal: kaya → miskin)</li>
+                    </ul>
+                    <p><strong>2. Horizontal</strong> — Perpindahan setara (misal: pindah pekerjaan)</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Faktor Pendorong</h3>
+                    <p>Faktor yang mendorong mobilitas sosial:</p>
+                    <ul>
+                        <li><strong>Pendidikan</strong> — Tingkat pendidikan tinggi</li>
+                        <li><strong>Ekonomi</strong> — Peningkatan penghasilan</li>
+                        <li><strong>Keahlian</strong> — Keterampilan khusus</li>
+                        <li><strong>Usaha</strong> — Kerja keras dan motivasi</li>
+                        <li><strong>Kesempatan</strong> — Peluang yang terbuka</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🚫</div>
+                    <h3>Faktor Penghambat</h3>
+                    <p>Faktor yang menghambat mobilitas sosial:</p>
+                    <ul>
+                        <li><strong>Diskriminasi</strong> — Ras, gender, agama</li>
+                        <li><strong>Kemiskinan</strong> — Tidak mampu bersekolah</li>
+                        <li><strong>Kurangnya akses</strong> — Terpencil, terbelakang</li>
+                        <li><strong>Tradisi</strong> — Kasta, adat yang kaku</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">✅</div>
+                    <h3>Dampak Mobilitas Sosial</h3>
+                    <p>Dampak positif dan negatif:</p>
+                    <ul>
+                        <li><strong>Positif:</strong> Motivasi, inovasi, pembangunan</li>
+                        <li><strong>Positif:</strong> Pemerataan kesejahteraan</li>
+                        <li><strong>Negatif:</strong> Konflik sosial, kesenjangan</li>
+                        <li><strong>Negatif:</strong> Stres, tekanan mental</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Contoh Mobilitas Sosial dalam Kehidupan:</h4>
+                <ul>
+                    <li>✅ Anak petani yang kuliah dan menjadi <strong>dokter</strong> (sosial climbing)</li>
+                    <li>✅ Buruh pabrik yang menjadi <strong>pengusaha</strong> (sosial climbing)</li>
+                    <li>✅ Orang kaya yang bangkrut dan menjadi <strong>miskin</strong> (social sinking)</li>
+                    <li>✅ Tentara yang pindah menjadi <strong>polisi</strong> (horizontal)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- INTERAKSI BUDAYA MASA KERAJAAN ISLAM -->
+        <section id="interaksi">
+            <h2><span>🕌</span> Interaksi Budaya pada Masa Kerajaan Islam</h2>
+            <p>Masuknya Islam ke Indonesia membawa perubahan besar dalam budaya, ekonomi, dan sistem pemerintahan masyarakat.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Tahukah Kamu?</h4>
+                <p>Islam masuk ke Indonesia sekitar <strong>abad ke-7 Masehi</strong> melalui jalur perdagangan. Pedagang Arab, Gujarat (India), dan China membawa Islam ke Nusantara.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🕌</div>
+                    <h3>Kerajaan Islam di Indonesia</h3>
+                    <p>Kerajaan-kerajaan Islam besar di Indonesia:</p>
+                    <ul>
+                        <li><strong>Samudera Pasai</strong> (1267) — Aceh</li>
+                        <li><strong>Demak</strong> (1478) — Jawa Tengah</li>
+                        <li><strong>Mataram Islam</strong> (1588) — Jawa Tengah</li>
+                        <li><strong>Ternate & Tidore</strong> — Maluku</li>
+                        <li><strong>Gowa-Tallo</strong> — Sulawesi Selatan</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Interaksi Budaya</h3>
+                    <p>Islam membawa pengaruh budaya baru:</p>
+                    <ul>
+                        <li><strong>Aksara Arab</strong> — Huruf Jawi/Pegon</li>
+                        <li><strong>Sastra</strong> — Hikayat, babad, suluk</li>
+                        <li><strong>Seni</strong> — Kaligrafi, masjid, gamelan</li>
+                        <li><strong>Tata krama</strong> — Sopan santun, etika</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💰</div>
+                    <h3>Pengaruh Ekonomi</h3>
+                    <p>Islam meningkatkan perdagangan:</p>
+                    <ul>
+                        <li><strong>Perdagangan internasional</strong> — Jalur sutra, rempah</li>
+                        <li><strong>Mata uang</strong> — Sistem uang logam</li>
+                        <li><strong>Pasar</strong> — Pusat perdagangan</li>
+                        <li><strong>Jaringan dagang</strong> — Hubungan Timur Tengah</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Pengaruh Pemerintahan</h3>
+                    <p>Islam mengubah sistem pemerintahan:</p>
+                    <ul>
+                        <li><strong>Sultan</strong> — Raja bergelar Islam</li>
+                        <li><strong>Ulama</strong> — Penasihat raja</li>
+                        <li><strong>Syariat Islam</strong> — Hukum Islam</li>
+                        <li><strong>Wali</strong> — Penyebar agama (Wali Songo)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📜 Wali Songo — Penyebar Islam di Jawa:</h4>
+                <ul>
+                    <li><strong>Sunan Gresik</strong> (Maulana Malik Ibrahim) — Gresik, Jawa Timur</li>
+                    <li><strong>Sunan Ampel</strong> — Surabaya, Jawa Timur</li>
+                    <li><strong>Sunan Bonang</strong> — Tuban, Jawa Timur</li>
+                    <li><strong>Sunan Drajat</strong> — Lamongan, Jawa Timur</li>
+                    <li><strong>Sunan Giri</strong> — Gresik, Jawa Timur</li>
+                    <li><strong>Sunan Kalijaga</strong> — Demak, Jawa Tengah</li>
+                    <li><strong>Sunan Kudus</strong> — Kudus, Jawa Tengah</li>
+                    <li><strong>Sunan Muria</strong> — Muria, Jawa Tengah</li>
+                    <li><strong>Sunan Gunung Jati</strong> — Cirebon, Jawa Barat</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Akulturasi Budaya:</h4>
+                <p>Akulturasi budaya terjadi karena <strong>percampuran budaya Islam dengan budaya lokal</strong>. Hasilnya:</p>
+                <ul>
+                    <li>✅ <strong>Masjid</strong> — Arsitektur Jawa + Islam</li>
+                    <li>✅ <strong>Batik</strong> — Motif Islam (kaligrafi) + Jawa</li>
+                    <li>✅ <strong>Wayang</strong> — Cerita Islam + Hindu-Jawa</li>
+                    <li>✅ <strong>Gamelan</strong> — Musik tradisional + nuansa Islam</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Bab 2</h2>
+            <p>Uji pemahamanmu tentang Kemajemukan Masyarakat Indonesia! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis IPS Bab 2</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/12</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 2</h2>
+            <div style="background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">💰 Aktivitas Ekonomi</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Sektor: <strong>pertanian, perikanan, industri, jasa, digital</strong>.</p>
+                    <p>Keragaman dipengaruhi oleh <strong>letak geografis dan SDA</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🔄 Mobilitas Sosial</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Jenis: <strong>vertikal (naik/turun) dan horizontal</strong>.</p>
+                    <p>Faktor pendorong: <strong>pendidikan, ekonomi, keahlian, usaha</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🕌 Interaksi Budaya Islam</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Islam masuk abad ke-7 melalui <strong>jalur perdagangan</strong>.</p>
+                    <p>Wali Songo menyebarkan Islam di <strong>Jawa</strong>.</p>
+                    <p>Akulturasi budaya menghasilkan <strong>batik, wayang, masjid</strong>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">👥</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">IPS - Bab 2: Kemajemukan Masyarakat Indonesia</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="ips.html">📚 Pilih Bab</a>
+                <a href="ips-bab1.html">🌍 Bab 1</a>
+                <a href="ips-bab3.html">🇮🇩 Bab 3</a>
+                <a href="ips-bab4.html">💰 Bab 4</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: 'Mobilitas sosial yang berpindah naik status disebut...', options: ['Social sinking', 'Sosial climbing', 'Horizontal', 'Vertikal'], correct: 1 },
+            { question: 'Contoh mobilitas sosial vertikal ke atas adalah...', options: ['Pindah kerja', 'Petani jadi pengusaha', 'Pindah rumah', 'Ganti hobi'], correct: 1 },
+            { question: 'Islam masuk ke Indonesia sekitar abad ke...', options: ['5', '7', '10', '15'], correct: 1 },
+            { question: 'Kerajaan Islam pertama di Indonesia adalah...', options: ['Demak', 'Samudera Pasai', 'Mataram', 'Gowa-Tallo'], correct: 1 },
+            { question: 'Wali Songo menyebarkan Islam di...', options: ['Sumatera', 'Kalimantan', 'Jawa', 'Papua'], correct: 2 },
+            { question: 'Aksara yang berkembang sejak masuknya Islam adalah...', options: ['Latin', 'Jawa', 'Arab/Pegon', 'Sansekerta'], correct: 2 },
+            { question: 'Faktor pendorong mobilitas sosial adalah...', options: ['Diskriminasi', 'Pendidikan', 'Kemiskinan', 'Tradisi'], correct: 1 },
+            { question: 'Sektor ekonomi terbesar di Indonesia adalah...', options: ['Industri', 'Jasa', 'Pertanian', 'Pertambangan'], correct: 2 },
+            { question: 'Pencampuran budaya Islam dengan budaya lokal disebut...', options: ['Asimilasi', 'Akulturasi', 'Difusi', 'Modernisasi'], correct: 1 },
+            { question: 'Sunan Kalijaga terkenal menggunakan media dakwah...', options: ['Pedang', 'Perdagangan', 'Seni budaya', 'Politik'], correct: 2 },
+            { question: 'Contoh akulturasi budaya Islam adalah...', options: ['KFC', 'Batik', 'Pizza', 'Burger'], correct: 1 },
+            { question: 'Kerajaan Demak terletak di...', options: ['Jawa Timur', 'Jawa Tengah', 'Jawa Barat', 'Sumatera'], correct: 1 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/12'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/12`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 120 ? '🏆 SEMPURNA!' : quizScore >= 80 ? '👏 Bagus!' : quizScore >= 50 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('ekonomi').style.opacity = '1'; document.getElementById('ekonomi').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

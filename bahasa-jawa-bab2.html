@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Crita Legenda - Bahasa Jawa SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+            overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50;
+        }
+        .bg-animation {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; overflow: hidden;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+        }
+        .bg-animation .bubble {
+            position: absolute; border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            animation: floatBubble 20s infinite ease-in-out;
+        }
+        @keyframes floatBubble {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; }
+        }
+        .portal-navbar {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            padding: 15px 20px; display: flex; align-items: center;
+            justify-content: space-between; flex-wrap: wrap; gap: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000;
+        }
+        .portal-navbar .nav-brand {
+            display: flex; align-items: center; gap: 10px;
+            color: white; text-decoration: none; font-weight: bold; font-size: 1.1em;
+        }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link {
+            color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px;
+            font-size: 0.9em; transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+        }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #1b5e20; border-color: #1b5e20; }
+
+        header {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+            color: white; text-align: center; padding: 50px 20px;
+            position: relative; overflow: hidden;
+        }
+        header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab {
+            background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3);
+            padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap;
+            font-weight: bold; transition: all 0.3s ease; font-size: 0.95em;
+        }
+        .nav-tab:hover, .nav-tab.active { background: #1b5e20; border-color: #1b5e20; transform: translateY(-3px); }
+
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        section {
+            background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px;
+            margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: fadeInUp 0.6s ease;
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        h2 { color: #1b5e20; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #2e7d32; }
+        h3 { color: #1b5e20; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #2e7d32; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #1b5e20; font-weight: 700; }
+
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card {
+            background: white; border-radius: 20px; padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #2e7d32;
+            transition: all 0.3s ease;
+        }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+
+        .example-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 5px solid #2e7d32; border-radius: 15px;
+            padding: 20px 25px; margin: 20px 0;
+        }
+        .example-box h4 { color: #1b5e20; margin-top: 0; }
+
+        .fun-fact {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #ff9800; border-radius: 15px;
+            padding: 20px 25px; margin: 20px 0;
+        }
+        .fun-fact h4 { color: #e65100; margin-top: 0; }
+
+        .story-box {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 20px; padding: 35px; margin: 25px 0; color: white;
+        }
+        .story-box h3 { color: #ffd700; margin-top: 0; }
+        .story-box p { color: rgba(255,255,255,0.9); }
+        .story-box .story-text {
+            background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px;
+            margin-top: 15px; font-style: italic; line-height: 2;
+        }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #e8f5e9; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #e8f5e9; }
+
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option {
+            background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3);
+            color: white; padding: 20px; border-radius: 15px; cursor: pointer;
+            font-size: 1.1em; transition: all 0.3s ease; text-align: center;
+        }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+
+        .game-btn {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; border: none;
+            padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer;
+            display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold;
+        }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(27,94,32,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8); display: flex; align-items: center;
+            justify-content: center; z-index: 2000;
+        }
+        .modal {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 20px; padding: 40px; text-align: center;
+            max-width: 500px; width: 90%; border: 3px solid #ffd700;
+        }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #2e7d32; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+
+        footer {
+            background: linear-gradient(135deg, #0a1628 0%, #1b5e20 100%);
+            color: white; text-align: center; padding: 30px; margin-top: 30px;
+        }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            section { padding: 20px; }
+            h2 { font-size: 1.5em; }
+            .quiz-options { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <nav class="portal-navbar">
+        <a href="bahasa-jawa.html" class="nav-brand">
+            <span style="font-size: 1.5em;">📜</span>
+            Bahasa Jawa - Bab 2
+        </a>
+        <div class="nav-links">
+            <a href="bahasa-jawa.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="bahasa-jawa-bab1.html" class="nav-link">✍️ Bab 1</a>
+            <a href="bahasa-jawa-bab2.html" class="nav-link active">📖 Bab 2</a>
+            <a href="bahasa-jawa-bab3.html" class="nav-link">📜 Bab 3</a>
+            <a href="bahasa-jawa-bab4.html" class="nav-link">📰 Bab 4</a>
+            <a href="bahasa-jawa-bab5.html" class="nav-link">📋 Bab 5</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">📖</div>
+        <h1>CRITA LEGENDA</h1>
+        <p class="subtitle">Belajar Cerita Legenda dalam Bahasa Jawa 📚🌿</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-tab" onclick="scrollToSection('unsur')">🧩 Unsur Intrinsik</button>
+            <button class="nav-tab" onclick="scrollToSection('struktur')">📝 Struktur</button>
+            <button class="nav-tab" onclick="scrollToSection('contoh')">📜 Contoh Legenda</button>
+            <button class="nav-tab" onclick="scrollToSection('ciri-bahasa')">🗣️ Ciri Bahasa</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span>📖</span> Apa Itu Crita Legenda?</h2>
+            <p>Halo guys! 👋 Kalian pasti pernah dengar cerita tentang <strong>Roro Jonggrang</strong>, <strong>Malin Kundang</strong>, atau <strong>Tangkuban Perahu</strong> kan? Nah, cerita-cerita itu disebut <strong>legenda</strong>!</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Fun Fact!</h4>
+                <p>Kata <strong>"legenda"</strong> berasal dari bahasa Latin <em>"legere"</em> yang artinya <strong>"membaca"</strong>. Dalam Bahasa Jawa, legenda disebut <strong>"crita rakyat"</strong> atau <strong>"dongeng legenda"</strong>.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📖</div>
+                    <h3>Pengertian Legenda</h3>
+                    <p>Legenda adalah cerita prosa rakyat yang dianggap <strong>benar-benar terjadi</strong> oleh yang empunya cerita dan cerita itu berkisar tentang <strong>tempat, orang, atau benda</strong> tertentu.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Ciri-Ciri Legenda</h3>
+                    <p>Legenda memiliki ciri khas: dianggap <strong>benar terjadi</strong>, berlatar <strong>tempat nyata</strong>, memiliki <strong>tokoh manusia</strong>, dan mengandung <strong>pesan moral</strong>.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Jenis Legenda</h3>
+                    <p>Ada 3 jenis legenda: <strong>Legenda Perseorangan</strong> (tentang tokoh), <strong>Legenda Setempat</strong> (tentang tempat), dan <strong>Legenda Keagamaan</strong> (tentang hal sakral).</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎭</div>
+                    <h3>Fungsi Legenda</h3>
+                    <p>Legenda berfungsi sebagai <strong>hiburan</strong>, <strong>pendidikan moral</strong>, <strong>pelestarian budaya</strong>, dan <strong>penjelasan asal-usul</strong> suatu tempat atau fenomena.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>✨ Contoh Legenda di Jawa:</h4>
+                <ul>
+                    <li><strong>Roro Jonggrang</strong> — Asal-usul Candi Prambanan (Yogyakarta)</li>
+                    <li><strong>Tangkuban Perahu</strong> — Asal-usul Gunung Tangkuban Perahu (Jawa Barat)</li>
+                    <li><strong>Timun Mas</strong> — Cerita rakyat dari Jawa Tengah</li>
+                    <li><strong>Jaka Tarub</strong> — Cerita rakyat tentang bidadari</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- UNSUR INTRINSIK -->
+        <section id="unsur">
+            <h2><span>🧩</span> Unsur-Unsur Intrinsik Crita Legenda</h2>
+            <p>Setiap cerita legenda memiliki unsur-unsur pembangun yang disebut <strong>unsur intrinsik</strong>. Yuk pelajari!</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Unsur</th>
+                        <th>Penjelasan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🎭 Tema</strong></td>
+                        <td>Pokok cerita / gagasan utama</td>
+                        <td>Kasih sayang orang tua, keserakahan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>👤 Tokoh</strong></td>
+                        <td>Pelaku dalam cerita</td>
+                        <td>Roro Jonggrang, Bandung Bondowoso</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💬 Amanat</strong></td>
+                        <td>Pesan moral yang disampaikan</td>
+                        <td>Jangan sombong, hormati orang tua</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📍 Latar</strong></td>
+                        <td>Tempat, waktu, suasana cerita</td>
+                        <td>Candi Prambanan, zaman kerajaan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📈 Alur</strong></td>
+                        <td>Rangkaian peristiwa dalam cerita</td>
+                        <td>Alur maju (kronologis)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🗣️ Sudut Pandang</strong></td>
+                        <td>Cara pengarang menyampaikan cerita</td>
+                        <td>Orang ketiga (dia/nama tokoh)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎨 Gaya Bahasa</strong></td>
+                        <td>Cara penyampaian cerita</td>
+                        <td>Bahasa Jawa, menggunakan majas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>✨ Contoh Analisis Unsur Intrinsik:</h4>
+                <p><strong>Legenda Roro Jonggrang:</strong></p>
+                <ul>
+                    <li><strong>Tema:</strong> Cinta dan keserakahan</li>
+                    <li><strong>Tokoh:</strong> Bandung Bondowoso (protagonis), Roro Jonggrang (tritagonis)</li>
+                    <li><strong>Latar:</strong> Kerajaan Prambanan, Candi Prambanan</li>
+                    <li><strong>Amanat:</strong> Jangan serakah dan jangan mempermainkan perasaan orang lain</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- STRUKTUR -->
+        <section id="struktur">
+            <h2><span>📝</span> Struktur Crita Legenda</h2>
+            <p>Cerita legenda memiliki struktur yang terdiri dari 3 bagian utama:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">🌱</div>
+                    <h3>1. Purwaka (Awalan)</h3>
+                    <p>Bagian pembuka cerita yang berisi <strong>pengenalan tokoh, latar, dan suasana</strong>. Di bagian ini pembaca diperkenalkan dengan dunia cerita.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Ing jaman biyen, wonten satunggaling tiyang ingkang naminipun Jaka Tarub..."</em></p>
+                        <p style="font-size: 0.9em;">(Pada zaman dahulu, ada seorang pemuda bernama Jaka Tarub...)</p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">⚡</div>
+                    <h3>2. Isi (Awit-awitan)</h3>
+                    <p>Bagian inti cerita yang berisi <strong>konflik, masalah, dan puncak cerita (klimaks)</strong>. Di sinilah cerita menjadi menarik!</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Bandung Bondowoso kasmaran marang Roro Jonggrang lan nyuwun garwa..."</em></p>
+                        <p style="font-size: 0.9em;">(Bandung Bondowoso jatuh cinta kepada Roro Jonggrang dan meminangnya...)</p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">🏁</div>
+                    <h3>3. Penutup (Wekasan)</h3>
+                    <p>Bagian akhir cerita yang berisi <strong>penyelesaian masalah</strong> dan biasanya mengandung <strong>pesan moral</strong>.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Roro Jonggrang dados arca amargi bandung Bondowoso duka..."</em></p>
+                        <p style="font-size: 0.9em;">(Roro Jonggrang menjadi patung karena Bandung Bondowoso marah...)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTOH LEGENDA -->
+        <section id="contoh">
+            <h2><span>📜</span> Contoh Crita Legenda dalam Bahasa Jawa</h2>
+            <p>Berikut adalah contoh cerita legenda yang ditulis dalam Bahasa Jawa:</p>
+
+            <div class="story-box">
+                <h3>🏔️ Roro Jonggrang</h3>
+                <p style="color: rgba(255,255,255,0.7);">Legenda asal-usul Candi Prambanan</p>
+                <div class="story-text">
+                    <p>Ing jaman biyen, wonten kerajaan ingkang asma Prambanan. Ing kerajaan punika wonten putri ingkang ayu pisan, namina <strong>Roro Jonggrang</strong>.</p>
+                    <p>Wonten satunggaling prajurit ingkang sakti mandraguna, namina <strong>Bandung Bondowoso</strong>. Panjenenganipun kasmaran dhateng Roro Jonggrang lan nyuwun garwa.</p>
+                    <p>Roro Jonggrang mboten kersa, nanging mboten wani nolak langsung. Panjenenganipun ngajokaken syarat: <strong>"Panjenengan kedha ndamelaken seribu candi dalu dinten."</strong></p>
+                    <p>Bandung Bondowoso sarujuk lan wiwit ndamel candi. Kanthi bantuan jin, 999 candi sampun rampung. Roro Jonggrang ajrih, mangka dhawuh dhateng para wanita supados ngobong jerami lan ngaduk ayam supados esuk-esuk.</p>
+                    <p>Bandung Bondowoso kaget amargi sampun esuk. Panjenenganipun duka pisan lan <strong>ngrituali Roro Jonggrang dados candi ingkang kaping seratus</strong>.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Kosakata Penting:</h4>
+                <ul>
+                    <li><strong>Ing jaman biyen</strong> = Pada zaman dahulu</li>
+                    <li><strong>Ayu pisan</strong> = Sangat cantik</li>
+                    <li><strong>Kasmaran</strong> = Jatuh cinta</li>
+                    <li><strong>Nyuwun garwa</strong> = Meminang / meminta jadi istri</li>
+                    <li><strong>Mboten kersa</strong> = Tidak mau</li>
+                    <li><strong>Ndadosaken</strong> = Menjadikan</li>
+                    <li><strong>Duka pisan</strong> = Sangat marah</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CIRI BAHASA -->
+        <section id="ciri-bahasa">
+            <h2><span>🗣️</span> Ciri Kebahasaan Crita Legenda</h2>
+            <p>Cerita legenda dalam Bahasa Jawa memiliki ciri kebahasaan khusus:</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📅</div>
+                    <h3>Kata Keterangan Waktu</h3>
+                    <p>Menggunakan kata keterangan waktu lampau:</p>
+                    <ul>
+                        <li><strong>Ing jaman biyen</strong> (pada zaman dahulu)</li>
+                        <li><strong>Mbiyen mbiyen</strong> (dahulu kala)</li>
+                        <li><strong>Wonten ing jamanipun</strong> (pada masanya)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">👤</div>
+                    <h3>Kata Ganti Orang</h3>
+                    <p>Menggunakan kata ganti orang ketiga:</p>
+                    <ul>
+                        <li><strong>Panjenenganipun</strong> (beliau)</li>
+                        <li><strong>Dhèwèké</strong> (dia)</li>
+                        <li><strong>Dhèwèk</strong> (dia, akrab)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🔗</div>
+                    <h3>Kata Sambung</h3>
+                    <p>Menggunakan kata sambung yang mengalir:</p>
+                    <ul>
+                        <li><strong>Lan</strong> (dan)</li>
+                        <li><strong>Nanging</strong> (tetapi)</li>
+                        <li><strong>Amargi</strong> (karena)</li>
+                        <li><strong>Mangka</strong> (sehingga)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Kata Kerja</h3>
+                    <p>Menggunakan kata kerja aktif dan pasif:</p>
+                    <ul>
+                        <li><strong>Ndadosaken</strong> (menjadikan)</li>
+                        <li><strong>Nyuwun</strong> (meminta)</li>
+                        <li><strong>Damel</strong> (membuat)</li>
+                        <li><strong>Kasmaran</strong> (jatuh cinta)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Crita Legenda</h2>
+            <p>Uji pemahamanmu tentang cerita legenda! 💪</p>
+
+            <div class="game-container">
+                <h3>🧠 Kuis Crita Legenda</h3>
+                <div class="score-display">
+                    <div class="score-item">
+                        <div class="label">Skor</div>
+                        <div class="value" id="quizScore">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Soal</div>
+                        <div class="value" id="quizCount">0/10</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="label">Benar</div>
+                        <div class="value" id="quizCorrect">0</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 2: Crita Legenda</h2>
+            <div style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📖 Pengertian Legenda</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Legenda adalah cerita prosa rakyat yang dianggap benar-benar terjadi.</p>
+                    <p>Berkisar tentang <strong>tempat, orang, atau benda</strong> tertentu.</p>
+                    <p>Jenis: Legenda Perseorangan, Legenda Setempat, Legenda Keagamaan.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🧩 Unsur Intrinsik</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p><strong>Tema</strong> — Pokok cerita</p>
+                    <p><strong>Tokoh</strong> — Pelaku cerita</p>
+                    <p><strong>Latar</strong> — Tempat, waktu, suasana</p>
+                    <p><strong>Alur</strong> — Rangkaian peristiwa</p>
+                    <p><strong>Amanat</strong> — Pesan moral</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📝 Struktur Crita</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p><strong>Purwaka (Awalan)</strong> — Pengenalan tokoh dan latar</p>
+                    <p><strong>Isi (Awit-awitan)</strong> — Konflik dan klimaks</p>
+                    <p><strong>Wekasan (Penutup)</strong> — Penyelesaian dan pesan moral</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">📖</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">Bahasa Jawa - Bab 2: Crita Legenda</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="bahasa-jawa.html">📚 Pilih Bab</a>
+                <a href="bahasa-jawa-bab1.html">✍️ Bab 1</a>
+                <a href="bahasa-jawa-bab3.html">📜 Bab 3</a>
+                <a href="bahasa-jawa-bab4.html">📰 Bab 4</a>
+                <a href="bahasa-jawa-bab5.html">📋 Bab 5</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;">
+                <button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() {
+            const container = document.getElementById('bgAnimation');
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 50 + 20;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.bottom = '-100px';
+                bubble.style.animationDelay = Math.random() * 10 + 's';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(bubble);
+            }
+        }
+        createBubbles();
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        const quizQuestions = [
+            { question: 'Legenda dalam Bahasa Jawa disebut...', options: ['Crita wayang', 'Crita rakyat', 'Crita novel', 'Crita roman'], correct: 1 },
+            { question: 'Kata "legenda" berasal dari bahasa...', options: ['Jawa', 'Sansekerta', 'Latin', 'Arab'], correct: 2 },
+            { question: 'Tokoh utama legenda Roro Jonggrang adalah...', options: ['Jaka Tarub', 'Bandung Bondowoso', 'Malin Kundang', 'Timun Mas'], correct: 1 },
+            { question: 'Struktur cerita legenda terdiri dari...', options: ['2 bagian', '3 bagian', '4 bagian', '5 bagian'], correct: 1 },
+            { question: 'Bagian pembuka cerita legenda disebut...', options: ['Wekasan', 'Isi', 'Purwaka', 'Klimaks'], correct: 2 },
+            { question: '"Ing jaman biyen" artinya...', options: ['Pada masa kini', 'Pada zaman dahulu', 'Pada saat itu', 'Pada akhir cerita'], correct: 1 },
+            { question: 'Unsur yang merupakan pesan moral disebut...', options: ['Tema', 'Tokoh', 'Amanat', 'Latar'], correct: 2 },
+            { question: 'Candi Prambanan dikaitkan dengan legenda...', options: ['Malin Kundang', 'Tangkuban Perahu', 'Roro Jonggrang', 'Timun Mas'], correct: 2 },
+            { question: 'Kata "kasmaran" artinya...', options: ['Sedih', 'Marah', 'Jatuh cinta', 'Takut'], correct: 2 },
+            { question: 'Jenis legenda yang berkaitan dengan tempat disebut...', options: ['Legenda Perseorangan', 'Legenda Setempat', 'Legenda Keagamaan', 'Legenda Nasional'], correct: 1 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+
+        function startQuiz() {
+            currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0;
+            document.getElementById('quizScore').textContent = '0';
+            document.getElementById('quizCount').textContent = '0/10';
+            document.getElementById('quizCorrect').textContent = '0';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; }
+            quizAnswered = false;
+            const q = quizQuestions[currentQuizIndex];
+            document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`;
+            document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) =>
+                `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`
+            ).join('');
+        }
+
+        function checkQuizAnswer(selected) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+            const q = quizQuestions[currentQuizIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((opt, i) => {
+                opt.disabled = true;
+                if (i === q.correct) opt.classList.add('correct');
+                else if (i === selected) opt.classList.add('wrong');
+            });
+            if (selected === q.correct) {
+                quizScore += 10; quizCorrectCount++;
+                document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>';
+            } else {
+                document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`;
+            }
+            document.getElementById('quizScore').textContent = quizScore;
+            document.getElementById('quizCorrect').textContent = quizCorrectCount;
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+
+        function endQuiz() {
+            document.getElementById('modalScore').textContent = quizScore;
+            let message = quizScore === 100 ? '🏆 SEMPURNA! Kamu ahli Legenda!' :
+                          quizScore >= 70 ? '👏 Bagus! Pemahamanmu sudah baik!' :
+                          quizScore >= 50 ? '💪 Cukup bagus, terus belajar!' : '📚 Ayo pelajari lagi!';
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('quizModal').classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizModal').classList.add('hidden');
+            startQuiz();
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(40px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+        setTimeout(() => {
+            document.getElementById('pengertian').style.opacity = '1';
+            document.getElementById('pengertian').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

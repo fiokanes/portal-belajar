@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5: Pariwara - Bahasa Jawa SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #880e4f 0%, #ad1457 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #880e4f; border-color: #880e4f; }
+        header { background: linear-gradient(135deg, #880e4f 0%, #ad1457 50%, #c2185b 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #880e4f; border-color: #880e4f; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #880e4f; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #ad1457; }
+        h3 { color: #880e4f; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #ad1457; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #880e4f; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #ad1457; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-left: 5px solid #ad1457; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #880e4f; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #4caf50; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #2e7d32; margin-top: 0; }
+        .iklan-box { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; margin: 25px 0; color: white; }
+        .iklan-box h3 { color: #ffd700; margin-top: 0; }
+        .iklan-box .iklan-content { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; margin-top: 15px; line-height: 2; border: 2px dashed rgba(255,215,0,0.3); }
+        .iklan-box .iklan-example { background: linear-gradient(135deg, #ffd700 0%, #ffa000 100%); border-radius: 15px; padding: 25px; margin-top: 15px; color: #333; font-weight: bold; text-align: center; font-size: 1.1em; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #880e4f, #ad1457); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #fce4ec; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #fce4ec; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #880e4f, #ad1457); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(136,14,79,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #ad1457; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #880e4f 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="bahasa-jawa.html" class="nav-brand"><span style="font-size: 1.5em;">📋</span> Bahasa Jawa - Bab 5</a>
+        <div class="nav-links">
+            <a href="bahasa-jawa.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="bahasa-jawa-bab1.html" class="nav-link">✍️ Bab 1</a>
+            <a href="bahasa-jawa-bab2.html" class="nav-link">📖 Bab 2</a>
+            <a href="bahasa-jawa-bab3.html" class="nav-link">📜 Bab 3</a>
+            <a href="bahasa-jawa-bab4.html" class="nav-link">📰 Bab 4</a>
+            <a href="bahasa-jawa-bab5.html" class="nav-link active">📋 Bab 5</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">📋</div>
+        <h1>PARIWARA</h1>
+        <p class="subtitle">Belajar Pariwara (Iklan) dalam Bahasa Jawa 📚📢</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-tab" onclick="scrollToSection('jenis')">🎯 Jenis Iklan</button>
+            <button class="nav-tab" onclick="scrollToSection('struktur')">📝 Struktur</button>
+            <button class="nav-tab" onclick="scrollToSection('ciri-bahasa')">🗣️ Ciri Bahasa</button>
+            <button class="nav-tab" onclick="scrollToSection('contoh')">📋 Contoh Pariwara</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span>📋</span> Apa Itu Pariwara?</h2>
+            <p>Halo guys! 👋 Kalian pasti sering lihat iklan di TV, koran, atau internet kan? Nah, dalam Bahasa Jawa, iklan itu disebut <strong>"Pariwara"</strong>! 📺</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Fun Fact!</h4>
+                <p>Kata <strong>"Pariwara"</strong> berasal dari bahasa Jawa yang berarti <strong>menyebarkan kabar</strong> atau <strong>memberitahu</strong>. Pariwara bertujuan untuk <strong>mempromosikan</strong> produk atau jasa kepada masyarakat.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📋</div>
+                    <h3>Pengertian Pariwara</h3>
+                    <p><strong>Pariwara</strong> adalah pesan atau informasi yang bertujuan untuk <strong>mempromosikan</strong> suatu produk, jasa, atau gagasan kepada masyarakat melalui media.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Tujuan Pariwara</h3>
+                    <p>Pariwara bertujuan untuk:</p>
+                    <ul>
+                        <li><strong>Memperkenalkan</strong> produk/jasa</li>
+                        <li><strong>Meyakinkan</strong> konsumen</li>
+                        <li><strong>Meningkatkan</strong> penjualan</li>
+                        <li><strong>Membujuk</strong> masyarakat</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📺</div>
+                    <h3>Media Pariwara</h3>
+                    <p>Pariwara bisa disampaikan melalui:</p>
+                    <ul>
+                        <li><strong>Televisi</strong> (TV)</li>
+                        <li><strong>Radio</strong></li>
+                        <li><strong>Koran / Majalah</strong></li>
+                        <li><strong>Baliho / Spanduk</strong></li>
+                        <li><strong>Internet / Media sosial</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">✅</div>
+                    <h3>Syarat Pariwara yang Baik</h3>
+                    <p>Pariwara yang baik harus:</p>
+                    <ul>
+                        <li><strong>Menarik</strong> perhatian</li>
+                        <li><strong>Jelas</strong> dan mudah dipahami</li>
+                        <li><strong>Jujur</strong> dan tidak menipu</li>
+                        <li><strong>Sopan</strong> dan beretika</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- JENIS IKLAN -->
+        <section id="jenis">
+            <h2><span>🎯</span> Jenis-Jenis Pariwara</h2>
+            <p>Pariwara dibedakan menjadi beberapa jenis berdasarkan tujuannya:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">🛒</div>
+                    <h3>1. Pariwara Niaga (Iklan Komersial)</h3>
+                    <p>Iklan yang bertujuan untuk <strong>menjual produk atau jasa</strong>. Contoh: iklan makanan, minuman, pakaian, elektronik.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Tuku saiki uga! Diskon nganti 50% mung kanggo dina iki wae!"</em></p>
+                        <p style="font-size: 0.9em;">(Beli sekarang juga! Diskon hingga 50% hanya untuk hari ini saja!)</p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">📢</div>
+                    <h3>2. Pariwara Layanan Masyarakat</h3>
+                    <p>Iklan yang bertujuan untuk <strong>memberikan informasi atau edukasi</strong> kepada masyarakat. Contoh: iklan kesehatan, keselamatan, lingkungan.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Ayo nggunakake masker kanggo nglindhungi awake dhewe lan wong liya!"</em></p>
+                        <p style="font-size: 0.9em;">(Ayo menggunakan masker untuk melindungi diri sendiri dan orang lain!)</p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">🏛️</div>
+                    <h3>3. Pariwara Pengumuman</h3>
+                    <p>Iklan yang bertujuan untuk <strong>mengumumkan sesuatu</strong> kepada masyarakat. Contoh: pengumuman kegiatan, lomba, acara.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Pengumuman! Lomba menulis crita legenda Jawa tanggal 15 Februari 2024."</em></p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">💼</div>
+                    <h3>4. Pariwara Lowongan Kerja</h3>
+                    <p>Iklan yang bertujuan untuk <strong>mencari karyawan</strong> atau tenaga kerja. Contoh: lowongan kerja di perusahaan.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Dibutuhake karyawan kanggo posisi kasir. Lamaran dikirim menyang..."</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Pariwara</th>
+                        <th>Tujuan</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Pariwara Niaga</strong></td><td>Menjual produk/jasa</td><td>Iklan makanan, minuman</td></tr>
+                    <tr><td><strong>Pariwara Layanan Masyarakat</strong></td><td>Edukasi masyarakat</td><td>Iklan kesehatan, lingkungan</td></tr>
+                    <tr><td><strong>Pariwara Pengumuman</strong></td><td>Mengumumkan acara</td><td>Pengumuman lomba, kegiatan</td></tr>
+                    <tr><td><strong>Pariwara Lowongan</strong></td><td>Mencari karyawan</td><td>Lowongan kerja</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- STRUKTUR -->
+        <section id="struktur">
+            <h2><span>📝</span> Struktur Pariwara</h2>
+            <p>Pariwara memiliki struktur yang terdiri dari beberapa bagian:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">🔥</div>
+                    <h3>1. Judul (Headline)</h3>
+                    <p>Bagian yang berisi <strong>inti pesan</strong> yang ingin disampaikan. Judul harus <strong>menarik perhatian</strong> dan <strong>membujuk</strong> orang untuk membaca.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">📝</div>
+                    <h3>2. Isi Pariwara (Body)</h3>
+                    <p>Bagian yang berisi <strong>informasi lengkap</strong> tentang produk, jasa, atau pesan yang ingin disampaikan. Harus <strong>jelas dan meyakinkan</strong>.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">📞</div>
+                    <h3>3. Informasi Kontak</h3>
+                    <p>Bagian yang berisi <strong>informasi untuk menghubungi</strong>, seperti alamat, nomor telepon, website, atau media sosial.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">🎨</div>
+                    <h3>4. Gambar / Ilustrasi</h3>
+                    <p>Bagian yang berisi <strong>gambar atau ilustrasi</strong> yang mendukung pesan. Gambar harus <strong>menarik dan relevan</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CIRI BAHASA -->
+        <section id="ciri-bahasa">
+            <h2><span>🗣️</span> Ciri Kebahasaan Pariwara</h2>
+            <p>Pariwara dalam Bahasa Jawa memiliki ciri kebahasaan khusus:</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Kata Bujukan / Rayuan</h3>
+                    <p>Menggunakan kata-kata yang <strong>membujuk dan merayu</strong>:</p>
+                    <ul>
+                        <li><strong>Ayo!</strong> (Mari!)</li>
+                        <li><strong>Tuku saiki!</strong> (Beli sekarang!)</li>
+                        <li><strong>Aja nganti ketinggalan!</strong> (Jangan sampai ketinggalan!)</li>
+                        <li><strong>Mung kanggo sampeyan!</strong> (Hanya untuk Anda!)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⭐</div>
+                    <h3>Kata Sifat Berlebihan</h3>
+                    <p>Menggunakan kata sifat yang <strong>berlebihan (hiperbola)</strong>:</p>
+                    <ul>
+                        <li><strong>Paling apik</strong> (paling bagus)</li>
+                        <li><strong>Luwih murah</strong> (lebih murah)</li>
+                        <li><strong>Super enak</strong> (super enak)</li>
+                        <li><strong>Top banget</strong> (sangat bagus)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Kata Kerja Ajakan</h3>
+                    <p>Menggunakan kata kerja yang berisi <strong>ajakan atau perintah</strong>:</p>
+                    <ul>
+                        <li><strong>Tuku</strong> (beli)</li>
+                        <li><strong>Coba</strong> (coba)</li>
+                        <li><strong>Goleki</strong> (cari)</li>
+                        <li><strong>Entuk</strong> (dapatkan)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Kata Keterangan</h3>
+                    <p>Menggunakan kata keterangan yang <strong>menarik</strong>:</p>
+                    <ul>
+                        <li><strong>Mung sedina wae!</strong> (Hanya sehari saja!)</li>
+                        <li><strong>Saiki uga!</strong> (Sekarang juga!)</li>
+                        <li><strong>Tanpa syarat!</strong> (Tanpa syarat!)</li>
+                        <li><strong>Gratis ongkir!</strong> (Gratis ongkir!)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTOH PARIWARA -->
+        <section id="contoh">
+            <h2><span>📋</span> Contoh Pariwara dalam Bahasa Jawa</h2>
+            <p>Berikut adalah contoh pariwara yang ditulis dalam Bahasa Jawa:</p>
+
+            <div class="iklan-box">
+                <h3>🛒 Contoh Pariwara 1: Iklan Produk</h3>
+                <div class="iklan-example">
+                    🌟 BATAGOR ASLI BANDUNG 🌟<br><br>
+                    Enak tenan! Gurih lan renyah!<br>
+                    Mung Rp 10.000 wae!<br><br>
+                    📍 Jl. Malioboro No. 15, Yogyakarta<br>
+                    📞 0812-3456-7890<br>
+                    ⏰ Buka saben dina jam 08.00 - 21.00<br><br>
+                    Ayo tuku saiki uga! Aja nganti ketinggalan! 🎉
+                </div>
+            </div>
+
+            <div class="iklan-box">
+                <h3>📢 Contoh Pariwara 2: Iklan Layanan Masyarakat</h3>
+                <div class="iklan-content">
+                    <p style="text-align: center; font-size: 1.3em; color: #ffd700; font-weight: bold;">🌿 AYO NGOPENI LINGKUNGAN! 🌿</p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Dherek nyuwun peran sampeyan kanggo njaga kebersihan lingkungan!
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.9);">
+                        <li>✅ Aja nggunakake plastik sekali pakai</li>
+                        <li>✅ Buang sampah ing papan sing wis disediakake</li>
+                        <li>✅ Tanam wit-witan ing saubenging omah</li>
+                        <li>✅ Hemat banyu lan energi</li>
+                    </ul>
+                    <p style="text-align: center; color: #ffd700; font-weight: bold; margin-top: 15px;">
+                        LINGKUNGAN RESIK, URIP SEHAT! 🌍
+                    </p>
+                </div>
+            </div>
+
+            <div class="iklan-box">
+                <h3>💼 Contoh Pariwara 3: Lowongan Kerja</h3>
+                <div class="iklan-content">
+                    <p style="text-align: center; font-size: 1.3em; color: #ffd700; font-weight: bold;">📋 DIBUTUHAKAN KARYAWAN 📋</p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Toko "Sumber Rejeki" mbukak lowongan kanggo posisi:
+                    </p>
+                    <ul style="color: rgba(255,255,255,0.9);">
+                        <li><strong>Kasir</strong> (2 wong)</li>
+                        <li><strong>Pramuniaga</strong> (3 wong)</li>
+                    </ul>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        <strong>Syarat:</strong><br>
+                        - Umur 18-25 taun<br>
+                        - Pendidikan minimal SMA/sederajat<br>
+                        - Bisa kerja tim<br>
+                        - Jujur lan tanggung jawab
+                    </p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        <strong>Kirim lamaran menyang:</strong><br>
+                        Toko "Sumber Rejeki"<br>
+                        Jl. Ahmad Yani No. 25, Semarang<br>
+                        Deadline: 28 Februari 2024
+                    </p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Kosakata Penting dalam Pariwara:</h4>
+                <ul>
+                    <li><strong>Tuku</strong> = Beli</li>
+                    <li><strong>Saiki uga</strong> = Sekarang juga</li>
+                    <li><strong>Aja nganti ketinggalan</strong> = Jangan sampai ketinggalan</li>
+                    <li><strong>Enak tenan</strong> = Enak sekali</li>
+                    <li><strong>Mung...wae</strong> = Hanya...saja</li>
+                    <li><strong>Dibutuhake</strong> = Dibutuhkan</li>
+                    <li><strong>Kirim lamaran</strong> = Kirim lamaran</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Pariwara</h2>
+            <p>Uji pemahamanmu tentang pariwara! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis Pariwara</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 5: Pariwara</h2>
+            <div style="background: linear-gradient(135deg, #880e4f 0%, #ad1457 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📋 Apa Itu Pariwara?</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Pariwara adalah <strong>pesan promosi</strong> produk, jasa, atau gagasan.</p>
+                    <p>Tujuan: <strong>mempromosikan, meyakinkan, membujuk</strong>.</p>
+                    <p>Media: <strong>TV, radio, koran, baliho, internet</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🎯 Jenis Pariwara</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p><strong>Pariwara Niaga</strong> — Menjual produk/jasa</p>
+                    <p><strong>Pariwara Layanan Masyarakat</strong> — Edukasi</p>
+                    <p><strong>Pariwara Pengumuman</strong> — Mengumumkan acara</p>
+                    <p><strong>Pariwara Lowongan</strong> — Mencari karyawan</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🗣️ Ciri Bahasa Pariwara</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Kata bujukan: <strong>ayo, tuku saiki, aja nganti ketinggalan</strong></p>
+                    <p>Kata sifat berlebihan: <strong>paling apik, luwih murah</strong></p>
+                    <p>Kata kerja ajakan: <strong>tuku, coba, goleki</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">📋</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">Bahasa Jawa - Bab 5: Pariwara</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="bahasa-jawa.html">📚 Pilih Bab</a>
+                <a href="bahasa-jawa-bab1.html">✍️ Bab 1</a>
+                <a href="bahasa-jawa-bab2.html">📖 Bab 2</a>
+                <a href="bahasa-jawa-bab3.html">📜 Bab 3</a>
+                <a href="bahasa-jawa-bab4.html">📰 Bab 4</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: '"Pariwara" dalam Bahasa Indonesia artinya...', options: ['Cerita', 'Berita', 'Iklan', 'Puisi'], correct: 2 },
+            { question: 'Tujuan utama pariwara niaga adalah...', options: ['Mendidik', 'Menjual produk', 'Menghibur', 'Memberi informasi'], correct: 1 },
+            { question: 'Pariwara yang bertujuan memberi edukasi disebut...', options: ['Pariwara niaga', 'Pariwara layanan masyarakat', 'Pariwara pengumuman', 'Pariwara lowongan'], correct: 1 },
+            { question: '"Tuku saiki uga" artinya...', options: ['Beli besok', 'Beli sekarang juga', 'Beli kemarin', 'Beli nanti'], correct: 1 },
+            { question: 'Ciri bahasa pariwara menggunakan kata...', options: ['Bujukan', 'Perintah', 'Pertanyaan', 'Larangan'], correct: 0 },
+            { question: '"Aja nganti ketinggalan" artinya...', options: ['Jangan datang', 'Jangan ketinggalan', 'Jangan pergi', 'Jangan duduk'], correct: 1 },
+            { question: 'Pariwara yang baik harus bersifat...', options: ['Menipu', 'Jujur', 'Berlebihan', 'Memaksa'], correct: 1 },
+            { question: 'Media pariwara yang paling modern adalah...', options: ['Koran', 'Radio', 'Internet', 'Baliho'], correct: 2 },
+            { question: '"Mung...wae" artinya...', options: ['Banyak sekali', 'Hanya...saja', 'Tidak ada', 'Semuanya'], correct: 1 },
+            { question: 'Struktur pariwara terdiri dari...', options: ['2 bagian', '3 bagian', '4 bagian', '5 bagian'], correct: 2 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/10'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 100 ? '🏆 SEMPURNA!' : quizScore >= 70 ? '👏 Bagus!' : quizScore >= 50 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('pengertian').style.opacity = '1'; document.getElementById('pengertian').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

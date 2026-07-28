@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Pembangunan Perekonomian Indonesia - IPS SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #fb8c00 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #fb8c00 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #e65100; border-color: #e65100; }
+        header { background: linear-gradient(135deg, #bf360c 0%, #e65100 50%, #f57c00 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #e65100; border-color: #e65100; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #e65100; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #f57c00; }
+        h3 { color: #e65100; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #f57c00; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #e65100; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #f57c00; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #f57c00; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #e65100; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #1565c0; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #0d47a1; margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #e65100, #f57c00); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #fff3e0; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #fff3e0; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #e65100, #f57c00); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(230,81,0,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #f57c00; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #e65100 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="ips.html" class="nav-brand"><span style="font-size: 1.5em;">💰</span> IPS - Bab 4</a>
+        <div class="nav-links">
+            <a href="ips.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="ips-bab1.html" class="nav-link">🌍 Bab 1</a>
+            <a href="ips-bab2.html" class="nav-link">👥 Bab 2</a>
+            <a href="ips-bab3.html" class="nav-link">🇮🇩 Bab 3</a>
+            <a href="ips-bab4.html" class="nav-link active">💰 Bab 4</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">💰</div>
+        <h1>PEMBANGUNAN PEREKONOMIAN INDONESIA</h1>
+        <p class="subtitle">Bab 4 - IPS SMP Kelas 8 📚📊</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('kemerdekaan')">🇮🇩 Ekonomi Masa Kemerdekaan</button>
+            <button class="nav-tab" onclick="scrollToSection('perdagangan')">🌐 Perdagangan Internasional</button>
+            <button class="nav-tab" onclick="scrollToSection('penduduk')">👥 Dinamika Penduduk</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- KONDISI PEREKONOMIAN MASA KEMERDEKAAN -->
+        <section id="kemerdekaan">
+            <h2><span>🇮🇩</span> Kondisi Perekonomian pada Masa Kemerdekaan</h2>
+            <p>Saat memproklamasikan kemerdekaan, Indonesia menghadapi tantangan ekonomi yang sangat besar.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Tahukah Kamu?</h4>
+                <p>Saat kemerdekaan 1945, kondisi ekonomi Indonesia sangat memprihatinkan. <strong>Inflasi mencapai 600%</strong> dan infrastruktur hancur akibat Perang Dunia II!</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Kondisi Ekonomi 1945</h3>
+                    <p>Kondisi ekonomi Indonesia saat kemerdekaan:</p>
+                    <ul>
+                        <li><strong>Inflasi tinggi</strong> — Harga barang melonjak</li>
+                        <li><strong>Infrastruktur rusak</strong> — Jalan, jembatan hancur</li>
+                        <li><strong>Kekurangan bahan pangan</strong> — Kelangkaan makanan</li>
+                        <li><strong>Transportasi lumpuh</strong> — Kereta, kapal rusak</li>
+                        <li><strong>SDM terbatas</strong> — Pendidikan rendah</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📋</div>
+                    <h3>Upaya Pemerintah</h3>
+                    <p>Pemerintah mengambil berbagai upaya:</p>
+                    <ul>
+                        <li><strong>Menstabilkan ekonomi</strong> — Mengendalikan inflasi</li>
+                        <li><strong>Rekonstruksi</strong> — Membangun kembali infrastruktur</li>
+                        <li><strong>Nasionalisasi</strong> — Mengambil alih asing</li>
+                        <li><strong>Pembangunan industri</strong> — Industri nasional</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Kebijakan Ekonomi</h3>
+                    <p>Kebijakan ekonomi masa awal kemerdekaan:</p>
+                    <ul>
+                        <li><strong>Kasimo Plan</strong> — Rencana swasembada pangan</li>
+                        <li><strong>Gunseikan</strong> — Penguasaan militer ekonomi</li>
+                        <li><strong>Bank Indonesia</strong> — Didirikan 1946</li>
+                        <li><strong>Oeang Republik Indonesia</strong> — Mata uang pertama</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Pencapaian</h3>
+                    <p>Pencapaian ekonomi masa awal:</p>
+                    <ul>
+                        <li><strong>Swasembada beras</strong> — 1950-an</li>
+                        <li><strong>Industrialisasi</strong> — Pembangunan pabrik</li>
+                        <li><strong>Infrastruktur</strong> — Perbaikan jalan, jembatan</li>
+                        <li><strong>Pendidikan</strong> — Wajib belajar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📜 Kasimo Plan (1946):</h4>
+                <p>Rencana yang diprakarsai oleh <strong>Ignatius Kasimo</strong> untuk mencapai swasembada pangan:</p>
+                <ul>
+                    <li>✅ Meningkatkan produksi padi</li>
+                    <li>✅ Membuka lahan pertanian baru</li>
+                    <li>✅ Menggalakkan tanaman pangan alternatif</li>
+                    <li>✅ Membangun irigasi</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PERDAGANGAN INTERNASIONAL -->
+        <section id="perdagangan">
+            <h2><span>🌐</span> Perdagangan Internasional</h2>
+            <p>Perdagangan internasional adalah kegiatan jual beli barang dan jasa antarnegara yang sangat penting bagi perekonomian Indonesia.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📤</div>
+                    <h3>Ekspor Indonesia</h3>
+                    <p>Barang yang diekspor Indonesia:</p>
+                    <ul>
+                        <li><strong>Kelapa sawit</strong> — Minyak sawit (CPO)</li>
+                        <li><strong>Batu bara</strong> — Energi</li>
+                        <li><strong>Minyak bumi</strong> — Bahan bakar</li>
+                        <li><strong>Karet</strong> — Bahan industri</li>
+                        <li><strong>Kopi</strong> — Komoditas pertanian</li>
+                        <li><strong>Tekstil</strong> — Industri garmen</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📥</div>
+                    <h3>Impor Indonesia</h3>
+                    <p>Barang yang diimpor Indonesia:</p>
+                    <ul>
+                        <li><strong>Mesin & peralatan</strong> — Industri</li>
+                        <li><strong>Bahan baku</strong> — Untuk industri</li>
+                        <li><strong>Makanan</strong> — Gandung, daging</li>
+                        <li><strong>Elektronik</strong> — HP, laptop</li>
+                        <li><strong>Kendaraan</strong> — Mobil, motor</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Mitra Dagang</h3>
+                    <p>Mitra dagang utama Indonesia:</p>
+                    <ul>
+                        <li><strong>China</strong> — Mitra terbesar</li>
+                        <li><strong>Jepang</strong> — Ekspor & impor</li>
+                        <li><strong>Amerika Serikat</strong> — Ekspor tekstil</li>
+                        <li><strong>India</strong> — Ekspor batu bara</li>
+                        <li><strong>Uni Eropa</strong> — Ekspor CPO</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Dampak Perdagangan</h3>
+                    <p>Dampak perdagangan internasional:</p>
+                    <ul>
+                        <li><strong>Positif:</strong> Devisa, lapangan kerja, teknologi</li>
+                        <li><strong>Positif:</strong> Pilihan barang beragam</li>
+                        <li><strong>Negatif:</strong> Ketergantungan impor</li>
+                        <li><strong>Negatif:</strong> Persaingan dengan produk lokal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Komoditas Ekspor</th>
+                        <th>Negara Tujuan</th>
+                        <th>Pendapatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>CPO (Minyak Sawit)</strong></td><td>India, China, Uni Eropa</td><td>Terbesar</td></tr>
+                    <tr><td><strong>Batu Bara</strong></td><td>China, India, Jepang</td><td>Kedua</td></tr>
+                    <tr><td><strong>Minyak Bumi</strong></td><td>Jepang, Korea, AS</td><td>Ketiga</td></tr>
+                    <tr><td><strong>Karet</strong></td><td>AS, Jepang, China</td><td>Keempat</td></tr>
+                    <tr><td><strong>Kopi</strong></td><td>AS, Jerman, Jepang</td><td>Keenam</td></tr>
+                </tbody>
+            </table>
+
+            <div class="example-box">
+                <h4>📝 Organisasi Perdagangan Internasional:</h4>
+                <ul>
+                    <li><strong>WTO</strong> — World Trade Organization (Organisasi Perdagangan Dunia)</li>
+                    <li><strong>ASEAN</strong> — Perhimpunan Bangsa Asia Tenggara</li>
+                    <li><strong>APEC</strong> — Asia-Pacific Economic Cooperation</li>
+                    <li><strong>G20</strong> — Kelompok 20 negara besar</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DINAMIKA PENDUDUK -->
+        <section id="penduduk">
+            <h2><span>👥</span> Dinamika Penduduk</h2>
+            <p><strong>Dinamika penduduk</strong> adalah perubahan jumlah, komposisi, dan persebaran penduduk yang dipengaruhi oleh kelahiran, kematian, dan migrasi.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📈</div>
+                    <h3>Pertumbuhan Penduduk</h3>
+                    <p>Faktor pertumbuhan penduduk:</p>
+                    <ul>
+                        <li><strong>Kelahiran (natalitas)</strong> — Bayi yang lahir</li>
+                        <li><strong>Kematian (mortalitas)</strong> — Penduduk yang meninggal</li>
+                        <li><strong>Migrasi</strong> — Perpindahan penduduk</li>
+                        <li><strong>Rumus:</strong> L - M + (I - E)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Komposisi Penduduk</h3>
+                    <p>Komposisi penduduk Indonesia:</p>
+                    <ul>
+                        <li><strong>Usia produktif:</strong> ±70% (15-64 tahun)</li>
+                        <li><strong>Usia muda:</strong> ±25% (0-14 tahun)</li>
+                        <li><strong>Usia tua:</strong> ±5% (65+ tahun)</li>
+                        <li><strong>Bonus demografi:</strong> 2020-2030</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🗺️</div>
+                    <h3>Persebaran Penduduk</h3>
+                    <p>Persebaran penduduk Indonesia tidak merata:</p>
+                    <ul>
+                        <li><strong>Padat:</strong> Jawa, Bali, Sumatera Utara</li>
+                        <li><strong>Sedang:</strong> Sulawesi, Kalimantan</li>
+                        <li><strong>Jarang:</strong> Papua, Kalimantan Barat</li>
+                        <li><strong>Program:</strong> Transmigrasi</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Masalah Kependudukan</h3>
+                    <p>Masalah kependudukan Indonesia:</p>
+                    <ul>
+                        <li><strong>Urbanisasi</strong> — Perpindahan ke kota</li>
+                        <li><strong>Kemiskinan</strong> — Penduduk miskin</li>
+                        <li><strong>Pengangguran</strong> — Tidak memiliki pekerjaan</li>
+                        <li><strong>Ketimpangan</strong> — Kesenjangan sosial</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📊 Bonus Demografi (2020-2030):</h4>
+                <p>Indonesia mengalami <strong>bonus demografi</strong> dimana jumlah penduduk usia produktif (15-64 tahun) lebih besar dari usia non-produktif. Ini adalah peluang besar untuk:</p>
+                <ul>
+                    <li>✅ Meningkatkan <strong>produktivitas ekonomi</strong></li>
+                    <li>✅ Mendorong <strong>inovasi dan kreativitas</strong></li>
+                    <li>✅ Menarik <strong>investasi asing</strong></li>
+                    <li>✅ Membangun <strong>infrastruktur</strong></li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Program Kependudukan Indonesia:</h4>
+                <ul>
+                    <li><strong>KB (Keluarga Berencana)</strong> — Mengendalikan jumlah anak</li>
+                    <li><strong>Transmigrasi</strong> — Persebaran penduduk dari padat ke jarang</li>
+                    <li><strong>Urbanisasi terencana</strong> — Pengendalian urbanisasi</li>
+                    <li><strong>Pendidikan</strong> — Meningkatkan kualitas SDM</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Bab 4</h2>
+            <p>Uji pemahamanmu tentang Pembangunan Perekonomian Indonesia! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis IPS Bab 4</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/12</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 4</h2>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🇮🇩 Ekonomi Masa Kemerdekaan</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Kondisi 1945: <strong>inflasi tinggi, infrastruktur rusak, kekurangan pangan</strong>.</p>
+                    <p>Upaya: <strong>Kasimo Plan, nasionalisasi, industrialisasi</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🌐 Perdagangan Internasional</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Ekspor utama: <strong>CPO, batu bara, minyak bumi, karet, kopi</strong>.</p>
+                    <p>Mitra utama: <strong>China, Jepang, AS, India, Uni Eropa</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">👥 Dinamika Penduduk</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Faktor: <strong>kelahiran, kematian, migrasi</strong>.</p>
+                    <p>Bonus demografi: <strong>2020-2030</strong> (usia produktif besar).</p>
+                    <p>Program: <strong>KB, transmigrasi, pendidikan</strong>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">💰</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">IPS - Bab 4: Pembangunan Perekonomian Indonesia</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="ips.html">📚 Pilih Bab</a>
+                <a href="ips-bab1.html">🌍 Bab 1</a>
+                <a href="ips-bab2.html">👥 Bab 2</a>
+                <a href="ips-bab3.html">🇮🇩 Bab 3</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: 'Kondisi ekonomi Indonesia saat kemerdekaan 1945...', options: ['Makmur', 'Stabil', 'Sangat sulit', 'Maju'], correct: 2 },
+            { question: 'Rencana swasembada pangan disebut...', options: ['Rencana Pembangunan', 'Kasimo Plan', 'Rencana Lima Tahun', 'Supersemar'], correct: 1 },
+            { question: 'Mata uang pertama Indonesia adalah...', options: ['Rupiah', 'ORI', 'Dollar', 'Ringgit'], correct: 1 },
+            { question: 'Komoditas ekspor terbesar Indonesia adalah...', options: ['Kopi', 'Karet', 'CPO (Minyak Sawit)', 'Teh'], correct: 2 },
+            { question: 'Mitra dagang terbesar Indonesia adalah...', options: ['Amerika', 'Jepang', 'China', 'India'], correct: 2 },
+            { question: 'Bonus demografi Indonesia terjadi pada tahun...', options: ['1990-2000', '2000-2010', '2020-2030', '2040-2050'], correct: 2 },
+            { question: 'Program untuk mengendalikan jumlah anak disebut...', options: ['Transmigrasi', 'Urbanisasi', 'KB', 'Modernisasi'], correct: 2 },
+            { question: 'Bank Indonesia didirikan pada tahun...', options: ['1942', '1945', '1946', '1950'], correct: 2 },
+            { question: 'Organisasi perdagangan dunia disebut...', options: ['ASEAN', 'WTO', 'PBB', 'NATO'], correct: 1 },
+            { question: 'Perpindahan penduduk dari desa ke kota disebut...', options: ['Transmigrasi', 'Urbanisasi', 'Migrasi', 'Emigrasi'], correct: 1 },
+            { question: 'Batu bara Indonesia banyak diekspor ke...', options: ['Amerika', 'Eropa', 'China', 'Australia'], correct: 2 },
+            { question: 'Dinamika penduduk dipengaruhi oleh...', options: ['Hanya kelahiran', 'Hanya kematian', 'Kelahiran, kematian, migrasi', 'Hanya migrasi'], correct: 2 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/12'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/12`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 120 ? '🏆 SEMPURNA!' : quizScore >= 80 ? '👏 Bagus!' : quizScore >= 50 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('kemerdekaan').style.opacity = '1'; document.getElementById('kemerdekaan').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

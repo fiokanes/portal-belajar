@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: Serat Wulangreh - Bahasa Jawa SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #fb8c00 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #fb8c00 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #e65100; border-color: #e65100; }
+        header { background: linear-gradient(135deg, #bf360c 0%, #e65100 50%, #f57c00 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #e65100; border-color: #e65100; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #e65100; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #f57c00; }
+        h3 { color: #e65100; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #f57c00; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #e65100; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #f57c00; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #f57c00; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #e65100; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left: 5px solid #4caf50; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #2e7d32; margin-top: 0; }
+        .tembang-box { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; margin: 25px 0; color: white; }
+        .tembang-box h3 { color: #ffd700; margin-top: 0; }
+        .tembang-box .tembang-text { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; margin-top: 15px; font-style: italic; line-height: 2.2; text-align: center; font-size: 1.1em; }
+        .tembang-box .tembang-meaning { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px; margin-top: 15px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #e65100, #f57c00); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #fff3e0; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #fff3e0; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #e65100, #f57c00); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(230,81,0,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #f57c00; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #e65100 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="bahasa-jawa.html" class="nav-brand"><span style="font-size: 1.5em;">📜</span> Bahasa Jawa - Bab 3</a>
+        <div class="nav-links">
+            <a href="bahasa-jawa.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="bahasa-jawa-bab1.html" class="nav-link">✍️ Bab 1</a>
+            <a href="bahasa-jawa-bab2.html" class="nav-link">📖 Bab 2</a>
+            <a href="bahasa-jawa-bab3.html" class="nav-link active">📜 Bab 3</a>
+            <a href="bahasa-jawa-bab4.html" class="nav-link">📰 Bab 4</a>
+            <a href="bahasa-jawa-bab5.html" class="nav-link">📋 Bab 5</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">📜</div>
+        <h1>SERAT WULANGREH</h1>
+        <p class="subtitle">Belajar Serat Wulangreh karya Sunan Bonang 📚🙏</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-tab" onclick="scrollToSection('sunan-bonang')">👨‍🏫 Sunan Bonang</button>
+            <button class="nav-tab" onclick="scrollToSection('tembang')">🎵 Tembang</button>
+            <button class="nav-tab" onclick="scrollToSection('nilai')">🙏 Nilai Luhur</button>
+            <button class="nav-tab" onclick="scrollToSection('penerapan')">💡 Penerapan</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span>📖</span> Apa Itu Serat Wulangreh?</h2>
+            <p>Halo guys! 👋 Pernah dengar <strong>Serat Wulangreh</strong>? Ini adalah salah satu karya sastra Jawa yang sangat terkenal dan penuh dengan ajaran moral! 📜</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Fun Fact!</h4>
+                <p><strong>Serat Wulangreh</strong> artinya secara harfiah adalah <strong>"Surat Ajaran"</strong> atau <strong>"Kitab Pengajaran"</strong>. Kata "Wulang" berarti <strong>ajaran</strong>, dan "Reh" berarti <strong>cara atau aturan</strong>.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📜</div>
+                    <h3>Pengertian</h3>
+                    <p>Serat Wulangreh adalah karya sastra Jawa berupa <strong>tembang macapat</strong> yang berisi ajaran moral, budi pekerti, dan tata krama hidup.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">👨‍🏫</div>
+                    <h3>Pengarang</h3>
+                    <p>Ditulis oleh <strong>Sunan Bonang</strong>, salah satu dari Wali Songo yang menyebarkan agama Islam di Jawa.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎵</div>
+                    <h3>Bentuk</h3>
+                    <p>Ditulis dalam bentuk <strong>tembang macapat</strong>, yaitu puisi tradisional Jawa dengan aturan guru wilangan dan guru lagu.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Tujuan</h3>
+                    <p>Bertujuan untuk <strong>mendidik masyarakat</strong> tentang budi pekerti, tata krama, dan cara hidup yang baik.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUNAN BONANG -->
+        <section id="sunan-bonang">
+            <h2><span>👨‍🏫</span> Sunan Bonang - Pengarang Serat Wulangreh</h2>
+            <p><strong>Sunan Bonang</strong> adalah salah satu dari <strong>Wali Songo</strong> yang sangat berperan dalam penyebaran agama Islam di tanah Jawa.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">👤</div>
+                    <h3>Identitas</h3>
+                    <ul>
+                        <li><strong>Nama asli:</strong> Raden Maulana Makdum Ibrahim</li>
+                        <li><strong>Ayah:</strong> Sunan Ampel</li>
+                        <li><strong>Berdomisili:</strong> Bonang, Tuban, Jawa Timur</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎭</div>
+                    <h3>Metode Dakwah</h3>
+                    <p>Sunan Bonang terkenal menggunakan <strong>seni dan budaya</strong> sebagai media dakwah. Beliau menggunakan <strong>tembang, gamelan, dan wayang</strong> untuk menyampaikan ajaran Islam.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Karya-Karya</h3>
+                    <ul>
+                        <li><strong>Serat Wulangreh</strong> — Ajaran budi pekerti</li>
+                        <li><strong>Serat Dewa Ruci</strong> — Ajaran spiritual</li>
+                        <li>Berbagai tembang macapat lainnya</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Keistimewaan</h3>
+                    <p>Sunan Bonang dikenal sebagai <strong>wali yang bijaksana</strong> dan mampu menyatukan ajaran Islam dengan budaya Jawa secara harmonis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEMBANG -->
+        <section id="tembang">
+            <h2><span>🎵</span> Contoh Tembang dalam Serat Wulangreh</h2>
+            <p>Berikut adalah contoh tembang dari Serat Wulangreh beserta artinya:</p>
+
+            <div class="tembang-box">
+                <h3>🎵 Tembang Durma</h3>
+                <p style="color: rgba(255,255,255,0.7);">Salah satu tembang dalam Serat Wulangreh</p>
+                <div class="tembang-text">
+                    Aja ngundang wruhing liyan,<br>
+                    Aja gumunan, aja getunan,<br>
+                    Aja kumalunglung,<br>
+                    Aja kumalunglung,<br>
+                    Ngluruhek karsaning liyan.
+                </div>
+                <div class="tembang-meaning">
+                    <h4 style="color: #ffd700;">📝 Arti / Terjemahan:</h4>
+                    <ul style="color: rgba(255,255,255,0.9);">
+                        <li><strong>Aja ngundang wruhing liyan</strong> — Jangan mengandalkan pengetahuan orang lain</li>
+                        <li><strong>Aja gumunan</strong> — Jangan mudah terheran-heran / terkesan</li>
+                        <li><strong>Aja getunan</strong> — Jangan mudah menyesal</li>
+                        <li><strong>Aja kumalunglung</strong> — Jangan bingung / ragu-ragu</li>
+                        <li><strong>Ngluruhek karsaning liyan</strong> — Jangan menuruti kehendak orang lain secara membabi buta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tembang-box">
+                <h3>🎵 Tembang Asmarandana</h3>
+                <p style="color: rgba(255,255,255,0.7);">Tembang tentang tata krama</p>
+                <div class="tembang-text">
+                    Lamun arep gawe jeneng,<br>
+                    Kudu ngati-ati,<br>
+                    Aja nglirik ing ngisor,<br>
+                    Aja nggugu karepe wong liya,<br>
+                    Nanging eling lan waspada.
+                </div>
+                <div class="tembang-meaning">
+                    <h4 style="color: #ffd700;">📝 Arti / Terjemahan:</h4>
+                    <ul style="color: rgba(255,255,255,0.9);">
+                        <li><strong>Lamun arep gawe jeneng</strong> — Jika ingin membuat nama (berprestasi)</li>
+                        <li><strong>Kudu ngati-ati</strong> — Harus berhati-hati</li>
+                        <li><strong>Aja nglirik ing ngisor</strong> — Jangan memandang rendah</li>
+                        <li><strong>Aja nggugu karepe wong liya</strong> — Jangan hanya menuruti kemauan orang lain</li>
+                        <li><strong>Nanging eling lan waspada</strong> — Tetapi ingat dan waspada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Apa Itu Tembang Macapat?</h4>
+                <p><strong>Tembang macapat</strong> adalah puisi tradisional Jawa yang memiliki aturan:</p>
+                <ul>
+                    <li><strong>Guru wilangan</strong> — Jumlah suku kata per baris</li>
+                    <li><strong>Guru lagu</strong> — Vokal terakhir setiap baris</li>
+                    <li>Ada <strong>11 jenis</strong> tembang macapat: Maskumambang, Mijil, Sinom, Kinanthi, Asmarandana, Gambuh, Dhandhanggula, Durma, Pangkur, Megatruh, Pocung</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- NILAI LUHUR -->
+        <section id="nilai">
+            <h2><span>🙏</span> Nilai-Nilai Luhur dalam Serat Wulangreh</h2>
+            <p>Serat Wulangreh mengandung banyak nilai luhur yang bisa diterapkan dalam kehidupan sehari-hari:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">💪</div>
+                    <h3>1. Mandiri</h3>
+                    <p><strong>"Aja ngundang wruhing liyan"</strong> — Jangan mengandalkan pengetahuan orang lain. Kita harus <strong>belajar dan berusaha sendiri</strong>.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">🧘</div>
+                    <h3>2. Sabar dan Tidak Mudah Terkesan</h3>
+                    <p><strong>"Aja gumunan"</strong> — Jangan mudah terheran-heran. Kita harus <strong>tenang dan bijaksana</strong> dalam menghadapi segala hal.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">🎯</div>
+                    <h3>3. Tidak Mudah Menyesal</h3>
+                    <p><strong>"Aja getunan"</strong> — Jangan mudah menyesali keputusan. <strong>Bertanggung jawab</strong> atas pilihan yang sudah dibuat.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #9c27b0;">
+                    <div class="card-icon">🧠</div>
+                    <h3>4. Tegas dan Tidak Ragu</h3>
+                    <p><strong>"Aja kumalunglung"</strong> — Jangan bingung atau ragu-ragu. Harus <strong>tegas dalam mengambil keputusan</strong>.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">⚖️</div>
+                    <h3>5. Berpikir Kritis</h3>
+                    <p><strong>"Ngluruhek karsaning liyan"</strong> — Jangan menuruti kehendak orang lain secara membabi buta. Harus <strong>berpikir kritis</strong>.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #00bcd4;">
+                    <div class="card-icon">👁️</div>
+                    <h3>6. Waspada</h3>
+                    <p><strong>"Eling lan waspada"</strong> — Selalu ingat dan waspada terhadap segala kemungkinan. <strong>Jangan lengah</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PENERAPAN -->
+        <section id="penerapan">
+            <h2><span>💡</span> Penerapan dalam Kehidupan Sehari-hari</h2>
+            <p>Nilai-nilai Serat Wulangreh bisa kita terapkan dalam kehidupan sehari-hari, lho! Yuk lihat contohnya:</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Di Sekolah</h3>
+                    <ul>
+                        <li>Mengerjakan tugas <strong>sendiri</strong> (mandiri)</li>
+                        <li>Tidak mudah <strong>mencontek</strong> (berpikir kritis)</li>
+                        <li><strong>Tegas</strong> dalam memilih jawaban</li>
+                        <li>Tidak <strong>ragu-ragu</strong> saat ujian</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Di Rumah</h3>
+                    <ul>
+                        <li><strong>Membantu</strong> orang tua tanpa disuruh</li>
+                        <li>Tidak mudah <strong>menyesali</strong> keputusan</li>
+                        <li><strong>Bijaksana</strong> dalam bertindak</li>
+                        <li><strong>Waspada</strong> terhadap bahaya</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">👫</div>
+                    <h3>Bergaul</h3>
+                    <ul>
+                        <li>Tidak <strong>ikut-ikutan</strong> teman yang buruk</li>
+                        <li><strong>Berpikir kritis</strong> sebelum bertindak</li>
+                        <li>Tidak <strong>memandang rendah</strong> orang lain</li>
+                        <li><strong>Sabar</strong> menghadapi masalah</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Serat Wulangreh</h2>
+            <p>Uji pemahamanmu tentang Serat Wulangreh! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis Serat Wulangreh</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 3: Serat Wulangreh</h2>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📜 Apa Itu Serat Wulangreh?</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Karya sastra Jawa berupa <strong>tembang macapat</strong>.</p>
+                    <p>Ditulis oleh <strong>Sunan Bonang</strong> (Wali Songo).</p>
+                    <p>Berisi <strong>ajaran moral dan budi pekerti</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🙏 Nilai-Nilai Luhur</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p><strong>Mandiri</strong> — Jangan mengandalkan orang lain</p>
+                    <p><strong>Sabar</strong> — Jangan mudah terheran-heran</p>
+                    <p><strong>Tidak mudah menyesal</strong> — Bertanggung jawab</p>
+                    <p><strong>Tegas</strong> — Jangan ragu-ragu</p>
+                    <p><strong>Berpikir kritis</strong> — Jangan menurut membabi buta</p>
+                    <p><strong>Waspada</strong> — Selalu ingat dan waspada</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">📜</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">Bahasa Jawa - Bab 3: Serat Wulangreh</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="bahasa-jawa.html">📚 Pilih Bab</a>
+                <a href="bahasa-jawa-bab1.html">✍️ Bab 1</a>
+                <a href="bahasa-jawa-bab2.html">📖 Bab 2</a>
+                <a href="bahasa-jawa-bab4.html">📰 Bab 4</a>
+                <a href="bahasa-jawa-bab5.html">📋 Bab 5</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: 'Serat Wulangreh ditulis oleh...', options: ['Sunan Kalijaga', 'Sunan Bonang', 'Sunan Ampel', 'Sunan Giri'], correct: 1 },
+            { question: 'Serat Wulangreh ditulis dalam bentuk...', options: ['Novel', 'Cerpen', 'Tembang macapat', 'Drama'], correct: 2 },
+            { question: '"Wulangreh" artinya...', options: ['Surat cinta', 'Kitab pengajaran', 'Cerita rakyat', 'Lagu daerah'], correct: 1 },
+            { question: 'Sunan Bonang adalah salah satu...', options: ['Raja Jawa', 'Wali Songo', 'Pujangga', 'Prajurit'], correct: 1 },
+            { question: '"Aja gumunan" artinya...', options: ['Jangan sombong', 'Jangan terheran-heran', 'Jangan marah', 'Jangan menangis'], correct: 1 },
+            { question: 'Nilai utama Serat Wulangreh adalah...', options: ['Ekonomi', 'Politik', 'Budi pekerti', 'Teknologi'], correct: 2 },
+            { question: 'Metode dakwah Sunan Bonang menggunakan...', options: ['Pedang', 'Seni dan budaya', 'Politik', 'Perdagangan'], correct: 1 },
+            { question: '"Aja kumalunglung" artinya...', options: ['Jangan bingung', 'Jangan lapar', 'Jangan marah', 'Jangan tidur'], correct: 0 },
+            { question: 'Tembang macapat memiliki aturan...', options: ['Guru wilangan dan guru lagu', 'Guru besar dan guru kecil', 'Guru utama dan guru tambahan', 'Guru ngaji dan guru ngaji'], correct: 0 },
+            { question: 'Sunan Bonang berasal dari daerah...', options: ['Demak', 'Tuban', 'Gresik', 'Cirebon'], correct: 1 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/10'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 100 ? '🏆 SEMPURNA!' : quizScore >= 70 ? '👏 Bagus!' : quizScore >= 50 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('pengertian').style.opacity = '1'; document.getElementById('pengertian').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Pawarta - Bahasa Jawa SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .portal-navbar { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #0d47a1; border-color: #0d47a1; }
+        header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #0d47a1; border-color: #0d47a1; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        section { background: rgba(255,255,255,0.97); border-radius: 20px; padding: 35px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { color: #0d47a1; font-size: 2em; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; padding-bottom: 15px; border-bottom: 4px solid #1565c0; }
+        h3 { color: #0d47a1; font-size: 1.4em; margin: 25px 0 15px 0; }
+        h4 { color: #1565c0; font-size: 1.2em; margin: 15px 0 10px 0; }
+        p { color: #5d4037; margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin: 15px 0; padding-left: 30px; }
+        li { color: #5d4037; margin-bottom: 10px; font-size: 1.05em; }
+        strong { color: #0d47a1; font-weight: 700; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 25px 0; }
+        .info-card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid #1565c0; transition: all 0.3s ease; }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .info-card .card-icon { font-size: 3em; margin-bottom: 15px; }
+        .info-card h3 { margin-top: 0; }
+        .example-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 5px solid #1565c0; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .example-box h4 { color: #0d47a1; margin-top: 0; }
+        .fun-fact { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left: 5px solid #ff9800; border-radius: 15px; padding: 20px 25px; margin: 20px 0; }
+        .fun-fact h4 { color: #e65100; margin-top: 0; }
+        .pawarta-box { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; margin: 25px 0; color: white; }
+        .pawarta-box h3 { color: #ffd700; margin-top: 0; }
+        .pawarta-box .pawarta-content { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; margin-top: 15px; line-height: 2; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .comparison-table th { background: linear-gradient(135deg, #0d47a1, #1565c0); color: white; padding: 18px; text-align: center; font-size: 1.05em; }
+        .comparison-table td { padding: 15px 18px; border-bottom: 1px solid #e3f2fd; color: #555; text-align: center; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table tr:hover { background: #e3f2fd; }
+        .game-container { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 35px; color: white; }
+        .game-container h3 { color: #ffd700; text-align: center; font-size: 1.6em; margin-bottom: 25px; }
+        .quiz-question { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; margin-bottom: 20px; text-align: center; }
+        .quiz-question .question-text { font-size: 1.2em; margin-bottom: 10px; }
+        .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+        .quiz-option { background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 20px; border-radius: 15px; cursor: pointer; font-size: 1.1em; transition: all 0.3s ease; text-align: center; }
+        .quiz-option:hover { background: rgba(255,255,255,0.25); border-color: #ffd700; transform: translateY(-3px); }
+        .quiz-option.correct { background: linear-gradient(135deg, #00838f, #00acc1); border-color: #00acc1; }
+        .quiz-option.wrong { background: linear-gradient(135deg, #c62828, #e53935); border-color: #e53935; }
+        .quiz-feedback { text-align: center; font-size: 1.3em; margin: 20px 0; min-height: 50px; }
+        .score-display { display: flex; justify-content: center; gap: 30px; margin: 20px 0; }
+        .score-item { background: rgba(255,255,255,0.15); padding: 15px 25px; border-radius: 15px; text-align: center; }
+        .score-item .label { font-size: 0.9em; opacity: 0.8; }
+        .score-item .value { font-size: 2.5em; font-weight: bold; color: #ffd700; }
+        .game-btn { background: linear-gradient(135deg, #0d47a1, #1565c0); color: white; border: none; padding: 15px 30px; font-size: 1.1em; border-radius: 50px; cursor: pointer; display: inline-block; margin: 10px; transition: all 0.3s ease; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(13,71,161,0.4); }
+        .game-btn.secondary { background: linear-gradient(135deg, #0277bd, #0288d1); }
+        .game-btn.gold { background: linear-gradient(135deg, #f9a825, #fdd835); color: #333; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal { background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%); border-radius: 20px; padding: 40px; text-align: center; max-width: 500px; width: 90%; border: 3px solid #ffd700; }
+        .modal h2 { color: #ffd700; border: none; justify-content: center; padding-bottom: 0; }
+        .modal .final-score { font-size: 4em; color: #1565c0; font-weight: bold; margin: 20px 0; }
+        .hidden { display: none !important; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #0d47a1 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer p { color: white; margin-bottom: 5px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } section { padding: 20px; } h2 { font-size: 1.5em; } .quiz-options { grid-template-columns: 1fr; } .info-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="bahasa-jawa.html" class="nav-brand"><span style="font-size: 1.5em;">📰</span> Bahasa Jawa - Bab 4</a>
+        <div class="nav-links">
+            <a href="bahasa-jawa.html" class="nav-link">📚 Pilih Bab</a>
+            <a href="bahasa-jawa-bab1.html" class="nav-link">✍️ Bab 1</a>
+            <a href="bahasa-jawa-bab2.html" class="nav-link">📖 Bab 2</a>
+            <a href="bahasa-jawa-bab3.html" class="nav-link">📜 Bab 3</a>
+            <a href="bahasa-jawa-bab4.html" class="nav-link active">📰 Bab 4</a>
+            <a href="bahasa-jawa-bab5.html" class="nav-link">📋 Bab 5</a>
+            <a href="index.html" class="nav-link">🏠 Beranda</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">📰</div>
+        <h1>PAWARTA</h1>
+        <p class="subtitle">Belajar Pawarta (Berita) dalam Bahasa Jawa 📚📢</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('pengertian')">📖 Pengertian</button>
+            <button class="nav-tab" onclick="scrollToSection('struktur')">📝 Struktur</button>
+            <button class="nav-tab" onclick="scrollToSection('ciri-bahasa')">🗣️ Ciri Bahasa</button>
+            <button class="nav-tab" onclick="scrollToSection('contoh')">📺 Contoh Pawarta</button>
+            <button class="nav-tab" onclick="scrollToSection('tips')">💡 Tips</button>
+            <button class="nav-tab" onclick="scrollToSection('kuis')">❓ Kuis</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PENGERTIAN -->
+        <section id="pengertian">
+            <h2><span>📰</span> Apa Itu Pawarta?</h2>
+            <p>Halo guys! 👋 Kalian sering dengar berita di TV atau radio kan? Nah, dalam Bahasa Jawa, berita itu disebut <strong>"Pawarta"</strong>! 📺</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Fun Fact!</h4>
+                <p>Kata <strong>"Pawarta"</strong> berasal dari bahasa Jawa <em>"warto"</em> yang berarti <strong>kabar atau berita</strong>. Pawarta biasanya disampaikan melalui <strong>radio, TV, koran, atau internet</strong>.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📰</div>
+                    <h3>Pengertian Pawarta</h3>
+                    <p><strong>Pawarta</strong> adalah laporan tentang peristiwa atau kejadian yang sedang terjadi atau sudah terjadi yang disampaikan kepada masyarakat melalui media.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📺</div>
+                    <h3>Media Pawarta</h3>
+                    <p>Pawarta bisa disampaikan melalui berbagai media:</p>
+                    <ul>
+                        <li><strong>Televisi</strong> (TV)</li>
+                        <li><strong>Radio</strong></li>
+                        <li><strong>Koran / Surat kabar</strong></li>
+                        <li><strong>Internet / Media sosial</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Tujuan Pawarta</h3>
+                    <p>Pawarta bertujuan untuk:</p>
+                    <ul>
+                        <li><strong>Memberikan informasi</strong> kepada masyarakat</li>
+                        <li><strong>Mengedukasi</strong> masyarakat</li>
+                        <li><strong>Menghibur</strong> masyarakat</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">✅</div>
+                    <h3>Syarat Pawarta yang Baik</h3>
+                    <p>Pawarta yang baik harus:</p>
+                    <ul>
+                        <li><strong>Aktual</strong> (terkini)</li>
+                        <li><strong>Faktual</strong> (berdasarkan fakta)</li>
+                        <li><strong>Jelas</strong> dan mudah dipahami</li>
+                        <li><strong>Objektif</strong> (tidak memihak)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRUKTUR -->
+        <section id="struktur">
+            <h2><span>📝</span> Struktur Pawarta</h2>
+            <p>Pawarta memiliki struktur yang terdiri dari 3 bagian utama:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">🔥</div>
+                    <h3>1. Judul (Headline)</h3>
+                    <p>Bagian yang berisi <strong>inti berita</strong> dalam satu kalimat singkat dan menarik. Judul harus bisa <strong>menarik perhatian</strong> pembaca.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Banjir Bandang Ngancurake Puluhan Omah ing Semarang"</em></p>
+                        <p style="font-size: 0.9em;">(Banjir Bandang Menghancurkan Puluhan Rumah di Semarang)</p>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">📋</div>
+                    <h3>2. Isi Berita (Body)</h3>
+                    <p>Bagian yang berisi <strong>informasi lengkap</strong> tentang peristiwa. Menjawab pertanyaan: <strong>Apa? Siapa? Kapan? Di mana? Mengapa? Bagaimana?</strong></p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p>Disebut juga <strong>5W+1H</strong>:</p>
+                        <ul>
+                            <li><strong>What</strong> (Apa) — Peristiwa apa?</li>
+                            <li><strong>Who</strong> (Siapa) — Siapa yang terlibat?</li>
+                            <li><strong>When</strong> (Kapan) — Kapan terjadi?</li>
+                            <li><strong>Where</strong> (Di mana) — Di mana tempatnya?</li>
+                            <li><strong>Why</strong> (Mengapa) — Mengapa terjadi?</li>
+                            <li><strong>How</strong> (Bagaimana) — Bagaimana kronologinya?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">📝</div>
+                    <h3>3. Sumber Berita</h3>
+                    <p>Bagian yang berisi <strong>informasi tentang sumber</strong> berita, seperti nama narasumber, tempat kejadian, atau media yang memberitakan.</p>
+                    <div class="example-box" style="margin-top: 10px;">
+                        <p><em>"Miturut keterangan saking Bapak Kepala Desa..."</em></p>
+                        <p style="font-size: 0.9em;">(Menurut keterangan dari Bapak Kepala Desa...)</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Pertanyaan</th>
+                        <th>Istilah</th>
+                        <th>Contoh Jawaban</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Apa?</strong></td><td>What</td><td>Banjir bandang</td></tr>
+                    <tr><td><strong>Siapa?</strong></td><td>Who</td><td>Warga Semarang</td></tr>
+                    <tr><td><strong>Kapan?</strong></td><td>When</td><td>Minggu, 15 Januari 2024</td></tr>
+                    <tr><td><strong>Di mana?</strong></td><td>Where</td><td>Semarang, Jawa Tengah</td></tr>
+                    <tr><td><strong>Mengapa?</strong></td><td>Why</td><td>Hujan deras seharian</td></tr>
+                    <tr><td><strong>Bagaimana?</strong></td><td>How</td><td>Air sungai meluap dan merendam rumah</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CIRI BAHASA -->
+        <section id="ciri-bahasa">
+            <h2><span>🗣️</span> Ciri Kebahasaan Pawarta</h2>
+            <p>Pawarta dalam Bahasa Jawa memiliki ciri kebahasaan khusus:</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">📅</div>
+                    <h3>Kata Keterangan Waktu</h3>
+                    <p>Menggunakan kata keterangan waktu sekarang/masa lalu:</p>
+                    <ul>
+                        <li><strong>Dinten punika</strong> (hari ini)</li>
+                        <li><strong>Wingi</strong> (kemarin)</li>
+                        <li><strong>Minggu wingi</strong> (minggu lalu)</li>
+                        <li><strong>Tabuh 08.00</strong> (pukul 08.00)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">👤</div>
+                    <h3>Kata Ganti</h3>
+                    <p>Menggunakan kata ganti orang ketiga:</p>
+                    <ul>
+                        <li><strong>Panjenenganipun</strong> (beliau)</li>
+                        <li><strong>Dhèwèké</strong> (dia)</li>
+                        <li><strong>Para rawuh</strong> (para hadirin)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Kata Kerja</h3>
+                    <p>Menggunakan kata kerja aktif:</p>
+                    <ul>
+                        <li><strong>Ngendika</strong> (mengatakan)</li>
+                        <li><strong>Nyariosaken</strong> (menceritakan)</li>
+                        <li><strong>Nglampahi</strong> (mengalami)</li>
+                        <li><strong>Nindakake</strong> (melakukan)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🔗</div>
+                    <h3>Kata Sambung</h3>
+                    <p>Menggunakan kata sambung yang mengalir:</p>
+                    <ul>
+                        <li><strong>Lan</strong> (dan)</li>
+                        <li><strong>Nanging</strong> (tetapi)</li>
+                        <li><strong>Amargi</strong> (karena)</li>
+                        <li><strong>Miturut</strong> (menurut)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTOH PAWARTA -->
+        <section id="contoh">
+            <h2><span>📺</span> Contoh Pawarta dalam Bahasa Jawa</h2>
+            <p>Berikut adalah contoh pawarta yang ditulis dalam Bahasa Jawa:</p>
+
+            <div class="pawarta-box">
+                <h3>📺 Contoh Pawarta 1: Bencana Alam</h3>
+                <div class="pawarta-content">
+                    <p><strong style="color: #ffd700;">Judul:</strong> Banjir Bandang Ngancurake Puluhan Omah ing Semarang</p>
+                    <p><strong style="color: #ffd700;">Warta:</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Dinten Minggu, tanggal 15 Januari 2024, banjir bandang nglampahi kutha Semarang, Jawa Tengah. Banjir punika dipunsebabaken dening udan deres ingkang dumados salajengipun dinten.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Miturut keterangan saking Bapak Kepala Badan Penanggulangan Bencana Daerah (BPBD), banjir punika ngancurake langkung saking 50 omah lan ngungsiaken langkung saking 200 jiwa.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Pemerintah daerah sampun nindakaken evakuasi lan maringi bantuan dhateng para korban. Masyarakat dipunparingi imbauan supados tansah waspada.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9em; margin-top: 15px;"><em>Sumber: BPBD Semarang</em></p>
+                </div>
+            </div>
+
+            <div class="pawarta-box">
+                <h3>📺 Contoh Pawarta 2: Pendidikan</h3>
+                <div class="pawarta-content">
+                    <p><strong style="color: #ffd700;">Judul:</strong> Siswa SMP Negeri 1 Surabaya Menang Kompetisi Sains</p>
+                    <p><strong style="color: #ffd700;">Warta:</strong></p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Dinten Jemuwah, tanggal 10 Februari 2024, siswa SMP Negeri 1 Surabaya dados pemenang Kompetisi Sains Nasional tingkat SMP. Kompetisi punika dipunayakake ing Jakarta.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Anu nama Raden Ayu Putri Wulandari menang medali emas ing mata pelajaran IPA. Panjenenganipun ngendika bilih latihan ingkang dipuntindakake salajengipun 6 wulan sampun maringi asil.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.9);">
+                        Kepala sekolah ngendika bilih sekolah tansah nyengkuyung siswa-siswi ingkang berprestasi.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9em; margin-top: 15px;"><em>Sumber: SMP Negeri 1 Surabaya</em></p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Kosakata Penting dalam Pawarta:</h4>
+                <ul>
+                    <li><strong>Dinten punika</strong> = Hari ini</li>
+                    <li><strong>Nglampahi</strong> = Mengalami</li>
+                    <li><strong>Dipunsebabaken</strong> = Disebabkan</li>
+                    <li><strong>Miturut keterangan</strong> = Menurut keterangan</li>
+                    <li><strong>Nindakaken</strong> = Melakukan</li>
+                    <li><strong>Ngendika</strong> = Mengatakan</li>
+                    <li><strong>Nyengkuyung</strong> = Mendukung</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TIPS -->
+        <section id="tips">
+            <h2><span>💡</span> Tips Membuat Pawarta</h2>
+            <p>Berikut adalah tips untuk membuat pawarta yang baik:</p>
+
+            <div class="info-grid">
+                <div class="info-card" style="border-top-color: #4caf50;">
+                    <div class="card-icon">1️⃣</div>
+                    <h3>Tentukan Tema</h3>
+                    <p>Pilih peristiwa yang <strong>aktual dan menarik</strong> untuk diberitakan. Pastikan informasinya <strong>benar dan faktual</strong>.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #2196f3;">
+                    <div class="card-icon">2️⃣</div>
+                    <h3>Kumpulkan Informasi</h3>
+                    <p>Kumpulkan informasi lengkap: <strong>Apa? Siapa? Kapan? Di mana? Mengapa? Bagaimana?</strong></p>
+                </div>
+                <div class="info-card" style="border-top-color: #ff9800;">
+                    <div class="card-icon">3️⃣</div>
+                    <h3>Buat Judul Menarik</h3>
+                    <p>Buat judul yang <strong>singkat, jelas, dan menarik</strong>. Judul harus bisa membuat orang ingin membaca seluruh berita.</p>
+                </div>
+                <div class="info-card" style="border-top-color: #f44336;">
+                    <div class="card-icon">4️⃣</div>
+                    <h3>Tulis dengan Jelas</h3>
+                    <p>Gunakan bahasa yang <strong>jelas, singkat, dan mudah dipahami</strong>. Hindari bahasa yang bertele-tele.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KUIS -->
+        <section id="kuis">
+            <h2><span>❓</span> Kuis Pawarta</h2>
+            <p>Uji pemahamanmu tentang pawarta! 💪</p>
+            <div class="game-container">
+                <h3>🧠 Kuis Pawarta</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Skor</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Soal</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Benar</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="game-btn gold" onclick="startQuiz()">🚀 Mulai Kuis</button>
+                    <button class="game-btn secondary hidden" id="nextBtn" onclick="nextQuestion()">➡️ Soal Berikutnya</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANGKUMAN -->
+        <section>
+            <h2>📋 Rangkuman Bab 4: Pawarta</h2>
+            <div style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📰 Apa Itu Pawarta?</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Pawarta adalah <strong>laporan peristiwa</strong> yang disampaikan kepada masyarakat.</p>
+                    <p>Disampaikan melalui <strong>TV, radio, koran, internet</strong>.</p>
+                    <p>Syarat: <strong>aktual, faktual, jelas, objektif</strong>.</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">📝 Struktur Pawarta</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p><strong>Judul (Headline)</strong> — Inti berita</p>
+                    <p><strong>Isi Berita (Body)</strong> — Informasi lengkap (5W+1H)</p>
+                    <p><strong>Sumber</strong> — Asal informasi</p>
+                </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%); border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                <h3 style="color: white; margin-bottom: 15px;">🗣️ Ciri Bahasa Pawarta</h3>
+                <div style="color: rgba(255,255,255,0.95); line-height: 2;">
+                    <p>Kata keterangan waktu: <strong>dinten punika, wingi</strong></p>
+                    <p>Kata ganti orang ketiga: <strong>panjenenganipun</strong></p>
+                    <p>Kata kerja aktif: <strong>ngendika, nyariosaken</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">📰</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">Bahasa Jawa - Bab 4: Pawarta</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="bahasa-jawa.html">📚 Pilih Bab</a>
+                <a href="bahasa-jawa-bab1.html">✍️ Bab 1</a>
+                <a href="bahasa-jawa-bab2.html">📖 Bab 2</a>
+                <a href="bahasa-jawa-bab3.html">📜 Bab 3</a>
+                <a href="bahasa-jawa-bab5.html">📋 Bab 5</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Kuis Selesai!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Keren banget!</p>
+            <div style="margin-top: 20px;"><button class="game-btn" onclick="restartQuiz()">🔄 Main Lagi</button></div>
+        </div>
+    </div>
+
+    <script>
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for (let i = 0; i < 15; i++) { const b = document.createElement('div'); b.className = 'bubble'; const s = Math.random()*50+20; b.style.width = s+'px'; b.style.height = s+'px'; b.style.left = Math.random()*100+'%'; b.style.bottom = '-100px'; b.style.animationDelay = Math.random()*10+'s'; b.style.animationDuration = (Math.random()*10+10)+'s'; c.appendChild(b); } }
+        createBubbles();
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active')); event.target.classList.add('active'); }
+
+        const quizQuestions = [
+            { question: '"Pawarta" dalam Bahasa Indonesia artinya...', options: ['Cerita', 'Berita', 'Iklan', 'Puisi'], correct: 1 },
+            { question: 'Struktur pawarta terdiri dari...', options: ['2 bagian', '3 bagian', '4 bagian', '5 bagian'], correct: 1 },
+            { question: '5W+1H dalam pawarta artinya...', options: ['5 Waktu + 1 Hari', 'What, Who, When, Where, Why + How', '5 Wara + 1 Hari', '5 Warna + 1 Hijau'], correct: 1 },
+            { question: 'Pawarta yang baik harus...', options: ['Fiktif', 'Faktual', 'Fana', 'Fantastis'], correct: 1 },
+            { question: '"Dinten punika" artinya...', options: ['Kemarin', 'Besok', 'Hari ini', 'Lusa'], correct: 2 },
+            { question: 'Judul pawarta disebut juga...', options: ['Body', 'Headline', 'Footer', 'Sidebar'], correct: 1 },
+            { question: 'Media yang bisa menyampaikan pawarta adalah...', options: ['TV saja', 'Radio saja', 'Koran saja', 'TV, radio, koran, internet'], correct: 3 },
+            { question: '"Ngendika" artinya...', options: ['Mendengar', 'Mengatakan', 'Melihat', 'Membaca'], correct: 1 },
+            { question: 'Pawarta harus bersifat...', options: ['Subjektif', 'Objektif', 'Abstrif', 'Destruktif'], correct: 1 },
+            { question: '"Miturut keterangan" artinya...', options: ['Berdasarkan cerita', 'Menurut keterangan', 'Karena alasan', 'Dengan cara'], correct: 1 }
+        ];
+
+        let currentQuizIndex = 0, quizScore = 0, quizCorrectCount = 0, quizAnswered = false;
+        function startQuiz() { currentQuizIndex = 0; quizScore = 0; quizCorrectCount = 0; document.getElementById('quizScore').textContent = '0'; document.getElementById('quizCount').textContent = '0/10'; document.getElementById('quizCorrect').textContent = '0'; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); showQuizQuestion(); }
+        function showQuizQuestion() { if (currentQuizIndex >= quizQuestions.length) { endQuiz(); return; } quizAnswered = false; const q = quizQuestions[currentQuizIndex]; document.getElementById('quizQuestion').innerHTML = `<div class="question-text">${q.question}</div>`; document.getElementById('quizCount').textContent = `${currentQuizIndex + 1}/10`; document.getElementById('quizFeedback').textContent = ''; document.getElementById('nextBtn').classList.add('hidden'); document.getElementById('quizOptions').innerHTML = q.options.map((opt, i) => `<button class="quiz-option" onclick="checkQuizAnswer(${i})">${opt}</button>`).join(''); }
+        function checkQuizAnswer(selected) { if (quizAnswered) return; quizAnswered = true; const q = quizQuestions[currentQuizIndex]; const options = document.querySelectorAll('.quiz-option'); options.forEach((opt, i) => { opt.disabled = true; if (i === q.correct) opt.classList.add('correct'); else if (i === selected) opt.classList.add('wrong'); }); if (selected === q.correct) { quizScore += 10; quizCorrectCount++; document.getElementById('quizFeedback').innerHTML = '<span style="color: #00e676;">✅ Benar! +10 poin</span>'; } else { document.getElementById('quizFeedback').innerHTML = `<span style="color: #ff5252;">❌ Salah! Jawaban: ${q.options[q.correct]}</span>`; } document.getElementById('quizScore').textContent = quizScore; document.getElementById('quizCorrect').textContent = quizCorrectCount; document.getElementById('nextBtn').classList.remove('hidden'); }
+        function nextQuestion() { currentQuizIndex++; showQuizQuestion(); }
+        function endQuiz() { document.getElementById('modalScore').textContent = quizScore; let message = quizScore === 100 ? '🏆 SEMPURNA!' : quizScore >= 70 ? '👏 Bagus!' : quizScore >= 50 ? '💪 Cukup bagus!' : '📚 Ayo belajar lagi!'; document.getElementById('modalMessage').textContent = message; document.getElementById('quizModal').classList.remove('hidden'); }
+        function restartQuiz() { document.getElementById('quizModal').classList.add('hidden'); startQuiz(); }
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+        document.querySelectorAll('section').forEach(section => { section.style.opacity = '0'; section.style.transform = 'translateY(40px)'; section.style.transition = 'all 0.6s ease'; observer.observe(section); });
+        setTimeout(() => { document.getElementById('pengertian').style.opacity = '1'; document.getElementById('pengertian').style.transform = 'translateY(0)'; }, 100);
+    </script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>
