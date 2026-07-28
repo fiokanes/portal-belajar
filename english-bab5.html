@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5: No Littering - English SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="portal-styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 50%, #ab47bc 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 50%, #ab47bc 100%); }
+        .portal-navbar { background: linear-gradient(135deg, #6a1b9a 0%, #8e24aa 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link.active { background: #6a1b9a; border-color: #6a1b9a; }
+        header { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #8e24aa 100%); color: white; text-align: center; padding: 50px 20px; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #6a1b9a; border-color: #6a1b9a; }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { color: #6a1b9a; border-bottom: 4px solid #8e24aa; }
+        h3 { color: #6a1b9a; }
+        .info-card { border-top-color: #6a1b9a; }
+        .info-card h3 { color: #6a1b9a; }
+        .example-box { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left-color: #6a1b9a; }
+        .example-box h4 { color: #6a1b9a; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #6a1b9a 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } .content-section { padding: 20px; } .quiz-options { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="english.html" class="nav-brand"><span style="font-size: 1.5em;">🚯</span> English - Bab 5</a>
+        <div class="nav-links">
+            <a href="english.html" class="nav-link">📚 Chapters</a>
+            <a href="english-tenses.html" class="nav-link">📝 Tenses</a>
+            <a href="english-bab2.html" class="nav-link">🇮🇩 Bab 2</a>
+            <a href="english-bab3.html" class="nav-link">💚 Bab 3</a>
+            <a href="english-bab4.html" class="nav-link">🌍 Bab 4</a>
+            <a href="english-bab5.html" class="nav-link active">🚯 Bab 5</a>
+            <a href="english-bab6.html" class="nav-link">🤗 Bab 6</a>
+            <a href="index.html" class="nav-link">🏠 Home</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">🚯</div>
+        <h1>NO LITTERING</h1>
+        <p class="subtitle">Bab 5 - English for Nusantara Kelas 8 📚🚫</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('material')">📖 Material</button>
+            <button class="nav-tab" onclick="scrollToSection('vocabulary')">📝 Vocabulary</button>
+            <button class="nav-tab" onclick="scrollToSection('signs')">🪧 Signs</button>
+            <button class="nav-tab" onclick="scrollToSection('grammar')">✏️ Grammar</button>
+            <button class="nav-tab" onclick="scrollToSection('quiz')">❓ Quiz</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="material" class="content-section">
+            <h2><span>📖</span> Reading Material</h2>
+            <p><strong>Littering</strong> is throwing garbage on the ground in public places. It is a bad habit that damages our environment. We must <strong>stop littering</strong>!</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Did You Know?</h4>
+                <p>Indonesia produces about <strong>6.8 million tons</strong> of plastic waste every year. Much of it ends up in the ocean, harming marine animals!</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🚫</div>
+                    <h3>Prohibitions</h3>
+                    <p>Things we must NOT do:</p>
+                    <ul>
+                        <li><strong>"Don't litter!"</strong> — Jangan buang sampah!</li>
+                        <li><strong>"No littering!"</strong> — Dilarang membuang sampah!</li>
+                        <li><strong>"Don't throw garbage here!"</strong></li>
+                        <li><strong>"Keep off the grass!"</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Warnings</h3>
+                    <p>Warning expressions:</p>
+                    <ul>
+                        <li><strong>"Be careful!"</strong> — Hati-hati!</li>
+                        <li><strong>"Watch out!"</strong> — Awas!</li>
+                        <li><strong>"Warning!"</strong> — Peringatan!</li>
+                        <li><strong>"Danger!"</strong> — Bahaya!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Signs and Their Meanings:</h4>
+                <ul>
+                    <li><strong>🚯 No Littering</strong> — Dilarang buang sampah</li>
+                    <li><strong>🚭 No Smoking</strong> — Dilarang merokok</li>
+                    <li><strong>🔇 Keep Quiet</strong> — Jaga ketenangan</li>
+                    <li><strong>⛔ No Entry</strong> — Dilarang masuk</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="vocabulary" class="content-section">
+            <h2><span>📝</span> Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card"><div class="word">Litter</div><div class="pronunciation">/ˈlɪtər/</div><div class="meaning">Sampah</div></div>
+                <div class="vocab-card"><div class="word">Prohibition</div><div class="pronunciation">/ˌproʊɪˈbɪʃn/</div><div class="meaning">Larangan</div></div>
+                <div class="vocab-card"><div class="word">Warning</div><div class="pronunciation">/ˈwɔːnɪŋ/</div><div class="meaning">Peringatan</div></div>
+                <div class="vocab-card"><div class="word">Dustbin</div><div class="pronunciation">/ˈdʌstbɪn/</div><div class="meaning">Tempat sampah</div></div>
+                <div class="vocab-card"><div class="word">Garbage</div><div class="pronunciation">/ˈɡɑːrbɪdʒ/</div><div class="meaning">Sampah</div></div>
+                <div class="vocab-card"><div class="word">Clean</div><div class="pronunciation">/kliːn/</div><div class="meaning">Bersih</div></div>
+                <div class="vocab-card"><div class="word">Dirty</div><div class="pronunciation">/ˈdɜːrti/</div><div class="meaning">Kotor</div></div>
+                <div class="vocab-card"><div class="word">Sign</div><div class="pronunciation">/saɪn/</div><div class="meaning">Rambu / Tanda</div></div>
+            </div>
+        </section>
+
+        <section id="signs" class="content-section">
+            <h2><span>🪧</span> Public Signs</h2>
+            <p>Learn to read and understand public signs in English:</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🚫</div>
+                    <h3>Prohibition Signs</h3>
+                    <ul>
+                        <li><strong>No Littering</strong> = Dilarang buang sampah</li>
+                        <li><strong>No Smoking</strong> = Dilarang merokok</li>
+                        <li><strong>No Parking</strong> = Dilarang parkir</li>
+                        <li><strong>No Swimming</strong> = Dilarang berenang</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Warning Signs</h3>
+                    <ul>
+                        <li><strong>Wet Floor</strong> = Lantai licin</li>
+                        <li><strong>High Voltage</strong> = Bahaya listrik</li>
+                        <li><strong>Slippery Road</strong> = Jalan licin</li>
+                        <li><strong>Danger</strong> = Bahaya</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar" class="content-section">
+            <h2><span>✏️</span> Grammar Focus</h2>
+            <h3>Prohibition with "Don't" and "No"</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🚫</div>
+                    <h3>Using "Don't"</h3>
+                    <p>Structure: <strong>Don't + Verb</strong></p>
+                    <ul>
+                        <li><strong>Don't</strong> litter!</li>
+                        <li><strong>Don't</strong> smoke here!</li>
+                        <li><strong>Don't</strong> make noise!</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⛔</div>
+                    <h3>Using "No"</h3>
+                    <p>Structure: <strong>No + Noun/Verb-ing</strong></p>
+                    <ul>
+                        <li><strong>No</strong> Littering!</li>
+                        <li><strong>No</strong> Smoking!</li>
+                        <li><strong>No</strong> Swimming!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="content-section">
+            <h2><span>❓</span> Quiz</h2>
+            <div class="quiz-container">
+                <h3>🧠 Test Your Knowledge</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Score</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Question</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Correct</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="btn-primary btn-gold" onclick="quiz.start()">🚀 Start Quiz</button>
+                    <button class="btn-primary btn-secondary hidden" id="nextBtn" onclick="quiz.next()">➡️ Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">🚯</p>
+            <h3 style="color: #ffd700;">English - Bab 5: No Littering</h3>
+            <p>SMP Kelas 8</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="english.html">📚 Chapters</a>
+                <a href="english-bab4.html">🌍 Bab 4</a>
+                <a href="english-bab6.html">🤗 Bab 6</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Great job!</p>
+            <div style="margin-top: 20px;"><button class="btn-primary" onclick="quiz.restart()">🔄 Try Again</button></div>
+        </div>
+    </div>
+
+    <script src="portal-scripts.js"></script>
+    <script src="click-sounds.js"></script>
+    <script>
+        const quizQuestions = [
+            { question: '"No Littering" means...', options: ['Boleh buang sampah', 'Dilarang buang sampah', 'Harus buang sampah', 'Bebas buang sampah'], correct: 1 },
+            { question: 'What is the opposite of "clean"?', options: ['Dirty', 'Nice', 'Good', 'Pretty'], correct: 0 },
+            { question: '"Don\'t smoke here" is a...', options: ['Greeting', 'Prohibition', 'Invitation', 'Question'], correct: 1 },
+            { question: 'Where should we put garbage?', options: ['On the ground', 'In the river', 'In the dustbin', 'On the road'], correct: 2 },
+            { question: '"Wet Floor" sign means...', options: ['Lantai kering', 'Lantai licin', 'Lantai bersih', 'Lantai baru'], correct: 1 },
+            { question: '"No Swimming" means...', options: ['Boleh berenang', 'Dilarang berenang', 'Harus berenang', 'Bebas berenang'], correct: 1 },
+            { question: 'What does "litter" mean?', options: ['Sampah', 'Bersih', 'Indah', 'Bagus'], correct: 0 },
+            { question: '"Be careful!" is a...', options: ['Prohibition', 'Warning', 'Greeting', 'Farewell'], correct: 1 },
+            { question: '"Don\'t + ..." structure is used for...', options: ['Giving permission', 'Prohibition', 'Asking questions', 'Greeting'], correct: 1 },
+            { question: '"No Parking" means...', options: ['Boleh parkir', 'Dilarang parkir', 'Harus parkir', 'Bebas parkir'], correct: 1 }
+        ];
+        const quiz = new QuizSystem(quizQuestions);
+    </script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

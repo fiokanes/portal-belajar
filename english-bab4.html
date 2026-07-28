@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Love Our World - English SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="portal-styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ff9800 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ff9800 100%); }
+        .portal-navbar { background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link.active { background: #e65100; border-color: #e65100; }
+        header { background: linear-gradient(135deg, #bf360c 0%, #e65100 50%, #f57c00 100%); color: white; text-align: center; padding: 50px 20px; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #e65100; border-color: #e65100; }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { color: #e65100; border-bottom: 4px solid #f57c00; }
+        h3 { color: #e65100; }
+        .info-card { border-top-color: #e65100; }
+        .info-card h3 { color: #e65100; }
+        .example-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-left-color: #e65100; }
+        .example-box h4 { color: #e65100; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #e65100 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } .content-section { padding: 20px; } .quiz-options { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="english.html" class="nav-brand"><span style="font-size: 1.5em;">🌍</span> English - Bab 4</a>
+        <div class="nav-links">
+            <a href="english.html" class="nav-link">📚 Chapters</a>
+            <a href="english-tenses.html" class="nav-link">📝 Tenses</a>
+            <a href="english-bab2.html" class="nav-link">🇮🇩 Bab 2</a>
+            <a href="english-bab3.html" class="nav-link">💚 Bab 3</a>
+            <a href="english-bab4.html" class="nav-link active">🌍 Bab 4</a>
+            <a href="english-bab5.html" class="nav-link">🚯 Bab 5</a>
+            <a href="english-bab6.html" class="nav-link">🤗 Bab 6</a>
+            <a href="index.html" class="nav-link">🏠 Home</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">🌍</div>
+        <h1>LOVE OUR WORLD</h1>
+        <p class="subtitle">Bab 4 - English for Nusantara Kelas 8 📚🌿</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('material')">📖 Material</button>
+            <button class="nav-tab" onclick="scrollToSection('vocabulary')">📝 Vocabulary</button>
+            <button class="nav-tab" onclick="scrollToSection('dialogue')">🗣️ Dialogue</button>
+            <button class="nav-tab" onclick="scrollToSection('grammar')">✏️ Grammar</button>
+            <button class="nav-tab" onclick="scrollToSection('quiz')">❓ Quiz</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="material" class="content-section">
+            <h2><span>📖</span> Reading Material</h2>
+            <p>Our world is a beautiful place. We must take care of it for future generations. <strong>Environmental conservation</strong> is everyone's responsibility.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Did You Know?</h4>
+                <p>Indonesia has the <strong>third largest tropical forest</strong> in the world! It's home to many unique animals like <strong>orangutans</strong>, <strong>Sumatran tigers</strong>, and <strong>komodo dragons</strong>.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">♻️</div>
+                    <h3>Reduce, Reuse, Recycle</h3>
+                    <p>The 3 R's to save the environment:</p>
+                    <ul>
+                        <li><strong>Reduce</strong> — Use less, save resources</li>
+                        <li><strong>Reuse</strong> — Use things again</li>
+                        <li><strong>Recycle</strong> — Make new from old</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🌳</div>
+                    <h3>Protect Nature</h3>
+                    <p>Ways to protect our nature:</p>
+                    <ul>
+                        <li><strong>Plant trees</strong> — Clean the air</li>
+                        <li><strong>Save water</strong> — Don't waste water</li>
+                        <li><strong>Save energy</strong> — Turn off lights</li>
+                        <li><strong>Don't litter</strong> — Keep clean</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Environmental Phrases:</h4>
+                <ul>
+                    <li><strong>"Save the earth!"</strong> — Selamatkan bumi!</li>
+                    <li><strong>"Go green!"</strong> — Hidup hijau!</li>
+                    <li><strong>"Reduce, Reuse, Recycle!"</strong></li>
+                    <li><strong>"Every day is Earth Day."</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="vocabulary" class="content-section">
+            <h2><span>📝</span> Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card"><div class="word">Environment</div><div class="pronunciation">/ɪnˈvaɪrənmənt/</div><div class="meaning">Lingkungan</div></div>
+                <div class="vocab-card"><div class="word">Pollution</div><div class="pronunciation">/pəˈluːʃn/</div><div class="meaning">Pencemaran</div></div>
+                <div class="vocab-card"><div class="word">Forest</div><div class="pronunciation">/ˈfɒrɪst/</div><div class="meaning">Hutan</div></div>
+                <div class="vocab-card"><div class="word">Recycle</div><div class="pronunciation">/riːˈsaɪkl/</div><div class="meaning">Daur ulang</div></div>
+                <div class="vocab-card"><div class="word">Protect</div><div class="pronunciation">/prəˈtekt/</div><div class="meaning">Melindungi</div></div>
+                <div class="vocab-card"><div class="word">Conserve</div><div class="pronunciation">/kənˈsɜːv/</div><div class="meaning">Melestarikan</div></div>
+                <div class="vocab-card"><div class="word">Waste</div><div class="pronunciation">/weɪst/</div><div class="meaning">Sampah / Limbah</div></div>
+                <div class="vocab-card"><div class="word">Sustainable</div><div class="pronunciation">/səˈsteɪnəbl/</div><div class="meaning">Berkelanjutan</div></div>
+            </div>
+        </section>
+
+        <section id="dialogue" class="content-section">
+            <h2><span>🗣️</span> Dialogue</h2>
+            <div class="dialogue-box">
+                <div class="speaker">👧 Sari:</div>
+                <div class="text">Rudi, why is there so much trash on the river?</div>
+                <div class="speaker">🧑 Rudi:</div>
+                <div class="text">Some people throw garbage into the river. It's very sad.</div>
+                <div class="speaker">👧 Sari:</div>
+                <div class="text">We should do something to help. What can we do?</div>
+                <div class="speaker">🧑 Rudi:</div>
+                <div class="text">We can join the river cleanup this Saturday. Would you like to come?</div>
+                <div class="speaker">👧 Sari:</div>
+                <div class="text">Yes, I'd love to! We must protect our environment.</div>
+                <div class="speaker">🧑 Rudi:</div>
+                <div class="text">Exactly! If we love our world, we must take care of it.</div>
+            </div>
+        </section>
+
+        <section id="grammar" class="content-section">
+            <h2><span>✏️</span> Grammar Focus</h2>
+            <h3>Expressing Obligation (Must, Should, Have to)</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">💪</div>
+                    <h3>Must</h3>
+                    <p>Strong obligation:</p>
+                    <ul>
+                        <li><strong>"We must protect the environment."</strong></li>
+                        <li><strong>"You must not litter."</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Should</h3>
+                    <p>Advice or recommendation:</p>
+                    <ul>
+                        <li><strong>"We should recycle plastic."</strong></li>
+                        <li><strong>"You should save water."</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="content-section">
+            <h2><span>❓</span> Quiz</h2>
+            <div class="quiz-container">
+                <h3>🧠 Test Your Knowledge</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Score</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Question</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Correct</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="btn-primary btn-gold" onclick="quiz.start()">🚀 Start Quiz</button>
+                    <button class="btn-primary btn-secondary hidden" id="nextBtn" onclick="quiz.next()">➡️ Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">🌍</p>
+            <h3 style="color: #ffd700;">English - Bab 4: Love Our World</h3>
+            <p>SMP Kelas 8</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="english.html">📚 Chapters</a>
+                <a href="english-bab3.html">💚 Bab 3</a>
+                <a href="english-bab5.html">🚯 Bab 5</a>
+                <a href="english-bab6.html">🤗 Bab 6</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Great job!</p>
+            <div style="margin-top: 20px;"><button class="btn-primary" onclick="quiz.restart()">🔄 Try Again</button></div>
+        </div>
+    </div>
+
+    <script src="portal-scripts.js"></script>
+    <script src="click-sounds.js"></script>
+    <script>
+        const quizQuestions = [
+            { question: 'What are the 3 R\'s for the environment?', options: ['Read, Write, Count', 'Reduce, Reuse, Recycle', 'Run, Rest, Relax', 'Rain, River, Rain'], correct: 1 },
+            { question: '"Environment" means...', options: ['Hutan', 'Lingkungan', 'Sampah', 'Polusi'], correct: 1 },
+            { question: 'What should we do to save water?', options: ['Use more water', 'Waste water', 'Turn off the tap', 'Pollute rivers'], correct: 2 },
+            { question: '"Recycle" means making...', options: ['Old things older', 'New things from old', 'More garbage', 'Nothing'], correct: 1 },
+            { question: 'Which animal is found in Indonesia?', options: ['Panda', 'Orangutan', 'Penguin', 'Polar bear'], correct: 1 },
+            { question: '"We must protect the environment" shows...', options: ['Advice', 'Obligation', 'Permission', 'Request'], correct: 1 },
+            { question: 'What is "hutan" in English?', options: ['Garden', 'Park', 'Forest', 'Farm'], correct: 2 },
+            { question: '"Go green" means...', options: ['Paint green', 'Protect environment', 'Eat vegetables', 'Wear green'], correct: 1 },
+            { question: '"Pollution" means...', options: ['Kebersihan', 'Pencemaran', 'Keindahan', 'Kesehatan'], correct: 1 },
+            { question: 'Which is NOT a way to protect nature?', options: ['Plant trees', 'Save energy', 'Littering', 'Recycle'], correct: 2 }
+        ];
+        const quiz = new QuizSystem(quizQuestions);
+    </script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

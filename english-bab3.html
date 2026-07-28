@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: Kindness Begin with Me - English SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="portal-styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #43a047 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #43a047 100%); }
+        .portal-navbar { background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #2e7d32; border-color: #2e7d32; }
+        header { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #2e7d32; border-color: #2e7d32; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { color: #2e7d32; border-bottom: 4px solid #388e3c; }
+        h3 { color: #2e7d32; }
+        .info-card { border-top-color: #2e7d32; }
+        .info-card h3 { color: #2e7d32; }
+        .example-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-left-color: #2e7d32; }
+        .example-box h4 { color: #2e7d32; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #2e7d32 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } .content-section { padding: 20px; } .quiz-options { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="english.html" class="nav-brand"><span style="font-size: 1.5em;">💚</span> English - Bab 3</a>
+        <div class="nav-links">
+            <a href="english.html" class="nav-link">📚 Chapters</a>
+            <a href="english-tenses.html" class="nav-link">📝 Tenses</a>
+            <a href="english-bab2.html" class="nav-link">🇮🇩 Bab 2</a>
+            <a href="english-bab3.html" class="nav-link active">💚 Bab 3</a>
+            <a href="english-bab4.html" class="nav-link">🌍 Bab 4</a>
+            <a href="english-bab5.html" class="nav-link">🚯 Bab 5</a>
+            <a href="english-bab6.html" class="nav-link">🤗 Bab 6</a>
+            <a href="index.html" class="nav-link">🏠 Home</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">💚</div>
+        <h1>KINDNESS BEGIN WITH ME</h1>
+        <p class="subtitle">Bab 3 - English for Nusantara Kelas 8 📚🤝</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('material')">📖 Material</button>
+            <button class="nav-tab" onclick="scrollToSection('vocabulary')">📝 Vocabulary</button>
+            <button class="nav-tab" onclick="scrollToSection('dialogue')">🗣️ Dialogue</button>
+            <button class="nav-tab" onclick="scrollToSection('grammar')">✏️ Grammar</button>
+            <button class="nav-tab" onclick="scrollToSection('quiz')">❓ Quiz</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="material" class="content-section">
+            <h2><span>📖</span> Reading Material</h2>
+            <p><strong>Kindness</strong> means being friendly, generous, and considerate to other people. It starts with small actions that we do every day.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Did You Know?</h4>
+                <p>Studies show that being kind releases <strong>serotonin</strong> and <strong>endorphins</strong> in the brain, which makes both the giver and receiver feel happier!</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🗣️</div>
+                    <h3>Kind Words</h3>
+                    <p>Words that show kindness:</p>
+                    <ul>
+                        <li><strong>"Thank you"</strong> — Terima kasih</li>
+                        <li><strong>"Please"</strong> — Tolong / Silakan</li>
+                        <li><strong>"You're welcome"</strong> — Sama-sama</li>
+                        <li><strong>"I'm sorry"</strong> — Maaf</li>
+                        <li><strong>"Excuse me"</strong> — Permisi</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Kind Actions</h3>
+                    <p>Things we can do to show kindness:</p>
+                    <ul>
+                        <li><strong>Helping</strong> someone who is in need</li>
+                        <li><strong>Sharing</strong> food or things with friends</li>
+                        <li><strong>Listening</strong> to someone who is sad</li>
+                        <li><strong>Smiling</strong> at people around you</li>
+                        <li><strong>Respecting</strong> others' feelings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Example Sentences:</h4>
+                <ul>
+                    <li><strong>"Can I help you?"</strong> — Bolehkah aku membantumu?</li>
+                    <li><strong>"Would you like some water?"</strong> — Maukah kamu minum air?</li>
+                    <li><strong>"You did a great job!"</strong> — Kamu melakukan pekerjaan yang bagus!</li>
+                    <li><strong>"I understand how you feel."</strong> — Aku mengerti perasaanmu.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="vocabulary" class="content-section">
+            <h2><span>📝</span> Vocabulary</h2>
+            <div class="vocab-grid">
+                <div class="vocab-card"><div class="word">Kindness</div><div class="pronunciation">/ˈkaɪndnəs/</div><div class="meaning">Kebaikan</div></div>
+                <div class="vocab-card"><div class="word">Generous</div><div class="pronunciation">/ˈdʒenərəs/</div><div class="meaning">Murah hati</div></div>
+                <div class="vocab-card"><div class="word">Helpful</div><div class="pronunciation">/ˈhelpfəl/</div><div class="meaning">Suka menolong</div></div>
+                <div class="vocab-card"><div class="word">Polite</div><div class="pronunciation">/pəˈlaɪt/</div><div class="meaning">Sopan</div></div>
+                <div class="vocab-card"><div class="word">Respect</div><div class="pronunciation">/rɪˈspekt/</div><div class="meaning">Menghormati</div></div>
+                <div class="vocab-card"><div class="word">Caring</div><div class="pronunciation">/ˈkeərɪŋ/</div><div class="meaning">Peduli</div></div>
+                <div class="vocab-card"><div class="word">Grateful</div><div class="pronunciation">/ˈɡreɪtfəl/</div><div class="meaning">Bersyukur</div></div>
+                <div class="vocab-card"><div class="word">Compassion</div><div class="pronunciation">/kəmˈpæʃn/</div><div class="meaning">Belas kasih</div></div>
+            </div>
+        </section>
+
+        <section id="dialogue" class="content-section">
+            <h2><span>🗣️</span> Dialogue</h2>
+            <div class="dialogue-box">
+                <div class="speaker">🧑 Budi:</div>
+                <div class="text">Hi Maya! You look sad. What happened?</div>
+                <div class="speaker">👧 Maya:</div>
+                <div class="text">I lost my wallet. I can't find it anywhere.</div>
+                <div class="speaker">🧑 Budi:</div>
+                <div class="text">I'm sorry to hear that. Let me help you look for it.</div>
+                <div class="speaker">👧 Maya:</div>
+                <div class="text">Thank you so much, Budi. You're so kind.</div>
+                <div class="speaker">🧑 Budi:</div>
+                <div class="text">Don't worry. Kindness begins with me. Let's check the classroom.</div>
+                <div class="speaker">👧 Maya:</div>
+                <div class="text">I found it! It was under my desk. Thank you for helping me!</div>
+                <div class="speaker">🧑 Budi:</div>
+                <div class="text">You're welcome! I'm glad I could help.</div>
+            </div>
+        </section>
+
+        <section id="grammar" class="content-section">
+            <h2><span>✏️</span> Grammar Focus</h2>
+            <h3>Offering Help and Expressing Gratitude</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Offering Help</h3>
+                    <ul>
+                        <li><strong>"Can I help you?"</strong></li>
+                        <li><strong>"Let me help you."</strong></li>
+                        <li><strong>"Would you like some help?"</strong></li>
+                        <li><strong>"Do you need any assistance?"</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🙏</div>
+                    <h3>Expressing Gratitude</h3>
+                    <ul>
+                        <li><strong>"Thank you very much."</strong></li>
+                        <li><strong>"I really appreciate it."</strong></li>
+                        <li><strong>"That's very kind of you."</strong></li>
+                        <li><strong>"I'm so grateful."</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="content-section">
+            <h2><span>❓</span> Quiz</h2>
+            <div class="quiz-container">
+                <h3>🧠 Test Your Knowledge</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Score</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Question</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Correct</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="btn-primary btn-gold" onclick="quiz.start()">🚀 Start Quiz</button>
+                    <button class="btn-primary btn-secondary hidden" id="nextBtn" onclick="quiz.next()">➡️ Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">💚</p>
+            <h3 style="color: #ffd700;">English - Bab 3: Kindness Begin with Me</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="english.html">📚 Chapters</a>
+                <a href="english-bab2.html">🇮🇩 Bab 2</a>
+                <a href="english-bab4.html">🌍 Bab 4</a>
+                <a href="english-bab5.html">🚯 Bab 5</a>
+                <a href="english-bab6.html">🤗 Bab 6</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Great job!</p>
+            <div style="margin-top: 20px;"><button class="btn-primary" onclick="quiz.restart()">🔄 Try Again</button></div>
+        </div>
+    </div>
+
+    <script src="portal-scripts.js"></script>
+    <script src="click-sounds.js"></script>
+    <script>
+        const quizQuestions = [
+            { question: 'What does "kindness" mean?', options: ['Being angry', 'Being friendly and generous', 'Being sad', 'Being lazy'], correct: 1 },
+            { question: '"Thank you" shows...', options: ['Anger', 'Gratitude', 'Sadness', 'Fear'], correct: 1 },
+            { question: 'What is the opposite of "kind"?', options: ['Nice', 'Mean', 'Happy', 'Good'], correct: 1 },
+            { question: '"You\'re welcome" is a response to...', options: ['Hello', 'Sorry', 'Thank you', 'Goodbye'], correct: 2 },
+            { question: 'Which word means "sopan" in English?', options: ['Rude', 'Polite', 'Kind', 'Nice'], correct: 1 },
+            { question: '"Let me help you" is an expression of...', options: ['Asking permission', 'Offering help', 'Apologizing', 'Greeting'], correct: 1 },
+            { question: 'What does "generous" mean?', options: ['Selfish', 'Mean', 'Murah hati', 'Angry'], correct: 2 },
+            { question: '"I\'m sorry to hear that" shows...', options: ['Happiness', 'Sympathy', 'Anger', 'Surprise'], correct: 1 },
+            { question: 'Which is NOT a kind action?', options: ['Helping', 'Sharing', 'Bullying', 'Listening'], correct: 2 },
+            { question: '"I really appreciate it" means...', options: ['I don\'t care', 'I\'m very grateful', 'I\'m angry', 'I\'m confused'], correct: 1 }
+        ];
+        const quiz = new QuizSystem(quizQuestions);
+    </script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

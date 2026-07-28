@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English - Bahasa Inggris SMP Kelas 8 🇬🇧</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="portal-styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #0d47a1 0%, #1565c0 30%, #1976d2 60%, #1e88e5 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #0d47a1 0%, #1565c0 30%, #1976d2 60%, #1e88e5 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        .back-nav { position: fixed; top: 20px; left: 20px; z-index: 1000; background: rgba(255,255,255,0.95); padding: 12px 20px; border-radius: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0d47a1; font-weight: bold; font-size: 1rem; transition: all 0.3s ease; }
+        .back-nav:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); background: white; }
+        header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%); color: white; text-align: center; padding: 60px 20px 80px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%); }
+        .header-icon { font-size: 5em; margin-bottom: 20px; position: relative; z-index: 1; animation: bounce 2s ease-in-out infinite; display: inline-block; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.1); } }
+        header h1 { font-size: 3.5em; margin-bottom: 15px; position: relative; z-index: 1; text-shadow: 3px 3px 6px rgba(0,0,0,0.3); letter-spacing: 3px; }
+        header .subtitle { font-size: 1.4em; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        main { max-width: 1200px; margin: -40px auto 40px; padding: 0 20px; position: relative; z-index: 10; }
+        .section-box { background: rgba(255, 255, 255, 0.97); border-radius: 30px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 40px; }
+        .section-box h2 { color: #0d47a1; font-size: 1.8em; margin-bottom: 25px; text-align: center; }
+        .hero-section { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%); color: white; padding: 50px 40px; border-radius: 30px; text-align: center; margin-bottom: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(13,71,161,0.4); }
+        .hero-section h2 { font-size: 2.5em; margin-bottom: 20px; position: relative; z-index: 1; }
+        .hero-section p { font-size: 1.2em; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .bab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .bab-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; position: relative; text-decoration: none; color: inherit; display: block; }
+        .bab-card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 25px 60px rgba(0,0,0,0.25); }
+        .bab-card .card-image { height: 160px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .bab-card .card-image .card-icon { font-size: 5em; z-index: 2; transition: transform 0.4s ease; }
+        .bab-card:hover .card-image .card-icon { transform: scale(1.2) rotate(10deg); }
+        .bab-card .card-image::before { content: ''; position: absolute; width: 150%; height: 150%; background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%); animation: pulse 3s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(0.8); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } }
+        .card-tenses .card-image { background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%); }
+        .card-ch1 .card-image { background: linear-gradient(135deg, #c62828 0%, #e53935 100%); }
+        .card-ch2 .card-image { background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%); }
+        .card-ch3 .card-image { background: linear-gradient(135deg, #e65100 0%, #ff9800 100%); }
+        .card-ch4 .card-image { background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%); }
+        .card-ch5 .card-image { background: linear-gradient(135deg, #00838f 0%, #26c6da 100%); }
+        .bab-card .card-content { padding: 20px; }
+        .bab-card .card-badge { display: inline-block; padding: 4px 12px; border-radius: 15px; font-size: 0.8em; font-weight: bold; margin-bottom: 10px; }
+        .card-tenses .card-badge { background: #e3f2fd; color: #1565c0; }
+        .card-ch1 .card-badge { background: #ffebee; color: #c62828; }
+        .card-ch2 .card-badge { background: #e8f5e9; color: #2e7d32; }
+        .card-ch3 .card-badge { background: #fff3e0; color: #e65100; }
+        .card-ch4 .card-badge { background: #f3e5f5; color: #6a1b9a; }
+        .card-ch5 .card-badge { background: #e0f7fa; color: #00838f; }
+        .bab-card h3 { color: #0d47a1; font-size: 1.2em; margin-bottom: 8px; }
+        .bab-card p { color: #666; font-size: 0.9em; line-height: 1.6; margin-bottom: 12px; }
+        .bab-card .card-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .bab-card .topic-tag { padding: 4px 10px; border-radius: 10px; font-size: 0.75em; }
+        .card-tenses .topic-tag { background: #e3f2fd; color: #1565c0; }
+        .card-ch1 .topic-tag { background: #ffebee; color: #c62828; }
+        .card-ch2 .topic-tag { background: #e8f5e9; color: #2e7d32; }
+        .card-ch3 .topic-tag { background: #fff3e0; color: #e65100; }
+        .card-ch4 .topic-tag { background: #f3e5f5; color: #6a1b9a; }
+        .card-ch5 .topic-tag { background: #e0f7fa; color: #00838f; }
+        .bab-card .card-footer { display: flex; align-items: center; justify-content: space-between; }
+        .bab-card .start-btn { color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em; transition: all 0.3s ease; }
+        .card-tenses .start-btn { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+        .card-ch1 .start-btn { background: linear-gradient(135deg, #c62828, #e53935); }
+        .card-ch2 .start-btn { background: linear-gradient(135deg, #2e7d32, #66bb6a); }
+        .card-ch3 .start-btn { background: linear-gradient(135deg, #e65100, #ff9800); }
+        .card-ch4 .start-btn { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+        .card-ch5 .start-btn { background: linear-gradient(135deg, #00838f, #26c6da); }
+        .bab-card:hover .start-btn { transform: translateX(5px); }
+        .bab-card .arrow { font-size: 1.2em; color: #ccc; transition: all 0.3s ease; }
+        .bab-card:hover .arrow { color: #0d47a1; transform: translateX(5px); }
+        .stats-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 25px; }
+        .stat-item { text-align: center; }
+        .stat-item .stat-number { font-size: 2.5em; font-weight: bold; color: #0d47a1; display: block; }
+        .stat-item .stat-label { color: #888; font-size: 0.95em; }
+        footer { background: linear-gradient(135deg, #0d1b2a 0%, #0d47a1 100%); color: white; text-align: center; padding: 40px 20px; position: relative; }
+        footer::before { content: ''; position: absolute; top: -30px; left: 0; right: 0; height: 30px; background: linear-gradient(135deg, #0d1b2a 0%, #0d47a1 100%); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+        .footer-content { max-width: 800px; margin: 0 auto; }
+        .footer-logo { font-size: 2.5em; margin-bottom: 15px; }
+        footer h3 { font-size: 1.5em; margin-bottom: 10px; color: #ffd700; }
+        footer p { color: rgba(255,255,255,0.8); margin-bottom: 8px; font-size: 1em; }
+        .footer-links { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #ffd700; text-decoration: none; transition: all 0.3s ease; font-weight: bold; font-size: 0.9em; }
+        .footer-links a:hover { color: white; text-decoration: underline; }
+        .footer-bottom { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9em; }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #0d47a1, #1565c0); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5em; cursor: pointer; box-shadow: 0 5px 20px rgba(13,71,161,0.4); transition: all 0.3s ease; opacity: 0; visibility: hidden; z-index: 100; }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { transform: translateY(-5px) scale(1.1); }
+        @media (max-width: 768px) { header h1 { font-size: 2.2em; } .bab-grid { grid-template-columns: 1fr; } .section-box { padding: 30px 20px; } .hero-section { padding: 30px 20px; } .hero-section h2 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <a href="index.html" class="back-nav">← Kembali ke Portal</a>
+
+    <header>
+        <div class="header-icon">🇬🇧</div>
+        <h1>ENGLISH</h1>
+        <p class="subtitle">English for Nusantara - SMP Kelas 8 📚✨</p>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Welcome to English! 🇬🇧</h2>
+            <p>Pilih chapter yang ingin kamu pelajari. Setiap chapter berisi materi lengkap dan kuis interaktif!</p>
+        </section>
+
+        <section class="section-box">
+            <h2>📚 Choose Your Chapter</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Click a chapter to start learning</p>
+            <div class="bab-grid">
+                <!-- Tenses -->
+                <a href="english-tenses.html" class="bab-card card-tenses">
+                    <div class="card-image"><span class="card-icon">📝</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">📝 Grammar</span>
+                        <h3>Tenses</h3>
+                        <p>Simple Present, Simple Past, Present Continuous, Simple Future</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">🟢 Present</span>
+                            <span class="topic-tag">🔴 Past</span>
+                            <span class="topic-tag">🔵 Future</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+
+                <!-- Bab 2 -->
+                <a href="english-bab2.html" class="bab-card card-ch1">
+                    <div class="card-image"><span class="card-icon">🇮🇩</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Bab 2</span>
+                        <h3>Celebrating Independence Day</h3>
+                        <p>Mempelajari tentang perayaan Hari Kemerdekaan Indonesia dalam bahasa Inggris</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">🇮🇩 Independence</span>
+                            <span class="topic-tag">🎉 Celebration</span>
+                            <span class="topic-tag">🗣️ Speaking</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+
+                <!-- Bab 3 -->
+                <a href="english-bab3.html" class="bab-card card-ch2">
+                    <div class="card-image"><span class="card-icon">💚</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Bab 3</span>
+                        <h3>Kindness Begin with Me</h3>
+                        <p>Mempelajari tentang kebaikan dan cara mengekspresikannya dalam bahasa Inggris</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">💚 Kindness</span>
+                            <span class="topic-tag">🤝 Helping</span>
+                            <span class="topic-tag">✍️ Writing</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+
+                <!-- Bab 4 -->
+                <a href="english-bab4.html" class="bab-card card-ch3">
+                    <div class="card-image"><span class="card-icon">🌍</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Bab 4</span>
+                        <h3>Love Our World</h3>
+                        <p>Mempelajari tentang cinta lingkungan dan menjaga kelestarian alam</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">🌍 Environment</span>
+                            <span class="topic-tag">♻️ Recycle</span>
+                            <span class="topic-tag">📖 Reading</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+
+                <!-- Bab 5 -->
+                <a href="english-bab5.html" class="bab-card card-ch4">
+                    <div class="card-image"><span class="card-icon">🚯</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Bab 5</span>
+                        <h3>No Littering</h3>
+                        <p>Mempelajari tentang larangan membuang sampah dan menjaga kebersihan</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">🚯 No Littering</span>
+                            <span class="topic-tag">⚠️ Warning</span>
+                            <span class="topic-tag">🗣️ Speaking</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+
+                <!-- Bab 6 -->
+                <a href="english-bab6.html" class="bab-card card-ch5">
+                    <div class="card-image"><span class="card-icon">🤗</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Bab 6</span>
+                        <h3>Embrace Yourself</h3>
+                        <p>Mempelajari tentang menerima diri sendiri dan percaya diri</p>
+                        <div class="card-topics">
+                            <span class="topic-tag">🤗 Self-love</span>
+                            <span class="topic-tag">💪 Confidence</span>
+                            <span class="topic-tag">✍️ Writing</span>
+                        </div>
+                    </div>
+                    <div class="card-footer"><span class="start-btn">Learn →</span><span class="arrow">→</span></div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>📊 Statistics</h2>
+            <div class="stats-bar">
+                <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">Chapters</span></div>
+                <div class="stat-item"><span class="stat-number">60+</span><span class="stat-label">Quizzes</span></div>
+                <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Vocabulary</span></div>
+                <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Free!</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">🇬🇧</div>
+            <h3>ENGLISH FOR NUSANTARA</h3>
+            <p>English Learning Platform for Grade 8</p>
+            <div class="footer-links">
+                <a href="index.html">📚 Home</a>
+                <a href="english-tenses.html">📝 Tenses</a>
+                <a href="english-bab2.html">🇮🇩 Bab 2</a>
+                <a href="english-bab3.html">💚 Bab 3</a>
+                <a href="english-bab4.html">🌍 Bab 4</a>
+                <a href="english-bab5.html">🚯 Bab 5</a>
+                <a href="english-bab6.html">🤗 Bab 6</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Portal Belajar Fiona. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️</div>
+    <script src="portal-scripts.js"></script>
+    <script src="click-sounds.js"></script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>

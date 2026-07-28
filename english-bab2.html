@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Celebrating Independence Day - English SMP Kelas 8</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="portal-styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #c62828 0%, #d32f2f 50%, #e53935 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #c62828 0%, #d32f2f 50%, #e53935 100%); }
+        .portal-navbar { background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%); padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        .portal-navbar .nav-brand { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        .portal-navbar .nav-links { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portal-navbar .nav-link { color: white; text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; transition: all 0.3s ease; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .portal-navbar .nav-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .portal-navbar .nav-link.active { background: #c62828; border-color: #c62828; }
+        header { background: linear-gradient(135deg, #b71c1c 0%, #c62828 50%, #d32f2f 100%); color: white; text-align: center; padding: 50px 20px; position: relative; overflow: hidden; }
+        .header-icon { font-size: 5em; margin-bottom: 15px; position: relative; z-index: 1; animation: float 3s ease-in-out infinite; display: inline-block; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.3em; opacity: 0.95; position: relative; z-index: 1; }
+        .nav-tabs-container { background: rgba(0,0,0,0.3); padding: 15px; position: sticky; top: 60px; z-index: 999; }
+        .nav-tabs { display: flex; gap: 10px; overflow-x: auto; max-width: 1400px; margin: 0 auto; padding: 5px 0; }
+        .nav-tab { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 25px; cursor: pointer; white-space: nowrap; font-weight: bold; transition: all 0.3s ease; font-size: 0.95em; }
+        .nav-tab:hover, .nav-tab.active { background: #c62828; border-color: #c62828; transform: translateY(-3px); }
+        main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h2 { color: #c62828; border-bottom: 4px solid #d32f2f; }
+        h3 { color: #c62828; }
+        .content-section { animation: fadeInUp 0.6s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .info-card { border-top-color: #c62828; }
+        .info-card h3 { color: #c62828; }
+        .example-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-left-color: #c62828; }
+        .example-box h4 { color: #c62828; }
+        footer { background: linear-gradient(135deg, #0a1628 0%, #c62828 100%); color: white; text-align: center; padding: 30px; margin-top: 30px; }
+        footer a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } .content-section { padding: 20px; } .quiz-options { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation" id="bgAnimation"></div>
+    <nav class="portal-navbar">
+        <a href="english.html" class="nav-brand"><span style="font-size: 1.5em;">🇮🇩</span> English - Bab 2</a>
+        <div class="nav-links">
+            <a href="english.html" class="nav-link">📚 Chapters</a>
+            <a href="english-tenses.html" class="nav-link">📝 Tenses</a>
+            <a href="english-bab2.html" class="nav-link active">🇮🇩 Bab 2</a>
+            <a href="english-bab3.html" class="nav-link">💚 Bab 3</a>
+            <a href="english-bab4.html" class="nav-link">🌍 Bab 4</a>
+            <a href="english-bab5.html" class="nav-link">🚯 Bab 5</a>
+            <a href="english-bab6.html" class="nav-link">🤗 Bab 6</a>
+            <a href="index.html" class="nav-link">🏠 Home</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-icon">🇮🇩</div>
+        <h1>CELEBRATING INDEPENDENCE DAY</h1>
+        <p class="subtitle">Bab 2 - English for Nusantara Kelas 8 📚🎉</p>
+    </header>
+
+    <div class="nav-tabs-container">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="scrollToSection('material')">📖 Material</button>
+            <button class="nav-tab" onclick="scrollToSection('vocabulary')">📝 Vocabulary</button>
+            <button class="nav-tab" onclick="scrollToSection('dialogue')">🗣️ Dialogue</button>
+            <button class="nav-tab" onclick="scrollToSection('grammar')">✏️ Grammar</button>
+            <button class="nav-tab" onclick="scrollToSection('quiz')">❓ Quiz</button>
+        </div>
+    </div>
+
+    <main>
+        <!-- MATERIAL -->
+        <section id="material" class="content-section">
+            <h2><span>📖</span> Reading Material</h2>
+            <p>Indonesia celebrates its Independence Day on <strong>August 17th</strong> every year. This special day is called <strong>"Hari Kemerdekaan"</strong> in Indonesian.</p>
+
+            <div class="fun-fact">
+                <h4>🤔 Did You Know?</h4>
+                <p>Indonesia declared its independence on <strong>August 17, 1945</strong>. The proclamation was read by <strong>Soekarno</strong> and <strong>Mohammad Hatta</strong> in Jakarta.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🏁</div>
+                    <h3>Traditional Games</h3>
+                    <p>During Independence Day celebrations, people play traditional games:</p>
+                    <ul>
+                        <li><strong>Panjat Pinang</strong> — Climbing a greased pole</li>
+                        <li><strong>Balap Karung</strong> — Sack race</li>
+                        <li><strong>Tarik Tambang</strong> — Tug of war</li>
+                        <li><strong>Makan Kerupuk</strong> — Cracker eating contest</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🎊</div>
+                    <h3>Celebrations</h3>
+                    <p>How Indonesians celebrate Independence Day:</p>
+                    <ul>
+                        <li><strong>Flag ceremony</strong> — Raising the Indonesian flag</li>
+                        <li><strong>Parades</strong> — Marching through the streets</li>
+                        <li><strong>Decorations</strong> — Red and white decorations</li>
+                        <li><strong>Competitions</strong> — Various games and contests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Key Phrases for Independence Day:</h4>
+                <ul>
+                    <li><strong>"Happy Independence Day!"</strong> — Selamat Hari Kemerdekaan!</li>
+                    <li><strong>"Long live Indonesia!"</strong> — Hidup Indonesia!</li>
+                    <li><strong>"We are proud to be Indonesian."</strong> — Kami bangga menjadi orang Indonesia.</li>
+                    <li><strong>"Let's celebrate together!"</strong> — Ayo rayakan bersama!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- VOCABULARY -->
+        <section id="vocabulary" class="content-section">
+            <h2><span>📝</span> Vocabulary</h2>
+            <p>Learn these important words related to Independence Day:</p>
+
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="word">Independence</div>
+                    <div class="pronunciation">/ˌɪndɪˈpendəns/</div>
+                    <div class="meaning">Kemerdekaan</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Celebration</div>
+                    <div class="pronunciation">/ˌselɪˈbreɪʃn/</div>
+                    <div class="meaning">Perayaan</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Freedom</div>
+                    <div class="pronunciation">/ˈfriːdəm/</div>
+                    <div class="meaning">Kebebasan</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Patriot</div>
+                    <div class="pronunciation">/ˈpætriət/</div>
+                    <div class="meaning">Patriot / Pahlawan</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Flag</div>
+                    <div class="pronunciation">/flæɡ/</div>
+                    <div class="meaning">Bendera</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Ceremony</div>
+                    <div class="pronunciation">/ˈserəməni/</div>
+                    <div class="meaning">Upacara</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Hero</div>
+                    <div class="pronunciation">/ˈhɪəroʊ/</div>
+                    <div class="meaning">Pahlawan</div>
+                </div>
+                <div class="vocab-card">
+                    <div class="word">Nation</div>
+                    <div class="pronunciation">/ˈneɪʃn/</div>
+                    <div class="meaning">Bangsa</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIALOGUE -->
+        <section id="dialogue" class="content-section">
+            <h2><span>🗣️</span> Dialogue</h2>
+            <p>Read this dialogue about Independence Day celebration:</p>
+
+            <div class="dialogue-box">
+                <div class="speaker">🧑 Andi:</div>
+                <div class="text">Hey Lisa! Are you excited about the Independence Day celebration tomorrow?</div>
+
+                <div class="speaker">👧 Lisa:</div>
+                <div class="text">Yes, I am! I can't wait to join the traditional games. What about you?</div>
+
+                <div class="speaker">🧑 Andi:</div>
+                <div class="text">I'm going to participate in the sack race. I practiced a lot!</div>
+
+                <div class="speaker">👧 Lisa:</div>
+                <div class="text">That's great! I want to watch the flag ceremony first. It's always so patriotic.</div>
+
+                <div class="speaker">🧑 Andi:</div>
+                <div class="text">Me too. I feel so proud to be Indonesian on this special day.</div>
+
+                <div class="speaker">👧 Lisa:</div>
+                <div class="text">Happy Independence Day, Andi! Long live Indonesia!</div>
+
+                <div class="speaker">🧑 Andi:</div>
+                <div class="text">Happy Independence Day, Lisa! Merdeka!</div>
+            </div>
+        </section>
+
+        <!-- GRAMMAR -->
+        <section id="grammar" class="content-section">
+            <h2><span>✏️</span> Grammar Focus</h2>
+            <h3>Expressing Pride and Congratulations</h3>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🎉</div>
+                    <h3>Congratulations</h3>
+                    <p>Use these expressions to congratulate:</p>
+                    <ul>
+                        <li><strong>"Congratulations!"</strong></li>
+                        <li><strong>"Happy Independence Day!"</strong></li>
+                        <li><strong>"I'm so proud of you!"</strong></li>
+                        <li><strong>"Well done!"</strong></li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">💪</div>
+                    <h3>Expressing Pride</h3>
+                    <p>Use these to express pride:</p>
+                    <ul>
+                        <li><strong>"I'm proud to be Indonesian."</strong></li>
+                        <li><strong>"We should be proud of our heroes."</strong></li>
+                        <li><strong>"It makes me feel proud."</strong></li>
+                        <li><strong>"I'm honored to celebrate this day."</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Pattern: "I'm proud to + verb"</h4>
+                <ul>
+                    <li>I'm proud <strong>to be</strong> Indonesian.</li>
+                    <li>I'm proud <strong>to celebrate</strong> Independence Day.</li>
+                    <li>I'm proud <strong>to honor</strong> our heroes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="quiz" class="content-section">
+            <h2><span>❓</span> Quiz</h2>
+            <div class="quiz-container">
+                <h3>🧠 Test Your Knowledge</h3>
+                <div class="score-display">
+                    <div class="score-item"><div class="label">Score</div><div class="value" id="quizScore">0</div></div>
+                    <div class="score-item"><div class="label">Question</div><div class="value" id="quizCount">0/10</div></div>
+                    <div class="score-item"><div class="label">Correct</div><div class="value" id="quizCorrect">0</div></div>
+                </div>
+                <div class="quiz-question" id="quizQuestion"></div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div style="text-align: center;">
+                    <button class="btn-primary btn-gold" onclick="quiz.start()">🚀 Start Quiz</button>
+                    <button class="btn-primary btn-secondary hidden" id="nextBtn" onclick="quiz.next()">➡️ Next Question</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.5em; margin-bottom: 10px;">🇮🇩</p>
+            <h3 style="color: #ffd700; margin-bottom: 10px;">English - Bab 2: Celebrating Independence Day</h3>
+            <p>SMP Kelas 8 | Belajar Jadi Mudah & Menyenangkan!</p>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="english.html">📚 Chapters</a>
+                <a href="english-tenses.html">📝 Tenses</a>
+                <a href="english-bab3.html">💚 Bab 3</a>
+                <a href="english-bab4.html">🌍 Bab 4</a>
+                <a href="english-bab5.html">🚯 Bab 5</a>
+                <a href="english-bab6.html">🤗 Bab 6</a>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.7;">© 2024 Portal Belajar Fiona</p>
+        </div>
+    </footer>
+
+    <div class="modal-overlay hidden" id="quizModal">
+        <div class="modal">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="final-score" id="modalScore">0</div>
+            <p id="modalMessage">Great job!</p>
+            <div style="margin-top: 20px;"><button class="btn-primary" onclick="quiz.restart()">🔄 Try Again</button></div>
+        </div>
+    </div>
+
+    <script src="portal-scripts.js"></script>
+    <script src="click-sounds.js"></script>
+    <script>
+        const quizQuestions = [
+            { question: 'When does Indonesia celebrate Independence Day?', options: ['August 17', 'October 2', 'June 1', 'May 20'], correct: 0 },
+            { question: 'What is "Hari Kemerdekaan" in English?', options: ['National Day', 'Independence Day', 'Heroes Day', 'Youth Day'], correct: 1 },
+            { question: 'Which game involves climbing a greased pole?', options: ['Balap Karung', 'Panjat Pinang', 'Tarik Tambang', 'Makan Kerupuk'], correct: 1 },
+            { question: 'What colors represent Indonesia\'s flag?', options: ['Blue and White', 'Red and White', 'Red and Blue', 'Green and White'], correct: 1 },
+            { question: '"Long live Indonesia" means...', options: ['Hidup Indonesia', 'Merdeka Indonesia', 'Jayalah Indonesia', 'Indonesia Raya'], correct: 0 },
+            { question: 'What is the English word for "bendera"?', options: ['Banner', 'Flag', 'Pole', 'Pennant'], correct: 1 },
+            { question: 'A person who loves their country is called a...', options: ['Citizen', 'Patriot', 'Hero', 'Leader'], correct: 1 },
+            { question: 'What does "ceremony" mean in Indonesian?', options: ['Festival', 'Upacara', 'Parade', 'Pesta'], correct: 1 },
+            { question: '"I\'m proud to be Indonesian" shows...', options: ['Sadness', 'Anger', 'Pride', 'Fear'], correct: 2 },
+            { question: 'Balap Karung is a...', options: ['Swimming race', 'Running race', 'Sack race', 'Bike race'], correct: 2 }
+        ];
+
+        const quiz = new QuizSystem(quizQuestions);
+    </script>
+<script src="mapel-switcher.js"></script>
+</body>
+</html>
