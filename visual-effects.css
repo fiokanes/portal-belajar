@@ -1,5 +1,5 @@
 /* ==========================================
-   VISUAL EFFECTS SYSTEM v2.0
+   VISUAL EFFECTS SYSTEM v5.0
    Animasi, Highlight, Floating Elements
    ========================================== */
 
@@ -16,7 +16,7 @@
 .floating-item {
     position: absolute;
     animation: floatRandom 15s ease-in-out infinite;
-    opacity: 0.15;
+    opacity: 0.12;
     font-size: 2em;
     filter: blur(0.5px);
 }
@@ -437,7 +437,13 @@
 .badge-blue {
     background: linear-gradient(135deg, #2196f3, #03a9f4);
     color: white;
-    box-shadow: 0 3px 10px rgba(33,150,243,0.4);
+    box-shadow: 0 3px 10px rgba(33,150,234,0.4);
+}
+
+.badge-red {
+    background: linear-gradient(135deg, #f44336, #e53935);
+    color: white;
+    box-shadow: 0 3px 10px rgba(244,67,54,0.4);
 }
 
 /* ============ SCROLL INDICATOR ============ */
@@ -560,4 +566,164 @@
 @keyframes confettiFall {
     0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
     100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ============ GLASSMORPHISM EFFECT ============ */
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+/* ============ GRADIENT TEXT ============ */
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============ ANIMATED BORDER ============ */
+.animated-border {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px;
+    right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 22px;
+    animation: borderAnimation 3s ease infinite;
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ============ FLOATING LABEL ============ */
+.floating-label {
+    position: relative;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    color: #999;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 0.8em;
+    color: #667eea;
+}
+
+/* ============ GLOW EFFECT ============ */
+.glow {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.8);
+}
+
+/* ============ SKELETON LOADING ============ */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeletonLoading 1.5s infinite;
+    border-radius: 5px;
+}
+
+@keyframes skeletonLoading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ============ MARQUEE EFFECT ============ */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ============ TEXT SHADOW EFFECTS ============ */
+.text-shadow-sm { text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+.text-shadow-md { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.text-shadow-lg { text-shadow: 3px 3px 6px rgba(0,0,0,0.4); }
+
+/* ============ BOX SHADOW EFFECTS ============ */
+.shadow-sm { box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.shadow-md { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.shadow-lg { box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+.shadow-xl { box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+
+/* ============ TRANSITION EFFECTS ============ */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.transition-fast {
+    transition: all 0.15s ease;
+}
+
+.transition-slow {
+    transition: all 0.5s ease;
+}
+
+/* ============ HOVER EFFECTS ============ */
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+/* ============ RESPONSIVE HELPERS ============ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============ PRINT STYLES ============ */
+@media print {
+    .floating-elements,
+    .scroll-progress,
+    .fab,
+    #soundToggle,
+    .scroll-top {
+        display: none !important;
+    }
 }
