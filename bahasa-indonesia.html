@@ -512,6 +512,171 @@
             text-decoration: underline;
         }
 
+        /* ============ BAB ACTION BUTTONS ============ */
+        .bab-action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .quiz-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .sim-btn {
+            background: linear-gradient(135deg, #1565c0, #1e88e5);
+            color: white;
+        }
+
+        /* ============ QUIZ BUTTONS GRID ============ */
+        .bab-quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .bab-quiz-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1em;
+            text-align: left;
+        }
+
+        .bab-quiz-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(183, 28, 28, 0.3);
+        }
+
+        .bab-quiz-btn .btn-icon {
+            font-size: 2em;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff5f5;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .bab-quiz-btn:hover .btn-icon {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .bab-quiz-btn .btn-text {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .bab-quiz-btn:hover .btn-text {
+            color: white;
+        }
+
+        .random-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--accent);
+        }
+
+        .random-btn .btn-icon {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .random-btn .btn-text {
+            color: white;
+        }
+
+        .random-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        /* ============ LEADERBOARD ============ */
+        .leaderboard-container {
+            background: linear-gradient(135deg, #fff8e1, #ffffff);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 2px solid var(--accent);
+        }
+
+        .leaderboard-container h3 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        /* ============ SIMULATION GRID ============ */
+        .simulation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .sim-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sim-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .sim-card .sim-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .sim-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .sim-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
             header h1 { font-size: 2em; }
@@ -581,6 +746,7 @@
             <button class="nav-tab" onclick="scrollToBab('bab6')">💬 Bab 6</button>
             <button class="nav-tab" onclick="scrollToBab('bab7')">🎬 Bab 7</button>
             <button class="nav-tab" onclick="scrollToBab('kuis')">❓ Kuis</button>
+            <button class="nav-tab" onclick="scrollToBab('simulasi')">🎮 Simulasi</button>
         </div>
     </div>
 
@@ -697,6 +863,15 @@
                     <p>Berdasarkan pengamatan, kupu-kupu di kebun sekolah memiliki ciri-ciri fisik yang khas dan aktif mencari nektar bunga pada pagi hari.</p>
                 </div>
             </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab1')">
+                    📝 Latihan Soal Bab 1
+                </button>
+                <button class="action-btn sim-btn" onclick="showSimulation('struktur-teks')">
+                    🔬 Lihat Simulasi Struktur Teks
+                </button>
+            </div>
         </section>
 
         <!-- BAB 2: MENYAMPAIKAN PESAN KREATIF MELALUI TEKS IKLAN -->
@@ -804,6 +979,15 @@
                     <li><strong>Berikan call to action</strong> - Ajakan untuk bertindak</li>
                 </ol>
             </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab2')">
+                    📝 Latihan Soal Bab 2
+                </button>
+                <button class="action-btn sim-btn" onclick="showSimulation('jenis-iklan')">
+                    🔬 Lihat Simulasi Jenis Iklan
+                </button>
+            </div>
         </section>
 
         <!-- BAB 3: MENYUSUN ARTIKEL ILMIAH POPULER -->
@@ -900,6 +1084,12 @@
                     <p><strong>Penutup:</strong> Kesadaran masyarakat untuk mengurangi penggunaan plastik sekali pakai sangat penting. Dengan membawa tas belanja sendiri, menggunakan botol minum yang dapat digunakan kembali, dan memilah sampah dengan benar, kita dapat berkontribusi dalam menjaga kelestarian lingkungan.</p>
                 </div>
             </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab3')">
+                    📝 Latihan Soal Bab 3
+                </button>
+            </div>
         </section>
 
         <!-- BAB 4: MENGULAS ISI & NILAI DALAM KARYA MELALUI TEKS RESENSI -->
@@ -992,6 +1182,12 @@
                         <li>Jangan spoiler ending cerita</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab4')">
+                    📝 Latihan Soal Bab 4
+                </button>
             </div>
         </section>
 
@@ -1108,6 +1304,12 @@
                     </p>
                 </div>
             </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab5')">
+                    📝 Latihan Soal Bab 5
+                </button>
+            </div>
         </section>
 
         <!-- BAB 6: MENYUARAKAN GAGASAN SECARA KRITIS & DIPLOMATIS -->
@@ -1200,6 +1402,12 @@
                         <li>Gunakan nada yang tenang dan profesional</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab6')">
+                    📝 Latihan Soal Bab 6
+                </button>
             </div>
         </section>
 
@@ -1331,6 +1539,15 @@
                     <p><strong>Amanat:</strong> Persahabatan sejati didasarkan pada kejujuran dan kesetiaan</p>
                 </div>
             </div>
+            
+            <div class="bab-action-buttons">
+                <button class="action-btn quiz-btn" onclick="startBabQuiz('bab7')">
+                    📝 Latihan Soal Bab 7
+                </button>
+                <button class="action-btn sim-btn" onclick="showSimulation('analisis-drama')">
+                    🔬 Lihat Simulasi Analisis Drama
+                </button>
+            </div>
         </section>
 
         <!-- KUIS INTERAKTIF -->
@@ -1339,14 +1556,91 @@
                 <div class="bab-number">❓</div>
                 <div class="bab-title">
                     <h2>🧠 Kuis Interaktif Bahasa Indonesia</h2>
-                    <p>Uji pemahamanmu tentang 7 bab yang telah dipelajari!</p>
+                    <p>Uji pemahamanmu tentang 7 bab yang telah dipelajari! Soal akan berbeda setiap kali!</p>
                 </div>
             </div>
 
             <div class="quiz-section">
-                <h3>🎯 Pilih Jawaban yang Benar!</h3>
+                <h3>🎯 Pilih Bab untuk Memulai Kuis</h3>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">Masukkan namamu, lalu jawab 10 soal acak dari bab yang dipilih!</p>
                 
-                <div class="quiz-question" id="quiz1">
+                <div class="bab-quiz-grid">
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab1')">
+                        <span class="btn-icon">📋</span>
+                        <span class="btn-text">Bab 1: Laporan Pengamatan</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab2')">
+                        <span class="btn-icon">📢</span>
+                        <span class="btn-text">Bab 2: Teks Iklan</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab3')">
+                        <span class="btn-icon">🔬</span>
+                        <span class="btn-text">Bab 3: Artikel Ilmiah</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab4')">
+                        <span class="btn-icon">📖</span>
+                        <span class="btn-text">Bab 4: Teks Resensi</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab5')">
+                        <span class="btn-icon">🎭</span>
+                        <span class="btn-text">Bab 5: Puisi Masa Kini</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab6')">
+                        <span class="btn-icon">💬</span>
+                        <span class="btn-text">Bab 6: Kritis & Diplomatis</span>
+                    </button>
+                    <button class="bab-quiz-btn" onclick="startBabQuiz('bab7')">
+                        <span class="btn-icon">🎬</span>
+                        <span class="btn-text">Bab 7: Teks Drama</span>
+                    </button>
+                    <button class="bab-quiz-btn random-btn" onclick="startBabQuiz('random')">
+                        <span class="btn-icon">🎲</span>
+                        <span class="btn-text">Kuis Random (Semua Bab)</span>
+                    </button>
+                </div>
+                
+                <div id="leaderboardContainer" class="leaderboard-container">
+                    <h3>🏆 Leaderboard Bahasa Indonesia</h3>
+                    <div id="mainLeaderboard" class="leaderboard-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULASI INTERAKTIF -->
+        <section id="simulasi" class="bab-section">
+            <div class="bab-header">
+                <div class="bab-number">🎮</div>
+                <div class="bab-title">
+                    <h2>🔬 Simulasi Interaktif</h2>
+                    <p>Belajar dengan cara yang lebih menyenangkan melalui simulasi!</p>
+                </div>
+            </div>
+
+            <div class="simulation-grid">
+                <div class="sim-card" onclick="showSimulation('struktur-teks')">
+                    <div class="sim-icon">📊</div>
+                    <h4>Struktur Teks</h4>
+                    <p>Pelajari struktur berbagai jenis teks secara interaktif</p>
+                </div>
+                <div class="sim-card" onclick="showSimulation('jenis-iklan')">
+                    <div class="sim-icon">📢</div>
+                    <h4>Jenis-Jenis Iklan</h4>
+                    <p>Kenali berbagai jenis iklan dan karakteristiknya</p>
+                </div>
+                <div class="sim-card" onclick="showSimulation('proses-menulis')">
+                    <div class="sim-icon">✍️</div>
+                    <h4>Proses Menulis</h4>
+                    <p>Ikuti langkah-langkah menulis yang baik</p>
+                </div>
+                <div class="sim-card" onclick="showSimulation('analisis-drama')">
+                    <div class="sim-icon">🎭</div>
+                    <h4>Analisis Drama</h4>
+                    <p>Pelajari cara menganalisis unsur-unsur drama</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- OLD QUIZ SECTION REMOVED - Now using new quiz system -->
                     <h4>1. Apa struktur utama teks laporan hasil pengamatan?</h4>
                     <div class="quiz-options">
                         <label class="quiz-option" onclick="checkAnswer(this, 'quiz1', false)">
@@ -1369,95 +1663,15 @@
                     <div class="quiz-feedback" id="feedback-quiz1"></div>
                 </div>
 
-                <div class="quiz-question" id="quiz2">
-                    <h4>2. Apa fungsi utama iklan?</h4>
-                    <div class="quiz-options">
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz2', false)">
-                            <input type="radio" name="q2">
-                            <span>Menghibur pembaca</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz2', false)">
-                            <input type="radio" name="q2">
-                            <span>Mendidik masyarakat</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz2', true)">
-                            <input type="radio" name="q2">
-                            <span>Mempengaruhi dan membujuk konsumen</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz2', false)">
-                            <input type="radio" name="q2">
-                            <span>Memberikan informasi ilmiah</span>
-                        </label>
-                    </div>
                     <div class="quiz-feedback" id="feedback-quiz2"></div>
                 </div>
 
-                <div class="quiz-question" id="quiz3">
-                    <h4>3. Apa perbedaan utama artikel ilmiah dan artikel ilmiah populer?</h4>
-                    <div class="quiz-options">
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz3', false)">
-                            <input type="radio" name="q3">
-                            <span>Artikel ilmiah lebih pendek</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz3', true)">
-                            <input type="radio" name="q3">
-                            <span>Artikel ilmiah populer menggunakan bahasa yang lebih mudah dipahami</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz3', false)">
-                            <input type="radio" name="q3">
-                            <span>Artikel ilmiah populer tidak memerlukan data</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz3', false)">
-                            <input type="radio" name="q3">
-                            <span>Tidak ada perbedaan</span>
-                        </label>
-                    </div>
                     <div class="quiz-feedback" id="feedback-quiz3"></div>
                 </div>
 
-                <div class="quiz-question" id="quiz4">
-                    <h4>4. Apa yang dimaksud dengan resensi?</h4>
-                    <div class="quiz-options">
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz4', false)">
-                            <input type="radio" name="q4">
-                            <span>Cerita pendek tentang kehidupan</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz4', true)">
-                            <input type="radio" name="q4">
-                            <span>Ulasan atau pembahasan tentang suatu karya</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz4', false)">
-                            <input type="radio" name="q4">
-                            <span>Laporan hasil penelitian</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz4', false)">
-                            <input type="radio" name="q4">
-                            <span>Puisi tentang alam</span>
-                        </label>
-                    </div>
                     <div class="quiz-feedback" id="feedback-quiz4"></div>
                 </div>
 
-                <div class="quiz-question" id="quiz5">
-                    <h4>5. Apa ciri khas puisi kontemporer?</h4>
-                    <div class="quiz-options">
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz5', false)">
-                            <input type="radio" name="q5">
-                            <span>Terikat aturan rima dan irama</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz5', true)">
-                            <input type="radio" name="q5">
-                            <span>Eksperimental dan tidak terikat aturan</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz5', false)">
-                            <input type="radio" name="q5">
-                            <span>Selalu menggunakan bahasa formal</span>
-                        </label>
-                        <label class="quiz-option" onclick="checkAnswer(this, 'quiz5', false)">
-                            <input type="radio" name="q5">
-                            <span>Hanya ditulis oleh penyair terkenal</span>
-                        </label>
-                    </div>
                     <div class="quiz-feedback" id="feedback-quiz5"></div>
                 </div>
 
@@ -1482,8 +1696,99 @@
     <script src="audio-system.js"></script>
     <script src="visual-effects.js"></script>
     <script src="click-sounds.js"></script>
+    <script src="quiz-data.js"></script>
+    <script src="quiz-system-v2.js"></script>
+    <script src="simulation-system.js"></script>
     
     <script>
+        // ============ NEW QUIZ SYSTEM ============
+        quizSystem = new QuizSystem('bahasa-indonesia', QUIZ_DATA['bahasa-indonesia']);
+        
+        function startBabQuiz(babId) {
+            if (babId === 'random') {
+                // Combine all questions from all babs
+                const allQuestions = [];
+                Object.values(QUIZ_DATA['bahasa-indonesia']).forEach(bab => {
+                    allQuestions.push(...bab.questions);
+                });
+                quizSystem.babData['random'] = { questions: allQuestions };
+                quizSystem.showNameInput('random');
+            } else {
+                quizSystem.showNameInput(babId);
+            }
+        }
+        
+        // Load main leaderboard
+        function loadMainLeaderboard() {
+            quizSystem.loadLeaderboard('mainLeaderboard');
+        }
+        
+        // Initialize leaderboard on page load
+        document.addEventListener('DOMContentLoaded', loadMainLeaderboard);
+        
+        // ============ SIMULATION FUNCTIONS ============
+        function showSimulation(type) {
+            const simulations = {
+                'struktur-teks': {
+                    title: '📊 Struktur Berbagai Jenis Teks',
+                    items: [
+                        { icon: '📋', label: 'Laporan', info: 'Struktur: Pernyataan Umum → Deskripsi → Klasifikasi → Simpulan' },
+                        { icon: '📢', label: 'Iklan', info: 'Struktur: Headline → Body → Slogan → CTA' },
+                        { icon: '🔬', label: 'Artikel', info: 'Struktur: Judul → Lead → Isi → Penutup' },
+                        { icon: '📖', label: 'Resensi', info: 'Struktur: Data Buku → Pendahuluan → Ringkasan → Kelebihan → Kekurangan' },
+                        { icon: '🎭', label: 'Puisi', info: 'Unsur: Tema → Diksi → Imaji → Rima → Amanat' },
+                        { icon: '💬', label: 'Eksposisi', info: 'Struktur: Tesis → Argumentasi → Penegasan Ulang' },
+                        { icon: '🎬', label: 'Drama', info: 'Struktur: Ekposisi → Komplikasi → Klimaks → Resolusi → Koda' }
+                    ]
+                },
+                'jenis-iklan': {
+                    title: '📢 Jenis-Jenis Iklan Berdasarkan Media',
+                    left: {
+                        title: 'Iklan Cetak',
+                        icon: '📰',
+                        items: ['Koran', 'Majalah', 'Brosur', 'Katalog', 'Flyer']
+                    },
+                    right: {
+                        title: 'Iklan Digital',
+                        icon: '💻',
+                        items: ['Sosial Media', 'Website', 'Email', 'Video Online', 'Banner']
+                    }
+                },
+                'proses-menulis': {
+                    title: '✍️ Proses Menulis yang Baik',
+                    steps: [
+                        { icon: '🎯', title: 'Menentukan Topik', description: 'Pilih topik yang menarik dan relevan' },
+                        { icon: '🔍', title: 'Mengumpulkan Data', description: 'Riset dan kumpulkan informasi dari berbagai sumber' },
+                        { icon: '📝', title: 'Membuat Kerangka', description: 'Susun outline atau kerangka tulisan' },
+                        { icon: '✍️', title: 'Menulis Draf', description: 'Tulis draf pertama berdasarkan kerangka' },
+                        { icon: '🔄', title: 'Merevisi', description: 'Periksa dan perbaiki kesalahan' },
+                        { icon: '✅', title: 'Finalisasi', description: 'Buat versi final yang siap dipublikasikan' }
+                    ]
+                },
+                'analisis-drama': {
+                    title: '🎭 Unsur-Unsur Drama',
+                    items: [
+                        { icon: '💡', label: 'Tema', info: 'Pokok permasalahan yang menjadi dasar cerita drama' },
+                        { icon: '👤', label: 'Tokoh', info: 'Pelaku dalam cerita yang memiliki karakter tertentu' },
+                        { icon: '⚔️', label: 'Konflik', info: 'Pertentangan atau masalah yang dihadapi tokoh' },
+                        { icon: '💬', label: 'Dialog', info: 'Percakapan antar tokoh yang mengungkap karakter' },
+                        { icon: '🏠', label: 'Setting', info: 'Latar waktu, tempat, dan suasana cerita' },
+                        { icon: '📖', label: 'Amanat', info: 'Pesan moral yang ingin disampaikan pengarang' },
+                        { icon: '🎭', label: 'Klimaks', info: 'Puncak konflik yang paling menegangkan' }
+                    ]
+                }
+            };
+            
+            const data = simulations[type];
+            if (!data) return;
+            
+            let simType = 'diagram';
+            if (type === 'jenis-iklan') simType = 'comparison';
+            if (type === 'proses-menulis') simType = 'process';
+            
+            simulationSystem.show(simType, data);
+        }
+        
         // ============ SCROLL TO BAB ============
         function scrollToBab(babId) {
             const bab = document.getElementById(babId);
