@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Python 🐍 - Portal Belajar Fiona</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
+    <style>
+        body.mapel-python {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e3f0fa 0%, #c5ddf0 50%, #a8cbe8 100%);
+            overflow-x: hidden;
+            font-size: 17px; line-height: 1.8; color: #2c3e50;
+        }
+        .python-main { max-width: 860px; margin: 0 auto; padding: 22px 16px 40px; }
+        .intro-box { background: #fff; border-radius: 20px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); margin-bottom: 26px; }
+        .intro-box h3 { color: #274e6d; margin-bottom: 10px; }
+        .intro-box ol { margin: 10px 0 0 22px; }
+        .intro-box li { margin-bottom: 6px; }
+        .intro-box code { background: #e3f0fa; color: #1e3a5f; border-radius: 6px; padding: 2px 8px; font-size: 0.9em; }
+        .run-steps {
+            background: linear-gradient(135deg, #1e3a5f, #306998); color: #fff;
+            border-radius: 18px; padding: 20px 24px; margin-top: 16px;
+        }
+        .run-steps h4 { margin-bottom: 10px; color: #ffd43b; }
+        .run-steps li { color: #e8f0f8; margin-bottom: 8px; }
+        .run-steps code { background: rgba(255,255,255,0.15); color: #ffd43b; border-radius: 6px; padding: 2px 8px; }
+    </style>
+</head>
+<body class="mapel-python">
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <header class="page-hero">
+        <span class="hero-icon">🐍</span>
+        <h1>BELAJAR PYTHON</h1>
+        <p class="subtitle">Belajar coding dari nol — mudah, seru, dan langsung praktek! 💻✨</p>
+    </header>
+
+    <main class="python-main">
+        <div class="intro-box">
+            <h3>👋 Apa Itu Python?</h3>
+            <p>Python adalah bahasa pemrograman yang <b>mudah dibaca</b> seperti bahasa Inggris biasa. Cocok banget buat pemula! Dengan Python kamu bisa membuat program sendiri — mulai dari yang sederhana sampai yang keren.</p>
+            <div class="run-steps">
+                <h4>🛠️ Cara Menjalankan Program</h4>
+                <ol>
+                    <li>Unduh <code>Python</code> di <code>python.org</code> dan install di komputermu</li>
+                    <li>Klik tombol <b>⬇️ Unduh Kode</b> di halaman tiap program</li>
+                    <li>Buka file <code>.py</code> dengan <b>IDLE</b> (sudah ikut terinstall)</li>
+                    <li>Tekan <code>F5</code> untuk menjalankan programnya! 🚀</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="programList">
+            <!-- Daftar program diisi otomatis oleh portal-nav.js (status ✅) -->
+        </div>
+    </main>
+
+    <script src="audio-system.js"></script>
+    <script src="visual-effects.js"></script>
+    <script src="click-sounds.js"></script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+    <script>
+        // ============ DAFTAR PROGRAM PYTHON ============
+        const PROGRAMS = [
+            { href: 'python-bab1.html', icon: '👋', title: 'Program 1: Hello World', desc: 'Program pertamamu! Mencetak tulisan di layar.', file: 'kode-python/main.py' },
+            { href: 'python-bab2.html', icon: '📐', title: 'Program 2: Luas Persegi', desc: 'Menerima input dari pengguna & menghitung luas.', file: 'kode-python/bangun_datar.py' },
+            { href: 'python-bab3.html', icon: '➗', title: 'Program 3: Keliling Persegi', desc: 'Menghitung keliling persegi dengan rumus 4 × sisi.', file: 'kode-python/hitung_keliling.py' },
+            { href: 'python-bab4.html', icon: '📏', title: 'Program 4: Luas Persegi Panjang', desc: 'Dua input sekaligus: panjang dan lebar!', file: 'kode-python/hitung_luas_persegi_panjang.py' },
+            { href: 'python-bab5.html', icon: '🏪', title: 'Program 5: Program Kasir', desc: 'Program lengkap: kasir toko dengan 2 barang!', file: 'kode-python/program_kasir.py' }
+        ];
+
+        function renderPrograms() {
+            const list = document.getElementById('programList');
+            if (!list) return;
+            list.innerHTML = PROGRAMS.map(p => `
+                <a href="${p.href}" class="bab-item">
+                    <span class="bab-icon">${p.icon}</span>
+                    <span class="bab-info">
+                        <span class="bab-title">${p.title}</span>
+                        <span class="bab-desc">${p.desc}</span>
+                    </span>
+                    <span class="bab-status"></span>
+                </a>
+            `).join('');
+            if (window.pbDecorateBabCards) pbDecorateBabCards();
+        }
+        renderPrograms();
+    </script>
+</body>
+</html>

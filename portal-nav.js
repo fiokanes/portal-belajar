@@ -85,6 +85,14 @@ const NAV_CONFIG = {
     'informatika-bab2.html':    { label: 'Bab 2: Berpikir Komputasional', icon: '🧠', parent: 'informatika.html', kind: 'bab', mapel: 'info', bab: 'bab2' },
     'informatika-bab3.html':    { label: 'Bab 3: Algoritma', icon: '⌨️', parent: 'informatika.html', kind: 'bab', mapel: 'info', bab: 'bab3' },
 
+    // ==== PYTHON ====
+    'python.html':              { label: 'Belajar Python', icon: '🐍', parent: 'index.html', kind: 'mapel', mapel: 'python' },
+    'python-bab1.html':         { label: 'Program 1: Hello World', icon: '👋', parent: 'python.html', kind: 'bab', mapel: 'python', bab: 'bab1' },
+    'python-bab2.html':         { label: 'Program 2: Luas Persegi', icon: '📐', parent: 'python.html', kind: 'bab', mapel: 'python', bab: 'bab2' },
+    'python-bab3.html':         { label: 'Program 3: Keliling Persegi', icon: '➗', parent: 'python.html', kind: 'bab', mapel: 'python', bab: 'bab3' },
+    'python-bab4.html':         { label: 'Program 4: Luas Persegi Panjang', icon: '📏', parent: 'python.html', kind: 'bab', mapel: 'python', bab: 'bab4' },
+    'python-bab5.html':         { label: 'Program 5: Program Kasir', icon: '🏪', parent: 'python.html', kind: 'bab', mapel: 'python', bab: 'bab5' },
+
     // ==== KUIS (4) ====
     'kuis-matematika.html':     { label: 'Kuis Matematika', icon: '🔢', parent: 'index.html', kind: 'kuis', mapel: 'matematika' },
     'kuis-biologi.html':        { label: 'Kuis Biologi', icon: '🧬', parent: 'index.html', kind: 'kuis', mapel: 'bio' },
@@ -104,7 +112,8 @@ const BAB_SEQUENCE = {
     'eng': ['english-tenses.html', 'english-bab2.html', 'english-bab3.html', 'english-bab4.html', 'english-bab5.html', 'english-bab6.html'],
     'jawa': ['aksara-jawa.html', 'bahasa-jawa-bab1.html', 'bahasa-jawa-bab2.html', 'bahasa-jawa-bab3.html', 'bahasa-jawa-bab4.html', 'bahasa-jawa-bab5.html'],
     'ppkn': ['ppkn-pancasila.html', 'ppkn-bab1.html', 'ppkn-bab2.html', 'ppkn-bab3.html'],
-    'info': ['informatika-bab1.html', 'informatika-bab2.html', 'informatika-bab3.html']
+    'info': ['informatika-bab1.html', 'informatika-bab2.html', 'informatika-bab3.html'],
+    'python': ['python-bab1.html', 'python-bab2.html', 'python-bab3.html', 'python-bab4.html', 'python-bab5.html']
 };
 
 // ============ UTIL ============

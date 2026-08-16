@@ -1973,6 +1973,76 @@ QUIZ_DATA['informatika_bab3'] = {
     }
 };
 
+
+// ==========================================
+// BANK SOAL PYTHON (5 program)
+// ==========================================
+QUIZ_DATA['python_bab1'] = {
+    umum: {
+        title: 'Python - Hello World',
+        questions: [
+            { question: 'Fungsi Python untuk menampilkan tulisan di layar adalah...', options: ['input()', 'print()', 'int()', 'output()'], correct: 1, explanation: 'print() adalah fungsi bawaan Python untuk mencetak/menampilkan teks ke layar.' },
+            { question: 'Teks di Python disebut...', options: ['Angka', 'Variabel', 'String', 'Fungsi'], correct: 2, explanation: 'Teks yang diapit tanda kutip disebut string, misalnya "Hello World".' },
+            { question: 'Tanda apa yang mengapit string di Python?', options: ['Kurung ( )', 'Tanda kutip " "', 'Titik koma ;', 'Kurung siku [ ]'], correct: 1, explanation: 'String harus diapit tanda kutip, bisa kutip satu atau dua.' },
+            { question: 'Program pertamamu mencetak...', options: ['Hello World', 'Goodbye', 'Hello Python', 'Selamat Datang'], correct: 0, explanation: 'Program pertama mencetak "Hello World" — tradisi programmer di seluruh dunia.' },
+            { question: 'Kalau lupa tanda kutip pada teks, Python akan bilang...', options: ['SyntaxError', 'RuntimeError', 'NoError', 'PrintError'], correct: 0, explanation: 'Tanpa tanda kutip, Python bingung membedakan teks dan kode, lalu muncul SyntaxError.' }
+        ]
+    }
+};
+
+QUIZ_DATA['python_bab2'] = {
+    umum: {
+        title: 'Python - Luas Persegi',
+        questions: [
+            { question: 'Rumus luas persegi adalah...', options: ['4 x sisi', 'sisi x sisi', '2 x sisi', 'sisi + sisi'], correct: 1, explanation: 'Luas persegi = sisi x sisi, karena persegi punya sisi yang sama panjang.' },
+            { question: 'Fungsi untuk meminta input dari pengguna adalah...', options: ['print()', 'int()', 'input()', 'str()'], correct: 2, explanation: 'input() menanyakan sesuatu dan menerima jawaban dari pengguna.' },
+            { question: 'Mengapa pakai int() pada input?', options: ['Biar teksnya besar', 'Mengubah teks menjadi angka agar bisa dihitung', 'Membuat program lebih cepat', 'Agar output rapi'], correct: 1, explanation: 'input() selalu memberi teks; int() mengubahnya menjadi angka agar bisa dihitung.' },
+            { question: 'Tempat menyimpan nilai di Python disebut...', options: ['Kotak', 'Variabel', 'Fungsi', 'String'], correct: 1, explanation: 'Variabel adalah tempat menyimpan nilai, misalnya variabel sisi dan luas.' },
+            { question: 'Jika sisi = 5, maka luas = ...', options: ['10', '20', '25', '5'], correct: 2, explanation: 'Luas = 5 x 5 = 25.' }
+        ]
+    }
+};
+
+QUIZ_DATA['python_bab3'] = {
+    umum: {
+        title: 'Python - Keliling Persegi',
+        questions: [
+            { question: 'Rumus keliling persegi adalah...', options: ['sisi x sisi', '2 x sisi', '4 x sisi', 'sisi : 4'], correct: 2, explanation: 'Persegi punya 4 sisi sama panjang, jadi keliling = 4 x sisi.' },
+            { question: 'Angka 4 pada rumus keliling disebut...', options: ['Variabel', 'Konstanta', 'String', 'Fungsi'], correct: 1, explanation: 'Konstanta adalah nilai yang tetap dan tidak berubah, seperti angka 4.' },
+            { question: 'Jika sisi = 7, maka keliling = ...', options: ['14', '21', '28', '49'], correct: 2, explanation: 'Keliling = 4 x 7 = 28.' },
+            { question: 'Pola input - proses - output pada program 2 dan 3 hampir sama. Ini contoh...', options: ['Dekomposisi', 'Pengenalan pola', 'Abstraksi', 'Perulangan'], correct: 1, explanation: 'Melihat kesamaan dua program menunjukkan pengenalan pola.' },
+            { question: 'Perintah untuk menampilkan hasil keliling adalah...', options: ['input("Keliling")', 'int("Keliling")', 'print("Keliling persegi : ", keliling)', 'keliling = print()'], correct: 2, explanation: 'print() digunakan untuk menampilkan teks dan nilai variabel keliling.' }
+        ]
+    }
+};
+
+QUIZ_DATA['python_bab4'] = {
+    umum: {
+        title: 'Python - Luas Persegi Panjang',
+        questions: [
+            { question: 'Rumus luas persegi panjang adalah...', options: ['panjang + lebar', '2 x (panjang + lebar)', 'panjang x lebar', 'panjang : lebar'], correct: 2, explanation: 'Luas persegi panjang = panjang x lebar.' },
+            { question: 'Program ini butuh berapa input?', options: ['1', '2', '3', '4'], correct: 1, explanation: 'Dua input: panjang dan lebar.' },
+            { question: 'Program berjalan dari atas ke bawah disebut...', options: ['Eksekusi sekuensial', 'Eksekusi acak', 'Perulangan', 'Percabangan'], correct: 0, explanation: 'Python menjalankan baris kode secara berurutan dari atas ke bawah.' },
+            { question: 'Jika panjang = 8 dan lebar = 5, luasnya adalah...', options: ['13', '26', '35', '40'], correct: 3, explanation: 'Luas = 8 x 5 = 40.' },
+            { question: 'Variabel panjang dan lebar adalah dua kotak berbeda yang menyimpan...', options: ['Teks', 'Angka', 'Fungsi', 'Print'], correct: 1, explanation: 'Keduanya menyimpan angka hasil dari int(input()).' }
+        ]
+    }
+};
+
+QUIZ_DATA['python_bab5'] = {
+    umum: {
+        title: 'Python - Program Kasir',
+        questions: [
+            { question: 'Subtotal barang pertama dihitung dengan...', options: ['harga1 + jumlah1', 'harga1 x jumlah1', 'harga1 - jumlah1', 'jumlah1 x jumlah2'], correct: 1, explanation: 'Subtotal = harga x jumlah, misalnya total1 = harga1 x jumlah1.' },
+            { question: 'Nama barang disimpan TANPA int() karena...', options: ['Namanya pendek', 'Nama bukan angka', 'int() hanya untuk print', 'Nama sudah angka'], correct: 1, explanation: 'Nama barang adalah teks, jadi tidak perlu diubah jadi angka.' },
+            { question: 'Kode \n dalam string berfungsi untuk...', options: ['Membuat garis', 'Baris baru (enter)', 'Menghapus teks', 'Mengulang teks'], correct: 1, explanation: '\n adalah karakter khusus untuk pindah ke baris baru.' },
+            { question: 'Jika harga1=5000, jumlah1=2, harga2=2000, jumlah2=3, total belanja = ...', options: ['10000', '6000', '16000', '7000'], correct: 2, explanation: 'Total = (5000x2) + (2000x3) = 10000 + 6000 = 16000.' },
+            { question: 'Jumlah variabel yang dipakai di program kasir adalah...', options: ['3', '4', '6', '8'], correct: 2, explanation: 'Enam variabel: barang1, harga1, jumlah1, barang2, harga2, jumlah2, plus total1, total2, total_belanja.' }
+        ]
+    }
+};
+
 // Export
+
 
 window.QUIZ_DATA = QUIZ_DATA;

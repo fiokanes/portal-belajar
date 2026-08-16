@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Program 4: Luas Persegi Panjang 📏</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
+    <style>
+        body.mapel-python { font-family: 'Poppins', 'Segoe UI', sans-serif; min-height: 100vh; background: linear-gradient(135deg, #e3f0fa 0%, #c5ddf0 50%, #a8cbe8 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .python-main { max-width: 860px; margin: 0 auto; padding: 22px 16px 40px; }
+        .pb-card h3 { color: #274e6d; margin: 18px 0 10px; }
+        .pb-card p, .pb-card li { margin-bottom: 10px; }
+        .pb-card ul { margin-left: 24px; }
+        .pb-card code { background: #e3f0fa; color: #1e3a5f; border-radius: 6px; padding: 2px 8px; font-size: 0.9em; }
+        .code-box { background: #1e293b; color: #e2e8f0; border-radius: 16px; padding: 22px; font-family: 'Consolas', 'Courier New', monospace; font-size: 1.05em; overflow-x: auto; line-height: 1.8; position: relative; margin: 10px 0; }
+        .code-box .code-lang { position: absolute; top: 10px; right: 14px; font-size: 0.75em; color: #64748b; font-family: 'Poppins', sans-serif; }
+        .code-box .kw { color: #c792ea; } .code-box .fn { color: #82aaff; } .code-box .str { color: #c3e88d; }
+        .btn-download { background: linear-gradient(135deg, #1e3a5f, #306998); color: #fff; }
+        .demo-box { background: linear-gradient(135deg, #f0f7ff, #e3f0fa); border: 2px solid #b8d4ec; border-radius: 16px; padding: 22px; margin-top: 14px; }
+        .demo-box label { display: block; font-weight: 600; color: #274e6d; margin-bottom: 6px; }
+        .demo-box input { width: 100%; padding: 12px 16px; border-radius: 12px; border: 2px solid #b8d4ec; font-size: 1em; margin-bottom: 14px; font-family: inherit; }
+        .demo-output { background: #0f172a; color: #4ade80; border-radius: 12px; padding: 16px; font-family: 'Consolas', monospace; margin-top: 12px; white-space: pre-wrap; min-height: 60px; }
+        .demo-output .prompt { color: #94a3b8; }
+        .quiz-section { background: linear-gradient(135deg, #fff8e1, #fff3cd); border-radius: 26px; padding: 34px; margin-top: 30px; border: 3px solid #ffc107; }
+        .quiz-section h2 { color: #f57f17; }
+    </style>
+</head>
+<body class="mapel-python">
+    <header class="page-hero">
+        <span class="hero-icon">📏</span>
+        <h1>PROGRAM 4: LUAS PERSEGI PANJANG</h1>
+        <p class="subtitle">Sekarang programnya butuh DUA input sekaligus! 🧮✨</p>
+    </header>
+
+    <main class="python-main">
+        <section class="pb-card">
+            <h2>🌟 Apa Itu Program Ini?</h2>
+            <p>Program ini menanyakan <b>panjang</b> dan <b>lebar</b>, lalu menghitung luasnya dengan rumus <b>Luas = panjang × lebar</b>. Bedanya dari program sebelumnya: sekarang ada <b>dua variabel input</b> yang bekerja sama! 🤝</p>
+        </section>
+
+        <section class="pb-card">
+            <h2>💻 Kode Program</h2>
+            <div class="code-box">
+                <span class="code-lang">🐍 Python</span>
+                <span class="kw">panjang</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Masukkan panjang : "</span>))<br>
+                <span class="kw">lebar</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Masukkan lebar : "</span>))<br>
+                <span class="kw">luas</span> = <span class="kw">panjang</span> * <span class="kw">lebar</span><br>
+                <span class="fn">print</span>(<span class="str">"Luas : "</span>, <span class="kw">luas</span>)
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+                <button class="btn btn-soft btn-nav" onclick="copyCode()">📋 Salin Kode</button>
+                <a class="btn btn-download btn-nav" href="kode-python/hitung_luas_persegi_panjang.py" download>⬇️ Unduh hitung_luas_persegi_panjang.py</a>
+            </div>
+        </section>
+
+        <section class="pb-card">
+            <h2>🔍 Penjelasan Baris per Baris</h2>
+            <ul>
+                <li><code>panjang = int(input("Masukkan panjang : "))</code> — input pertama disimpan di variabel <code>panjang</code>.</li>
+                <li><code>lebar = int(input("Masukkan lebar : "))</code> — input kedua disimpan di variabel <code>lebar</code>. <b>Dua variabel berbeda!</b></li>
+                <li><code>luas = panjang * lebar</code> — kalikan kedua variabel. Perhatikan: program jalan <b>berurutan dari atas ke bawah</b> (disebut <b>eksekusi sekuensial</b>).</li>
+                <li><code>print("Luas : ", luas)</code> — tampilkan hasilnya.</li>
+            </ul>
+            <p>💡 <b>Variabel itu seperti kotak penyimpanan!</b> <code>panjang</code> dan <code>lebar</code> adalah dua kotak berbeda yang masing-masing menyimpan satu angka.</p>
+        </section>
+
+        <section class="pb-card">
+            <h2>🎮 Coba Sendiri!</h2>
+            <p>Isi panjang dan lebarnya, lalu jalankan — persis seperti program Python aslinya! 👇</p>
+            <div class="demo-box">
+                <label for="panjangInput">Masukkan panjang :</label>
+                <input type="number" id="panjangInput" placeholder="contoh: 8" min="0">
+                <label for="lebarInput">Masukkan lebar :</label>
+                <input type="number" id="lebarInput" placeholder="contoh: 5" min="0">
+                <button class="btn btn-primary" onclick="runDemo()">▶️ Jalankan Program</button>
+                <div class="demo-output" id="demoOutput"><span class="prompt">Program akan berjalan di sini...</span></div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align:center; margin-bottom:26px;">Uji pemahamanmu tentang luas persegi panjang!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+
+    <script src="click-sounds.js"></script>
+    <script src="quiz-data.js"></script>
+    <script src="quiz-game-system.js"></script>
+    <script>
+        function runDemo() {
+            const out = document.getElementById('demoOutput');
+            const panjang = parseInt(document.getElementById('panjangInput').value);
+            const lebar = parseInt(document.getElementById('lebarInput').value);
+            if (isNaN(panjang) || isNaN(lebar) || panjang < 0 || lebar < 0) {
+                out.innerHTML = '<span class="prompt">>>> </span><span style="color:#f87171">⚠️ Masukkan angka panjang dan lebar dulu ya!</span>';
+                if (window.AudioSystem) window.AudioSystem.playError();
+                return;
+            }
+            const luas = panjang * lebar;
+            out.innerHTML = '<span class="prompt">>>> </span><span style="color:#e2e8f0">panjang = int(input("Masukkan panjang : "))</span>\n'
+                + '<span class="prompt">Masukkan panjang : </span>' + panjang + '\n'
+                + '<span class="prompt">>>> </span><span style="color:#e2e8f0">lebar = int(input("Masukkan lebar : "))</span>\n'
+                + '<span class="prompt">Masukkan lebar : </span>' + lebar + '\n'
+                + '<span class="prompt">>>> </span><span style="color:#e2e8f0">luas = panjang * lebar</span>\n'
+                + '<span class="prompt">>>> </span><span style="color:#e2e8f0">print("Luas : ", luas)</span>\n'
+                + '<span style="color:#4ade80">Luas : ' + luas + '</span>';
+            if (window.AudioSystem) window.AudioSystem.playSuccess();
+        }
+        function copyCode() {
+            const code = 'panjang = int(input("Masukkan panjang : "))\nlebar = int(input("Masukkan lebar : "))\nluas = panjang * lebar\nprint("Luas : ", luas)';
+            navigator.clipboard.writeText(code).then(() => alert('📋 Kode disalin! Tempel di IDLE dan tekan F5.'));
+        }
+        if(typeof QuizSystem!=='undefined') QuizSystem.createQuiz('python_bab4', 'quizContainer', 5);
+        function createBubbles() { const c = document.getElementById('bgAnimation'); if (!c) return; for(let i=0;i<15;i++){const b=document.createElement('div');b.className='bubble';const s=Math.random()*50+20;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'%';b.style.bottom='-100px';b.style.animationDelay=Math.random()*10+'s';b.style.animationDuration=(Math.random()*10+10)+'s';c.appendChild(b);}} createBubbles();
+    </script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+</body>
+</html>

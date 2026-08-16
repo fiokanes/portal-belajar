@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Program 5: Program Kasir 🏪</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
+    <style>
+        body.mapel-python { font-family: 'Poppins', 'Segoe UI', sans-serif; min-height: 100vh; background: linear-gradient(135deg, #e3f0fa 0%, #c5ddf0 50%, #a8cbe8 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .python-main { max-width: 860px; margin: 0 auto; padding: 22px 16px 40px; }
+        .pb-card h3 { color: #274e6d; margin: 18px 0 10px; }
+        .pb-card p, .pb-card li { margin-bottom: 10px; }
+        .pb-card ul { margin-left: 24px; }
+        .pb-card code { background: #e3f0fa; color: #1e3a5f; border-radius: 6px; padding: 2px 8px; font-size: 0.9em; }
+        .code-box { background: #1e293b; color: #e2e8f0; border-radius: 16px; padding: 22px; font-family: 'Consolas', 'Courier New', monospace; font-size: 1em; overflow-x: auto; line-height: 1.7; position: relative; margin: 10px 0; }
+        .code-box .code-lang { position: absolute; top: 10px; right: 14px; font-size: 0.75em; color: #64748b; font-family: 'Poppins', sans-serif; }
+        .code-box .kw { color: #c792ea; } .code-box .fn { color: #82aaff; } .code-box .str { color: #c3e88d; } .code-box .num { color: #f78c6c; }
+        .btn-download { background: linear-gradient(135deg, #1e3a5f, #306998); color: #fff; }
+        .demo-box { background: linear-gradient(135deg, #f0f7ff, #e3f0fa); border: 2px solid #b8d4ec; border-radius: 16px; padding: 22px; margin-top: 14px; }
+        .demo-box label { display: block; font-weight: 600; color: #274e6d; margin-bottom: 6px; }
+        .demo-box input { width: 100%; padding: 12px 16px; border-radius: 12px; border: 2px solid #b8d4ec; font-size: 1em; margin-bottom: 14px; font-family: inherit; }
+        .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .demo-output { background: #0f172a; color: #4ade80; border-radius: 12px; padding: 16px; font-family: 'Consolas', monospace; margin-top: 12px; white-space: pre-wrap; min-height: 60px; }
+        .demo-output .prompt { color: #94a3b8; }
+        .demo-output .receipt { color: #e2e8f0; }
+        .quiz-section { background: linear-gradient(135deg, #fff8e1, #fff3cd); border-radius: 26px; padding: 34px; margin-top: 30px; border: 3px solid #ffc107; }
+        .quiz-section h2 { color: #f57f17; }
+        @media (max-width: 600px) { .demo-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="mapel-python">
+    <header class="page-hero">
+        <span class="hero-icon">🏪</span>
+        <h1>PROGRAM 5: PROGRAM KASIR</h1>
+        <p class="subtitle">Program paling lengkap — kamu baru saja membuat kasir toko! 🛒</p>
+    </header>
+
+    <main class="python-main">
+        <section class="pb-card">
+            <h2>🌟 Apa Itu Program Ini?</h2>
+            <p>Ini program paling seru! Kamu membuat <b>kasir toko "TOKO CERIA"</b> yang bisa menerima <b>2 barang belanjaan</b> (nama, harga, dan jumlahnya), menghitung subtotal tiap barang, lalu menjumlahkan semuanya jadi <b>total belanja</b>. Semua konsep yang sudah kamu pelajari dipakai di sini! 🎓</p>
+        </section>
+
+        <section class="pb-card">
+            <h2>💻 Kode Program</h2>
+            <div class="code-box">
+                <span class="code-lang">🐍 Python</span>
+                <span class="fn">print</span>(<span class="str">"================================"</span>)<br>
+                <span class="fn">print</span>(<span class="str">"TOKO CERIA"</span>)<br>
+                <span class="fn">print</span>(<span class="str">"================================"</span>)<br>
+                <span class="kw">barang1</span> = <span class="fn">input</span>(<span class="str">"Nama Barang Pertama : "</span>) <br>
+                <span class="kw">harga1</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Harga Barang Pertama : "</span>)) <br>
+                <span class="kw">jumlah1</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Jumlah Barang Pertama : "</span>))<br>
+                <span class="kw">barang2</span> = <span class="fn">input</span>(<span class="str">"Nama Barang Kedua : "</span>) <br>
+                <span class="kw">harga2</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Harga Barang Kedua : "</span>)) <br>
+                <span class="kw">jumlah2</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Jumlah Barang Kedua : "</span>))<br>
+                <span class="kw">total1</span> = <span class="kw">harga1</span> * <span class="kw">jumlah1</span><br>
+                <span class="kw">total2</span> = <span class="kw">harga2</span> * <span class="kw">jumlah2</span><br>
+                <span class="kw">total_belanja</span> = <span class="kw">total1</span> + <span class="kw">total2</span><br>
+                <span class="fn">print</span>(<span class="str">"\\n================================"</span>)<br>
+                <span class="fn">print</span>(<span class="kw">barang1</span>, <span class="str">":"</span>, <span class="kw">total1</span>)<br>
+                <span class="fn">print</span>(<span class="kw">barang2</span>, <span class="str">":"</span>, <span class="kw">total2</span>)<br>
+                <span class="fn">print</span>(<span class="str">"================================"</span>)<br>
+                <span class="fn">print</span>(<span class="str">"Total Belanja : "</span>, <span class="kw">total_belanja</span>)<br>
+                <span class="fn">print</span>(<span class="str">"================================"</span>)<br>
+                <span class="fn">print</span>(<span class="str">"Terima kasih telah berbelanja!"</span>)
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+                <button class="btn btn-soft btn-nav" onclick="copyCode()">📋 Salin Kode</button>
+                <a class="btn btn-download btn-nav" href="kode-python/program_kasir.py" download>⬇️ Unduh program_kasir.py</a>
+            </div>
+        </section>
+
+        <section class="pb-card">
+            <h2>🔍 Penjelasan Bagian per Bagian</h2>
+            <h3>1. Buka toko 🏪</h3>
+            <p>Tiga <code>print()</code> pertama membuat papan nama toko — lengkap dengan garis <code>====</code> sebagai bingkai.</p>
+            <h3>2. Terima pesanan 📝</h3>
+            <p>Enam <code>input()</code> menyimpan data barang: <code>barang1/2</code> (teks, tanpa <code>int()</code> karena nama bukan angka) dan <code>harga1/2</code>, <code>jumlah1/2</code> (angka, pakai <code>int()</code>).</p>
+            <h3>3. Hitung struk 🧮</h3>
+            <ul>
+                <li><code>total1 = harga1 * jumlah1</code> — subtotal barang pertama (harga × jumlah).</li>
+                <li><code>total2 = harga2 * jumlah2</code> — subtotal barang kedua.</li>
+                <li><code>total_belanja = total1 + total2</code> — jumlahkan semuanya!</li>
+            </ul>
+            <h3>4. Cetak struk 🧾</h3>
+            <p>Program menampilkan struk lengkap: nama barang, subtotalnya, dan total belanja. Perhatikan <code>\\n</code> di dalam string — itu kode untuk <b>baris baru</b> (enter)!</p>
+            <p>💡 <b>Konsep penting:</b> ada <b>6 variabel</b> yang bekerja sama di sini. Kamu sudah membuat program yang <b>terstruktur</b> — ini awal dari pembuatan aplikasi sungguhan!</p>
+        </section>
+
+        <section class="pb-card">
+            <h2>🎮 Coba Sendiri!</h2>
+            <p>Jadi pelanggan di tokomu sendiri! Isi data belanjaan, lalu jalankan kasirnya — persis seperti program Python aslinya! 👇</p>
+            <div class="demo-box">
+                <div class="demo-grid">
+                    <div>
+                        <label>Nama Barang Pertama :</label>
+                        <input type="text" id="barang1" placeholder="contoh: Buku">
+                        <label>Harga Barang Pertama :</label>
+                        <input type="number" id="harga1" placeholder="contoh: 5000" min="0">
+                        <label>Jumlah Barang Pertama :</label>
+                        <input type="number" id="jumlah1" placeholder="contoh: 2" min="0">
+                    </div>
+                    <div>
+                        <label>Nama Barang Kedua :</label>
+                        <input type="text" id="barang2" placeholder="contoh: Pensil">
+                        <label>Harga Barang Kedua :</label>
+                        <input type="number" id="harga2" placeholder="contoh: 2000" min="0">
+                        <label>Jumlah Barang Kedua :</label>
+                        <input type="number" id="jumlah2" placeholder="contoh: 3" min="0">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="runDemo()">▶️ Jalankan Kasir</button>
+                <div class="demo-output" id="demoOutput"><span class="prompt">Kasir siap melayani...</span></div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align:center; margin-bottom:26px;">Uji pemahamanmu tentang program kasir!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+
+    <script src="click-sounds.js"></script>
+    <script src="quiz-data.js"></script>
+    <script src="quiz-game-system.js"></script>
+    <script>
+        function runDemo() {
+            const out = document.getElementById('demoOutput');
+            const b1 = document.getElementById('barang1').value.trim() || '(tanpa nama)';
+            const h1 = parseInt(document.getElementById('harga1').value);
+            const j1 = parseInt(document.getElementById('jumlah1').value);
+            const b2 = document.getElementById('barang2').value.trim() || '(tanpa nama)';
+            const h2 = parseInt(document.getElementById('harga2').value);
+            const j2 = parseInt(document.getElementById('jumlah2').value);
+            if (isNaN(h1) || isNaN(j1) || isNaN(h2) || isNaN(j2) || h1 < 0 || j1 < 0 || h2 < 0 || j2 < 0) {
+                out.innerHTML = '<span class="prompt">>>> </span><span style="color:#f87171">⚠️ Isi semua harga dan jumlah dengan angka dulu ya!</span>';
+                if (window.AudioSystem) window.AudioSystem.playError();
+                return;
+            }
+            const t1 = h1 * j1, t2 = h2 * j2, total = t1 + t2;
+            out.innerHTML = '<span class="prompt">>>> </span><span style="color:#e2e8f0">print("================================")</span>\n'
+                + '<span class="receipt">================================</span>\n'
+                + '<span class="receipt">TOKO CERIA</span>\n'
+                + '<span class="receipt">================================</span>\n'
+                + '<span class="prompt">Nama Barang Pertama : </span>' + b1 + '\n'
+                + '<span class="prompt">Harga Barang Pertama : </span>' + h1 + '\n'
+                + '<span class="prompt">Jumlah Barang Pertama : </span>' + j1 + '\n'
+                + '<span class="prompt">Nama Barang Kedua : </span>' + b2 + '\n'
+                + '<span class="prompt">Harga Barang Kedua : </span>' + h2 + '\n'
+                + '<span class="prompt">Jumlah Barang Kedua : </span>' + j2 + '\n'
+                + '<span class="receipt">================================</span>\n'
+                + '<span class="receipt">' + b1 + ' : ' + t1 + '</span>\n'
+                + '<span class="receipt">' + b2 + ' : ' + t2 + '</span>\n'
+                + '<span class="receipt">================================</span>\n'
+                + '<span style="color:#4ade80">Total Belanja : ' + total + '</span>\n'
+                + '<span class="receipt">================================</span>\n'
+                + '<span class="receipt">Terima kasih telah berbelanja!</span>';
+            if (window.AudioSystem) window.AudioSystem.playSuccess();
+        }
+        function copyCode() {
+            const code = 'print("================================")\nprint("TOKO CERIA")\nprint("================================")\nbarang1 = input("Nama Barang Pertama : ") \nharga1 = int(input("Harga Barang Pertama : ")) \njumlah1 = int(input("Jumlah Barang Pertama : "))\nbarang2 = input("Nama Barang Kedua : ") \nharga2 = int(input("Harga Barang Kedua : ")) \njumlah2 = int(input("Jumlah Barang Kedua : "))\ntotal1 = harga1 * jumlah1\ntotal2 = harga2 * jumlah2\ntotal_belanja = total1 + total2\nprint("\\n================================")\nprint(barang1, ":", total1)\nprint(barang2, ":", total2)\nprint("================================")\nprint("Total Belanja : ", total_belanja)\nprint("================================")\nprint("Terima kasih telah berbelanja!")';
+            navigator.clipboard.writeText(code).then(() => alert('📋 Kode disalin! Tempel di IDLE dan tekan F5.'));
+        }
+        if(typeof QuizSystem!=='undefined') QuizSystem.createQuiz('python_bab5', 'quizContainer', 5);
+        function createBubbles() { const c = document.getElementById('bgAnimation'); if (!c) return; for(let i=0;i<15;i++){const b=document.createElement('div');b.className='bubble';const s=Math.random()*50+20;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'%';b.style.bottom='-100px';b.style.animationDelay=Math.random()*10+'s';b.style.animationDuration=(Math.random()*10+10)+'s';c.appendChild(b);}} createBubbles();
+    </script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+</body>
+</html>

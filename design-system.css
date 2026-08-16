@@ -24,6 +24,7 @@ body.mapel-bindo  { --m-primary: #b71c1c; --m-gradient: linear-gradient(135deg, 
 body.mapel-ppkn   { --m-primary: #d32f2f; --m-gradient: linear-gradient(135deg, #b71c1c, #d32f2f, #e53935); --m-soft: #ffebee; --m-text: #c62828; }
 body.mapel-info   { --m-primary: #6a1b9a; --m-gradient: linear-gradient(135deg, #4a148c, #6a1b9a, #9c27b0); --m-soft: #f3e5f5; --m-text: #6a1b9a; }
 body.mapel-progres { --m-primary: #f57f17; --m-gradient: linear-gradient(135deg, #e65100, #f57f17, #fbc02d); --m-soft: #fff8e1; --m-text: #e65100; }
+body.mapel-python { --m-primary: #306998; --m-gradient: linear-gradient(135deg, #1e3a5f, #306998, #4b8bbe); --m-soft: #e3f0fa; --m-text: #274e6d; }
 
 /* ============ DASAR ============ */
 body {
@@ -154,6 +155,8 @@ body {
 .bab-item .bab-title { font-weight: 700; color: #263238; font-size: 1.02em; }
 .bab-item .bab-desc { color: #888; font-size: 0.82em; margin-top: 2px; }
 .bab-item .bab-status { font-size: 1.5em; flex-shrink: 0; }
+.bab-item .bab-status::after { content: '▶'; }
+.bab-item.done .bab-status::after { content: '✅'; }
 .bab-item.done { border-left-color: var(--success); background: linear-gradient(135deg, #fff, #f1f8e9); }
 .bab-item.done .bab-icon { background: #dcedc8; }
 
