@@ -1,0 +1,247 @@
+/* ==========================================
+   DESIGN SYSTEM v1.0 — Portal Belajar Fiona
+   Satu sistem desain untuk semua halaman
+   Tetap ceria, warna-warni, ramah jempol SMP
+   ========================================== */
+
+/* ============ TOKEN WARNA PER MAPEL ============ */
+:root {
+    --m-primary: #1a237e;
+    --m-gradient: linear-gradient(135deg, #0d1b2a, #1a237e, #283593);
+    --m-soft: #e8eaf6;
+    --m-text: #1a237e;
+    --radius: 20px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --success: #4caf50;
+}
+
+body.mapel-math   { --m-primary: #00897b; --m-gradient: linear-gradient(135deg, #00695c, #00897b, #009688); --m-soft: #e0f2f1; --m-text: #00695c; }
+body.mapel-bio    { --m-primary: #2e7d32; --m-gradient: linear-gradient(135deg, #1b5e20, #2e7d32, #43a047); --m-soft: #e8f5e9; --m-text: #2e7d32; }
+body.mapel-ips    { --m-primary: #c62828; --m-gradient: linear-gradient(135deg, #b71c1c, #c62828, #e53935); --m-soft: #ffebee; --m-text: #b71c1c; }
+body.mapel-eng    { --m-primary: #1565c0; --m-gradient: linear-gradient(135deg, #0d47a1, #1565c0, #1e88e5); --m-soft: #e3f2fd; --m-text: #1565c0; }
+body.mapel-jawa   { --m-primary: #4e342e; --m-gradient: linear-gradient(135deg, #3e2723, #4e342e, #6d4c41); --m-soft: #efebe9; --m-text: #4e342e; }
+body.mapel-bindo  { --m-primary: #b71c1c; --m-gradient: linear-gradient(135deg, #7f0000, #b71c1c, #c62828); --m-soft: #ffebee; --m-text: #b71c1c; }
+body.mapel-ppkn   { --m-primary: #d32f2f; --m-gradient: linear-gradient(135deg, #b71c1c, #d32f2f, #e53935); --m-soft: #ffebee; --m-text: #c62828; }
+body.mapel-info   { --m-primary: #6a1b9a; --m-gradient: linear-gradient(135deg, #4a148c, #6a1b9a, #9c27b0); --m-soft: #f3e5f5; --m-text: #6a1b9a; }
+body.mapel-progres { --m-primary: #f57f17; --m-gradient: linear-gradient(135deg, #e65100, #f57f17, #fbc02d); --m-soft: #fff8e1; --m-text: #e65100; }
+
+/* ============ DASAR ============ */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 72px; /* ruang untuk tab bar bawah */
+}
+
+/* Sembunyikan tombol kembali lama (breadcrumb sudah menggantikan) */
+.back-nav { display: none !important; }
+
+/* ============ TOP BAR ============ */
+.top-bar {
+    position: sticky; top: 0; z-index: 900;
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.top-bar .tb-logo {
+    font-size: 1.5em; line-height: 1;
+    background: var(--m-gradient);
+    border-radius: 12px;
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.breadcrumb {
+    flex: 1; display: flex; align-items: center; gap: 6px;
+    font-size: 0.82em; overflow-x: auto; white-space: nowrap;
+    scrollbar-width: none;
+}
+.breadcrumb::-webkit-scrollbar { display: none; }
+.breadcrumb a { color: #888; text-decoration: none; font-weight: 500; }
+.breadcrumb a:hover { color: var(--m-text); }
+.breadcrumb a.current { color: var(--m-text); font-weight: 700; }
+.breadcrumb .sep { color: #ccc; font-weight: 300; }
+.tb-xp {
+    background: var(--m-soft); color: var(--m-text);
+    border-radius: 20px; padding: 5px 12px;
+    font-weight: 700; font-size: 0.85em;
+    display: flex; align-items: center; gap: 4px;
+    flex-shrink: 0; cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+.tb-xp:hover { transform: scale(1.08); }
+
+/* ============ TAB BAR BAWAH ============ */
+.tab-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.tab-bar a {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 9px 4px 8px;
+    font-size: 0.68em; font-weight: 600; color: #999;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.tab-bar a .tab-icon { font-size: 1.55em; transition: transform 0.25s; }
+.tab-bar a:hover { color: var(--m-text); }
+.tab-bar a.active { color: var(--m-text); }
+.tab-bar a.active .tab-icon { transform: translateY(-2px) scale(1.15); }
+.tab-bar a.active::before {
+    content: ''; position: absolute; top: 0; width: 32px; height: 3px;
+    border-radius: 0 0 4px 4px; background: var(--m-gradient);
+}
+.tab-bar a { position: relative; }
+
+/* ============ HERO KOMPAK (pengganti header raksasa) ============ */
+.page-hero {
+    background: var(--m-gradient); color: #fff;
+    text-align: center; padding: 26px 16px 30px;
+    position: relative; overflow: hidden;
+}
+.page-hero h1 { font-size: 1.65em; letter-spacing: 1px; margin-bottom: 6px; position: relative; z-index: 1; }
+.page-hero .subtitle { font-size: 1em; opacity: 0.95; position: relative; z-index: 1; }
+.page-hero .hero-icon { font-size: 2.6em; display: block; margin-bottom: 6px; position: relative; z-index: 1; animation: pbBounce 2.5s ease-in-out infinite; }
+@keyframes pbBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* ============ KARTU LANJUT BELAJAR ============ */
+.continue-card {
+    background: linear-gradient(135deg, #ffffff, var(--m-soft));
+    border: 2px solid var(--m-soft);
+    border-radius: 24px; padding: 22px;
+    display: flex; align-items: center; gap: 18px;
+    box-shadow: var(--shadow);
+    text-decoration: none; color: inherit;
+    margin-bottom: 26px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.continue-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18); }
+.continue-card .cc-icon {
+    font-size: 2.4em; width: 72px; height: 72px; flex-shrink: 0;
+    background: var(--m-gradient); color: #fff;
+    border-radius: 20px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.continue-card .cc-info { flex: 1; min-width: 0; }
+.continue-card .cc-label { font-size: 0.75em; font-weight: 700; color: var(--m-text); text-transform: uppercase; letter-spacing: 1px; }
+.continue-card .cc-title { font-size: 1.15em; font-weight: 700; color: #263238; margin: 2px 0 8px; }
+.continue-card .cc-arrow { font-size: 1.8em; color: var(--m-text); flex-shrink: 0; }
+
+/* ============ DAFTAR BAB (list item) ============ */
+.bab-item {
+    display: flex; align-items: center; gap: 16px;
+    background: #fff; border-radius: 18px; padding: 15px 18px;
+    box-shadow: var(--shadow); margin-bottom: 12px;
+    text-decoration: none; color: inherit;
+    border-left: 6px solid var(--m-gradient);
+    border-left-color: var(--m-primary);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.bab-item:hover { transform: translateX(6px); box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16); }
+.bab-item .bab-icon {
+    font-size: 1.7em; width: 54px; height: 54px; flex-shrink: 0;
+    background: var(--m-soft); border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+}
+.bab-item .bab-info { flex: 1; min-width: 0; }
+.bab-item .bab-title { font-weight: 700; color: #263238; font-size: 1.02em; }
+.bab-item .bab-desc { color: #888; font-size: 0.82em; margin-top: 2px; }
+.bab-item .bab-status { font-size: 1.5em; flex-shrink: 0; }
+.bab-item.done { border-left-color: var(--success); background: linear-gradient(135deg, #fff, #f1f8e9); }
+.bab-item.done .bab-icon { background: #dcedc8; }
+
+/* ============ PROGRESS BAR ============ */
+.progress-track { background: #e0e0e0; border-radius: 20px; height: 10px; overflow: hidden; }
+.progress-fill { background: var(--m-gradient); height: 100%; border-radius: 20px; transition: width 0.6s ease; }
+
+/* ============ TOMBOL ============ */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 24px; border-radius: 16px;
+    font-weight: 700; font-size: 1em; border: none; cursor: pointer;
+    text-decoration: none; font-family: inherit;
+    transition: transform 0.15s, box-shadow 0.2s;
+}
+.btn:active { transform: scale(0.96); }
+.btn-primary { background: var(--m-gradient); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
+.btn-primary:hover { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); transform: translateY(-2px); }
+.btn-soft { background: var(--m-soft); color: var(--m-text); }
+.btn-soft:hover { transform: translateY(-2px); }
+.btn-nav { padding: 10px 16px; border-radius: 14px; font-size: 0.9em; }
+
+/* ============ NAV ANTAR BAB ============ */
+.bab-nav {
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+    margin: 22px 0;
+}
+.bab-nav .spacer { flex: 1; }
+.bab-nav .mark-done-btn { background: linear-gradient(135deg, #43a047, #66bb6a); color: #fff; }
+.bab-nav .mark-done-btn.done { background: #e8f5e9; color: #2e7d32; }
+
+/* ============ TAB SEKSI MATERI ============ */
+.sec-tabs { display: flex; gap: 8px; overflow-x: auto; padding: 6px 0 14px; scrollbar-width: none; }
+.sec-tabs::-webkit-scrollbar { display: none; }
+.sec-tabs a {
+    padding: 9px 18px; border-radius: 14px; background: #fff;
+    color: #666; font-weight: 600; font-size: 0.9em;
+    text-decoration: none; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s;
+}
+.sec-tabs a:hover { color: var(--m-text); }
+.sec-tabs a.active { background: var(--m-gradient); color: #fff; }
+
+/* ============ KARTU UMUM ============ */
+.pb-card {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: var(--radius); padding: 28px;
+    box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.pb-card h2 { color: var(--m-text); font-size: 1.5em; margin-bottom: 18px; }
+.pb-section-title { color: #fff; text-align: center; font-size: 1.6em; margin: 30px 0 20px; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); }
+
+/* ============ HALAMAN PROGRES ============ */
+.xp-hero {
+    background: var(--m-gradient); color: #fff;
+    border-radius: 24px; padding: 28px; text-align: center;
+    margin-bottom: 24px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    position: relative; overflow: hidden;
+}
+.xp-hero .level-badge {
+    font-size: 0.85em; font-weight: 700; background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px; padding: 6px 16px; display: inline-block; margin-bottom: 10px;
+}
+.xp-hero .xp-number { font-size: 3em; font-weight: 800; line-height: 1.1; }
+.xp-hero .xp-track { background: rgba(255, 255, 255, 0.25); height: 12px; border-radius: 20px; margin: 14px auto 6px; max-width: 340px; overflow: hidden; }
+.xp-hero .xp-fill { background: #ffd700; height: 100%; border-radius: 20px; transition: width 0.6s; }
+.xp-hero .xp-hint { font-size: 0.8em; opacity: 0.85; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat-cell { background: #fff; border-radius: 18px; padding: 18px 14px; text-align: center; box-shadow: var(--shadow); }
+.stat-cell .stat-num { font-size: 2em; font-weight: 800; color: var(--m-text); display: block; }
+.stat-cell .stat-lbl { color: #888; font-size: 0.8em; font-weight: 600; }
+
+/* ============ RESPONSIF ============ */
+@media (min-width: 900px) {
+    .tab-bar { max-width: 480px; left: 50%; transform: translateX(-50%); border-radius: 18px 18px 0 0; }
+}
+@media (max-width: 480px) {
+    .top-bar { padding: 8px 10px; gap: 8px; }
+    .breadcrumb { font-size: 0.75em; }
+    .tb-xp { padding: 4px 10px; font-size: 0.78em; }
+    .page-hero h1 { font-size: 1.4em; }
+    .continue-card { padding: 16px; gap: 12px; }
+    .continue-card .cc-icon { width: 60px; height: 60px; font-size: 2em; }
+}
+
+/* ============ PENJINAK LAMA (sementara, agar konsisten sebelum halaman dimigrasi) ============ */
+header { padding: 26px 16px 34px !important; }
+header h1 { font-size: 2em !important; letter-spacing: 1px !important; margin-bottom: 8px !important; }
+header .subtitle { font-size: 1.05em !important; }
+.header-icon { font-size: 2.8em !important; margin-bottom: 8px !important; }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progres Belajarku 🏆 - Portal Belajar Fiona</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
+    <style>
+        body.mapel-progres {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 50%, #ffcc80 100%);
+            overflow-x: hidden;
+            font-size: 17px; line-height: 1.8; color: #2c3e50;
+        }
+        .progres-main { max-width: 820px; margin: 0 auto; padding: 20px 16px 40px; }
+        .mapel-stats { margin-top: 10px; }
+        .mapel-row {
+            background: #fff; border-radius: 16px; padding: 14px 18px;
+            margin-bottom: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .mapel-row .mr-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .mapel-row .mr-icon { font-size: 1.6em; }
+        .mapel-row .mr-name { font-weight: 700; flex: 1; color: #37474f; }
+        .mapel-row .mr-count { font-size: 0.85em; color: #888; }
+        .done-list { margin-top: 8px; }
+        .done-item {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #f1f8e9; color: #2e7d32;
+            border-radius: 20px; padding: 5px 14px; margin: 4px 6px 4px 0;
+            font-size: 0.85em; font-weight: 600;
+        }
+        .empty-state { text-align: center; color: #888; padding: 30px 10px; }
+        .empty-state .big { font-size: 3.5em; display: block; margin-bottom: 10px; }
+        .kuis-hint {
+            background: #fff3e0; border: 2px dashed #ffb74d; color: #e65100;
+            border-radius: 16px; padding: 14px 18px; margin-top: 16px;
+            font-size: 0.9em; text-align: center;
+        }
+        .kuis-hint a { color: #e65100; font-weight: 700; }
+    </style>
+</head>
+<body class="mapel-progres">
+    <main class="progres-main">
+        <!-- KARTU XP & LEVEL -->
+        <section class="xp-hero">
+            <span class="level-badge" id="levelBadge">Level 1</span>
+            <div class="xp-number" id="xpNumber">0</div>
+            <div>Total XP ⭐</div>
+            <div class="xp-track"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+            <div class="xp-hint" id="xpHint">Mainkan kuis & tandai bab selesai untuk menambah XP!</div>
+        </section>
+
+        <!-- STATISTIK -->
+        <section class="stat-grid">
+            <div class="stat-cell"><span class="stat-num" id="statBab">0</span><span class="stat-lbl">Bab Selesai</span></div>
+            <div class="stat-cell"><span class="stat-num" id="statLevel">1</span><span class="stat-lbl">Level</span></div>
+            <div class="stat-cell"><span class="stat-num">8</span><span class="stat-lbl">Mapel Tersedia</span></div>
+            <div class="stat-cell"><span class="stat-num">371+</span><span class="stat-lbl">Soal Kuis</span></div>
+        </section>
+
+        <!-- PROGRES PER MAPEL -->
+        <section class="pb-card">
+            <h2>📊 Progres per Mapel</h2>
+            <div class="mapel-stats" id="mapelStats">
+                <p class="empty-state"><span class="big">🌱</span>Belum ada bab yang diselesaikan.<br>Yuk mulai belajar dan kumpulkan XP!</p>
+            </div>
+            <div class="kuis-hint">💡 <b>Tips:</b> Kuis memberi <b>+10 XP</b>, nilai sempurna bonus <b>+5 XP</b>, tandai bab selesai <b>+20 XP</b>!</div>
+        </section>
+    </main>
+
+    <script src="audio-system.js"></script>
+    <script src="visual-effects.js"></script>
+    <script src="click-sounds.js"></script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+
+    <script>
+        // ============ RENDER PROGRES ============
+        function renderProgres() {
+            const xp = ProgressSystem.getXP();
+            const level = ProgressSystem.getLevel();
+            const levelProgress = ProgressSystem.getLevelProgress();
+            const progress = ProgressSystem.getProgress();
+            const totalDone = ProgressSystem.countDone();
+
+            document.getElementById('xpNumber').textContent = xp;
+            document.getElementById('levelBadge').textContent = 'Level ' + level;
+            document.getElementById('xpFill').style.width = levelProgress + '%';
+            document.getElementById('xpHint').textContent =
+                levelProgress + ' / ' + ProgressSystem.XP_PER_LEVEL + ' XP menuju Level ' + (level + 1);
+            document.getElementById('statBab').textContent = totalDone;
+            document.getElementById('statLevel').textContent = level;
+
+            // Daftar mapel (ikon + nama + jumlah selesai)
+            const mapels = [
+                ['matematika', '🔢', 'Matematika'],
+                ['bio', '🧬', 'Biologi'],
+                ['fisika', '⚡', 'Fisika'],
+                ['ips', '🌏', 'IPS'],
+                ['eng', '🇬🇧', 'English'],
+                ['jawa', '📜', 'Bahasa Jawa'],
+                ['bindo', '📝', 'B. Indonesia'],
+                ['ppkn', '🇮🇩', 'PPKn'],
+                ['info', '💻', 'Informatika']
+            ];
+            const container = document.getElementById('mapelStats');
+            if (totalDone === 0) {
+                container.innerHTML = '<p class="empty-state"><span class="big">🌱</span>Belum ada bab yang diselesaikan.<br>Yuk mulai belajar dan kumpulkan XP!</p>';
+                return;
+            }
+            let html = '';
+            mapels.forEach(([key, icon, name]) => {
+                const data = progress[key];
+                if (!data) return;
+                const doneList = Object.entries(data).filter(([, v]) => v.done);
+                if (doneList.length === 0) return;
+                const items = doneList.map(([babId, v]) =>
+                    `<span class="done-item">✅ ${babId.replace(/^bab/, 'Bab ')}${v.best ? ' · ' + v.best + '%' : ''}</span>`
+                ).join('');
+                html += `
+                    <div class="mapel-row">
+                        <div class="mr-head">
+                            <span class="mr-icon">${icon}</span>
+                            <span class="mr-name">${name}</span>
+                            <span class="mr-count">${doneList.length} bab selesai</span>
+                        </div>
+                        <div class="done-list">${items}</div>
+                    </div>`;
+            });
+            container.innerHTML = html || '<p class="empty-state"><span class="big">🌱</span>Belum ada bab yang diselesaikan.</p>';
+        }
+        renderProgres();
+        document.addEventListener('pb-xp-updated', renderProgres);
+    </script>
+</body>
+</html>
