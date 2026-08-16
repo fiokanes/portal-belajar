@@ -1756,42 +1756,42 @@
 
     <script>
         // ============ AUDIO SYSTEM ============
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        let audioCtx = null;
+        const InlineAudioCtx = window.AudioContext || window.webkitAudioContext;
+        let inlineAudioCtx = null;
 
-        function initAudio() { if (!audioCtx) audioCtx = new AudioCtx(); }
+        function initAudio() { if (!inlineAudioCtx) inlineAudioCtx = new InlineAudioCtx(); }
 
         function playClick() {
             initAudio();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.connect(gain); gain.connect(audioCtx.destination);
+            const osc = inlineAudioCtx.createOscillator();
+            const gain = inlineAudioCtx.createGain();
+            osc.connect(gain); gain.connect(inlineAudioCtx.destination);
             osc.frequency.value = 800; osc.type = 'sine';
-            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
-            osc.start(); osc.stop(audioCtx.currentTime + 0.1);
+            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, inlineAudioCtx.currentTime + 0.1);
+            osc.start(); osc.stop(inlineAudioCtx.currentTime + 0.1);
         }
 
         function playSuccess() {
             initAudio();
             [523, 659, 784].forEach((freq, i) => {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.connect(gain); gain.connect(audioCtx.destination);
+                const osc = inlineAudioCtx.createOscillator();
+                const gain = inlineAudioCtx.createGain();
+                osc.connect(gain); gain.connect(inlineAudioCtx.destination);
                 osc.frequency.value = freq; osc.type = 'sine';
                 gain.gain.value = 0.2;
-                osc.start(audioCtx.currentTime + i * 0.15);
-                osc.stop(audioCtx.currentTime + i * 0.15 + 0.2);
+                osc.start(inlineAudioCtx.currentTime + i * 0.15);
+                osc.stop(inlineAudioCtx.currentTime + i * 0.15 + 0.2);
             });
         }
 
         function playError() {
             initAudio();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.connect(gain); gain.connect(audioCtx.destination);
+            const osc = inlineAudioCtx.createOscillator();
+            const gain = inlineAudioCtx.createGain();
+            osc.connect(gain); gain.connect(inlineAudioCtx.destination);
             osc.frequency.value = 200; osc.type = 'sawtooth';
-            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
-            osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+            gain.gain.value = 0.15; gain.gain.exponentialRampToValueAtTime(0.001, inlineAudioCtx.currentTime + 0.3);
+            osc.start(); osc.stop(inlineAudioCtx.currentTime + 0.3);
         }
 
         function speak(text, lang = 'id-ID') {
