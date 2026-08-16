@@ -246,6 +246,14 @@ class QuizSystem {
         // Save to leaderboard
         this.saveToLeaderboard();
         
+        // 🎁 Hadiah XP (ProgressSystem)
+        let gainedXP = 0;
+        if (typeof ProgressSystem !== 'undefined') {
+            const total = this.questions.length;
+            gainedXP = ProgressSystem.quizFinished(this.score, total, true);
+            try { document.dispatchEvent(new CustomEvent('pb-xp-updated')); } catch (e) {}
+        }
+        
         const percentage = Math.round((this.score / (this.questions.length * 10)) * 100);
         let grade, message, emoji;
         
@@ -301,6 +309,7 @@ class QuizSystem {
                         </div>
                     </div>
                     <p class="result-message">${message}</p>
+                    ${gainedXP ? `<p class="xp-reward">⭐ +${gainedXP} XP! Klik XP di atas untuk melihat progresmu.</p>` : ''}
                     
                     <div class="result-detail">
                         <h3>📋 Rincian Jawaban:</h3>

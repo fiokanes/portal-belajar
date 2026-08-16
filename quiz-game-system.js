@@ -143,6 +143,13 @@ function checkQuiz(mapel, numQuestions) {
         if (window.ClickSounds) ClickSounds.play('error');
     }
 
+    // 🎁 Hadiah XP (ProgressSystem)
+    if (typeof ProgressSystem !== 'undefined') {
+        const gained = ProgressSystem.quizFinished(score, numQuestions, true);
+        resultElement.innerHTML += `<p class="xp-reward">⭐ +${gained} XP! Klik XP di atas untuk melihat progresmu.</p>`;
+        try { document.dispatchEvent(new CustomEvent('pb-xp-updated')); } catch (e) {}
+    }
+
     resultElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 

@@ -162,6 +162,13 @@ body {
 .progress-fill { background: var(--m-gradient); height: 100%; border-radius: 20px; transition: width 0.6s ease; }
 
 /* ============ TOMBOL ============ */
+.xp-reward {
+    text-align: center; color: #2e7d32; font-weight: 700;
+    margin-top: 10px; font-size: 0.95em;
+    background: #e8f5e9; border-radius: 12px; padding: 8px 14px;
+    animation: pbPop 0.5s ease;
+}
+@keyframes pbPop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     padding: 14px 24px; border-radius: 16px;
@@ -197,6 +204,8 @@ body {
 }
 .sec-tabs a:hover { color: var(--m-text); }
 .sec-tabs a.active { background: var(--m-gradient); color: #fff; }
+/* judul seksi tidak tertutup top bar saat di-scroll */
+main h2 { scroll-margin-top: 70px; }
 
 /* ============ KARTU UMUM ============ */
 .pb-card {

@@ -333,6 +333,34 @@ function pbInjectMapelProgress() {
     }
 }
 
+// ============ TAB SEKSI MATERI (halaman bab) ============
+// Membuat tab lompat dari judul seksi (h2) yang ada di halaman
+function pbInjectSectionTabs() {
+    if (document.querySelector('.sec-tabs')) return;
+    const file = pbCurrentFile();
+    const cfg = NAV_CONFIG[file];
+    if (!cfg || cfg.kind !== 'bab') return;
+    const main = document.querySelector('main');
+    if (!main) return;
+    const targets = [];
+    main.querySelectorAll('h2').forEach(h2 => {
+        const text = (h2.textContent || '').trim();
+        if (!text) return;
+        if (!h2.id) h2.id = 'pbsec-' + targets.length;
+        targets.push({ id: h2.id, text: text.replace(/\s+/g, ' ') });
+    });
+    if (targets.length < 2) return;
+    const tabs = document.createElement('nav');
+    tabs.className = 'sec-tabs';
+    tabs.innerHTML = targets.map((t, i) =>
+        `<a href="#${t.id}" class="${i === 0 ? 'active' : ''}">${pbEscape(t.text)}</a>`
+    ).join('');
+    // Sisipkan di awal main, setelah bar progres (jika ada)
+    const progressBar = main.querySelector('.mapel-progress');
+    if (progressBar && progressBar.nextSibling) main.insertBefore(tabs, progressBar.nextSibling);
+    else main.insertBefore(tabs, main.firstChild);
+}
+
 // ============ INISIALISASI ============
 function pbInit() {
     if (document.getElementById('pbNavInjected')) return;
@@ -341,6 +369,7 @@ function pbInit() {
     pbInjectTabBar();
     pbInjectBabNav();
     pbInjectMapelProgress();
+    pbInjectSectionTabs();
     pbDecorateBabCards();
     pbRecordVisit();
     // Refresh XP saat kuis selesai (event dari sistem quiz)
