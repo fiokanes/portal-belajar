@@ -366,29 +366,10 @@
     </footer>
 
     <script src="click-sounds.js"></script>
+    <script src="quiz-data.js"></script>
     <script src="quiz-game-system.js"></script>
     <script>
-        // Tambahkan soal kuis tentang peraturan
-        const peraturanQuestions = [
-            { question: "Hukum tertinggi di Indonesia adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. Perpres"], answer: 2 },
-            { question: "Perppu dikeluarkan oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. MA"], answer: 1 },
-            { question: "Perda dibuat oleh...", options: ["A. Presiden", "B. DPR", "C. Pemerintah Daerah", "D. MPR"], answer: 2 },
-            { question: "UU dibuat oleh...", options: ["A. Presiden saja", "B. DPR saja", "C. DPR dan Presiden", "D. MPR"], answer: 2 },
-            { question: "PP dibuat untuk menjalankan...", options: ["A. UUD 1945", "B. UU", "C. Perpres", "D. Perda"], answer: 1 },
-            { question: "Hierarki pertama peraturan adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. TAP MPR"], answer: 2 },
-            { question: "Sumber dari segala sumber hukum di Indonesia adalah...", options: ["A. UUD 1945", "B. Pancasila", "C. UU", "D. Perpres"], answer: 1 },
-            { question: "Perpres dibuat oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. Pemerintah Daerah"], answer: 1 },
-            { question: "Perppu dikeluarkan dalam keadaan...", options: ["A. Normal", "B. Darurat", "C. Damai", "D. Biasa"], answer: 1 },
-            { question: "Peraturan yang bersifat mengikat secara umum adalah...", options: ["A. Perjanjian", "B. Kontrak", "C. Perundang-undangan", "D. Kesepakatan"], answer: 2 },
-            { question: "TAP MPR ditetapkan oleh...", options: ["A. Presiden", "B. DPR", "C. MPR", "D. MA"], answer: 2 },
-            { question: "Contoh Perda adalah peraturan tentang...", options: ["A. Pertahanan negara", "B. Ketertiban umum", "C. Hubungan luar negeri", "D. Moneter"], answer: 1 },
-            { question: "Peraturan perundang-undangan harus...", options: ["A. Lisan", "B. Tertulis", "C. Tidak tertulis", "D. Lisan dan tertulis"], answer: 1 },
-            { question: "Sila Pancasila yang menjamin kebebasan beragama adalah...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 4"], answer: 0 },
-            { question: "Peraturan yang melindungi HAM adalah sila...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 5"], answer: 1 }
-        ];
-
         if(typeof QuizSystem!=='undefined') {
-            QuizSystem.quizDatabase['ppkn_peraturan'] = peraturanQuestions;
             QuizSystem.createQuiz('ppkn_peraturan', 'quizContainer', 5);
         }
 

@@ -1587,5 +1587,339 @@ const QUIZ_DATA = {
     }
 };
 
+// ==========================================
+// BANK SOAL LAMA (dipindah dari quiz-game-system.js)
+// Format: answer -> correct, options dipertahankan
+// ==========================================
+QUIZ_DATA['matematika'] = {
+    umum: {
+        title: 'Matematika',
+        questions: [
+        { question: "Hasil dari 15 + (-8) adalah...", options: ["A. 23", "B. 7", "C. -7", "D. -23"], correct: 1 },
+        { question: "Hasil dari (-12) × 3 adalah...", options: ["A. 36", "B. -36", "C. -9", "D. 9"], correct: 1 },
+        { question: "Hasil dari 24 : (-6) adalah...", options: ["A. 4", "B. -4", "C. -18", "D. 18"], correct: 1 },
+        { question: "Bilangan yang lebih kecil dari -5 adalah...", options: ["A. -3", "B. 0", "C. -7", "D. 5"], correct: 2 },
+        { question: "Hasil dari (-10) + (-15) adalah...", options: ["A. -25", "B. 25", "C. -5", "D. 5"], correct: 0 },
+        { question: "Hasil dari 8 - (-12) adalah...", options: ["A. -4", "B. 4", "C. 20", "D. -20"], correct: 2 },
+        { question: "Hasil dari (-3) × (-4) adalah...", options: ["A. -12", "B. 12", "C. -7", "D. 7"], correct: 1 },
+        { question: "Hasil dari (-45) : 9 adalah...", options: ["A. 5", "B. -5", "C. -36", "D. 36"], correct: 1 },
+        { question: "Urutan dari terkecil: -3, 5, -8, 0, -1", options: ["A. -8,-3,-1,0,5", "B. 5,0,-1,-3,-8", "C. -1,-3,-8,0,5", "D. 5,-1,0,-3,-8"], correct: 0 },
+        { question: "Suhu di Jakarta 32°C, di Dieng 15°C. Selisihnya...", options: ["A. 47°C", "B. 17°C", "C. -17°C", "D. -47°C"], correct: 1 },
+        { question: "Hasil dari (-5)² adalah...", options: ["A. -25", "B. 25", "C. -10", "D. 10"], correct: 1 },
+        { question: "Hasil dari 100 : (-10) + 15 adalah...", options: ["A. -5", "B. 5", "C. 25", "D. -25"], correct: 1 },
+        { question: "Nilai dari |−7| + |3| adalah...", options: ["A. -10", "B. 10", "C. -4", "D. 4"], correct: 1 },
+        { question: "Hasil dari 2³ + 3² adalah...", options: ["A. 17", "B. 15", "C. 12", "D. 25"], correct: 0 },
+        { question: "FPB dari 12 dan 18 adalah...", options: ["A. 2", "B. 3", "C. 6", "D. 9"], correct: 2 },
+        { question: "KPK dari 8 dan 12 adalah...", options: ["A. 24", "B. 48", "C. 96", "D. 12"], correct: 0 },
+        { question: "Hasil dari 1/2 + 1/3 adalah...", options: ["A. 2/5", "B. 5/6", "C. 1/5", "D. 3/5"], correct: 1 },
+        { question: "Hasil dari 0,75 × 0,4 adalah...", options: ["A. 0.3", "B. 0.03", "C. 3", "D. 30"], correct: 0 },
+        { question: "Jika 3x + 5 = 20, maka x = ...", options: ["A. 3", "B. 5", "C. 7", "D. 15"], correct: 1 },
+        { question: "Luas persegi dengan sisi 7 cm adalah...", options: ["A. 14 cm²", "B. 28 cm²", "C. 49 cm²", "D. 21 cm²"], correct: 2 }
+        ]
+    }
+};
+
+QUIZ_DATA['biologi_pencernaan'] = {
+    umum: {
+        title: 'Biologi - Sistem Pencernaan',
+        questions: [
+        { question: "Organ pencernaan pertama yang dilewati makanan adalah...", options: ["A. Lambung", "B. Kerongkongan", "C. Mulut", "D. Usus halus"], correct: 2 },
+        { question: "Enzim yang mencerna pati di mulut adalah...", options: ["A. Pepsin", "B. Amilase", "C. Lipase", "D. Tripsin"], correct: 1 },
+        { question: "Pencernaan makanan terbanyak terjadi di...", options: ["A. Mulut", "B. Lambung", "C. Usus halus", "D. Usus besar"], correct: 2 },
+        { question: "Fungsi utama usus besar adalah...", options: ["A. Mencerna makanan", "B. Menyerap air", "C. Menghasilkan empedu", "D. Menghasilkan enzim"], correct: 1 },
+        { question: "Organ yang menghasilkan empedu adalah...", options: ["A. Lambung", "B. Pankreas", "C. Hati", "D. Usus halus"], correct: 2 },
+        { question: "Gastritis adalah peradangan pada...", options: ["A. Hati", "B. Lambung", "C. Usus", "D. Pankreas"], correct: 1 },
+        { question: "Gerakan otot di saluran pencernaan disebut...", options: ["A. Absorpsi", "B. Digesti", "C. Peristaltik", "D. Sekresi"], correct: 2 },
+        { question: "Vitamin yang diserap bersama lemak adalah...", options: ["A. Vitamin C", "B. Vitamin B", "C. Vitamin A", "D. Semua vitamin"], correct: 2 },
+        { question: "Pencernaan oleh gigi termasuk pencernaan...", options: ["A. Kimiawi", "B. Mekanis", "C. Biologis", "D. Fisika"], correct: 1 },
+        { question: "Diabetes mellitus berkaitan dengan organ...", options: ["A. Hati", "B. Lambung", "C. Pankreas", "D. Ginjal"], correct: 2 },
+        { question: "Enzim yang mengubah protein di lambung adalah...", options: ["A. Amilase", "B. Lipase", "C. Pepsin", "D. Tripsin"], correct: 2 },
+        { question: "Villi usus halus berfungsi untuk...", options: ["A. Mencerna lemak", "B. Menyerap nutrisi", "C. Menghasilkan enzim", "D. Menyimpan makanan"], correct: 1 },
+        { question: "Lambung menghasilkan asam...", options: ["A. Sulfat", "B. Klorida", "C. Nitrat", "D. Fosfat"], correct: 1 },
+        { question: "Appendisitis adalah peradangan pada...", options: ["A. Usus halus", "B. Usus buntu", "C. Usus besar", "D. Lambung"], correct: 1 },
+        { question: "Pankreas menghasilkan enzim...", options: ["A. Amilase saja", "B. Lipase saja", "C. Tripsin saja", "D. Berbagai enzim"], correct: 3 },
+        { question: "Penyerapan alkohol terutama di...", options: ["A. Lambung", "B. Usus halus", "C. Hati", "D. Usus besar"], correct: 1 },
+        { question: "Konstipasi terjadi karena...", options: ["A. Kelebihan air", "B. Kekurangan serat", "C. Kelebihan enzim", "D. Kekurangan lemak"], correct: 1 },
+        { question: "Organ terakhir dalam saluran cerna adalah...", options: ["A. Usus halus", "B. Usus besar", "C. Rektum", "D. Anus"], correct: 2 },
+        { question: "Empedu membantu mencerna...", options: ["A. Protein", "B. Karbohidrat", "C. Lemak", "D. Vitamin"], correct: 2 },
+        { question: "Maag disebabkan oleh berlebihnya...", options: ["A. Empedu", "B. Asam lambung", "C. Air liur", "D. Getah pankreas"], correct: 1 }
+        ]
+    }
+};
+
+QUIZ_DATA['biologi_darah'] = {
+    umum: {
+        title: 'Biologi - Sistem Peredaran Darah',
+        questions: [
+        { question: "Fungsi sel darah merah adalah...", options: ["A. Melawan infeksi", "B. Mengangkut oksigen", "C. Pembekuan darah", "D. Mengangkut nutrisi"], correct: 1 },
+        { question: "Pembuluh yang membawa darah dari jantung adalah...", options: ["A. Vena", "B. Arteri", "C. Kapiler", "D. Aorta"], correct: 1 },
+        { question: "Bagian jantung yang menerima O₂ dari paru-paru...", options: ["A. Serambi Kanan", "B. Serambi Kiri", "C. Bilik Kanan", "D. Bilik Kiri"], correct: 1 },
+        { question: "Sirkulasi kecil adalah dari jantung ke...", options: ["A. Seluruh tubuh", "B. Paru-paru", "C. Hati", "D. Otak"], correct: 1 },
+        { question: "Tekanan darah normal adalah...", options: ["A. 100/60", "B. 120/80", "C. 140/90", "D. 160/100"], correct: 1 },
+        { question: "Trombosit berfungsi untuk...", options: ["A. Mengangkut oksigen", "B. Melawan infeksi", "C. Pembekuan darah", "D. Mengangkut nutrisi"], correct: 2 },
+        { question: "Darah dengan CO₂ tinggi mengalir di...", options: ["A. Arteri", "B. Vena", "C. Kapiler", "D. Aorta"], correct: 1 },
+        { question: "Jantung koroner menyerang...", options: ["A. Paru-paru", "B. Otak", "C. Pembuluh jantung", "D. Ginjal"], correct: 2 },
+        { question: "Plasma darah berfungsi untuk...", options: ["A. Mengangkut oksigen", "B. Melawan infeksi", "C. Mengangkut zat", "D. Pembekuan"], correct: 2 },
+        { question: "Jumlah bilik jantung manusia...", options: ["A. 1", "B. 2", "C. 3", "D. 4"], correct: 1 },
+        { question: "Leukosit berfungsi untuk...", options: ["A. Mengangkut oksigen", "B. Melawan infeksi", "C. Pembekuan darah", "D. Mengangkut nutrisi"], correct: 1 },
+        { question: "Kapasitas darah manusia sekitar...", options: ["A. 2-3 liter", "B. 4-5 liter", "C. 6-7 liter", "D. 8-9 liter"], correct: 1 },
+        { question: "Aorta adalah pembuluh darah...", options: ["A. Vena terbesar", "B. Arteri terbesar", "C. Kapiler terbesar", "D. Vena terkecil"], correct: 1 },
+        { question: "Golongan darah universal donor adalah...", options: ["A. A", "B. B", "C. AB", "D. O"], correct: 3 },
+        { question: "Golongan darah universal recipient adalah...", options: ["A. A", "B. B", "C. AB", "D. O"], correct: 2 },
+        { question: "Denyut jantung normal dewasa adalah...", options: ["A. 40-60/menit", "B. 60-100/menit", "C. 100-120/menit", "D. 120-140/menit"], correct: 1 },
+        { question: "Anemia adalah kekurangan...", options: ["A. Sel darah putih", "B. Sel darah merah", "C. Trombosit", "D. Plasma"], correct: 1 },
+        { question: "Hemoglobin mengandung mineral...", options: ["A. Kalsium", "B. Besi", "C. Natrium", "D. Kalium"], correct: 1 },
+        { question: "Limpa berfungsi untuk...", options: ["A. Memproduksi darah", "B. Menyaring darah", "C. Mengedarkan darah", "D. Membekukan darah"], correct: 1 },
+        { question: "Hipertensi adalah tekanan darah...", options: ["A. Rendah", "B. Normal", "C. Tinggi", "D. Tidak stabil"], correct: 2 }
+        ]
+    }
+};
+
+QUIZ_DATA['biologi_pernapasan'] = {
+    umum: {
+        title: 'Biologi - Sistem Pernapasan',
+        questions: [
+        { question: "Organ pernapasan pertama adalah...", options: ["A. Paru-paru", "B. Hidung", "C. Trakea", "D. Bronkus"], correct: 1 },
+        { question: "Pertukaran gas terjadi di...", options: ["A. Bronkiolus", "B. Trakea", "C. Alveolus", "D. Bronkus"], correct: 2 },
+        { question: "Saat inspirasi, diafragma akan...", options: ["A. Mengendur", "B. Berkontraksi", "C. Tetap", "D. Naik"], correct: 1 },
+        { question: "Paru-paru kanan memiliki lobus...", options: ["A. 1", "B. 2", "C. 3", "D. 4"], correct: 2 },
+        { question: "TBC disebabkan oleh...", options: ["A. Virus", "B. Bakteri", "C. Jamur", "D. Parasit"], correct: 1 },
+        { question: "Fungsi silia adalah...", options: ["A. Menghangatkan", "B. Menyaring debu", "C. Melembabkan", "D. Menghasilkan lendir"], correct: 1 },
+        { question: "Kapasitas paru-paru dewasa...", options: ["A. 3 liter", "B. 6 liter", "C. 9 liter", "D. 12 liter"], correct: 1 },
+        { question: "Gas yang dikeluarkan saat ekspirasi...", options: ["A. O₂", "B. N₂", "C. CO₂", "D. H₂"], correct: 2 },
+        { question: "Suara dihasilkan di organ...", options: ["A. Hidung", "B. Faring", "C. Laring", "D. Trakea"], correct: 2 },
+        { question: "Pernapasan sel menghasilkan...", options: ["A. ADP", "B. ATP", "C. AMP", "D. GDP"], correct: 1 },
+        { question: "Asma menyerang bagian...", options: ["A. Hidung", "B. Trakea", "C. Bronkus", "D. Alveolus"], correct: 2 },
+        { question: "Emfisema disebabkan oleh...", options: ["A. Infeksi", "B. Alergi", "C. Merokok", "D. Polusi"], correct: 2 },
+        { question: "Otot pernapasan utama adalah...", options: ["A. Otot interkostal", "B. Diafragma", "C. Otot dada", "D. Otot perut"], correct: 1 },
+        { question: "Pneumonia menyerang bagian...", options: ["A. Hidung", "B. Trakea", "C. Bronkus", "D. Alveolus"], correct: 3 },
+        { question: "Volume tidal normal adalah...", options: ["A. 250 ml", "B. 500 ml", "C. 750 ml", "D. 1000 ml"], correct: 1 }
+        ]
+    }
+};
+
+QUIZ_DATA['biologi_ekskresi'] = {
+    umum: {
+        title: 'Biologi - Sistem Ekskresi',
+        questions: [
+        { question: "Organ utama ekskresi adalah...", options: ["A. Hati", "B. Ginjal", "C. Kulit", "D. Paru-paru"], correct: 1 },
+        { question: "Unit fungsional ginjal adalah...", options: ["A. Glomerulus", "B. Nefron", "C. Ureter", "D. Kandung kemih"], correct: 1 },
+        { question: "Penyerapan kembali zat disebut...", options: ["A. Filtrasi", "B. Reabsorpsi", "C. Augmentasi", "D. Ekskresi"], correct: 1 },
+        { question: "Zat sisa metabolisme protein adalah...", options: ["A. Asam urat", "B. Urea", "C. Kreatinin", "D. CO₂"], correct: 1 },
+        { question: "Endapan mineral di ginjal disebut...", options: ["A. Gagal ginjal", "B. Nefritis", "C. Batu ginjal", "D. Diabetes"], correct: 2 },
+        { question: "Manusia memiliki ginjal...", options: ["A. 1", "B. 2", "C. 3", "D. 4"], correct: 1 },
+        { question: "Saluran dari ginjal ke kandung kemih...", options: ["A. Uretra", "B. Ureter", "C. Nefron", "D. Glomerulus"], correct: 1 },
+        { question: "Kandung kemih menampung...", options: ["A. 100-200 ml", "B. 300-500 ml", "C. 600-800 ml", "D. 900-1000 ml"], correct: 1 },
+        { question: "Zat yang tidak disaring di glomerulus...", options: ["A. Air", "B. Glukosa", "C. Protein", "D. Urea"], correct: 2 },
+        { question: "Kulit mengeluarkan zat sisa berupa...", options: ["A. Urin", "B. Keringat", "C. Empedu", "D. CO₂"], correct: 1 },
+        { question: "Gagal ginjal dapat ditangani dengan...", options: ["A. Operasi", "B. Cuci darah", "C. Transfusi", "D. Suntik"], correct: 1 },
+        { question: "Glomerulus berfungsi untuk...", options: ["A. Menyerap air", "B. Menyaring darah", "C. Menghasilkan urin", "D. Menyimpan urin"], correct: 1 },
+        { question: "Diabetes insipidus menyerang...", options: ["A. Hati", "B. Ginjal", "C. Pankreas", "D. Lambung"], correct: 1 },
+        { question: "Hati mengubah amonia menjadi...", options: ["A. Asam urat", "B. Urea", "C. Kreatinin", "D. Glukosa"], correct: 1 },
+        { question: "Warna normal urin adalah...", options: ["A. Merah", "B. Kuning jernih", "C. Hijau", "D. Biru"], correct: 1 }
+        ]
+    }
+};
+
+QUIZ_DATA['fisika_usaha'] = {
+    umum: {
+        title: 'Fisika - Usaha, Energi, dan Pesawat Sederhana',
+        questions: [
+        { question: "Rumus usaha adalah...", options: ["A. W = F × d", "B. W = F / d", "C. W = F + d", "D. W = F - d"], correct: 0 },
+        { question: "Satuan usaha dalam SI adalah...", options: ["A. Newton", "B. Watt", "C. Joule", "D. Pascal"], correct: 2 },
+        { question: "Energi kinetik dipengaruhi oleh...", options: ["A. Massa dan tinggi", "B. Massa dan kecepatan", "C. Tinggi dan kecepatan", "D. Massa saja"], correct: 1 },
+        { question: "Rumus energi potensial adalah...", options: ["A. Ep = m × v²", "B. Ep = m × g × h", "C. Ep = F × d", "D. Ep = m × v"], correct: 1 },
+        { question: "Tuas kelas 1 contohnya...", options: ["A. Gerobak dorong", "B. Gunting", "C. Sekop", "D. Pancing"], correct: 1 },
+        { question: "Fungsi katrol tetap adalah...", options: ["A. Mengubah arah gaya", "B. Memperbesar gaya", "C. Memperkecil gaya", "D. Mengubah kecepatan"], correct: 0 },
+        { question: "Bidang miring memudahkan dengan cara...", options: ["A. Mengubah arah", "B. Memperkecil gaya", "C. Memperbesar gaya", "D. Mengubah kecepatan"], correct: 1 },
+        { question: "Daya adalah...", options: ["A. Usaha/waktu", "B. Gaya/waktu", "C. Usaha×waktu", "D. Gaya×waktu"], correct: 0 },
+        { question: "Satuan daya adalah...", options: ["A. Joule", "B. Newton", "C. Watt", "D. Pascal"], correct: 2 },
+        { question: "Hukum kekekalan energi menyatakan...", options: ["A. Energi dapat diciptakan", "B. Energi dapat dimusnahkan", "C. Energi berubah bentuk", "D. Energi hilang"], correct: 2 },
+        { question: "Katrol bebas berfungsi untuk...", options: ["A. Mengubah arah", "B. Memperbesar gaya", "C. Memperkecil gaya", "D. Mengubah kecepatan"], correct: 1 },
+        { question: "Rumus daya adalah...", options: ["A. P = W × t", "B. P = W / t", "C. P = F × d", "D. P = m × g"], correct: 1 },
+        { question: "Energi tidak dapat diciptakan sesuai hukum...", options: ["A. Newton", "B. Archimedes", "C. Kekekalan Energi", "D. Pascal"], correct: 2 },
+        { question: "1 Joule sama dengan...", options: ["A. 1 N/m", "B. 1 N×m", "C. 1 N/m²", "D. 1 N×m²"], correct: 1 },
+        { question: "Sekrup termasuk jenis...", options: ["A. Tuas", "B. Katrol", "C. Bidang miring", "D. Roda poros"], correct: 2 }
+        ]
+    }
+};
+
+QUIZ_DATA['fisika_tekanan'] = {
+    umum: {
+        title: 'Fisika - Tekanan pada Zat',
+        questions: [
+        { question: "Rumus tekanan adalah...", options: ["A. P = F × A", "B. P = F / A", "C. P = A / F", "D. P = F + A"], correct: 1 },
+        { question: "Satuan tekanan adalah...", options: ["A. Newton", "B. Joule", "C. Watt", "D. Pascal"], correct: 3 },
+        { question: "Hukum Pascal menyatakan tekanan...", options: ["A. Berkurang", "B. Bertambah", "C. Diteruskan ke segala arah", "D. Hilang"], correct: 2 },
+        { question: "Alat Hukum Pascal adalah...", options: ["A. Katrol", "B. Dongkrak hidrolik", "C. Tuas", "D. Bidang miring"], correct: 1 },
+        { question: "Hukum Archimedes menyatakan...", options: ["A. Tekanan diteruskan", "B. Gaya apung", "C. Tekanan sebanding", "D. Tekanan berbanding terbalik"], correct: 1 },
+        { question: "Tekanan hidrostatis dipengaruhi...", options: ["A. Luas dan kedalaman", "B. ρ, g, dan h", "C. Volume dan berat", "D. Luas dan gaya"], correct: 1 },
+        { question: "Kapal terapung menggunakan...", options: ["A. Hukum Pascal", "B. Hukum Archimedes", "C. Hukum Newton", "D. Hukum Ohm"], correct: 1 },
+        { question: "Tekanan pada zat padat dipengaruhi...", options: ["A. Gaya dan volume", "B. Gaya dan luas", "C. Massa dan volume", "D. Massa dan luas"], correct: 1 },
+        { question: "Manometer mengukur...", options: ["A. Suhu", "B. Tekanan gas", "C. Kelembaban", "D. Kecepatan"], correct: 1 },
+        { question: "Semakin dalam, tekanan...", options: ["A. Semakin kecil", "B. Semakin besar", "C. Tetap", "D. Hilang"], correct: 1 },
+        { question: "Massa jenis air adalah...", options: ["A. 100 kg/m³", "B. 1000 kg/m³", "C. 10000 kg/m³", "D. 1 kg/m³"], correct: 1 },
+        { question: "Barometer mengukur...", options: ["A. Tekanan air", "B. Tekanan udara", "C. Tekanan darah", "D. Tekanan gas"], correct: 1 },
+        { question: "Balon udara naik karena...", options: ["A. Massa jenis lebih besar", "B. Massa jenis lebih kecil", "C. Gaya gravitasi", "D. Tekanan udara"], correct: 1 },
+        { question: "1 Pascal sama dengan...", options: ["A. 1 N/m", "B. 1 N×m", "C. 1 N/m²", "D. 1 N×m²"], correct: 2 },
+        { question: "Prinsip kerja pompa air menggunakan...", options: ["A. Hukum Newton", "B. Hukum Pascal", "C. Hukum Archimedes", "D. Hukum Ohm"], correct: 1 }
+        ]
+    }
+};
+
+QUIZ_DATA['ppkn'] = {
+    umum: {
+        title: 'PPKn',
+        questions: [
+        { question: "Yang mengusulkan dasar negara adalah...", options: ["A. Hatta", "B. Soekarno", "C. Soepomo", "D. Yamin"], correct: 1 },
+        { question: "Pancasila terdiri dari... sila", options: ["A. 3", "B. 4", "C. 5", "D. 6"], correct: 2 },
+        { question: "Sila pertama berbunyi...", options: ["A. Kemanusiaan", "B. Ketuhanan", "C. Persatuan", "D. Kerakyatan"], correct: 1 },
+        { question: "Lambang sila pertama adalah...", options: ["A. Rantai", "B. Bintang", "C. Pohon Beringin", "D. Kepala Banteng"], correct: 1 },
+        { question: "Pancasila jadi dasar negara tanggal...", options: ["A. 1 Juni 1945", "B. 17 Agustus 1945", "C. 18 Agustus 1945", "D. 29 April 1945"], correct: 2 },
+        { question: "Contoh sila ketiga adalah...", options: ["A. Menghormati agama", "B. Menghargai musyawarah", "C. Menjaga kerukunan suku", "D. Tidak membeda-bedakan"], correct: 2 },
+        { question: "Padi dan kapas lambang sila...", options: ["A. Kedua", "B. Ketiga", "C. Keempat", "D. Kelima"], correct: 3 },
+        { question: "BPUPKI dibentuk tanggal...", options: ["A. 29 April 1945", "B. 1 Juni 1945", "C. 17 Agustus 1945", "D. 18 Agustus 1945"], correct: 0 },
+        { question: "Pancasila berasal dari bahasa...", options: ["A. Jawa", "B. Arab", "C. Sanskerta", "D. Belanda"], correct: 2 },
+        { question: "Sila keempat berbunyi...", options: ["A. Keadilan Sosial", "B. Persatuan Indonesia", "C. Kemanusiaan", "D. Kerakyatan"], correct: 3 },
+        { question: "Lambang sila kedua adalah...", options: ["A. Bintang", "B. Rantai", "C. Pohon Beringin", "D. Banteng"], correct: 1 },
+        { question: "Gotong royong mencerminkan sila...", options: ["A. Pertama", "B. Kedua", "C. Ketiga", "D. Keempat"], correct: 2 },
+        { question: "Toleransi antar umat beragama sila...", options: ["A. Pertama", "B. Kedua", "C. Ketiga", "D. Keempat"], correct: 0 },
+        { question: "Menghargai pendapat orang lain sila...", options: ["A. Pertama", "B. Kedua", "C. Ketiga", "D. Keempat"], correct: 3 },
+        { question: "Tidak diskriminatif sila...", options: ["A. Pertama", "B. Kedua", "C. Ketiga", "D. Kelima"], correct: 1 },
+        { question: "Mencintai produk dalam negeri sila...", options: ["A. Pertama", "B. Kedua", "C. Ketiga", "D. Keempat"], correct: 2 },
+        { question: "Menaati peraturan sila...", options: ["A. Ketiga", "B. Keempat", "C. Kelima", "D. Semua sila"], correct: 3 },
+        { question: "Hari lahir Pancasila adalah...", options: ["A. 17 Agustus", "B. 1 Juni", "C. 2 Oktober", "D. 28 Oktober"], correct: 1 },
+        { question: "Piagam Jakarta tanggal...", options: ["A. 1 Juni 1945", "B. 22 Juni 1945", "C. 17 Agustus 1945", "D. 18 Agustus 1945"], correct: 1 },
+        { question: "Pancasila sebagai... negara", options: ["A. Lambang", "B. Dasar", "C. Simbol", "D. Lambang"], correct: 1 },
+        { question: "UUD 1945 adalah hukum... di Indonesia", options: ["A. Tertinggi", "B. Terendah", "C. Biasa", "D. Khusus"], correct: 0 },
+        { question: "MPR terdiri dari...", options: ["A. DPR dan Presiden", "B. DPR dan DPD", "C. Presiden dan DPD", "D. DPR dan MA"], correct: 1 },
+        { question: "Presiden Indonesia dipilih oleh...", options: ["A. MPR", "B. DPR", "C. Rakyat langsung", "D. DPD"], correct: 2 },
+        { question: "Indonesia menganut sistem pemerintahan...", options: ["A. Parlementer", "B. Presidensial", "C. Monarki", "D. Federasi"], correct: 1 },
+        { question: "MK berwenang menguji UU terhadap...", options: ["A. UUD", "B. Peraturan lain", "C. Hukum adat", "D. Hukum internasional"], correct: 0 },
+        { question: "Hak warga negara yang diatur UUD 1945 adalah...", options: ["A. Hak memilih", "B. Hak berpendapat", "C. Hak mendapat pendidikan", "D. Semua benar"], correct: 3 },
+        { question: "Kewajiban warga negara termasuk...", options: ["A. Membayar pajak", "B. Membela negara", "C. Menjunjung hukum", "D. Semua benar"], correct: 3 },
+        { question: "Amandemen UUD 1945 dilakukan oleh...", options: ["A. Presiden", "B. DPR", "C. MPR", "D. MA"], correct: 2 },
+        { question: "Jumlah amandemen UUD 1945 adalah...", options: ["A. 1 kali", "B. 2 kali", "C. 3 kali", "D. 4 kali"], correct: 3 },
+        { question: "Dekrit Presiden 5 Juli 1959 dikeluarkan oleh...", options: ["A. Soeharto", "B. Soekarno", "C. Habibie", "D. Megawati"], correct: 1 },
+        { question: "TNI dan POLRI adalah alat... negara", options: ["A. Pertahanan dan keamanan", "B. Pemerintahan", "C. Peradilan", "D. Legislatif"], correct: 0 },
+        { question: "Hukum tertinggi di Indonesia adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. Perpres"], correct: 2 },
+        { question: "Perppu dikeluarkan oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. MA"], correct: 1 },
+        { question: "Perda dibuat oleh...", options: ["A. Presiden", "B. DPR", "C. Pemerintah Daerah", "D. MPR"], correct: 2 },
+        { question: "UU dibuat oleh...", options: ["A. Presiden saja", "B. DPR saja", "C. DPR dan Presiden", "D. MPR"], correct: 2 },
+        { question: "PP dibuat untuk menjalankan...", options: ["A. UUD 1945", "B. UU", "C. Perpres", "D. Perda"], correct: 1 },
+        { question: "Sumber dari segala sumber hukum adalah...", options: ["A. UUD 1945", "B. Pancasila", "C. UU", "D. Perpres"], correct: 1 },
+        { question: "Perppu dikeluarkan dalam keadaan...", options: ["A. Normal", "B. Darurat", "C. Damai", "D. Biasa"], correct: 1 },
+        { question: "Peraturan yang bersifat mengikat secara umum adalah...", options: ["A. Perjanjian", "B. Kontrak", "C. Perundang-undangan", "D. Kesepakatan"], correct: 2 },
+        { question: "TAP MPR ditetapkan oleh...", options: ["A. Presiden", "B. DPR", "C. MPR", "D. MA"], correct: 2 },
+        { question: "Sila yang menjamin kebebasan beragama adalah...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 4"], correct: 0 }
+        ]
+    }
+};
+
+QUIZ_DATA['bindo'] = {
+    umum: {
+        title: 'Bahasa Indonesia',
+        questions: [
+        { question: "Kalimat yang ejaannya benar...", options: ["A. Saya pergi ke pasar", "B. Saya kepasaR", "C. Saya pergii", "D. Saya kepasar"], correct: 0 },
+        { question: "Sinonim 'indah' adalah...", options: ["A. Jelek", "B. Cantik", "C. Buruk", "D. Biasa"], correct: 1 },
+        { question: "Antonim 'tinggi' adalah...", options: ["A. Panjang", "B. Rendah", "C. Besar", "D. Luas"], correct: 1 },
+        { question: "Kalimat efektif adalah...", options: ["A. Dia pergi ke sekolah dengan berjalan kaki", "B. Dia berjalan kaki pergi ke sekolah", "C. Dia pergi berjalan kaki ke sekolah", "D. Ke sekolah dia pergi berjalan kaki"], correct: 0 },
+        { question: "'Air muka' termasuk majas...", options: ["A. Simile", "B. Metafora", "C. Personifikasi", "D. Hiperbola"], correct: 1 },
+        { question: "'Berlari' memiliki imbuhan...", options: ["A. ber-...-i", "B. ber-...-an", "C. ber-", "D. be-...-an"], correct: 2 },
+        { question: "Ide pokok di awal paragraf disebut...", options: ["A. Deduktif", "B. Induktif", "C. Campuran", "D. Narasi"], correct: 0 },
+        { question: "Teks langkah-langkah membuat sesuatu...", options: ["A. Narasi", "B. Eksposisi", "C. Prosedur", "D. Deskripsi"], correct: 2 },
+        { question: "'Memperhatikan' awalan...", options: ["A. me-", "B. mem-", "C. memper-", "D. pe-"], correct: 2 },
+        { question: "Huruf kapital benar...", options: ["A. presiden jokowi", "B. Presiden Jokowi", "C. PRESIDEN JOKOWI", "D. presiden Jokowi"], correct: 1 },
+        { question: "Kata baku dari 'aktifitas'...", options: ["A. Aktifitas", "B. Aktivitas", "C. Aktif", "D. Aktiv"], correct: 1 },
+        { question: "Sinonim 'cepat' adalah...", options: ["A. Lambat", "B. Laju", "C. Diam", "D. Pelan"], correct: 1 },
+        { question: "Majas 'badai' untuk emosi...", options: ["A. Simile", "B. Metafora", "C. Hiperbola", "D. Personifikasi"], correct: 2 },
+        { question: "Kata depan yang benar...", options: ["A. Di rumah", "B. Dirumah", "C. DiRumah", "D. Di-rumah"], correct: 0 },
+        { question: "Singkatan yang benar...", options: ["A. Yg", "B. Yg.", "C. Yang", "D. Yng"], correct: 2 },
+        { question: "Sinonim 'bahagia'...", options: ["A. Sedih", "B. Senang", "C. Marah", "D. Takut"], correct: 1 },
+        { question: "Antonim 'kaya'...", options: ["A. Miskin", "B. Kaya raya", "C. Sedang", "D. Biasa"], correct: 0 },
+        { question: "Kalimat pasif menggunakan...", options: ["A. Me-", "B. Ber-", "C. Di-", "D. Pe-"], correct: 2 },
+        { question: "Kata serapan dari bahasa Arab...", options: ["A. Komputer", "B. Masjid", "C. Televisi", "D. Internet"], correct: 1 },
+        { question: "Sinonim 'pandai'...", options: ["A. Bodoh", "B. Pintar", "C. Malas", "D. Lemah"], correct: 1 }
+        ]
+    }
+};
+
+QUIZ_DATA['english'] = {
+    umum: {
+        title: 'Bahasa Inggris',
+        questions: [
+        { question: "She ___ to school every day.", options: ["A. go", "B. goes", "C. going", "D. went"], correct: 1 },
+        { question: "They ___ playing football now.", options: ["A. is", "B. are", "C. am", "D. was"], correct: 1 },
+        { question: "I ___ a book yesterday.", options: ["A. read", "B. reads", "C. reading", "D. am reading"], correct: 0 },
+        { question: "Opposite of 'hot' is...", options: ["A. Warm", "B. Cool", "C. Cold", "D. Heat"], correct: 2 },
+        { question: "She is ___ than her sister.", options: ["A. tall", "B. taller", "C. tallest", "D. more tall"], correct: 1 },
+        { question: "This is ___ book.", options: ["A. I", "B. me", "C. my", "D. mine"], correct: 2 },
+        { question: "We ___ to the beach last week.", options: ["A. go", "B. goes", "C. went", "D. going"], correct: 2 },
+        { question: "___ you like some coffee?", options: ["A. Do", "B. Does", "C. Are", "D. Is"], correct: 0 },
+        { question: "Plural of 'child' is...", options: ["A. childs", "B. childes", "C. children", "D. childrens"], correct: 2 },
+        { question: "I have ___ completed my homework.", options: ["A. yet", "B. already", "C. still", "D. since"], correct: 1 },
+        { question: "He ___ to music every night.", options: ["A. listen", "B. listens", "C. listening", "D. listened"], correct: 1 },
+        { question: "The cat is ___ the table.", options: ["A. in", "B. on", "C. at", "D. to"], correct: 1 },
+        { question: "She can ___ English well.", options: ["A. speaks", "B. speaking", "C. speak", "D. spoke"], correct: 2 },
+        { question: "I ___ breakfast at 7 AM.", options: ["A. have", "B. has", "C. having", "D. had"], correct: 0 },
+        { question: "This is ___ book I've ever read.", options: ["A. good", "B. better", "C. best", "D. the best"], correct: 3 },
+        { question: "They ___ go to school tomorrow.", options: ["A. will", "B. would", "C. can", "D. could"], correct: 0 },
+        { question: "The opposite of 'big' is...", options: ["A. Large", "B. Small", "C. Huge", "D. Giant"], correct: 1 },
+        { question: "She ___ her homework now.", options: ["A. do", "B. does", "C. is doing", "D. did"], correct: 2 },
+        { question: "I ___ to school by bus.", options: ["A. go", "B. goes", "C. going", "D. went"], correct: 0 },
+        { question: "He ___ a new car last month.", options: ["A. buy", "B. buys", "C. bought", "D. buying"], correct: 2 }
+        ]
+    }
+};
+
+QUIZ_DATA['geografi'] = {
+    umum: {
+        title: 'Geografi / IPS',
+        questions: [
+        { question: "Indonesia terletak di antara...", options: ["A. Asia dan Australia", "B. Asia dan Eropa", "C. Afrika dan Asia", "D. Eropa dan Australia"], correct: 0 },
+        { question: "Gunung tertinggi di Indonesia...", options: ["A. Semeru", "B. Kerinci", "C. Puncak Jaya", "D. Rinjani"], correct: 2 },
+        { question: "Indonesia memiliki iklim...", options: ["A. Dingin", "B. Tropis", "C. Subtropis", "D. Kutub"], correct: 1 },
+        { question: "Sungai terpanjang di Indonesia...", options: ["A. Musi", "B. Kapuas", "C. Mahakam", "D. Bengawan Solo"], correct: 1 },
+        { question: "Bencana alam yang sering terjadi...", options: ["A. Badai salju", "B. Gempa bumi", "C. Aurora", "D. Gurun pasir"], correct: 1 },
+        { question: "Pulau terbesar di Indonesia...", options: ["A. Jawa", "B. Sumatera", "C. Kalimantan", "D. Papua"], correct: 2 },
+        { question: "Laut di utara Jawa adalah...", options: ["A. Hindia", "B. Jawa", "C. Cina Selatan", "D. Flores"], correct: 1 },
+        { question: "Hasil tambang Kalimantan...", options: ["A. Minyak bumi", "B. Batu bara", "C. Emas", "D. Timah"], correct: 1 },
+        { question: "Indonesia terdiri dari... provinsi", options: ["A. 30", "B. 32", "C. 34", "D. 36"], correct: 2 },
+        { question: "Garis khatulistiwa melintasi...", options: ["A. Jawa", "B. Sumatera", "C. Kalimantan", "D. Sulawesi"], correct: 1 },
+        { question: "Ibukota Indonesia adalah...", options: ["A. Surabaya", "B. Jakarta", "C. Bandung", "D. Medan"], correct: 1 },
+        { question: "Laut terbesar di Indonesia...", options: ["A. Jawa", "B. Cina Selatan", "C. Hindia", "D. Pasifik"], correct: 2 },
+        { question: "Pulau terbanyak penduduknya...", options: ["A. Sumatera", "B. Jawa", "C. Kalimantan", "D. Sulawesi"], correct: 1 },
+        { question: "Danau terbesar di Indonesia...", options: ["A. Toba", "B. Singkarak", "C. Maninjau", "D. Sentani"], correct: 0 },
+        { question: "Gunung berapi aktif di Jawa...", options: ["A. Semeru", "B. Kerinci", "C. Dempo", "D. Marapi"], correct: 0 }
+        ]
+    }
+};
+
+QUIZ_DATA['ppkn_peraturan'] = {
+    umum: {
+        title: 'PPKn - Peraturan di Negara Indonesia',
+        questions: [
+
+            { question: "Hukum tertinggi di Indonesia adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. Perpres"], correct: 2 },
+            { question: "Perppu dikeluarkan oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. MA"], correct: 1 },
+            { question: "Perda dibuat oleh...", options: ["A. Presiden", "B. DPR", "C. Pemerintah Daerah", "D. MPR"], correct: 2 },
+            { question: "UU dibuat oleh...", options: ["A. Presiden saja", "B. DPR saja", "C. DPR dan Presiden", "D. MPR"], correct: 2 },
+            { question: "PP dibuat untuk menjalankan...", options: ["A. UUD 1945", "B. UU", "C. Perpres", "D. Perda"], correct: 1 },
+            { question: "Hierarki pertama peraturan adalah...", options: ["A. UU", "B. PP", "C. UUD 1945", "D. TAP MPR"], correct: 2 },
+            { question: "Sumber dari segala sumber hukum di Indonesia adalah...", options: ["A. UUD 1945", "B. Pancasila", "C. UU", "D. Perpres"], correct: 1 },
+            { question: "Perpres dibuat oleh...", options: ["A. DPR", "B. Presiden", "C. MPR", "D. Pemerintah Daerah"], correct: 1 },
+            { question: "Perppu dikeluarkan dalam keadaan...", options: ["A. Normal", "B. Darurat", "C. Damai", "D. Biasa"], correct: 1 },
+            { question: "Peraturan yang bersifat mengikat secara umum adalah...", options: ["A. Perjanjian", "B. Kontrak", "C. Perundang-undangan", "D. Kesepakatan"], correct: 2 },
+            { question: "TAP MPR ditetapkan oleh...", options: ["A. Presiden", "B. DPR", "C. MPR", "D. MA"], correct: 2 },
+            { question: "Contoh Perda adalah peraturan tentang...", options: ["A. Pertahanan negara", "B. Ketertiban umum", "C. Hubungan luar negeri", "D. Moneter"], correct: 1 },
+            { question: "Peraturan perundang-undangan harus...", options: ["A. Lisan", "B. Tertulis", "C. Tidak tertulis", "D. Lisan dan tertulis"], correct: 1 },
+            { question: "Sila Pancasila yang menjamin kebebasan beragama adalah...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 4"], correct: 0 },
+            { question: "Peraturan yang melindungi HAM adalah sila...", options: ["A. Sila 1", "B. Sila 2", "C. Sila 3", "D. Sila 5"], correct: 1 }
+
+        ]
+    }
+};
+
+
 // Export
 window.QUIZ_DATA = QUIZ_DATA;

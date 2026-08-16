@@ -206,14 +206,16 @@ class QuizSystem {
             explanation: question.explanation
         });
         
-        // Show explanation
-        explanation.style.display = 'flex';
-        explanation.className = `quiz-explanation ${isCorrect ? 'explanation-correct' : 'explanation-wrong'}`;
-        explanation.querySelector('.explanation-icon').textContent = isCorrect ? '✅' : '❌';
-        explanation.querySelector('.explanation-text').innerHTML = `
-            <strong>${isCorrect ? 'Benar!' : 'Saloh!'}</strong>
-            <p>${question.explanation}</p>
-        `;
+        // Show explanation (hanya jika soal memiliki penjelasan)
+        if (question.explanation) {
+            explanation.style.display = 'flex';
+            explanation.className = `quiz-explanation ${isCorrect ? 'explanation-correct' : 'explanation-wrong'}`;
+            explanation.querySelector('.explanation-icon').textContent = isCorrect ? '✅' : '❌';
+            explanation.querySelector('.explanation-text').innerHTML = `
+                <strong>${isCorrect ? 'Benar!' : 'Salah!'}</strong>
+                <p>${question.explanation}</p>
+            `;
+        }
         
         // Show footer
         footer.style.display = 'flex';
