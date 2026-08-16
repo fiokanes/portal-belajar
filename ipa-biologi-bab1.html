@@ -44,8 +44,9 @@
         .choice-card:hover .arrow { color: #333; transform: translateX(10px); }
         @media (max-width: 768px) { .choices-grid { grid-template-columns: 1fr; } .header-card { padding: 25px; } .header-card h1 { font-size: 1.8em; } }
     </style>
+    <link rel="stylesheet" href="design-system.css">
 </head>
-<body>
+<body class="mapel-bio">
     <div class="container">
         <a href="ipa-biologi.html" class="back-nav">← Kembali ke Pilih Bab</a>
 
@@ -103,5 +104,7 @@
         document.querySelectorAll('.choice-card').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'all 0.6s ease'; observer.observe(el); });
     </script>
 
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
 </body>
 </html>

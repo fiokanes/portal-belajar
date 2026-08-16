@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Belajar Fiona - Belajar Jadi Mudah & Menyenangkan! 📚</title>
     <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -406,6 +407,9 @@
                 <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Gratis!</span></div>
             </div>
         </section>
+
+        <!-- LANJUT BELAJAR: diisi otomatis oleh portal-nav.js -->
+        <div id="continueCard"></div>
 
         <section class="menu-section">
             <h2>📖 Pilih Mata Pelajaran</h2>
@@ -935,6 +939,12 @@
     <script src="audio-system.js"></script>
     <script src="visual-effects.js"></script>
     <script src="click-sounds.js"></script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+    <script>
+        // Tampilkan kartu "Lanjut Belajar"
+        if (typeof pbRenderContinueCard !== 'undefined') pbRenderContinueCard('continueCard');
+    </script>
 
 </body>
 </html>

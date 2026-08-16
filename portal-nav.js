@@ -156,7 +156,7 @@ function pbInjectTopBar() {
 
 function pbRefreshXP() {
     const el = document.getElementById('tbXPNum');
-    if (el && window.ProgressSystem) el.textContent = ProgressSystem.getXP();
+    if (el && typeof ProgressSystem !== 'undefined') el.textContent = ProgressSystem.getXP();
 }
 
 // ============ TAB BAR BAWAH ============
@@ -203,7 +203,7 @@ function pbInjectBabNav() {
     const next = idx < seq.length - 1 ? seq[idx + 1] : null;
     const prevCfg = prev ? NAV_CONFIG[prev] : null;
     const nextCfg = next ? NAV_CONFIG[next] : null;
-    const done = window.ProgressSystem && ProgressSystem.isBabDone(cfg.mapel, cfg.bab);
+    const done = typeof ProgressSystem !== 'undefined' && ProgressSystem.isBabDone(cfg.mapel, cfg.bab);
 
     const nav = document.createElement('div');
     nav.className = 'bab-nav';
@@ -248,7 +248,7 @@ function pbInjectBabNav() {
 function pbRecordVisit() {
     const file = pbCurrentFile();
     const cfg = pbFindConfig(file);
-    if (cfg.kind === 'bab' && window.ProgressSystem) {
+    if (cfg.kind === 'bab' && typeof ProgressSystem !== 'undefined') {
         ProgressSystem.setLastVisit(cfg.mapel, cfg.bab, file, cfg.label);
     }
 }
@@ -256,7 +256,7 @@ function pbRecordVisit() {
 // ============ RENDER "LANJUT BELAJAR" DI BERANDA ============
 function pbRenderContinueCard(containerId) {
     const container = document.getElementById(containerId);
-    if (!container || !window.ProgressSystem) return;
+    if (!container || typeof ProgressSystem === 'undefined') return;
     const last = ProgressSystem.getLastVisit();
     if (!last) {
         container.innerHTML = `
