@@ -167,6 +167,7 @@
         .card-jawa .card-image { background: linear-gradient(135deg, #4e342e 0%, #6d4c41 100%); }
         .card-bindo .card-image { background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%); }
         .card-ppkn .card-image { background: linear-gradient(135deg, #d32f2f 0%, #e53935 100%); }
+        .card-info .card-image { background: linear-gradient(135deg, #6a1b9a 0%, #9c27b0 100%); }
 
         .menu-card .card-content { padding: 30px; }
 
@@ -182,6 +183,7 @@
         .card-jawa .card-badge { background: #efebe9; color: #4e342e; }
         .card-bindo .card-badge { background: #ffebee; color: #b71c1c; }
         .card-ppkn .card-badge { background: #ffebee; color: #d32f2f; }
+        .card-info .card-badge { background: #f3e5f5; color: #6a1b9a; }
 
         .menu-card h3 { color: var(--primary); font-size: 1.6em; margin-bottom: 12px; }
         .menu-card p { color: #666; font-size: 1em; line-height: 1.7; margin-bottom: 20px; }
@@ -203,6 +205,7 @@
         .card-jawa .feature-tag { background: #efebe9; color: #4e342e; }
         .card-bindo .feature-tag { background: #ffebee; color: #b71c1c; }
         .card-ppkn .feature-tag { background: #ffebee; color: #d32f2f; }
+        .card-info .feature-tag { background: #f3e5f5; color: #6a1b9a; }
 
         .menu-card .card-footer { display: flex; align-items: center; justify-content: space-between; }
 
@@ -218,6 +221,7 @@
         .card-jawa .start-btn { background: linear-gradient(135deg, #4e342e, #6d4c41); }
         .card-bindo .start-btn { background: linear-gradient(135deg, #b71c1c, #c62828); }
         .card-ppkn .start-btn { background: linear-gradient(135deg, #d32f2f, #e53935); }
+        .card-info .start-btn { background: linear-gradient(135deg, #6a1b9a, #9c27b0); }
 
         .menu-card:hover .card-footer .start-btn { transform: translateX(10px); }
         .menu-card .card-footer .arrow { font-size: 1.5em; color: #ccc; transition: all 0.3s ease; }
@@ -268,6 +272,8 @@
         .motivation-section .quote { font-size: 1.3em; font-style: italic; max-width: 700px; margin: 0 auto 20px; opacity: 0.95; position: relative; z-index: 1; line-height: 1.8; }
         .motivation-section .quote-author { font-size: 1.1em; opacity: 0.8; position: relative; z-index: 1; font-weight: 600; }
         .motivation-section .mascot { font-size: 4em; margin-top: 20px; position: relative; z-index: 1; animation: bounce 2s ease-in-out infinite; }
+        .motivation-section .rainbow { font-size: 3em; margin-top: 10px; position: relative; z-index: 1; animation: rainbowPulse 2s ease-in-out infinite; }
+        @keyframes rainbowPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } }
         .motivation-section .day-info { 
             font-size: 0.9em; opacity: 0.7; position: relative; z-index: 1; 
             margin-top: 10px; font-weight: 300;
@@ -394,7 +400,7 @@
             <h2>👋 Selamat Datang, Fiona! 👋</h2>
             <p>Portal ini dirangkum khusus untuk membantu kamu belajar dengan cara yang seru dan interaktif! Pilih materi yang ingin dipelajari dan mulai petualangan ilmumu sekarang! 🚀</p>
             <div class="stats-bar">
-                <div class="stat-item"><span class="stat-number">7</span><span class="stat-label">Materi Pelajaran</span></div>
+                <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Materi Pelajaran</span></div>
                 <div class="stat-item"><span class="stat-number">134+</span><span class="stat-label">Soal & Kuis</span></div>
                 <div class="stat-item"><span class="stat-number">12+</span><span class="stat-label">Game Interaktif</span></div>
                 <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Gratis!</span></div>
@@ -405,7 +411,10 @@
             <h2>📖 Pilih Mata Pelajaran</h2>
             <div class="menu-grid">
                 <a href="matematika.html" class="menu-card card-math">
-                    <div class="card-image"><span class="card-icon">🔢</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Pythagorean_theorem.svg/200px-Pythagorean_theorem.svg.png" alt="Teorema Pythagoras" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">🔢</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">📐 Matematika</span>
                         <h3>Matematika - 7 Bab Lengkap</h3>
@@ -422,7 +431,10 @@
                 </a>
 
                 <a href="ipa.html" class="menu-card card-bio">
-                    <div class="card-image"><span class="card-icon">🔬</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Digestive_system_diagram.svg/200px-Digestive_system_diagram.svg.png" alt="Sistem Pencernaan" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">🔬</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">🔬 IPA</span>
                         <h3>Ilmu Pengetahuan Alam</h3>
@@ -439,7 +451,10 @@
                 </a>
 
                 <a href="ips.html" class="menu-card card-geo">
-                    <div class="card-image"><span class="card-icon">🌏</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cornelis_de_Houtman.jpg/200px-Cornelis_de_Houtman.jpg" alt="Cornelis de Houtman" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">🌏</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">🌏 IPS</span>
                         <h3>Ilmu Pengetahuan Sosial</h3>
@@ -457,7 +472,10 @@
                 </a>
 
                 <a href="english.html" class="menu-card card-english">
-                    <div class="card-image"><span class="card-icon">🇬🇧</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/200px-Flag_of_the_United_Kingdom.svg.png" alt="Bendera Inggris" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">🇬🇧</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">📝 English</span>
                         <h3>English - 6 Chapters</h3>
@@ -475,7 +493,10 @@
                 </a>
 
                 <a href="bahasa-jawa.html" class="menu-card card-jawa">
-                    <div class="card-image"><span class="card-icon">📜</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://placehold.co/200x200/4e342e/white?text=Hanacaraka" alt="Aksara Jawa" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">📜</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">🏛️ Bahasa Jawa</span>
                         <h3>Bahasa Jawa - 5 Bab Lengkap</h3>
@@ -493,7 +514,10 @@
                 </a>
 
                 <a href="bahasa-indonesia.html" class="menu-card card-bindo">
-                    <div class="card-image"><span class="card-icon">📝</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/200px-Flag_of_Indonesia.svg.png" alt="Bendera Indonesia" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">📝</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">📝 Bahasa Indonesia</span>
                         <h3>Bahasa Indonesia - 7 Bab Lengkap</h3>
@@ -512,7 +536,10 @@
                 </a>
 
                 <a href="ppkn.html" class="menu-card card-ppkn">
-                    <div class="card-image"><span class="card-icon">🇮🇩</span></div>
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Garuda_Pancasila.svg/200px-Garuda_Pancasila.svg.png" alt="Garuda Pancasila" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">🇮🇩</span>
+                    </div>
                     <div class="card-content">
                         <span class="card-badge">🇮🇩 PPKn</span>
                         <h3>Pendidikan Pancasila dan Kewarganegaraan</h3>
@@ -522,6 +549,25 @@
                             <span class="feature-tag">📜 UUD 1945</span>
                             <span class="feature-tag">⚖️ Peraturan</span>
                             <span class="feature-tag">🏛️ Lembaga Negara</span>
+                            <span class="feature-tag">🎮 Kuis</span>
+                        </div>
+                        <div class="card-footer"><span class="start-btn">Mulai Belajar →</span><span class="arrow">→</span></div>
+                    </div>
+                </a>
+
+                <a href="informatika.html" class="menu-card card-info">
+                    <div class="card-image" style="position:relative;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Coding.jpg/200px-Coding.jpg" alt="Coding" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0.7;">
+                        <span class="card-icon" style="position:relative; z-index:2;">💻</span>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-badge">💻 Informatika</span>
+                        <h3>Informatika - 3 Bab Lengkap</h3>
+                        <p>Pelajari Analisis Data, Berpikir Komputasional, dan Algoritma Pemrograman dengan cara yang menyenangkan!</p>
+                        <div class="card-features">
+                            <span class="feature-tag">📊 Analisis Data</span>
+                            <span class="feature-tag">🧠 Berpikir Komputasional</span>
+                            <span class="feature-tag">⌨️ Algoritma Pemrograman</span>
                             <span class="feature-tag">🎮 Kuis</span>
                         </div>
                         <div class="card-footer"><span class="start-btn">Mulai Belajar →</span><span class="arrow">→</span></div>
@@ -549,6 +595,7 @@
             <p class="quote-author" id="quoteAuthor"></p>
             <div class="day-info" id="dayInfo"></div>
             <div class="mascot" id="mascotEmoji">🦉</div>
+            <div class="rainbow" id="rainbowSymbol" style="font-size:3em; margin-top:10px;">🌈</div>
         </section>
 
         <section class="tips-section">
@@ -578,6 +625,7 @@
                 <a href="bahasa-jawa.html">📜 Bahasa Jawa</a>
                 <a href="bahasa-indonesia.html">📝 B.Indonesia</a>
                 <a href="ppkn.html">🇮🇩 PPKn</a>
+                <a href="informatika.html">💻 Informatika</a>
             </div>
             <div class="footer-links" style="margin-top: 15px;">
                 <span style="color: rgba(255,255,255,0.6); font-weight: normal;">🎯 Kuis & Game:</span>
@@ -644,157 +692,188 @@
             {
                 quote: "Pendidikan adalah senjata paling ampuh yang bisa kamu gunakan untuk mengubah dunia.",
                 author: "Nelson Mandela",
-                mascot: "🦉"
+                mascot: "🦉",
+                rainbow: "🌈"
             },
             {
                 quote: "Belajar bukan tentang mengisi pikiran, tapi tentang membuka pikiran.",
                 author: "Malala Yousafzai",
-                mascot: "📖"
+                mascot: "📖",
+                rainbow: "📚"
             },
             {
                 quote: "Keberhasilan adalah hasil dari kesempurnaan, kerja keras, belajar dari kesetiaan, ketekunan, dan yang paling penting, cinta terhadap apa yang kamu lakukan.",
                 author: "Pelé",
-                mascot: "⭐"
+                mascot: "⭐",
+                rainbow: "⚽"
             },
             {
                 quote: "Masa depan milik mereka yang percaya pada keindahan mimpi mereka.",
                 author: "Eleanor Roosevelt",
-                mascot: "🌟"
+                mascot: "🌟",
+                rainbow: "🌟"
             },
             {
                 quote: "Jangan takut gagal. Takutlah tidak mencoba.",
                 author: "Roy T. Bennett",
-                mascot: "💪"
+                mascot: "💪",
+                rainbow: "💪"
             },
             {
                 quote: "Setiap hari adalah kesempatan baru untuk belajar sesuatu yang baru.",
                 author: "Portal Belajar Fiona",
-                mascot: "📚"
+                mascot: "📚",
+                rainbow: "📚"
             },
             {
                 quote: "Pendidikan bukan persiapan untuk hidup; pendidikan adalah hidup itu sendiri.",
                 author: "John Dewey",
-                mascot: "🎓"
+                mascot: "🎓",
+                rainbow: "🎓"
             },
             {
                 quote: "Kebijaksanaan tidak datang dari pendidikan formal, tapi dari pengalaman hidup.",
                 author: "Albert Einstein",
-                mascot: "🧠"
+                mascot: "🧠",
+                rainbow: "🧠"
             },
             {
                 quote: "Satu buku, satu pena, satu anak, dan satu guru dapat mengubah dunia.",
                 author: "Malala Yousafzai",
-                mascot: "✏️"
+                mascot: "✏️",
+                rainbow: "✏️"
             },
             {
                 quote: "Tujuan pendidikan adalah membuat orang mampu berpikir sendiri.",
                 author: "Confucius",
-                mascot: "🤔"
+                mascot: "🤔",
+                rainbow: "🤔"
             },
             {
                 quote: "Belajar adalah harta yang akan mengikuti pemiliknya ke mana pun.",
                 author: "Peribahasa Tionghoa",
-                mascot: "💎"
+                mascot: "💎",
+                rainbow: "💎"
             },
             {
                 quote: "Kesuksesan bukan kunci kebahagiaan. Kebahagiaan adalah kunci kesuksesan.",
                 author: "Albert Schweitzer",
-                mascot: "😊"
+                mascot: "😊",
+                rainbow: "😊"
             },
             {
                 quote: "Pendidikan adalah fondasi dari mana kita membangun masa depan.",
                 author: "Christine Gregoire",
-                mascot: "🏗️"
+                mascot: "🏗️",
+                rainbow: "🏗️"
             },
             {
                 quote: "Berpikirlah besar, mulailah dari yang kecil, dan bertindaklah sekarang.",
                 author: "Robin Sharma",
-                mascot: "🚀"
+                mascot: "🚀",
+                rainbow: "🚀"
             },
             {
                 quote: "Setiap orang yang kamu temui sedang berjuang dalam pertempuran yang tidak kamu ketahui. Bersikap baiklah.",
                 author: "Plato",
-                mascot: "❤️"
+                mascot: "❤️",
+                rainbow: "❤️"
             },
             {
                 quote: "Kegagalan adalah bumbu yang memberi kesuksesan rasa.",
                 author: "Truman Capote",
-                mascot: "🌶️"
+                mascot: "🌶️",
+                rainbow: "🌶️"
             },
             {
                 quote: "Hidup adalah 10% apa yang terjadi padamu dan 90% bagaimana kamu meresponsnya.",
                 author: "Charles R. Swindoll",
-                mascot: "🔄"
+                mascot: "🔄",
+                rainbow: "🔄"
             },
             {
                 quote: "Jangan pernah berhenti belajar, karena hidup tidak pernah berhenti mengajar.",
                 author: "Portal Belajar Fiona",
-                mascot: "📝"
+                mascot: "📝",
+                rainbow: "📝"
             },
             {
                 quote: "Mimpi tidak menjadi kenyataan melalui sihir; dibutuhkan keringat, tekad, dan kerja keras.",
                 author: "Colin Powell",
-                mascot: "✨"
+                mascot: "✨",
+                rainbow: "✨"
             },
             {
                 quote: "Keberanian bukan ketiadaan rasa takut, tapi kemenangan atasnya.",
                 author: "Nelson Mandela",
-                mascot: "🦁"
+                mascot: "🦁",
+                rainbow: "🦁"
             },
             {
                 quote: "Tidak ada yang mustahil bagi mereka yang mau mencoba.",
                 author: "Alexander the Great",
-                mascot: "🏆"
+                mascot: "🏆",
+                rainbow: "🏆"
             },
             {
                 quote: "Pengetahuan adalah kekuatan, tapi antusiasme adalah kunci.",
                 author: "Portal Belajar Fiona",
-                mascot: "🔑"
+                mascot: "🔑",
+                rainbow: "🔑"
             },
             {
                 quote: "Hari ini adalah hari pertama dari sisa hidupmu.",
                 author: "Abbie Hoffman",
-                mascot: "🌅"
+                mascot: "🌅",
+                rainbow: "🌅"
             },
             {
                 quote: "Kesabaran adalah kunci kebahagiaan.",
                 author: "Peribahasa Indonesia",
-                mascot: "🗝️"
+                mascot: "🗝️",
+                rainbow: "🗝️"
             },
             {
                 quote: "Belajar dari kemarin, hidup untuk hari ini, berharap untuk besok.",
                 author: "Albert Einstein",
-                mascot: "⏰"
+                mascot: "⏰",
+                rainbow: "⏰"
             },
             {
                 quote: "Perubahan dimulai dari dirimu sendiri.",
                 author: "Portal Belajar Fiona",
-                mascot: "🔄"
+                mascot: "🔄",
+                rainbow: "🔄"
             },
             {
                 quote: "Jadilah perubahan yang ingin kamu lihat di dunia.",
                 author: "Mahatma Gandhi",
-                mascot: "🌍"
+                mascot: "🌍",
+                rainbow: "🌍"
             },
             {
                 quote: "Semangat yang tidak pernah padam akan membawamu pada keberhasilan.",
                 author: "Portal Belajar Fiona",
-                mascot: "🔥"
+                mascot: "🔥",
+                rainbow: "🔥"
             },
             {
                 quote: "Ilmu adalah cahaya yang menerangi kegelapan.",
                 author: "Peribahasa Arab",
-                mascot: "💡"
+                mascot: "💡",
+                rainbow: "💡"
             },
             {
                 quote: "Hari ini bisa menjadi awal dari sesuatu yang baru dan indah.",
                 author: "Portal Belajar Fiona",
-                mascot: "🌈"
+                mascot: "🌈",
+                rainbow: "🌈"
             },
             {
                 quote: "Kesuksesan adalah perjalanan, bukan tujuan.",
                 author: "Ben Sweetland",
-                mascot: "🚶"
+                mascot: "🚶",
+                rainbow: "🚶"
             }
         ];
 
@@ -807,6 +886,7 @@
             document.getElementById('dailyQuote').textContent = `"${motivasi.quote}"`;
             document.getElementById('quoteAuthor').textContent = `— ${motivasi.author}`;
             document.getElementById('mascotEmoji').textContent = motivasi.mascot;
+            document.getElementById('rainbowSymbol').textContent = motivasi.rainbow;
 
             const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
             const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -855,6 +935,6 @@
     <script src="audio-system.js"></script>
     <script src="visual-effects.js"></script>
     <script src="click-sounds.js"></script>
-<script src="mapel-switcher.js"></script>
+
 </body>
 </html>
