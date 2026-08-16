@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatika Bab 1: Analisis Data 📊</title>
+    <link rel="stylesheet" href="visual-effects.css">
+    <link rel="stylesheet" href="design-system.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; min-height: 100vh; background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 30%, #ab47bc 60%, #ce93d8 100%); overflow-x: hidden; font-size: 17px; line-height: 1.8; color: #2c3e50; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 30%, #ab47bc 60%, #ce93d8 100%); }
+        .bg-animation .bubble { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.08); animation: floatBubble 20s infinite ease-in-out; }
+        @keyframes floatBubble { 0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; } 50% { transform: translateY(-100vh) rotate(360deg); opacity: 0.2; } }
+        header { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #8e24aa 100%); color: white; text-align: center; padding: 26px 16px 34px; position: relative; overflow: hidden; }
+        header h1 { font-size: 2em; margin-bottom: 8px; position: relative; z-index: 1; text-shadow: 2px 2px 6px rgba(0,0,0,0.3); }
+        header .subtitle { font-size: 1.1em; opacity: 0.95; position: relative; z-index: 1; }
+        main { max-width: 1100px; margin: -30px auto 40px; padding: 0 16px; position: relative; z-index: 10; }
+        .section-box { background: rgba(255, 255, 255, 0.97); border-radius: 26px; padding: 34px; box-shadow: 0 18px 50px rgba(0,0,0,0.2); margin-bottom: 34px; }
+        .section-box h2 { color: #6a1b9a; font-size: 1.7em; margin-bottom: 22px; text-align: center; }
+        .section-box h3 { color: #6a1b9a; font-size: 1.25em; margin: 24px 0 12px; }
+        .section-box p { margin-bottom: 14px; text-align: justify; }
+        .section-box ul { margin: 12px 0 14px 28px; }
+        .section-box li { margin-bottom: 8px; }
+        .hero-section { background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #8e24aa 100%); color: white; padding: 36px 28px; border-radius: 26px; text-align: center; margin-bottom: 34px; position: relative; overflow: hidden; box-shadow: 0 18px 50px rgba(74, 20, 140, 0.4); }
+        .hero-section h2 { font-size: 2em; margin-bottom: 14px; position: relative; z-index: 1; }
+        .hero-section p { font-size: 1.1em; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 22px; }
+        .card { background: white; border-radius: 18px; padding: 26px; box-shadow: 0 10px 26px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center; border-top: 5px solid #6a1b9a; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 16px 36px rgba(0,0,0,0.15); }
+        .card .card-icon { font-size: 3.2em; margin-bottom: 16px; display: block; }
+        .card h4 { color: #6a1b9a; font-size: 1.15em; margin-bottom: 12px; }
+        .card p { color: #666; font-size: 0.95em; line-height: 1.6; }
+        .formula-box { background: linear-gradient(135deg, #f3e5f5, #e1bee7); border-radius: 15px; padding: 22px; border-left: 5px solid #6a1b9a; margin: 18px 0; }
+        .formula-box h4 { color: #6a1b9a; margin-bottom: 10px; }
+        .formula-box .formula { font-size: 1.35em; font-weight: bold; color: #4a148c; text-align: center; margin: 12px 0; background: white; padding: 14px; border-radius: 10px; }
+        .formula-box p { color: #555; font-size: 0.95em; }
+        .quiz-section { background: linear-gradient(135deg, #fff8e1, #fff3cd); border-radius: 26px; padding: 34px; margin-top: 34px; border: 3px solid #ffc107; }
+        .quiz-section h2 { color: #f57f17; }
+        footer { background: linear-gradient(135deg, #0d1b2a 0%, #4a148c 100%); color: white; text-align: center; padding: 36px 16px; position: relative; }
+        .footer-content { max-width: 800px; margin: 0 auto; }
+        footer h3 { font-size: 1.4em; margin-bottom: 8px; color: #ffd700; }
+        footer p { color: rgba(255,255,255,0.8); font-size: 0.95em; }
+        .footer-links { display: flex; justify-content: center; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+        .footer-links a { color: #ffd700; text-decoration: none; font-weight: bold; }
+        @media (max-width: 768px) { .card-grid { grid-template-columns: 1fr; } .section-box { padding: 26px 18px; } .hero-section { padding: 26px 18px; } }
+    </style>
+</head>
+<body class="mapel-info">
+    <div class="bg-animation" id="bgAnimation"></div>
+    <header>
+        <h1>📊 BAB 1: ANALISIS DATA</h1>
+        <p class="subtitle">Pelajari cara mengumpulkan, mengolah, dan menyajikan data! 📈✨</p>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h2>Apa Itu Analisis Data? 📊</h2>
+            <p>Analisis data adalah proses mengumpulkan, mengolah, dan menyajikan data agar menjadi informasi yang berguna. Dengan analisis data, kita bisa mengambil keputusan berdasarkan fakta, bukan tebakan!</p>
+        </section>
+        <section class="section-box">
+            <h2>📋 Jenis-Jenis Data</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-icon">🔤</span>
+                    <h4>Data Kualitatif</h4>
+                    <p>Data yang berupa keterangan atau kategori, bukan angka. Contoh: warna favorit, jenis kelamin, hobi.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🔢</span>
+                    <h4>Data Kuantitatif</h4>
+                    <p>Data yang berupa angka dan bisa dihitung. Contoh: tinggi badan, nilai ulangan, jumlah penduduk.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📥</span>
+                    <h4>Data Primer</h4>
+                    <p>Data yang dikumpulkan langsung dari sumbernya. Contoh: hasil wawancara atau kuesioner.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">📚</span>
+                    <h4>Data Sekunder</h4>
+                    <p>Data yang diperoleh dari sumber yang sudah ada. Contoh: data dari BPS atau buku referensi.</p>
+                </div>
+            </div>
+            <div class="formula-box">
+                <h4>💡 Tahapan Analisis Data</h4>
+                <div class="formula">Kumpulkan → Bersihkan → Olah → Sajikan → Simpulkan</div>
+                <p>Urutan ini membantu kita mengubah data mentah menjadi informasi yang bermakna.</p>
+            </div>
+        </section>
+        <section class="section-box">
+            <h2>📈 Cara Menyajikan Data</h2>
+            <ul>
+                <li><b>Tabel</b> — menyusun data dalam baris dan kolom agar mudah dibaca.</li>
+                <li><b>Diagram Batang</b> — membandingkan jumlah antar kategori.</li>
+                <li><b>Diagram Garis</b> — menunjukkan perubahan data dari waktu ke waktu.</li>
+                <li><b>Diagram Lingkaran</b> — menunjukkan bagian dari keseluruhan.</li>
+                <li><b>Piktogram</b> — menyajikan data dengan gambar/simbol.</li>
+            </ul>
+            <div class="formula-box">
+                <h4>🧮 Ukuran Pemusatan Data</h4>
+                <div class="formula">Mean = jumlah data ÷ banyak data</div>
+                <div class="formula">Median = nilai tengah data terurut</div>
+                <div class="formula">Modus = nilai yang paling sering muncul</div>
+                <p>Ketiganya membantu kita memahami "inti" dari sekumpulan data.</p>
+            </div>
+        </section>
+        <section class="quiz-section">
+            <h2>🧠 Kuis Pemahaman</h2>
+            <p style="text-align: center; margin-bottom: 26px;">Uji pemahamanmu tentang analisis data!</p>
+            <div id="quizContainer"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <h3>📊 BAB 1: ANALISIS DATA</h3>
+            <p>Informatika - SMP Kelas 8</p>
+            <div class="footer-links">
+                <a href="informatika.html">💻 Informatika</a>
+                <a href="index.html">📚 Portal Utama</a>
+            </div>
+        </div>
+    </footer>
+    <script src="click-sounds.js"></script>
+    <script src="quiz-data.js"></script>
+    <script src="quiz-game-system.js"></script>
+    <script>
+        if(typeof QuizSystem!=='undefined') QuizSystem.createQuiz('informatika_bab1', 'quizContainer', 5);
+        function createBubbles() { const c = document.getElementById('bgAnimation'); for(let i=0;i<15;i++){const b=document.createElement('div');b.className='bubble';const s=Math.random()*50+20;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'%';b.style.bottom='-100px';b.style.animationDelay=Math.random()*10+'s';b.style.animationDuration=(Math.random()*10+10)+'s';c.appendChild(b);}} createBubbles();
+    </script>
+    <script src="progress-system.js"></script>
+    <script src="portal-nav.js"></script>
+</body>
+</html>

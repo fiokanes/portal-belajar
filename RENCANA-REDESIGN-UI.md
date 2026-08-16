@@ -150,7 +150,7 @@ Anchor navigation ke bagian-bagian halaman (scroll halus).
 - [x] **Fase 0** — Dokumen perencanaan ini ✅
 - [x] **Fase 1** — Fondasi: `design-system.css` + `portal-nav.js` + `progress-system.js` + `progres.html` ✅
 - [ ] **Fase 2** — `index.html` (Beranda + Lanjut Belajar + tab bar)
-- [ ] **Fase 3** — 8 halaman mapel (daftar bab + status)
+- [x] **Fase 3** — 8 halaman mapel (daftar bab + status) ✅
 - [ ] **Fase 4** — ±30 halaman bab (navigasi antar-bab + selesai + XP)
 - [ ] **Fase 5** — 4 halaman kuis + upgrade 6 halaman English + halaman khusus
 - [ ] **Fase 6** — QA menyeluruh (cek link, sintaks JS, tes Node, cek duplikasi CSS)

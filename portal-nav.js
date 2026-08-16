@@ -80,6 +80,11 @@ const NAV_CONFIG = {
     // ==== HALAMAN LAIN ====
     'belajar-aritmatika.html':  { label: 'Belajar Aritmatika', icon: '🧮', parent: 'matematika.html', kind: 'lain', mapel: 'matematika' },
 
+    // ==== BAB INFORMATIKA ====
+    'informatika-bab1.html':    { label: 'Bab 1: Analisis Data', icon: '📊', parent: 'informatika.html', kind: 'bab', mapel: 'info', bab: 'bab1' },
+    'informatika-bab2.html':    { label: 'Bab 2: Berpikir Komputasional', icon: '🧠', parent: 'informatika.html', kind: 'bab', mapel: 'info', bab: 'bab2' },
+    'informatika-bab3.html':    { label: 'Bab 3: Algoritma', icon: '⌨️', parent: 'informatika.html', kind: 'bab', mapel: 'info', bab: 'bab3' },
+
     // ==== KUIS (4) ====
     'kuis-matematika.html':     { label: 'Kuis Matematika', icon: '🔢', parent: 'index.html', kind: 'kuis', mapel: 'matematika' },
     'kuis-biologi.html':        { label: 'Kuis Biologi', icon: '🧬', parent: 'index.html', kind: 'kuis', mapel: 'bio' },
@@ -98,7 +103,8 @@ const BAB_SEQUENCE = {
     'ips': ['ips-bab1.html', 'ips-bab2.html', 'ips-bab3.html', 'ips-bab4.html', 'geografis-indonesia.html'],
     'eng': ['english-tenses.html', 'english-bab2.html', 'english-bab3.html', 'english-bab4.html', 'english-bab5.html', 'english-bab6.html'],
     'jawa': ['aksara-jawa.html', 'bahasa-jawa-bab1.html', 'bahasa-jawa-bab2.html', 'bahasa-jawa-bab3.html', 'bahasa-jawa-bab4.html', 'bahasa-jawa-bab5.html'],
-    'ppkn': ['ppkn-pancasila.html', 'ppkn-bab1.html', 'ppkn-bab2.html', 'ppkn-bab3.html']
+    'ppkn': ['ppkn-pancasila.html', 'ppkn-bab1.html', 'ppkn-bab2.html', 'ppkn-bab3.html'],
+    'info': ['informatika-bab1.html', 'informatika-bab2.html', 'informatika-bab3.html']
 };
 
 // ============ UTIL ============
@@ -284,6 +290,49 @@ function pbRenderContinueCard(containerId) {
         </a>`;
 }
 
+// ============ DEKORASI STATUS BAB DI HALAMAN MAPEL ============
+// Menandai kartu bab yang sudah selesai (✅) + bar progres per mapel
+function pbDecorateBabCards() {
+    if (typeof ProgressSystem === 'undefined') return;
+    document.querySelectorAll('a.bab-card, a[href$=".html"]').forEach(card => {
+        const href = card.getAttribute('href');
+        const cfg = NAV_CONFIG[href];
+        if (!cfg || cfg.kind !== 'bab' || !cfg.mapel || !cfg.bab) return;
+        if (ProgressSystem.isBabDone(cfg.mapel, cfg.bab)) {
+            card.classList.add('done');
+        }
+    });
+}
+
+function pbInjectMapelProgress() {
+    if (typeof ProgressSystem === 'undefined') return;
+    const file = pbCurrentFile();
+    const cfg = NAV_CONFIG[file];
+    if (!cfg || (cfg.kind !== 'mapel' && cfg.kind !== 'submapel') || !cfg.mapel) return;
+    const seq = BAB_SEQUENCE[cfg.mapel] || [];
+    if (!seq.length) return;
+    let done = 0;
+    seq.forEach(f => {
+        const c = NAV_CONFIG[f];
+        if (c && ProgressSystem.isBabDone(cfg.mapel, c.bab)) done++;
+    });
+    const pct = Math.round(done / seq.length * 100);
+    const bar = document.createElement('div');
+    bar.className = 'mapel-progress';
+    bar.innerHTML = `
+        <div class="mp-head">
+            <strong>📈 Progres Belajarmu</strong>
+            <span class="mp-count">${done}/${seq.length} bab · ${pct}%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    `;
+    const main = document.querySelector('main');
+    if (main) {
+        if (main.firstChild) main.insertBefore(bar, main.firstChild);
+        else main.appendChild(bar);
+    }
+}
+
 // ============ INISIALISASI ============
 function pbInit() {
     if (document.getElementById('pbNavInjected')) return;
@@ -291,6 +340,8 @@ function pbInit() {
     pbInjectTopBar();
     pbInjectTabBar();
     pbInjectBabNav();
+    pbInjectMapelProgress();
+    pbDecorateBabCards();
     pbRecordVisit();
     // Refresh XP saat kuis selesai (event dari sistem quiz)
     document.addEventListener('pb-xp-updated', pbRefreshXP);

@@ -1921,5 +1921,58 @@ QUIZ_DATA['ppkn_peraturan'] = {
 };
 
 
+
+// ==========================================
+// BANK SOAL INFORMATIKA (3 bab)
+// ==========================================
+QUIZ_DATA['informatika_bab1'] = {
+    umum: {
+        title: 'Informatika - Analisis Data',
+        questions: [
+            { question: 'Data yang berupa angka dan bisa dihitung disebut...', options: ['Data kualitatif', 'Data kuantitatif', 'Data sekunder', 'Data primer'], correct: 1, explanation: 'Data kuantitatif adalah data berbentuk angka yang bisa dihitung, seperti tinggi badan atau nilai ulangan.' },
+            { question: 'Contoh data kualitatif adalah...', options: ['Tinggi badan 160 cm', 'Jumlah penduduk 1.000 orang', 'Warna favorit siswa', 'Nilai rata-rata 85'], correct: 2, explanation: 'Warna favorit termasuk data kualitatif karena berupa kategori, bukan angka.' },
+            { question: 'Data yang dikumpulkan langsung dari sumbernya disebut data...', options: ['Primer', 'Sekunder', 'Kuantitatif', 'Tersier'], correct: 0, explanation: 'Data primer dikumpulkan langsung, misalnya melalui wawancara atau kuesioner.' },
+            { question: 'Urutan tahapan analisis data yang benar adalah...', options: ['Sajikan - Olah - Kumpulkan - Simpulkan', 'Kumpulkan - Bersihkan - Olah - Sajikan - Simpulkan', 'Simpulkan - Kumpulkan - Sajikan - Olah', 'Olah - Sajikan - Kumpulkan - Simpulkan'], correct: 1, explanation: 'Tahapannya: kumpulkan data, bersihkan, olah, sajikan, lalu simpulkan.' },
+            { question: 'Diagram yang paling cocok untuk menunjukkan perubahan data dari waktu ke waktu adalah...', options: ['Diagram batang', 'Diagram lingkaran', 'Diagram garis', 'Piktogram'], correct: 2, explanation: 'Diagram garis paling baik menunjukkan tren perubahan dari waktu ke waktu.' },
+            { question: 'Nilai tengah dari data yang sudah diurutkan disebut...', options: ['Mean', 'Median', 'Modus', 'Rata-rata'], correct: 1, explanation: 'Median adalah nilai tengah setelah data diurutkan dari terkecil ke terbesar.' },
+            { question: 'Nilai yang paling sering muncul disebut...', options: ['Mean', 'Median', 'Modus', 'Jangkauan'], correct: 2, explanation: 'Modus adalah nilai yang paling sering muncul dalam sekumpulan data.' },
+            { question: 'Rumus mean (rata-rata) adalah...', options: ['Jumlah data x banyak data', 'Jumlah data : banyak data', 'Banyak data : jumlah data', 'Jumlah data + banyak data'], correct: 1, explanation: 'Mean dihitung dengan membagi jumlah seluruh data dengan banyaknya data.' }
+        ]
+    }
+};
+
+QUIZ_DATA['informatika_bab2'] = {
+    umum: {
+        title: 'Informatika - Berpikir Komputasional',
+        questions: [
+            { question: 'Memecah masalah besar menjadi bagian-bagian kecil disebut...', options: ['Abstraksi', 'Dekomposisi', 'Pengenalan pola', 'Algoritma'], correct: 1, explanation: 'Dekomposisi adalah memecah masalah besar menjadi bagian-bagian kecil yang lebih mudah diselesaikan.' },
+            { question: 'Mencari kesamaan dari masalah yang pernah dihadapi disebut...', options: ['Dekomposisi', 'Abstraksi', 'Pengenalan pola', 'Perulangan'], correct: 2, explanation: 'Pengenalan pola membantu kita memakai solusi yang sudah ada untuk masalah serupa.' },
+            { question: 'Memfokuskan pada informasi penting saja disebut...', options: ['Abstraksi', 'Dekomposisi', 'Algoritma', 'Pola'], correct: 0, explanation: 'Abstraksi berarti mengabaikan detail yang tidak penting dan fokus pada yang esensial.' },
+            { question: 'Langkah-langkah urut untuk menyelesaikan masalah disebut...', options: ['Data', 'Variabel', 'Algoritma', 'Diagram'], correct: 2, explanation: 'Algoritma adalah langkah-langkah berurutan dan logis untuk menyelesaikan masalah.' },
+            { question: 'Membuat jus mangga: cuci - kupas - potong - blender adalah contoh...', options: ['Abstraksi', 'Algoritma', 'Pengenalan pola', 'Data kualitatif'], correct: 1, explanation: 'Urutan langkah membuat jus adalah contoh algoritma dalam kehidupan sehari-hari.' },
+            { question: 'Saat membuat kue, resep bisa dipakai untuk kue lain dengan bahan mirip. Ini contoh...', options: ['Dekomposisi', 'Pengenalan pola', 'Abstraksi', 'Variabel'], correct: 1, explanation: 'Resep yang mirip menunjukkan pengenalan pola: masalah serupa, solusi serupa.' },
+            { question: 'Empat pilar berpikir komputasional adalah...', options: ['Dekomposisi, pola, abstraksi, algoritma', 'Input, proses, output, simpan', 'Kumpulkan, olah, sajikan, simpulkan', 'Urutan, percabangan, perulangan, fungsi'], correct: 0, explanation: 'Empat pilar: dekomposisi, pengenalan pola, abstraksi, dan algoritma.' },
+            { question: 'Manfaat berpikir komputasional adalah...', options: ['Hanya untuk programmer', 'Menyelesaikan masalah secara terstruktur', 'Menghafal rumus', 'Bermain game'], correct: 1, explanation: 'Berpikir komputasional berguna untuk semua bidang karena melatih penyelesaian masalah terstruktur.' }
+        ]
+    }
+};
+
+QUIZ_DATA['informatika_bab3'] = {
+    umum: {
+        title: 'Informatika - Algoritma Pemrograman',
+        questions: [
+            { question: 'Algoritma adalah...', options: ['Bahasa pemrograman', 'Langkah-langkah berurutan untuk menyelesaikan masalah', 'Perangkat keras komputer', 'Aplikasi komputer'], correct: 1, explanation: 'Algoritma adalah langkah-langkah berurutan dan logis untuk menyelesaikan masalah.' },
+            { question: 'Ciri algoritma yang baik adalah...', options: ['Berputar tanpa henti', 'Langkahnya membingungkan', 'Jelas, urut, dan berakhir', 'Tidak punya output'], correct: 2, explanation: 'Algoritma yang baik harus jelas, berurutan, dan memiliki akhir (finite).' },
+            { question: 'Simbol oval pada flowchart menandakan...', options: ['Proses', 'Keputusan', 'Mulai atau selesai', 'Input'], correct: 2, explanation: 'Simbol oval digunakan untuk mulai dan selesai pada flowchart.' },
+            { question: 'Simbol belah ketupat pada flowchart menandakan...', options: ['Proses', 'Keputusan', 'Mulai', 'Output'], correct: 1, explanation: 'Belah ketupat menandakan keputusan, misalnya ya/tidak atau benar/salah.' },
+            { question: 'Struktur algoritma yang melakukan tindakan berdasarkan kondisi disebut...', options: ['Urutan', 'Percabangan', 'Perulangan', 'Variabel'], correct: 1, explanation: 'Percabangan (selection) memilih tindakan berdasarkan kondisi, seperti JIKA ... MAKA.' },
+            { question: 'Mengulang langkah beberapa kali disebut...', options: ['Urutan', 'Percabangan', 'Perulangan', 'Abstraksi'], correct: 2, explanation: 'Perulangan (iteration) menjalankan langkah berulang kali hingga kondisi terpenuhi.' },
+            { question: 'Penulisan algoritma dengan kalimat biasa disebut...', options: ['Pseudocode', 'Bahasa natural', 'Flowchart', 'Kode mesin'], correct: 1, explanation: 'Bahasa natural adalah menulis algoritma dengan kalimat sehari-hari.' },
+            { question: 'Pseudocode adalah...', options: ['Kode program jadi', 'Algoritma yang ditulis menyerupai kode tapi belum jadi program', 'Diagram alir', 'Simbol flowchart'], correct: 1, explanation: 'Pseudocode menyerupai kode pemrograman tapi tetap mudah dibaca manusia.' }
+        ]
+    }
+};
+
 // Export
+
 window.QUIZ_DATA = QUIZ_DATA;

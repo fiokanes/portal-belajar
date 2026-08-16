@@ -207,6 +207,28 @@ body {
 .pb-card h2 { color: var(--m-text); font-size: 1.5em; margin-bottom: 18px; }
 .pb-section-title { color: #fff; text-align: center; font-size: 1.6em; margin: 30px 0 20px; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); }
 
+/* ============ PROGRES MAPEL (disuntik portal-nav di halaman mapel) ============ */
+.mapel-progress {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: var(--radius); padding: 18px 22px;
+    box-shadow: var(--shadow); margin-bottom: 26px;
+}
+.mapel-progress .mp-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.mapel-progress .mp-head strong { color: var(--m-text); font-size: 1.05em; }
+.mapel-progress .mp-count { color: #777; font-size: 0.85em; font-weight: 600; }
+
+/* Kartu bab yang sudah selesai */
+.bab-card { position: relative; }
+.bab-card.done { border: 2px solid #a5d6a7; }
+.bab-card.done::after {
+    content: '✅ Selesai';
+    position: absolute; top: 14px; right: 14px; z-index: 5;
+    background: #4caf50; color: #fff;
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 0.75em; font-weight: 700;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
 /* ============ HALAMAN PROGRES ============ */
 .xp-hero {
     background: var(--m-gradient); color: #fff;
